@@ -1,0 +1,319 @@
+body {
+    background-color: darkgray;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.topbar {
+    position: relative;
+    top: 0px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 65px;
+    border-bottom: 2px solid rgb(26, 209, 255);
+}
+
+.topbar .left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: calc(50% - 25px);
+    height: 100%;
+}
+
+.topbar .right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: calc(50% - 25px);
+    height: 100%;
+}
+
+.topbar .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+}
+
+#date-day {
+    position: absolute;
+    top: 10px;
+    right: 135px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+#date-date {
+    position: absolute;
+    bottom: 10px;
+    right: 135px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+#date-time {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.radio {
+    position: absolute;
+    left: 20px;
+    bottom: 0px;
+    width: calc(100% - 40px);
+    height: 100px;
+    border-top: 2px solid rgb(81, 94, 97);
+}
+
+.radio img {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.radio #radio-title {
+    position: absolute;
+    top: 27.5px;
+    left: 110px;
+    color: rgb(227, 227, 227);
+}
+
+.radio #radio-description {
+    position: absolute;
+    bottom: 27.5px;
+    left: 110px;
+    color: rgb(153, 153, 153);
+}
+
+.radio .controls {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100px;
+    width: 20%;
+    height: 100%;
+}
+
+.radio .controls .radio-back {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    width: 35px;
+    fill: rgb(212, 212, 212);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.radio .controls .radio-back:hover {
+    fill: rgb(131, 131, 131);
+}
+
+.radio .controls .radio-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    fill: rgb(212, 212, 212);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.radio .controls .radio-play:hover {
+    fill: rgb(131, 131, 131);
+}
+
+#radio-pause {
+    display: none;
+}
+
+.radio .controls .radio-next {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 35px;
+    fill: rgb(212, 212, 212);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.radio .controls .radio-next:hover {
+    fill: rgb(131, 131, 131);
+}
+
+.radio-volume {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 400px;
+    height: 100%;
+}
+
+.v-down {
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    height: 30px;
+    transform: translateY(-50%);
+    fill: rgb(212, 212, 212);
+}
+
+.v-up {
+    position: absolute;
+    top: 50%;
+    right: 55px;
+    height: 30px;
+    transform: translateY(-50%);
+    fill: rgb(212, 212, 212);
+}
+
+.radio-volume #v-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+#slider-inner {
+    fill: transparent;
+    stroke: transparent;
+}
+  
+#track-inner {
+    fill: #6a6a6a;
+}
+  
+#track-fill, #handle-inner, #handle-clone {
+    fill: #ffffff;
+}
+  
+.progress {
+    position: absolute;
+    font-weight: bold;
+    line-height: 100px;
+    top: 50%;
+    left: 100%;
+    transform: translate(-25%, -50%);
+}
+
+.model-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: calc(100% - 4px);
+    max-height: 700px;
+    height: calc(100% - 4px);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(26, 209, 255);
+    border-radius: 5px;
+    display: none;
+}
+
+.modal h1 {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 95%;
+    color: rgb(199, 198, 198);
+    text-align: center;
+}
+
+.modal txt {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 95%;
+    color: rgb(163, 163, 163);
+    text-align: center;
+}
+
+@media only screen and (max-width: 1295px) {
+    .v-up {
+        display: none;
+    }
+
+    .v-down {
+        display: none;
+    }
+
+    #radio-description {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    .radio-volume {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 655px) {
+    #radio-title {
+        display: none;
+    }
+
+    #radio-back {
+        width: 20px;
+    }
+
+    #radio-next {
+        width: 20px;
+    }
+
+    #radio-play {
+        width: 40px;
+    }
+
+    #radio-pause {
+        width: 40px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    #date-day {
+        left: -135%;
+
+    }
+
+    #date-date {
+        left: -135%;
+
+    }
+}
