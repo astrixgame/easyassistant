@@ -6,9 +6,9 @@ import xmljs from 'xml-js';
 import fs from 'fs';
 import LxCommunicator from "LxCommunicator";
 
-var lxAddr = "192.168.5.205:8080";
-var lxUser = "Daniel";
-var lxPass = "Minecraft96";
+var lxAddr = "LoxoneIP:LoxonePORT";
+var lxUser = "LoxoneUsername";
+var lxPass = "LoxonePassword";
 
 var con = mysql.createConnection({
     host: "localhost",
