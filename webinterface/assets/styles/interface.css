@@ -42,6 +42,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50px;
+    cursor: pointer;
 }
 
 #date-day {
@@ -71,6 +72,529 @@ body {
     font-family: 'Montserrat';
     font-size: 50px;
     font-weight: 600;
+}
+
+.panels {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 200px);
+    height: calc(100% - 600px);
+    padding: 10px 10px 10px 10px;
+}
+
+.p-menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.p-menu .item {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 7.5px 20px 7.5px 20px;
+}
+
+.p-menu .item:hover {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.p-menu .item svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    fill: rgb(206, 206, 206);
+}
+
+.p-menu .item-back {
+    position: absolute;
+    top: 7.5px;
+    left: 7.5px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 20px;
+    display: none;
+}
+
+.openned-item {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.item-openned-svg {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 60px;
+    height: 100px;
+}
+
+.item-openned-svg svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    fill: rgb(193, 193, 193);
+}
+
+.item-open-title {
+    position: absolute;
+    top: 100px;
+    left: 160px;
+    font-size: 30px;
+    color: rgb(206, 206, 206);
+}
+
+.openned-value-item {
+    position: absolute;
+    top: 240px;
+    left: calc((100% - 40%) / 2);
+    transform: translateX(-(100% - 40%) / 2);
+    color: rgb(206, 206, 206);
+}
+
+.connected-objects {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 40%;
+    height: 100%;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.connected-objects-title {
+    display: block;
+    font-size: 20px;
+    color: rgb(206, 206, 206);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.connected-object {
+    position: relative;
+    width: 90%;
+    height: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-top: 1px solid rgba(206, 206, 206, 0.2);
+    border-bottom: 1px solid rgba(206, 206, 206, 0.2);
+    color: rgb(206, 206, 206);
+    cursor: pointer;
+}
+
+.connected-object svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 35px;
+    fill: rgb(206, 206, 206);
+}
+
+.connected-object txt {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+}
+
+.controling {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+}
+
+.controling .panel {
+    position: relative;
+    float: left;
+    margin: 10px 10px 10px 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.controling .panel-item {
+    width: 150px;
+    height: 200px;
+}
+
+.controling .panel-room {
+    width: 150px;
+    height: 140px;
+}
+
+.controling .panel-category {
+    width: 150px;
+    height: 140px;
+}
+
+.controling .panel svg {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    fill: rgb(193, 193, 193);
+}
+
+.controling .panel .title {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    color: rgb(193, 193, 193);
+    text-align: center;
+}
+
+.controling .panel .value {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    color: rgb(150, 150, 150);
+    text-align: center;
+}
+
+.controling .panel .switch {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controling .panel input[type=range] {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+}
+
+.controling .panel .timedswitch {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controling .panel .timedswitch:hover {
+    border: 2px solid white;
+
+}
+
+.controling .panel .timedswitch svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    fill: rgb(238, 238, 238);
+}
+
+.controling .panel .leftbutton {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controling .panel .leftbutton:hover {
+    border: 2px solid white;
+}
+
+.controling .panel .rightbutton {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controling .panel .rightbutton:hover {
+    border: 2px solid white;
+}
+
+.controling .panel .leftbutton svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    fill: rgb(238, 238, 238);
+}
+
+.controling .panel .rightbutton svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    fill: rgb(238, 238, 238);
+}
+
+.controling .panel .pushbutton {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controling .panel .pushbutton:hover {
+    border: 2px solid white;
+}
+
+.controling .panel .pushbutton svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    fill: rgb(238, 238, 238);
+}
+
+.controling .panel .irrigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controling .panel .irrigation:hover {
+    border: 2px solid white;
+}
+
+.controling .panel .irrigation svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    fill: rgb(238, 238, 238);
+}
+
+.controling .panel .intercom {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controling .panel .intercom:hover {
+    border: 2px solid white;
+}
+
+.controling .panel .intercom svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    fill: rgb(238, 238, 238);
+}
+.controling .panel .inteligentController {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controling .panel .inteligentController:hover {
+    border: 2px solid white;
+
+}
+
+.controling .panel .inteligentController svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    fill: rgb(238, 238, 238);
+}
+
+.weather {
+    position: absolute;
+    bottom: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-col {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 180px;
+    border-radius: 15px;
+    transition: 0.2s;
+    border: 2px solid rgba(255, 255, 255, 0);
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.weather-col:hover {
+    border: 2px solid white;
+}
+
+i {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    color: white;
+    font-size: 50px;
+}
+
+.weather-title {
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(226, 226, 226);
+    font-size: 20px;
+}
+
+.weather-temp {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(209, 209, 209);
+}
+
+.openned-weather {
+    position: relative;
+    width: 720px;
+    height: 180px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: none;
+}
+
+.weather-preview {
+    position: relative;
+    width: 150px;
+    height: 100%;
+    transition: 0.2s;
+    border-right: 2px solid white;
+    cursor: pointer;
+}
+
+.weather-preview:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.openned-weather table {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: calc(100% - 152px);
+    padding: 10px 10px 10px 10px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.openned-weather table td {
+    color: rgb(209, 209, 209);
+}
+
+.openned-weather table td strong {
+    color: rgb(226, 226, 226);
 }
 
 .radio {
@@ -264,6 +788,59 @@ body {
     text-align: center;
 }
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #787878;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 10px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(255, 255, 255);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 5px;
+}
+  
+input:checked + .slider {
+    background-color: #006fc9;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #006fc9;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
 @media only screen and (max-width: 1295px) {
     .v-up {
         display: none;
@@ -284,7 +861,84 @@ body {
     }
 }
 
+@media only screen and (max-width: 740px) {
+    #date-day {
+        left: -135%;
+
+    }
+
+    #date-date {
+        left: -135%;
+
+    }
+}
+
 @media only screen and (max-width: 655px) {
+    .weather {
+        bottom: 200px;
+        height: 80px;
+    }
+    
+    .weather-col {
+        width: 150px;
+        height: 140px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .weather-col:hover {
+        border: 2px solid white;
+    }
+    
+    .weather-col i {
+        top: 20px;
+        font-size: 35px;
+    }
+    
+    .weather-col .weather-title {
+        bottom: 45px;
+        font-size: 15px;
+    }
+    
+    .weather-col .weather-temp {
+        bottom: 20px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .openned-weather {
+        width: 100%;
+        height: 140px;
+    }
+    
+    .weather-preview {
+        width: 100px;
+        height: 100%;
+    }
+
+    .weather-preview i {
+        top: 20px;
+        font-size: 35px;
+    }
+
+    .weather-preview .weather-title {
+        bottom: 45px;
+        font-size: 15px;
+    }
+
+    .weather-preview .weather-temp {
+        bottom: 20px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    
+    .openned-weather table {
+        width: calc(100% - 102px);
+        border-spacing: 0 8px;
+        font-size: 10px;
+    }
+
     #radio-title {
         display: none;
     }
@@ -303,17 +957,5 @@ body {
 
     #radio-pause {
         width: 40px;
-    }
-}
-
-@media only screen and (max-width: 740px) {
-    #date-day {
-        left: -135%;
-
-    }
-
-    #date-date {
-        left: -135%;
-
     }
 }
