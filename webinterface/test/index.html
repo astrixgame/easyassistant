@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="index.js"></script>
+        <style>
+            #chartdiv {
+                width: 100%;
+                height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="chartdiv"></div>
+    </body>
+    <script>
+        am5.ready(function() {
+            var root = am5.Root.new("chartdiv");
+            
+            root.setThemes([
+              am5themes_Animated.new(root)
+            ]);
+
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+              panX: true,
+              panY: true,
+              wheelX: "panX",
+              wheelY: "zoomX",
+              pinchZoomX:true
+            }));
+
+            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+              behavior: "none"
+            }));
+            cursor.lineY.set("visible", false);
+            
+            // Generate random data
+            var date = new Date();
+            date.setHours(0, 0, 0, 0);
+            var value = 100;
+            
+            function generateData() {
+              value = Math.round(Math.random() * 10 - 5 + value);
+            
+              am5.time.add(date, "day", 1);
+              return { date: date.getTime(), value: value };
+            }
+            
+            function generateDatas(count) {
+              var data = [];
+              for (var i = 0; i < count; ++i) {
+                data.push(generateData());
+              }
+              return data;
+            }
+
+            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+              baseInterval: { timeUnit: "day", count: 1 },
+              renderer: am5xy.AxisRendererX.new(root, {}),
+              tooltip: am5.Tooltip.new(root, {})
+            }));
+            
+            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+              renderer: am5xy.AxisRendererY.new(root, {})
+            }));
+
+            var series = chart.series.push(am5xy.LineSeries.new(root, {
+              name: "Series",
+              xAxis: xAxis,
+              yAxis: yAxis,
+              valueYField: "value",
+              valueXField: "date",
+              tooltip: am5.Tooltip.new(root, {
+                labelText: "{valueY}"
+              })
+            }));
+            
+            var scrollbar = chart.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
+              orientation: "horizontal",
+              height: 60
+            }));
+            
+            var sbDateAxis = scrollbar.chart.xAxes.push(am5xy.DateAxis.new(root, {
+              baseInterval: {
+                timeUnit: "day",
+                count: 1
+              },
+              renderer: am5xy.AxisRendererX.new(root, {})
+            }));
+            
+            var sbValueAxis = scrollbar.chart.yAxes.push(
+              am5xy.ValueAxis.new(root, {
+                renderer: am5xy.AxisRendererY.new(root, {})
+              })
+            );
+            
+            var sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
+              valueYField: "value",
+              valueXField: "date",
+              xAxis: sbDateAxis,
+              yAxis: sbValueAxis
+            }));
+            
+            var data = generateDatas(2000);
+            series.data.setAll(data);
+            sbSeries.data.setAll(data);
+
+            series.appear(1000);
+            chart.appear(1000, 100);
+        });
+    </script>
+</html>

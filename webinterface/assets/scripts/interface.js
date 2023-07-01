@@ -194,7 +194,7 @@ connection.onopen = function() {
                         }
                         opennedPanelVal += '</div>';
                         getSvg(icon,uuid+'-open-svg');
-                        opennedPanels.innerHTML += '<div class="openned-item" id="'+uuid+'-showcase"><div class="item-openned-svg" id="'+uuid+'-open-svg"></div><txt class="item-open-title">'+lxData.controls[uuid].name+'</txt>'+opennedPanelVal+'</div>';
+                        opennedPanels.innerHTML += '<div class="openned-item" id="'+uuid+'-showcase"><div class="openned-main"><div id="'+uuid+'-open-svg"></div><txt class="item-open-title">'+lxData.controls[uuid].name+'</txt>'+opennedPanelVal+'</div><div class="openned-stats"><txt>Statistiky</txt><div class="stats" id="'+uuid+'-stats"></div></div></div>';
                         getSvg(icon,uuid);
                         controling.innerHTML += '<div class="panel panel-item" id="'+uuid+'" onclick="showItem(this, event)"><txt class="title">'+smallerSentence(lxData.controls[uuid].name,20)+'</txt>'+value+'</div>';
                         
