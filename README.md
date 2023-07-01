@@ -2,7 +2,7 @@
 <h2>About us</h2>
 Easy Assistant is software designed to make life easier. Featuring voice recognition technology, the intelligent Easy Assistant responds instantly to voice commands, such as turning lights on or off, adjusting thermostat settings. It can detect your presence, and automatically adjust the temperature, lighting and other settings to create a comfortable environment while also conserving energy.
 <h2>How to run</h2>
-You need ports: <ul><li>34987 - EasyAssistantServer (REQUIRED)</li><li>3306 - MySQL Database (REQUIRED)</li><li>8080 - VLC Media Player (OPTIONAL)</li><li>80 - WebInterface (OPTIONAL)</li></ul>
+You need these free ports: <ul><li>34987 - EasyAssistantServer (REQUIRED)</li><li>3306 - MySQL Database (REQUIRED)</li><li>8080 - VLC Media Player (OPTIONAL)</li><li>80 - WebInterface (OPTIONAL)</li></ul>
 Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easy-assistant/releases</a> and run it <i>as administrator is recommended</i>
 <h2>Contact us</h2>
 Website, Forum: <a href="http://easyassistant.clanweb.eu/home/">http://easyassistant.clanweb.eu</a><br>
