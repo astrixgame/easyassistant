@@ -1,0 +1,588 @@
+[00-06-2023 15:14:30.982] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:14:30.986] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:14:30.986] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:14:30.988] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:14:30.988] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:14:30.989] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:14:30.990] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:14:30.990] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:14:30.990] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:14:30.991] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:14:31.84] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:14:31.84] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:14:31.85] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:14:31.310] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:14:31.311] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:14:31.315] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:14:31.315] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:14:31.315] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:16:40.353] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:16:40.358] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:16:40.359] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:16:40.377] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:16:40.378] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:16:40.379] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:16:40.379] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:16:40.379] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:16:40.379] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:16:40.380] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:16:40.461] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:16:40.461] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:16:40.462] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:16:40.678] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:16:40.682] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:16:40.678] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:16:40.682] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:16:40.682] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:16:47.733] [INFO] [Connection Thread] Client has connected
+[00-06-2023 15:17:28.304] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:17:28.307] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:17:28.308] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:17:28.320] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:17:28.320] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:17:28.323] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:17:28.325] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:17:28.324] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:17:28.324] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:17:28.322] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:17:28.403] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:17:28.403] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:17:28.404] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:17:28.619] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:17:28.620] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:17:28.624] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:17:28.623] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:17:28.624] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:17:45.59] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:17:45.63] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:17:45.63] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:17:45.74] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:17:45.74] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:17:45.76] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:17:45.76] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:17:45.76] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:17:45.77] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:17:45.77] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:17:45.163] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:17:45.163] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:17:45.163] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:17:45.382] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:17:45.382] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:17:45.385] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:17:45.386] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:17:45.386] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:17:45.822] [INFO] [Connection Thread] Client has connected
+[00-06-2023 15:18:36.324] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:18:36.327] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:18:36.327] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:18:36.330] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:18:36.330] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:18:36.332] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:18:36.332] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:18:36.333] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:18:36.333] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:18:36.334] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:18:36.412] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:18:36.412] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:18:36.412] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:18:36.631] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:18:36.640] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:18:36.631] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:18:36.649] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:18:36.649] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:18:45.331] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:18:45.335] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:18:45.335] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:18:45.337] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:18:45.337] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:18:45.338] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:18:45.339] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:18:45.339] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:18:45.341] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:18:45.339] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:18:45.426] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:18:45.426] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:18:45.426] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:18:45.649] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:18:45.650] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:18:45.653] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:18:45.653] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:18:45.653] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:18:46.387] [INFO] [Connection Thread] Client has connected
+[00-06-2023 15:22:51.370] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:22:51.374] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:22:51.374] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:22:51.376] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:22:51.376] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:22:51.377] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:22:51.378] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:22:51.377] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:22:51.378] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:22:51.378] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:22:51.455] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:22:51.456] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:22:51.456] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:22:51.673] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:22:51.673] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:22:51.677] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:22:51.676] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:22:51.677] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:22:53.964] [INFO] [Connection Thread] Client has connected [1893ad1c78c]
+[00-06-2023 15:27:24.245] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:27:24.248] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:27:24.248] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:27:24.258] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:27:24.258] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:27:24.259] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:27:24.259] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:27:24.261] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:27:24.260] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:27:24.260] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:27:24.339] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:27:24.340] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:27:24.340] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:27:24.560] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:27:24.561] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:27:24.565] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:27:24.565] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:27:24.565] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:27:26.386] [INFO] [Connection Thread] Client has connected [1893ad5efb2]
+[00-06-2023 15:27:52.610] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:27:52.614] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:27:52.614] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:27:52.625] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:27:52.625] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:27:52.626] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:27:52.626] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:27:52.627] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:27:52.627] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:27:52.627] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:27:52.709] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:27:52.709] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:27:52.710] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:27:52.928] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:27:52.927] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:27:52.931] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:27:52.931] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:27:52.931] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:27:53.971] [INFO] [Connection Thread] Client has connected [1893ad65b73]
+[00-06-2023 15:28:47.67] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:28:47.70] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:28:47.70] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:28:47.73] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:28:47.73] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:28:47.74] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:28:47.75] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:28:47.75] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:28:47.75] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:28:47.76] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:28:47.165] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:28:47.165] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:28:47.166] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:28:47.376] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:28:47.376] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:28:47.380] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:28:47.380] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:28:47.380] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:28:48.680] [INFO] [Connection Thread] Client has connected [1893ad73128]
+[00-06-2023 15:29:30.491] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:29:30.494] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:29:30.495] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:29:30.497] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:29:30.498] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:29:30.499] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:29:30.499] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:29:30.500] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:29:30.500] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:29:30.500] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:29:30.579] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:29:30.580] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:29:30.580] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:29:30.796] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:29:30.800] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:29:30.796] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:29:30.801] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:29:30.801] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:29:32.424] [INFO] [Connection Thread] Client has connected [1893ad7dc08]
+[00-06-2023 15:31:31.146] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:31:31.149] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:31:31.149] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:31:31.163] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:31:31.165] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:31:31.169] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:31:31.170] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:31:31.170] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:31:31.169] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:31:31.169] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:31:31.246] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:31:31.247] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:31:31.246] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:31:31.463] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:31:31.463] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:31:31.467] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:31:31.467] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:31:31.467] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:31:32.528] [INFO] [Connection Thread] Client has connected [1893ad9b130]
+[00-06-2023 15:31:58.598] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 15:31:58.606] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 15:31:58.606] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 15:31:58.608] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 15:31:58.608] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 15:31:58.610] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 15:31:58.610] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 15:31:58.609] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 15:31:58.609] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 15:31:58.609] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 15:31:58.689] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 15:31:58.690] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 15:31:58.690] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 15:31:58.902] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 15:31:58.904] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 15:31:58.908] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 15:31:58.910] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 15:31:58.921] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 15:44:16.534] [INFO] [Connection Thread] Client has connected [1893ae55996]
+[00-06-2023 16:04:58.120] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:04:58.124] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:04:58.124] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:04:58.133] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:04:58.133] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:04:58.134] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:04:58.135] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:04:58.136] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:04:58.136] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:04:58.137] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:04:58.216] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:04:58.216] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:04:58.217] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:04:58.428] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:04:58.428] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:04:58.430] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:04:58.430] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:04:58.430] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 16:06:27.997] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:06:27.992] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:06:27.997] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:06:28.7] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:06:28.8] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:06:28.9] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:06:28.10] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:06:28.10] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:06:28.11] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:06:28.12] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:06:28.92] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:06:28.91] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:06:28.92] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:06:28.304] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:06:28.306] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:06:28.306] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:06:28.307] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 16:06:28.305] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:07:23.513] [INFO] [Connection Thread] Client has connected [1893afa8379]
+[00-06-2023 16:07:34.205] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 16:07:34.377] [INFO] [Connection Thread] Client has connected [1893afaade9]
+[00-06-2023 16:08:23.25] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:08:23.28] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:08:23.28] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:08:23.38] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:08:23.39] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:08:23.40] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:08:23.40] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:08:23.44] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:08:23.43] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:08:23.46] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:08:23.141] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:08:23.142] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:08:23.142] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:08:23.373] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:08:23.374] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:08:23.375] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:08:23.375] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:08:23.376] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 16:08:28.840] [INFO] [Connection Thread] Client has connected [1893afb82a8]
+[00-06-2023 16:08:34.203] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 16:08:47.98] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:08:47.94] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:08:47.98] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:08:47.108] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:08:47.110] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:08:47.111] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:08:47.112] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:08:47.118] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:08:47.117] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:08:47.112] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:08:47.201] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:08:47.201] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:08:47.202] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:08:47.413] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:08:47.413] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:08:47.415] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:08:47.415] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:08:47.416] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 16:08:48.766] [INFO] [Connection Thread] Client has connected [1893afbd07e]
+[00-06-2023 16:09:41.8] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:09:41.11] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:09:41.11] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:09:41.20] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:09:41.20] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:09:41.22] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:09:41.22] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:09:41.23] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:09:41.24] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:09:41.23] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:09:41.104] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:09:41.105] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:09:41.105] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:09:41.324] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:09:41.324] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:09:41.326] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:09:41.325] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:09:41.326] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 16:09:45.925] [INFO] [Connection Thread] Client has connected [1893afcafc5]
+[00-06-2023 16:10:35.487] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 16:10:35.849] [INFO] [Connection Thread] Client has connected [1893afd72c9]
+[00-06-2023 16:11:07.806] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:11:07.814] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:11:07.816] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:11:07.826] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:11:07.826] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:11:07.827] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:11:07.827] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:11:07.828] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:11:07.828] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:11:07.829] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:11:07.937] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:11:07.938] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:11:07.938] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:11:08.175] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:11:08.175] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:11:08.177] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:11:08.177] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:11:08.178] [INFO] [Main Thread] Web Interface running at http://localhost/
+[00-06-2023 16:11:09.594] [INFO] [Connection Thread] Client has connected [1893afdf69a]
+[00-06-2023 16:18:42.153] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:18:42.150] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:18:42.153] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:18:42.162] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:18:42.162] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:18:42.163] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:18:42.163] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:18:42.165] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:18:42.166] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:18:42.164] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:18:42.243] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:18:42.244] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:18:42.244] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:18:42.459] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:18:42.461] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:18:42.461] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:18:42.464] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:18:42.465] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:18:42.466] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:18:42.467] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:18:42.466] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:18:42.467] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 16:18:47.374] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:18:47.371] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:18:47.374] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:18:47.384] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:18:47.385] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:18:47.385] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:18:47.386] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:18:47.387] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:18:47.386] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:18:47.386] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:18:47.468] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:18:47.468] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:18:47.468] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:18:47.678] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:18:47.679] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:18:47.681] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:18:47.679] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:18:47.681] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:18:47.682] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:18:47.683] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:18:47.683] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:18:47.683] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 16:19:23.964] [INFO] [Connection Thread] Client has connected [1893b0581bc]
+[00-06-2023 16:22:20.867] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:22:20.871] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:22:20.871] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:22:20.880] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:22:20.881] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:22:20.882] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:22:20.882] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:22:20.883] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:22:20.884] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:22:20.883] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:22:20.963] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:22:20.963] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:22:20.964] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:22:21.178] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:22:21.179] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:22:21.180] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:22:21.183] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:22:21.184] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:22:21.183] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:22:21.185] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:22:21.185] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:22:21.185] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 16:22:23.74] [INFO] [Connection Thread] Client has connected [1893b083d62]
+[00-06-2023 16:31:10.920] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:31:10.923] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:31:10.924] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:31:10.932] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:31:10.932] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:31:10.933] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:31:10.934] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:31:10.935] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:31:10.934] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:31:10.934] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:31:11.13] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:31:11.14] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:31:11.13] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:31:11.229] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:31:11.230] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:31:11.231] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:31:11.234] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:31:11.233] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:31:11.235] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:31:11.236] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:31:11.236] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:31:11.236] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 16:33:28.852] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:33:28.855] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:33:28.858] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:33:28.870] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:33:28.870] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:33:28.873] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:33:28.872] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:33:28.873] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:33:28.874] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:33:28.873] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:33:28.953] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:33:28.954] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:33:28.954] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:33:29.172] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:33:29.173] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:33:29.173] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:33:29.176] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:33:29.176] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:33:29.178] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:33:29.178] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:33:29.178] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 16:33:29.178] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:33:48.648] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:33:48.651] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:33:48.651] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:33:48.664] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:33:48.664] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:33:48.665] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:33:48.665] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:33:48.665] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:33:48.665] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:33:48.666] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:33:48.744] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:33:48.744] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:33:48.744] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:33:48.963] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:33:48.964] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:33:48.964] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:33:48.967] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:33:48.967] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:33:48.968] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:33:48.968] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:33:48.968] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:33:48.969] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 16:34:20.836] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:34:20.840] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:34:20.840] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:34:20.853] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:34:20.853] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:34:20.859] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:34:20.860] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:34:20.860] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:34:20.861] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:34:20.861] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:34:20.943] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:34:20.944] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:34:20.944] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:34:21.166] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:34:21.167] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:34:21.167] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:34:21.170] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:34:21.170] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:34:21.171] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:34:21.171] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:34:21.171] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:34:21.172] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 16:34:25.480] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 16:34:25.484] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 16:34:25.486] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 16:34:25.505] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 16:34:25.505] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 16:34:25.506] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 16:34:25.506] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 16:34:25.507] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 16:34:25.507] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 16:34:25.507] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 16:34:25.597] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 16:34:25.597] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 16:34:25.597] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 16:34:25.817] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 16:34:25.818] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 16:34:25.818] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 16:34:25.821] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 16:34:25.821] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 16:34:25.823] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 16:34:25.822] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 16:34:25.823] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 16:34:25.823] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 17:37:05.113] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 17:37:05.116] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 17:37:05.116] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 17:37:05.147] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 17:37:05.149] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 17:37:05.169] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 17:37:05.170] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 17:37:05.172] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 17:37:05.172] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 17:37:05.177] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 17:37:05.298] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 17:37:05.299] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 17:37:05.299] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 17:37:05.542] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 17:37:05.543] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 17:37:05.543] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 17:37:05.546] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 17:37:05.547] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 17:37:05.547] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 17:37:05.546] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 17:37:05.548] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 17:37:05.548] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 17:37:35.764] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 17:37:35.767] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 17:37:35.767] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 17:37:35.779] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 17:37:35.779] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 17:37:35.780] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 17:37:35.781] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 17:37:35.781] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 17:37:35.781] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 17:37:35.782] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 17:37:35.865] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 17:37:35.865] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 17:37:35.866] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 17:37:36.115] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 17:37:36.116] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 17:37:36.119] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 17:37:36.119] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 17:37:36.120] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 17:37:36.120] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 17:37:36.116] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 17:37:36.121] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 17:37:36.121] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 17:37:56.515] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 17:37:56.518] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 17:37:56.518] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 17:37:56.519] [WARNING] [Main Thread] You doesn't configure it yet, you must rename the config.sample.json to config.json and edit it for your use

@@ -1,0 +1,14 @@
+{
+    "loxoneAddr": "192.168.0.1:8080",
+    "loxoneUser": "Username",
+    "loxonePass": "SuperSecretPassword",
+    "radioPlaying": 0,
+    "radioStation": 1,
+    "radioVolume": 0,
+    "radioStations": [
+        {"name":"Radio1 Name", "image":"Radio1 Image Link", "link":"Radio1 Stream Link"},
+        {"name":"Radio2 Name", "image":"Radio2 Image Link", "link":"Radio2 Stream Link"}
+    ],
+    "vlcAddr": "localhost:8080",
+    "vlcPass": "SuperSecretPassword"
+}
