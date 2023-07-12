@@ -1,4 +1,5 @@
 # Easy Assistant
+<h2>Not fully functional yet</h2>
 <h2>About us</h2>
 Easy Assistant is software designed to make life easier. Featuring voice recognition technology, the intelligent Easy Assistant responds instantly to voice commands, such as turning lights on or off, adjusting thermostat settings. It can detect your presence, and automatically adjust the temperature, lighting and other settings to create a comfortable environment while also conserving energy.<br><br>The assistant must be connected to the main controller like Loxone or Home Assistant or something else.
 <br>But now it supports only <a href="https://www.loxone.com/">Loxone Miniserver</a>
@@ -11,10 +12,7 @@ And run following commands:<br><br>
 Download files
 <pre>git clone https://github.com/astrixgame/easyassistant.git</pre>
 Install modules
-<pre>
-npm i ws http lxcommunicator axios xml-js fs
-  
-</pre>
+<pre>npm i ws http lxcommunicator axios xml-js fs</pre>
 Rename config.sample.json to config.json and change the values for your use.<br><br>
 Run the server
 <pre>node server.js</pre>
