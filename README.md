@@ -5,6 +5,19 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
 <h2>How to run</h2>
 You need these free ports: <ul><li>34987 - EasyAssistantServer (REQUIRED)</li><li>80 - WebInterface (REQUIRED)</li><li>8080 - VLC Media Player (OPTIONAL) <sub>Only if you want to play radio.</sub></li></ul>
 Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easy-assistant/releases</a> and run it <i>as administrator is recommended</i>
+<h2>How to run the server</h2>
+You must have installed Node.js and Git<sub>For download</sub><br>
+And run following commands:<br><br>
+Download files
+<pre>git clone https://github.com/astrixgame/easyassistant.git</pre>
+Install modules
+<pre>
+npm i ws http lxcommunicator axios xml-js fs
+  
+</pre>
+Rename config.sample.json to config.json and change the values for your use.<br><br>
+Run the server
+<pre>node server.js</pre>
 <h2>Contact us</h2>
 Website, Forum: <a href="http://easyassistant.clanweb.eu/home/">http://easyassistant.clanweb.eu</a><br>
 YouTube: <a href="https://www.youtube.com/@easyassistant">https://www.youtube.com/@easyassistant</a><br>
