@@ -586,3 +586,1662 @@
 [00-06-2023 17:37:56.518] [INFO] [Main Thread] Varriables has been inilialized
 [00-06-2023 17:37:56.518] [INFO] [Main Thread] Loading configurations files
 [00-06-2023 17:37:56.519] [WARNING] [Main Thread] You doesn't configure it yet, you must rename the config.sample.json to config.json and edit it for your use
+[00-06-2023 19:04:13.816] [INFO] [Main Thread] Initializing varriables
+[00-06-2023 19:04:13.819] [INFO] [Main Thread] Varriables has been inilialized
+[00-06-2023 19:04:13.819] [INFO] [Main Thread] Loading configurations files
+[00-06-2023 19:04:13.845] [INFO] [Main Thread] Configurations files has been loaded
+[00-06-2023 19:04:13.845] [INFO] [Main Thread] Loading server cache and data files
+[00-06-2023 19:04:13.847] [INFO] [Main Thread] Server cache and data files has been loaded
+[00-06-2023 19:04:13.848] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[00-06-2023 19:04:13.848] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[00-06-2023 19:04:13.848] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[00-06-2023 19:04:13.848] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[00-06-2023 19:04:13.964] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[00-06-2023 19:04:13.964] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[00-06-2023 19:04:13.964] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[00-06-2023 19:04:14.525] [INFO] [Interface Thread] Initializing Web interface listener
+[00-06-2023 19:04:14.526] [INFO] [Interface Thread] Web interface listener has been initialized
+[00-06-2023 19:04:14.526] [INFO] [Interface Thread] Trying to create Web Interface listener
+[00-06-2023 19:04:14.529] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[00-06-2023 19:04:14.529] [INFO] [Main Thread] Trying to create WebSocket listener
+[00-06-2023 19:04:14.530] [INFO] [Main Thread] WebSocket listener is listening
+[00-06-2023 19:04:14.530] [INFO] [Main Thread] Server has been fully started
+[00-06-2023 19:04:14.531] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[00-06-2023 19:04:14.531] [INFO] [Interface Thread] Web Interface listener has been created
+[00-06-2023 19:04:44.869] [INFO] [Connection Thread] Client has connected [1893b9ce345]
+[00-06-2023 19:05:30.31] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:05:30.638] [INFO] [Connection Thread] Client has connected [1893b9d960e]
+[00-06-2023 19:10:32.881] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:10:34.378] [INFO] [Connection Thread] Client has connected [1893ba2388a]
+[00-06-2023 19:11:03.648] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:11:04.128] [INFO] [Connection Thread] Client has connected [1893ba2acc0]
+[00-06-2023 19:17:39.372] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:17:40.856] [INFO] [Connection Thread] Client has connected [1893ba8ba78]
+[00-06-2023 19:19:50.218] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:19:50.823] [INFO] [Connection Thread] Client has connected [1893baab627]
+[00-06-2023 19:22:49.716] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:22:50.430] [INFO] [Connection Thread] Client has connected [1893bad73be]
+[00-06-2023 19:24:21.29] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:24:21.528] [INFO] [Connection Thread] Client has connected [1893baed798]
+[00-06-2023 19:28:28.750] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:28:29.490] [INFO] [Connection Thread] Client has connected [1893bb2a032]
+[00-06-2023 19:29:57.181] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:29:57.526] [INFO] [Connection Thread] Client has connected [1893bb3f816]
+[00-06-2023 19:39:05.583] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:39:06.506] [INFO] [Connection Thread] Client has connected [1893bbc588a]
+[00-06-2023 19:40:35.984] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:40:36.352] [INFO] [Connection Thread] Client has connected [1893bbdb780]
+[00-06-2023 19:46:59.459] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:47:00.199] [INFO] [Connection Thread] Client has connected [1893bc392e7]
+[00-06-2023 19:52:00.422] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:52:01.284] [INFO] [Connection Thread] Client has connected [1893bc82b04]
+[00-06-2023 19:52:19.40] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:52:19.316] [INFO] [Connection Thread] Client has connected [1893bc87174]
+[00-06-2023 19:55:52.589] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 19:55:53.42] [INFO] [Connection Thread] Client has connected [1893bcbb452]
+[00-06-2023 20:00:00.639] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 20:00:01.237] [INFO] [Connection Thread] Client has connected [1893bcf7dd5]
+[00-06-2023 20:02:05.178] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 20:02:05.653] [INFO] [Connection Thread] Client has connected [1893bd163d5]
+[00-06-2023 20:03:14.772] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 20:03:15.57] [INFO] [Connection Thread] Client has connected [1893bd272f1]
+[00-06-2023 20:45:12.71] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 20:45:15.113] [INFO] [Connection Thread] Client has connected [1893bf8e6e9]
+[00-06-2023 21:21:41.963] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:21:42.814] [INFO] [Connection Thread] Client has connected [1893c1a489e]
+[00-06-2023 21:27:55.393] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:27:56.145] [INFO] [Connection Thread] Client has connected [1893c1ffaf1]
+[00-06-2023 21:30:30.378] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:30:30.721] [INFO] [Connection Thread] Client has connected [1893c2256c1]
+[00-06-2023 21:30:47.516] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:31:00.895] [INFO] [Connection Thread] Client has connected [1893c22cc9f]
+[00-06-2023 21:43:04.938] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:43:05.278] [INFO] [Connection Thread] Client has connected [1893c2dda3e]
+[00-06-2023 21:44:02.552] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:44:02.874] [INFO] [Connection Thread] Client has connected [1893c2ebb3a]
+[00-06-2023 21:45:44.442] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:45:44.826] [INFO] [Connection Thread] Client has connected [1893c30497a]
+[00-06-2023 21:47:49.666] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:47:49.918] [INFO] [Connection Thread] Client has connected [1893c32321e]
+[00-06-2023 21:48:27.440] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:48:27.670] [INFO] [Connection Thread] Client has connected [1893c32c596]
+[00-06-2023 21:48:52.283] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:48:52.610] [INFO] [Connection Thread] Client has connected [1893c332702]
+[00-06-2023 21:49:43.694] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:49:43.955] [INFO] [Connection Thread] Client has connected [1893c33ef93]
+[00-06-2023 21:49:52.209] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:49:52.486] [INFO] [Connection Thread] Client has connected [1893c3410e6]
+[00-06-2023 21:51:48.920] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:51:49.211] [INFO] [Connection Thread] Client has connected [1893c35d8db]
+[00-06-2023 21:56:07.259] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:56:07.536] [INFO] [Connection Thread] Client has connected [1893c39c9f0]
+[00-06-2023 21:59:38.888] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 21:59:39.36] [INFO] [Connection Thread] Client has connected [1893c3d041c]
+[00-06-2023 22:14:29.870] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 22:14:30.202] [INFO] [Connection Thread] Client has connected [1893c4a9d3a]
+[00-06-2023 22:16:46.927] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 22:16:47.83] [INFO] [Connection Thread] Client has connected [1893c4cb3eb]
+[00-06-2023 22:17:44.983] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 22:17:45.211] [INFO] [Connection Thread] Client has connected [1893c4d96fb]
+[00-06-2023 22:22:03.346] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 22:22:03.670] [INFO] [Connection Thread] Client has connected [1893c518896]
+[00-06-2023 22:22:16.879] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 22:22:17.33] [INFO] [Connection Thread] Client has connected [1893c51bcc9]
+[00-06-2023 22:23:30.188] [INFO] [Connection Thread] Client has disconnected
+[00-06-2023 22:23:30.410] [INFO] [Connection Thread] Client has connected [1893c52db6a]
+[01-06-2023 13:33:44.980] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 13:33:44.982] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 13:33:44.983] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 13:33:44.994] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 13:33:44.994] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 13:33:44.996] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 13:33:44.996] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 13:33:44.996] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 13:33:44.997] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 13:33:44.997] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 13:33:45.109] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 13:33:45.110] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 13:33:45.110] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 13:33:45.687] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 13:33:45.688] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 13:33:45.688] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 13:33:45.691] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 13:33:45.691] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 13:33:45.692] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 13:33:45.693] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 13:33:45.693] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 13:33:45.693] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 13:33:53.54] [INFO] [Connection Thread] Client has connected [1893f94551e]
+[01-06-2023 13:42:03.542] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 13:42:03.832] [INFO] [Connection Thread] Client has connected [1893f9bd238]
+[01-06-2023 13:45:25.126] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 13:45:25.504] [INFO] [Connection Thread] Client has connected [1893f9ee600]
+[01-06-2023 13:47:36.218] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 13:47:36.406] [INFO] [Connection Thread] Client has connected [1893fa0e556]
+[01-06-2023 13:49:46.475] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 13:49:46.684] [INFO] [Connection Thread] Client has connected [1893fa2e23c]
+[01-06-2023 13:52:10.281] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 13:52:10.512] [INFO] [Connection Thread] Client has connected [1893fa51410]
+[01-06-2023 13:57:58.326] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 13:57:58.611] [INFO] [Connection Thread] Client has connected [1893faa63d3]
+[01-06-2023 14:18:10.691] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 14:18:10.945] [INFO] [Connection Thread] Client has connected [1893fbce381]
+[01-06-2023 14:19:01.655] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 14:21:58.313] [INFO] [Connection Thread] Client has connected [1893fc05ba9]
+[01-06-2023 14:21:58.892] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 14:21:59.44] [INFO] [Connection Thread] Client has connected [1893fc05e84]
+[01-06-2023 14:22:17.852] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 14:22:38.390] [INFO] [Connection Thread] Client has connected [1893fc0f836]
+[01-06-2023 14:22:40.702] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 14:22:40.936] [INFO] [Connection Thread] Client has connected [1893fc10228]
+[01-06-2023 14:26:16.665] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 14:26:16.668] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 14:26:16.668] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 14:26:16.681] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 14:26:16.682] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 14:26:16.683] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 14:26:16.684] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 14:26:16.685] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 14:26:16.685] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 14:26:16.685] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 14:26:16.799] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 14:26:16.799] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 14:26:16.799] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 14:26:17.386] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 14:26:17.386] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 14:26:17.387] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 14:26:17.390] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 14:26:17.390] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 14:26:17.391] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 14:26:17.391] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 14:26:17.392] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 14:26:17.392] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 14:26:22.894] [INFO] [Connection Thread] Client has connected [1893fc4652e]
+[01-06-2023 14:27:26.718] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 14:27:26.721] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 14:27:26.721] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 14:27:26.734] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 14:27:26.734] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 14:27:26.736] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 14:27:26.736] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 14:27:26.738] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 14:27:26.737] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 14:27:26.738] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 14:27:26.860] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 14:27:26.861] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 14:27:26.861] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 14:27:27.449] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 14:27:27.450] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 14:27:27.450] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 14:27:27.453] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 14:27:27.453] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 14:27:27.454] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 14:27:27.454] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 14:27:27.455] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 14:27:27.454] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 14:27:38.924] [INFO] [Connection Thread] Client has connected [1893fc58e2c]
+[01-06-2023 14:27:39.576] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 14:27:39.715] [INFO] [Connection Thread] Client has connected [1893fc59143]
+[01-06-2023 16:40:30.884] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 16:40:30.887] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 16:40:30.888] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 16:40:30.903] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 16:40:30.904] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 16:40:30.905] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 16:40:30.906] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 16:40:30.906] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 16:40:30.905] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 16:40:30.906] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 16:40:31.21] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 16:40:31.22] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 16:40:31.22] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 16:40:31.592] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 16:40:31.593] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 16:40:31.593] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 16:40:31.596] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 16:40:31.596] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 16:40:31.598] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 16:40:31.598] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 16:40:31.598] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 16:40:31.599] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 16:41:27.865] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 16:41:27.867] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 16:41:27.867] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 16:41:27.881] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 16:41:27.881] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 16:41:27.882] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 16:41:27.882] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 16:41:27.883] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 16:41:27.882] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 16:41:27.883] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 16:41:27.994] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 16:41:27.994] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 16:41:27.994] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 16:41:28.582] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 16:41:28.584] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 16:41:28.584] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 16:41:28.587] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 16:41:28.588] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 16:41:28.589] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 16:41:28.590] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 16:41:28.589] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 16:41:28.590] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 16:41:43.985] [INFO] [Connection Thread] Client has connected [18940405031]
+[01-06-2023 17:00:18.136] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:00:18.361] [INFO] [Connection Thread] Client has connected [18940515139]
+[01-06-2023 17:02:33.537] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:02:33.710] [INFO] [Connection Thread] Client has connected [189405361ee]
+[01-06-2023 17:22:11.524] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:22:11.703] [INFO] [Connection Thread] Client has connected [18940655b77]
+[01-06-2023 17:23:01.780] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:23:02.82] [INFO] [Connection Thread] Client has connected [18940662042]
+[01-06-2023 17:23:12.991] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:23:13.371] [INFO] [Connection Thread] Client has connected [18940664c5b]
+[01-06-2023 17:23:13.423] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:23:13.712] [INFO] [Connection Thread] Client has connected [18940664db0]
+[01-06-2023 17:24:03.610] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:24:03.868] [INFO] [Connection Thread] Client has connected [1894067119c]
+[01-06-2023 17:24:45.947] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:24:46.231] [INFO] [Connection Thread] Client has connected [1894067b717]
+[01-06-2023 17:27:25.373] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:27:25.683] [INFO] [Connection Thread] Client has connected [189406a25f3]
+[01-06-2023 17:32:01.371] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:32:01.703] [INFO] [Connection Thread] Client has connected [189406e5c27]
+[01-06-2023 17:35:52.380] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:35:52.536] [INFO] [Connection Thread] Client has connected [1894071e1d8]
+[01-06-2023 17:46:14.249] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:46:14.560] [INFO] [Connection Thread] Client has connected [189407b5fa0]
+[01-06-2023 17:57:56.473] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 17:57:56.478] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 17:57:56.478] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 17:57:56.495] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 17:57:56.496] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 17:57:56.497] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 17:57:56.497] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 17:57:56.498] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 17:57:56.498] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 17:57:56.498] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 17:58:33.760] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 17:58:33.763] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 17:58:33.763] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 17:58:33.774] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 17:58:33.774] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 17:58:33.775] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 17:58:33.775] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 17:58:33.777] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 17:58:33.776] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 17:58:33.776] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 17:58:33.859] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 17:58:33.859] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 17:58:33.859] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 17:58:34.100] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 17:58:34.100] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 17:58:34.101] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 17:58:34.103] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 17:58:34.104] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 17:58:34.105] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 17:58:34.105] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 17:58:34.105] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 17:58:34.105] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 17:58:36.234] [INFO] [Connection Thread] Client has connected [1894086b0ca]
+[01-06-2023 17:59:30.823] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:59:31.178] [INFO] [Connection Thread] Client has connected [18940878769]
+[01-06-2023 18:03:37.890] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:03:38.361] [INFO] [Connection Thread] Client has connected [189408b4cf9]
+[01-06-2023 18:04:36.156] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:04:36.385] [INFO] [Connection Thread] Client has connected [189408c2fa1]
+[01-06-2023 18:05:36.986] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:05:37.215] [INFO] [Connection Thread] Client has connected [189408d1d3f]
+[01-06-2023 18:06:35.949] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:06:37.272] [INFO] [Connection Thread] Client has connected [189408e07d8]
+[01-06-2023 18:07:08.240] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:07:08.745] [INFO] [Connection Thread] Client has connected [189408e82c9]
+[01-06-2023 18:07:39.428] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:07:39.774] [INFO] [Connection Thread] Client has connected [189408efbfe]
+[01-06-2023 18:14:38.77] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:14:38.966] [INFO] [Connection Thread] Client has connected [18940956176]
+[01-06-2023 18:17:33.818] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:17:34.192] [INFO] [Connection Thread] Client has connected [18940980df0]
+[01-06-2023 18:18:17.856] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:18:18.103] [INFO] [Connection Thread] Client has connected [1894098b976]
+[01-06-2023 18:20:06.221] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:20:06.552] [INFO] [Connection Thread] Client has connected [189409a6118]
+[01-06-2023 18:20:43.574] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:20:44.17] [INFO] [Connection Thread] Client has connected [189409af371]
+[01-06-2023 18:21:19.798] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:21:20.96] [INFO] [Connection Thread] Client has connected [189409b8060]
+[01-06-2023 18:23:34.210] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:23:34.681] [INFO] [Connection Thread] Client has connected [189409d8e19]
+[01-06-2023 18:24:18.657] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:24:18.973] [INFO] [Connection Thread] Client has connected [189409e3b1d]
+[01-06-2023 18:24:28.823] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:24:29.209] [INFO] [Connection Thread] Client has connected [189409e6319]
+[01-06-2023 18:25:50.233] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:25:50.637] [INFO] [Connection Thread] Client has connected [189409fa12d]
+[01-06-2023 18:26:20.432] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:26:20.764] [INFO] [Connection Thread] Client has connected [18940a016dc]
+[01-06-2023 18:27:53.724] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:27:54.98] [INFO] [Connection Thread] Client has connected [18940a18372]
+[01-06-2023 18:29:59.159] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:29:59.452] [INFO] [Connection Thread] Client has connected [18940a36d1c]
+[01-06-2023 18:31:38.921] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:31:39.335] [INFO] [Connection Thread] Client has connected [18940a4f347]
+[01-06-2023 18:31:45.666] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:31:45.978] [INFO] [Connection Thread] Client has connected [18940a50d3a]
+[01-06-2023 18:32:01.608] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:32:02.255] [INFO] [Connection Thread] Client has connected [18940a54ccf]
+[01-06-2023 18:32:20.702] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:32:20.947] [INFO] [Connection Thread] Client has connected [18940a595d3]
+[01-06-2023 18:33:27.455] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 18:33:27.458] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 18:33:27.458] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 18:33:27.469] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 18:33:27.469] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 18:33:27.470] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 18:33:27.471] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 18:33:27.471] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 18:33:27.471] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 18:33:27.471] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 18:33:27.630] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 18:33:27.630] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 18:33:27.630] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 18:33:28.198] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 18:33:28.199] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 18:33:28.199] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 18:33:28.202] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 18:33:28.203] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 18:33:28.203] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 18:33:28.203] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 18:33:28.202] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 18:33:28.203] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 18:33:31.962] [INFO] [Connection Thread] Client has connected [18940a6ab3a]
+[01-06-2023 18:33:55.640] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:33:55.940] [INFO] [Connection Thread] Client has connected [18940a708e4]
+[01-06-2023 18:40:04.774] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:40:05.139] [INFO] [Connection Thread] Client has connected [18940acab13]
+[01-06-2023 18:45:26.184] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:45:26.509] [INFO] [Connection Thread] Client has connected [18940b1926d]
+[01-06-2023 18:46:25.212] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:46:25.512] [INFO] [Connection Thread] Client has connected [18940b278e8]
+[01-06-2023 18:49:59.707] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:50:00.13] [INFO] [Connection Thread] Client has connected [18940b5becd]
+[01-06-2023 18:54:27.30] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:54:27.358] [INFO] [Connection Thread] Client has connected [18940b9d31e]
+[01-06-2023 18:54:57.103] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:54:57.301] [INFO] [Connection Thread] Client has connected [18940ba4815]
+[01-06-2023 18:55:03.216] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 18:55:03.447] [INFO] [Connection Thread] Client has connected [18940ba6017]
+[01-06-2023 19:02:29.295] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:02:29.604] [INFO] [Connection Thread] Client has connected [18940c12ee4]
+[01-06-2023 19:29:12.989] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:29:13.425] [INFO] [Connection Thread] Client has connected [18940d9a7d1]
+[01-06-2023 19:32:11.257] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:32:11.484] [INFO] [Connection Thread] Client has connected [18940dc5f5c]
+[01-06-2023 19:32:12.277] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:32:12.511] [INFO] [Connection Thread] Client has connected [18940dc635f]
+[01-06-2023 19:33:29.542] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:33:29.775] [INFO] [Connection Thread] Client has connected [18940dd912f]
+[01-06-2023 19:36:01.943] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:36:02.181] [INFO] [Connection Thread] Client has connected [18940dfe485]
+[01-06-2023 19:47:50.489] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:47:50.886] [INFO] [Connection Thread] Client has connected [18940eab4e6]
+[01-06-2023 19:47:58.893] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:47:59.237] [INFO] [Connection Thread] Client has connected [18940ead585]
+[01-06-2023 19:48:47.468] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:48:47.866] [INFO] [Connection Thread] Client has connected [18940eb937a]
+[01-06-2023 19:50:38.716] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:50:39.266] [INFO] [Connection Thread] Client has connected [18940ed46a2]
+[01-06-2023 19:51:36.397] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 19:51:36.830] [INFO] [Connection Thread] Client has connected [18940ee277e]
+[01-06-2023 20:03:58.488] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:03:58.782] [INFO] [Connection Thread] Client has connected [18940f979be]
+[01-06-2023 20:20:55.26] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:20:55.476] [INFO] [Connection Thread] Client has connected [1894108fd34]
+[01-06-2023 20:22:08.229] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:22:08.644] [INFO] [Connection Thread] Client has connected [189410a1b04]
+[01-06-2023 20:22:22.123] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:22:22.372] [INFO] [Connection Thread] Client has connected [189410a50a4]
+[01-06-2023 20:22:30.881] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:22:31.142] [INFO] [Connection Thread] Client has connected [189410a72e6]
+[01-06-2023 20:25:41.687] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:25:41.986] [INFO] [Connection Thread] Client has connected [189410d5c62]
+[01-06-2023 20:26:31.429] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:26:31.818] [INFO] [Connection Thread] Client has connected [189410e1f0a]
+[01-06-2023 20:27:06.5] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:27:06.326] [INFO] [Connection Thread] Client has connected [189410ea5d6]
+[01-06-2023 20:29:20.697] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:29:21.43] [INFO] [Connection Thread] Client has connected [1894110b413]
+[01-06-2023 20:29:33.262] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:29:33.559] [INFO] [Connection Thread] Client has connected [1894110e4f7]
+[01-06-2023 20:30:44.324] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:30:44.621] [INFO] [Connection Thread] Client has connected [1894111fa8d]
+[01-06-2023 20:35:17.314] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 20:35:17.819] [INFO] [Connection Thread] Client has connected [189411625bb]
+[01-06-2023 21:06:51.789] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:06:52.161] [INFO] [Connection Thread] Client has connected [18941330d81]
+[01-06-2023 21:16:41.712] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:16:42.24] [INFO] [Connection Thread] Client has connected [189413c0da8]
+[01-06-2023 21:17:16.454] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:17:16.825] [INFO] [Connection Thread] Client has connected [189413c9599]
+[01-06-2023 21:17:52.158] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:17:52.444] [INFO] [Connection Thread] Client has connected [189413d20bc]
+[01-06-2023 21:17:58.286] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:17:58.510] [INFO] [Connection Thread] Client has connected [189413d386e]
+[01-06-2023 21:21:13.400] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 21:21:13.403] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 21:21:13.404] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 21:21:13.431] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 21:21:13.432] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 21:21:13.434] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 21:21:13.435] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 21:21:13.435] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 21:21:13.436] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 21:21:13.436] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 21:21:13.591] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 21:21:13.591] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 21:21:13.591] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 21:21:14.157] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 21:21:14.158] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 21:21:14.159] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 21:21:14.161] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 21:21:14.161] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 21:21:14.163] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 21:21:14.163] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 21:21:14.163] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 21:21:14.163] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 21:21:19.169] [INFO] [Connection Thread] Client has connected [18941404840]
+[01-06-2023 21:25:56.522] [INFO] [Connection Thread] Client has connected [189414483aa]
+[01-06-2023 21:26:13.828] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:26:25.425] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:26:25.682] [INFO] [Connection Thread] Client has connected [1894144f592]
+[01-06-2023 21:34:15.404] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:34:15.704] [INFO] [Connection Thread] Client has connected [189414c2198]
+[01-06-2023 21:42:36.91] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:42:36.301] [INFO] [Connection Thread] Client has connected [1894153c50d]
+[01-06-2023 21:42:52.361] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:42:52.515] [INFO] [Connection Thread] Client has connected [18941540463]
+[01-06-2023 21:43:18.296] [INFO] [Connection Thread] Client has connected [18941546918]
+[01-06-2023 21:43:22.360] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:43:22.524] [INFO] [Connection Thread] Client has connected [1894154799c]
+[01-06-2023 21:43:22.825] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:43:28.532] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:43:28.652] [INFO] [Connection Thread] Client has connected [1894154918c]
+[01-06-2023 21:43:41.597] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 21:43:41.600] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 21:43:41.600] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 21:43:41.643] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 21:43:41.643] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 21:43:41.647] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 21:43:41.647] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 21:43:41.647] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 21:43:41.648] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 21:43:41.648] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 21:43:41.809] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 21:43:41.810] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 21:43:41.810] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 21:43:42.442] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 21:43:42.443] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 21:43:42.443] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 21:43:42.446] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 21:43:42.446] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 21:43:42.448] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 21:43:42.448] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 21:43:42.448] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 21:43:42.448] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 21:43:44.185] [INFO] [Connection Thread] Client has connected [1894154ce39]
+[01-06-2023 21:46:30.181] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 21:46:30.184] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 21:46:30.184] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 21:46:30.199] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 21:46:30.199] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 21:46:30.200] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 21:46:30.201] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 21:46:30.202] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 21:46:30.201] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 21:46:30.201] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 21:46:30.330] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 21:46:30.330] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 21:46:30.330] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 21:46:30.962] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 21:46:30.963] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 21:46:30.966] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 21:46:30.966] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 21:46:30.968] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 21:46:30.968] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 21:46:30.963] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 21:46:30.968] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 21:46:30.968] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 21:46:33.843] [INFO] [Connection Thread] Client has connected [189415764f3]
+[01-06-2023 21:50:58.546] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:50:58.742] [INFO] [Connection Thread] Client has connected [189415b6fb6]
+[01-06-2023 21:51:10.385] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:51:10.538] [INFO] [Connection Thread] Client has connected [189415b9dca]
+[01-06-2023 21:52:00.793] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 21:52:00.796] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 21:52:00.796] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 21:52:00.814] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 21:52:00.813] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 21:52:00.815] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 21:52:00.815] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 21:52:00.816] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 21:52:00.816] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 21:52:00.817] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 21:52:00.951] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 21:52:00.952] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 21:52:00.952] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 21:52:01.590] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 21:52:01.591] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 21:52:01.591] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 21:52:01.594] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 21:52:01.594] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 21:52:01.595] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 21:52:01.595] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 21:52:01.595] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 21:52:01.595] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 21:52:09.442] [INFO] [Connection Thread] Client has connected [189415c83e2]
+[01-06-2023 21:52:57.770] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:52:59.5] [INFO] [Connection Thread] Client has connected [189415d457d]
+[01-06-2023 21:53:23.460] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:53:42.242] [INFO] [Connection Thread] Client has connected [189415dee62]
+[01-06-2023 21:53:55.240] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:53:55.735] [INFO] [Connection Thread] Client has connected [189415e2317]
+[01-06-2023 21:53:59.440] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:53:59.734] [INFO] [Connection Thread] Client has connected [189415e32b6]
+[01-06-2023 21:54:14.825] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:54:15.799] [INFO] [Connection Thread] Client has connected [189415e7177]
+[01-06-2023 21:55:43.723] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:55:45.236] [INFO] [Connection Thread] Client has connected [189415fced4]
+[01-06-2023 21:57:15.740] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:57:16.155] [INFO] [Connection Thread] Client has connected [189416131fb]
+[01-06-2023 22:06:28.259] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:06:28.262] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:06:28.262] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:06:28.274] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:06:28.274] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:06:28.275] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:06:28.275] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:06:28.276] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:06:28.276] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:06:28.276] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:06:28.404] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:06:28.404] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:06:28.404] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:06:29.41] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:06:29.41] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:06:29.42] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:06:29.44] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:06:29.44] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:06:29.45] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:06:29.46] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:06:29.46] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 22:06:29.46] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:06:34.90] [INFO] [Connection Thread] Client has connected [1894169b56a]
+[01-06-2023 22:12:20.892] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:12:21.92] [INFO] [Connection Thread] Client has connected [189416f00e3]
+[01-06-2023 22:12:44.769] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:12:44.955] [INFO] [Connection Thread] Client has connected [189416f5e1b]
+[01-06-2023 22:13:24.44] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:13:24.46] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:13:24.47] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:13:24.57] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:13:24.57] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:13:24.59] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:13:24.59] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:13:24.60] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:13:24.60] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:13:24.60] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:13:24.174] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:13:24.174] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:13:24.174] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:13:24.758] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:13:24.759] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:13:24.760] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:13:24.762] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:13:24.763] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:13:24.764] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:13:24.764] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 22:13:24.764] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:13:24.764] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:13:34.71] [INFO] [Connection Thread] Client has connected [18941701df7]
+[01-06-2023 22:14:39.648] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:14:39.958] [INFO] [Connection Thread] Client has connected [18941711f56]
+[01-06-2023 22:15:48.869] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:15:49.274] [INFO] [Connection Thread] Client has connected [18941722e1a]
+[01-06-2023 22:15:49.594] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:15:50.32] [INFO] [Connection Thread] Client has connected [18941723110]
+[01-06-2023 22:16:05.519] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:16:05.911] [INFO] [Connection Thread] Client has connected [18941726f17]
+[01-06-2023 22:16:43.672] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:16:44.75] [INFO] [Connection Thread] Client has connected [1894173042b]
+[01-06-2023 22:17:38.860] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:17:38.864] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:17:38.864] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:17:38.876] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:17:38.877] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:17:38.878] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:17:38.878] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:17:38.879] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:17:38.879] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:17:38.879] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:17:39.2] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:17:39.2] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:17:39.3] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:17:39.574] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:17:39.575] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:17:39.575] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:17:39.578] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:17:39.578] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:17:39.580] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:17:39.580] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:17:39.580] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 22:17:39.580] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:20:41.325] [INFO] [Connection Thread] Client has connected [1894176a2ed]
+[01-06-2023 22:22:37.458] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:22:37.897] [INFO] [Connection Thread] Client has connected [18941786a49]
+[01-06-2023 22:22:59.273] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:22:59.513] [INFO] [Connection Thread] Client has connected [1894178beb9]
+[02-06-2023 11:29:13.743] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 11:29:13.747] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 11:29:13.747] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 11:29:13.766] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 11:29:13.766] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 11:29:13.772] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 11:29:13.772] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 11:29:13.773] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 11:29:13.773] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 11:29:13.774] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 11:29:14.11] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 11:29:14.12] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 11:29:14.12] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 11:29:14.791] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 11:29:14.792] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 11:29:14.793] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 11:29:14.797] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 11:29:14.798] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 11:29:14.798] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 11:29:14.798] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 11:29:14.797] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 11:29:14.798] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 11:29:24.874] [INFO] [Connection Thread] Client has connected [1894448bc8a]
+[02-06-2023 11:32:09.601] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:32:09.776] [INFO] [Connection Thread] Client has connected [189444b40b0]
+[02-06-2023 11:39:49.96] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:39:49.346] [INFO] [Connection Thread] Client has connected [189445243e2]
+[02-06-2023 11:41:40.196] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:41:40.425] [INFO] [Connection Thread] Client has connected [1894453f5c9]
+[02-06-2023 11:42:19.107] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:42:19.405] [INFO] [Connection Thread] Client has connected [18944548e0d]
+[02-06-2023 11:56:43.124] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:56:43.377] [INFO] [Connection Thread] Client has connected [1894461bcf1]
+[02-06-2023 11:57:34.870] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:57:35.138] [INFO] [Connection Thread] Client has connected [18944628722]
+[02-06-2023 11:57:51.856] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:57:52.210] [INFO] [Connection Thread] Client has connected [1894462c9d2]
+[02-06-2023 11:58:16.255] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 11:58:16.561] [INFO] [Connection Thread] Client has connected [189446328f1]
+[02-06-2023 12:00:06.169] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 12:00:06.166] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 12:00:06.169] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 12:00:06.183] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 12:00:06.183] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 12:00:06.184] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 12:00:06.184] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 12:00:06.185] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 12:00:06.185] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 12:00:06.185] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 12:00:06.297] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 12:00:06.297] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 12:00:06.297] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 12:00:06.875] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 12:00:06.876] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 12:00:06.876] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 12:00:06.881] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 12:00:06.881] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 12:00:06.879] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 12:00:06.879] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 12:00:06.881] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 12:00:06.881] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 12:00:08.247] [INFO] [Connection Thread] Client has connected [1894464dd37]
+[02-06-2023 12:01:30.641] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:01:31.615] [INFO] [Connection Thread] Client has connected [189446622df]
+[02-06-2023 12:02:06.561] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:02:06.806] [INFO] [Connection Thread] Client has connected [1894466ac56]
+[02-06-2023 12:02:55.706] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:03:22.701] [INFO] [Connection Thread] Client has connected [1894467d4cd]
+[02-06-2023 12:04:07.263] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:10:51.12] [INFO] [Connection Thread] Client has connected [189446eac04]
+[02-06-2023 12:10:52.481] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:10:52.613] [INFO] [Connection Thread] Client has connected [189446eb245]
+[02-06-2023 12:22:59.415] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:22:59.664] [INFO] [Connection Thread] Client has connected [1894479ca50]
+[02-06-2023 12:28:23.908] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:28:24.180] [INFO] [Connection Thread] Client has connected [189447ebdf4]
+[02-06-2023 12:33:37.461] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:33:37.908] [INFO] [Connection Thread] Client has connected [18944838774]
+[02-06-2023 12:33:40.584] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:33:40.767] [INFO] [Connection Thread] Client has connected [1894483929f]
+[02-06-2023 12:34:49.878] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:34:50.86] [INFO] [Connection Thread] Client has connected [1894484a166]
+[02-06-2023 12:37:50.492] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:37:50.723] [INFO] [Connection Thread] Client has connected [18944876303]
+[02-06-2023 12:45:47.666] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:45:48.2] [INFO] [Connection Thread] Client has connected [189448eab62]
+[02-06-2023 12:50:08.203] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:50:08.488] [INFO] [Connection Thread] Client has connected [1894492a4e8]
+[02-06-2023 12:58:37.786] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:58:38.84] [INFO] [Connection Thread] Client has connected [189449a6b84]
+[02-06-2023 12:59:26.604] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:59:26.837] [INFO] [Connection Thread] Client has connected [189449b29f5]
+[02-06-2023 12:59:35.390] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:59:35.608] [INFO] [Connection Thread] Client has connected [189449b4c38]
+[02-06-2023 12:59:53.653] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 12:59:53.890] [INFO] [Connection Thread] Client has connected [189449b93a2]
+[02-06-2023 13:00:08.144] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:00:08.357] [INFO] [Connection Thread] Client has connected [189449bcc25]
+[02-06-2023 13:06:33.390] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:06:33.615] [INFO] [Connection Thread] Client has connected [18944a1ad0f]
+[02-06-2023 13:08:33.963] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:08:34.179] [INFO] [Connection Thread] Client has connected [18944a38403]
+[02-06-2023 13:09:32.89] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:09:32.580] [INFO] [Connection Thread] Client has connected [18944a46824]
+[02-06-2023 13:10:44.765] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:10:45.8] [INFO] [Connection Thread] Client has connected [18944a58310]
+[02-06-2023 13:11:19.849] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:11:20.130] [INFO] [Connection Thread] Client has connected [18944a60c42]
+[02-06-2023 13:13:09.832] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:13:10.78] [INFO] [Connection Thread] Client has connected [18944a7b9be]
+[02-06-2023 13:18:20.259] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:18:20.884] [INFO] [Connection Thread] Client has connected [18944ac77d4]
+[02-06-2023 13:19:05.587] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:19:05.842] [INFO] [Connection Thread] Client has connected [18944ad2772]
+[02-06-2023 13:19:53.233] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:19:53.435] [INFO] [Connection Thread] Client has connected [18944ade15b]
+[02-06-2023 13:20:47.849] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:20:47.996] [INFO] [Connection Thread] Client has connected [18944aeb67c]
+[02-06-2023 13:26:42.425] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:26:42.651] [INFO] [Connection Thread] Client has connected [18944b41fdb]
+[02-06-2023 13:27:53.101] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:27:53.349] [INFO] [Connection Thread] Client has connected [18944b53405]
+[02-06-2023 13:28:11.618] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:28:11.816] [INFO] [Connection Thread] Client has connected [18944b57c28]
+[02-06-2023 13:28:22.201] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:28:22.497] [INFO] [Connection Thread] Client has connected [18944b5a5e1]
+[02-06-2023 13:28:32.180] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:28:32.349] [INFO] [Connection Thread] Client has connected [18944b5cc5d]
+[02-06-2023 13:28:38.41] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:28:38.197] [INFO] [Connection Thread] Client has connected [18944b5e335]
+[02-06-2023 13:28:44.950] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:28:45.193] [INFO] [Connection Thread] Client has connected [18944b5fe89]
+[02-06-2023 13:28:49.322] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:28:49.465] [INFO] [Connection Thread] Client has connected [18944b60f39]
+[02-06-2023 13:29:21.770] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:29:21.925] [INFO] [Connection Thread] Client has connected [18944b68e05]
+[02-06-2023 13:29:30.261] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:29:30.445] [INFO] [Connection Thread] Client has connected [18944b6af4d]
+[02-06-2023 13:30:32.234] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:30:32.527] [INFO] [Connection Thread] Client has connected [18944b7a1cf]
+[02-06-2023 13:31:03.375] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:31:03.602] [INFO] [Connection Thread] Client has connected [18944b81b32]
+[02-06-2023 13:31:20.923] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:31:21.196] [INFO] [Connection Thread] Client has connected [18944b85fec]
+[02-06-2023 13:31:48.379] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:31:48.713] [INFO] [Connection Thread] Client has connected [18944b8cb69]
+[02-06-2023 13:31:58.562] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:31:58.902] [INFO] [Connection Thread] Client has connected [18944b8f336]
+[02-06-2023 13:32:09.742] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:32:10.596] [INFO] [Connection Thread] Client has connected [18944b920e4]
+[02-06-2023 13:33:11.431] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:34:07.339] [INFO] [Connection Thread] Client has connected [18944bae8eb]
+[02-06-2023 13:34:38.885] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:34:50.503] [INFO] [Connection Thread] Client has connected [18944bb9187]
+[02-06-2023 13:35:47.753] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:36:26.618] [INFO] [Connection Thread] Client has connected [18944bd08fa]
+[02-06-2023 13:40:45.183] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 13:40:45.186] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 13:40:45.186] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 13:40:45.201] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 13:40:45.201] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 13:40:45.202] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 13:40:45.203] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 13:40:45.204] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 13:40:45.204] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 13:40:45.204] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 13:40:45.322] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 13:40:45.322] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 13:40:45.322] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 13:40:45.914] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 13:40:45.915] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 13:40:45.915] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 13:40:45.918] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 13:40:45.918] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 13:40:45.920] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 13:40:45.920] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 13:40:45.920] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 13:40:45.920] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 13:41:18.876] [INFO] [Connection Thread] Client has connected [18944c17e9c]
+[02-06-2023 13:56:41.143] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:56:41.548] [INFO] [Connection Thread] Client has connected [18944cf92cc]
+[02-06-2023 13:57:14.102] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 13:57:17.233] [INFO] [Connection Thread] Client has connected [18944d01e31]
+[02-06-2023 13:57:22.840] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 14:00:36.718] [INFO] [Connection Thread] Client has connected [18944d3296e]
+[02-06-2023 16:43:18.802] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:43:19.226] [INFO] [Connection Thread] Client has connected [1894568203a]
+[02-06-2023 16:44:46.355] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:44:46.660] [INFO] [Connection Thread] Client has connected [189456975c4]
+[02-06-2023 16:45:03.518] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:45:03.763] [INFO] [Connection Thread] Client has connected [1894569b893]
+[02-06-2023 16:45:22.576] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:45:22.874] [INFO] [Connection Thread] Client has connected [189456a033a]
+[02-06-2023 16:49:27.221] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:49:27.492] [INFO] [Connection Thread] Client has connected [189456dbec4]
+[02-06-2023 16:49:39.839] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:49:40.148] [INFO] [Connection Thread] Client has connected [189456df034]
+[02-06-2023 16:49:49.537] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:49:49.865] [INFO] [Connection Thread] Client has connected [189456e1629]
+[02-06-2023 16:49:58.615] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:49:58.882] [INFO] [Connection Thread] Client has connected [189456e3962]
+[02-06-2023 16:50:12.232] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:50:12.499] [INFO] [Connection Thread] Client has connected [189456e6e93]
+[02-06-2023 16:50:49.779] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:50:50.26] [INFO] [Connection Thread] Client has connected [189456f012a]
+[02-06-2023 16:51:37.37] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:51:37.403] [INFO] [Connection Thread] Client has connected [189456fba3b]
+[02-06-2023 16:52:30.119] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:52:30.370] [INFO] [Connection Thread] Client has connected [18945708922]
+[02-06-2023 16:53:45.458] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:53:45.808] [INFO] [Connection Thread] Client has connected [1894571afd0]
+[02-06-2023 16:54:00.15] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:54:00.239] [INFO] [Connection Thread] Client has connected [1894571e82f]
+[02-06-2023 16:54:45.417] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:54:45.830] [INFO] [Connection Thread] Client has connected [18945729a46]
+[02-06-2023 16:55:01.548] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:55:01.793] [INFO] [Connection Thread] Client has connected [1894572d8a1]
+[02-06-2023 16:55:20.470] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 16:55:20.671] [INFO] [Connection Thread] Client has connected [1894573225f]
+[02-06-2023 19:35:49.88] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 19:35:49.513] [INFO] [Connection Thread] Client has connected [18946060f09]
+[02-06-2023 19:36:05.797] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 19:36:06.215] [INFO] [Connection Thread] Client has connected [18946065047]
+[02-06-2023 19:36:52.861] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 19:36:53.245] [INFO] [Connection Thread] Client has connected [189460707fd]
+[02-06-2023 20:06:35.732] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:06:36.109] [INFO] [Connection Thread] Client has connected [18946223c4d]
+[02-06-2023 20:07:02.511] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:07:02.755] [INFO] [Connection Thread] Client has connected [1894622a463]
+[02-06-2023 20:12:28.665] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:12:28.882] [INFO] [Connection Thread] Client has connected [18946279e52]
+[02-06-2023 20:13:04.350] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:13:04.587] [INFO] [Connection Thread] Client has connected [189462829cb]
+[02-06-2023 20:13:57.916] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:13:58.126] [INFO] [Connection Thread] Client has connected [1894628faee]
+[02-06-2023 20:14:03.634] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:14:03.854] [INFO] [Connection Thread] Client has connected [1894629114e]
+[02-06-2023 20:14:36.28] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:14:36.258] [INFO] [Connection Thread] Client has connected [18946298fe2]
+[02-06-2023 20:14:39.420] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:14:39.616] [INFO] [Connection Thread] Client has connected [18946299d00]
+[02-06-2023 20:20:04.163] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:20:04.504] [INFO] [Connection Thread] Client has connected [189462e9218]
+[02-06-2023 20:20:48.549] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:20:48.753] [INFO] [Connection Thread] Client has connected [189462f3ef1]
+[02-06-2023 20:22:43.100] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:22:43.368] [INFO] [Connection Thread] Client has connected [1894630fea8]
+[02-06-2023 20:31:55.150] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:31:55.468] [INFO] [Connection Thread] Client has connected [18946396b4c]
+[02-06-2023 20:32:16.364] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:32:16.551] [INFO] [Connection Thread] Client has connected [1894639bda7]
+[02-06-2023 20:32:24.405] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 20:32:24.409] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 20:32:24.409] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 20:32:24.428] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 20:32:24.428] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 20:32:24.431] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 20:32:24.431] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 20:32:24.432] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 20:32:24.432] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 20:32:24.431] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 20:32:24.555] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 20:32:24.555] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 20:32:24.556] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 20:32:25.141] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 20:32:25.142] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 20:32:25.145] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 20:32:25.145] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 20:32:25.146] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 20:32:25.147] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 20:32:25.142] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 20:32:25.147] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 20:32:25.147] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 20:32:50.196] [INFO] [Connection Thread] Client has connected [189463a4114]
+[02-06-2023 20:34:52.787] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:34:53.55] [INFO] [Connection Thread] Client has connected [189463c20ff]
+[02-06-2023 20:35:00.768] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:35:01.21] [INFO] [Connection Thread] Client has connected [189463c401d]
+[02-06-2023 20:42:46.746] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:42:47.155] [INFO] [Connection Thread] Client has connected [18946435cf3]
+[02-06-2023 20:45:03.588] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 20:45:03.936] [INFO] [Connection Thread] Client has connected [18946457340]
+[02-06-2023 21:25:20.861] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 21:25:21.644] [INFO] [Connection Thread] Client has connected [189466a576c]
+[02-06-2023 21:31:37.191] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 21:31:37.462] [INFO] [Connection Thread] Client has connected [18946701376]
+[01-06-2023 16:50:17.36] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 16:50:17.40] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 16:50:17.40] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 16:50:17.52] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 16:50:17.52] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 16:50:17.53] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 16:50:17.54] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 16:50:17.54] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 16:50:17.54] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 16:50:17.55] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 16:50:17.212] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 16:50:17.212] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 16:50:17.212] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 16:50:17.809] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 16:50:17.810] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 16:50:17.814] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 16:50:17.815] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 16:50:17.815] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 16:50:17.815] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 16:50:17.811] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 16:50:17.814] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 16:50:17.815] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 16:50:32.941] [INFO] [Connection Thread] Client has connected [18988616a6d]
+[01-06-2023 16:56:14.430] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 16:56:14.703] [INFO] [Connection Thread] Client has connected [1898866a16f]
+[01-06-2023 16:56:30.744] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 16:56:30.922] [INFO] [Connection Thread] Client has connected [1898866e0ca]
+[01-06-2023 16:57:10.396] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 16:57:10.545] [INFO] [Connection Thread] Client has connected [18988677b91]
+[01-06-2023 16:57:56.907] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 16:57:57.242] [INFO] [Connection Thread] Client has connected [189886831fa]
+[01-06-2023 16:59:30.380] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 16:59:53.817] [INFO] [Connection Thread] Client has connected [1898869f959]
+[01-06-2023 17:02:59.660] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:03:02.125] [INFO] [Connection Thread] Client has connected [189886cd8ed]
+[01-06-2023 17:03:05.725] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:03:06.247] [INFO] [Connection Thread] Client has connected [189886ce907]
+[01-06-2023 17:04:19.977] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:04:20.298] [INFO] [Connection Thread] Client has connected [189886e0a4a]
+[01-06-2023 17:05:28.617] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:05:29.86] [INFO] [Connection Thread] Client has connected [189886f16fe]
+[01-06-2023 17:06:16.936] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:06:17.171] [INFO] [Connection Thread] Client has connected [189886fd2d3]
+[01-06-2023 17:06:27.702] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:06:28.162] [INFO] [Connection Thread] Client has connected [189886ffdc2]
+[01-06-2023 17:06:37.401] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:06:37.597] [INFO] [Connection Thread] Client has connected [1898870229d]
+[01-06-2023 17:06:58.594] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:06:58.860] [INFO] [Connection Thread] Client has connected [189887075ac]
+[01-06-2023 17:07:32.794] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:07:33.90] [INFO] [Connection Thread] Client has connected [1898870fb62]
+[01-06-2023 17:08:18.907] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:08:19.293] [INFO] [Connection Thread] Client has connected [1898871afdd]
+[01-06-2023 17:09:08.178] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:09:08.415] [INFO] [Connection Thread] Client has connected [18988726fbf]
+[01-06-2023 17:09:26.343] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:09:26.615] [INFO] [Connection Thread] Client has connected [1898872b6d7]
+[01-06-2023 17:13:26.40] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:13:26.388] [INFO] [Connection Thread] Client has connected [18988765f74]
+[01-06-2023 17:13:47.697] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:13:48.34] [INFO] [Connection Thread] Client has connected [1898876b402]
+[01-06-2023 17:14:01.618] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:14:01.913] [INFO] [Connection Thread] Client has connected [1898876ea39]
+[01-06-2023 17:16:03.840] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:16:04.67] [INFO] [Connection Thread] Client has connected [1898878c763]
+[01-06-2023 17:17:02.396] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 17:17:02.611] [INFO] [Connection Thread] Client has connected [1898879ac13]
+[01-06-2023 21:00:52.815] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 21:00:52.837] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 21:00:52.837] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 21:00:52.885] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 21:00:52.885] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 21:00:52.889] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 21:00:52.890] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 21:00:52.890] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 21:00:52.890] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 21:00:52.889] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 21:00:53.74] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 21:00:53.74] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 21:00:53.74] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 21:00:53.716] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 21:00:53.719] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 21:00:53.719] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 21:00:53.725] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 21:00:53.725] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 21:00:53.726] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 21:00:53.727] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 21:00:53.727] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 21:00:53.727] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 21:00:59.916] [INFO] [Connection Thread] Client has connected [1898946b58c]
+[01-06-2023 21:55:06.649] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 21:55:06.654] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 21:55:06.654] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 21:55:06.659] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 21:55:06.660] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 21:55:06.661] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 21:55:06.662] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 21:55:06.668] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 21:55:06.670] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 21:55:06.666] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 21:55:06.813] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 21:55:06.812] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 21:55:06.813] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 21:55:07.423] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 21:55:07.425] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 21:55:07.430] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 21:55:07.431] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 21:55:07.433] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 21:55:07.433] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 21:55:07.434] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 21:55:07.426] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 21:55:07.435] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 21:55:11.735] [INFO] [Connection Thread] Client has connected [189897853f7]
+[01-06-2023 21:55:44.141] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:55:44.239] [INFO] [Connection Thread] Client has connected [1898978d2ef]
+[01-06-2023 21:56:38.179] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:56:38.268] [INFO] [Connection Thread] Client has connected [1898979a5fc]
+[01-06-2023 21:56:52.877] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 21:56:53.21] [INFO] [Connection Thread] Client has connected [1898979df9d]
+[01-06-2023 21:57:23.331] [INFO] [Connection Thread] Client has connected [189897a5603]
+[01-06-2023 22:00:20.116] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:00:20.473] [INFO] [Connection Thread] Client has connected [189897d09f9]
+[01-06-2023 22:00:36.605] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:00:36.856] [INFO] [Connection Thread] Client has connected [189897d49f8]
+[01-06-2023 22:01:22.834] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:01:23.251] [INFO] [Connection Thread] Client has connected [189897dff33]
+[01-06-2023 22:01:44.14] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:01:44.227] [INFO] [Connection Thread] Client has connected [189897e5123]
+[01-06-2023 22:02:06.300] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:02:11.205] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:02:11.295] [INFO] [Connection Thread] Client has connected [189897ebadf]
+[01-06-2023 22:03:59.836] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:03:59.964] [INFO] [Connection Thread] Client has connected [1898980635c]
+[01-06-2023 22:04:29.976] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:04:30.83] [INFO] [Connection Thread] Client has connected [1898980d903]
+[01-06-2023 22:04:55.394] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:04:55.481] [INFO] [Connection Thread] Client has connected [18989813c39]
+[01-06-2023 22:05:05.194] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:05:05.357] [INFO] [Connection Thread] Client has connected [189898162cd]
+[01-06-2023 22:05:22.256] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:05:22.356] [INFO] [Connection Thread] Client has connected [1898981a534]
+[01-06-2023 22:10:01.982] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:10:02.71] [INFO] [Connection Thread] Client has connected [1898985e9d7]
+[01-06-2023 22:10:56.153] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:10:56.396] [INFO] [Connection Thread] Client has connected [1898986be0c]
+[01-06-2023 22:11:10.479] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:11:10.577] [INFO] [Connection Thread] Client has connected [1898986f571]
+[01-06-2023 22:13:24.597] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:13:24.692] [INFO] [Connection Thread] Client has connected [18989890154]
+[01-06-2023 22:13:30.402] [INFO] [Connection Thread] Client has connected [189898917a2]
+[01-06-2023 22:14:48.425] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 22:14:48.537] [INFO] [Connection Thread] Client has connected [189898a48d9]
+[01-06-2023 22:24:20.485] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:24:20.488] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:24:20.489] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:24:20.491] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:24:20.492] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:24:20.493] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:24:20.493] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:24:20.494] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:24:20.495] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:24:20.494] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:24:20.633] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:24:20.634] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:24:20.634] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:24:21.188] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:24:21.189] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:24:21.191] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:24:21.189] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:24:21.193] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:24:21.193] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:24:21.191] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:24:21.193] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 22:24:21.193] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:25:29.490] [INFO] [Connection Thread] Client has connected [18989941092]
+[01-06-2023 22:59:02.641] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:59:02.645] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:59:02.645] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:59:02.648] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:59:02.648] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:59:02.649] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:59:02.650] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:59:02.650] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:59:02.650] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:59:02.649] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:59:02.762] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:59:02.763] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:59:02.763] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:59:03.338] [INFO] [Voice Thread] Training voice model
+[01-06-2023 22:59:03.340] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 22:59:03.340] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:59:03.341] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:59:03.341] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:59:03.345] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:59:03.345] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:59:03.347] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:59:03.347] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:59:03.348] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:59:03.348] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 22:59:22.511] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:59:22.516] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:59:22.517] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:59:22.525] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:59:22.526] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:59:22.528] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:59:22.530] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:59:22.534] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:59:22.532] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:59:22.533] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:59:22.640] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:59:22.640] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:59:22.641] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:59:23.235] [INFO] [Voice Thread] Training voice model
+[01-06-2023 22:59:23.238] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:59:23.237] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 22:59:23.243] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:59:23.244] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:59:23.246] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:59:23.246] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:59:23.240] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:59:23.247] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:59:23.239] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:59:23.247] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 22:59:38.681] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:59:38.685] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:59:38.686] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:59:38.692] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:59:38.693] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:59:38.696] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:59:38.696] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:59:38.699] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:59:38.697] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:59:38.698] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:59:38.825] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:59:38.826] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:59:38.826] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:59:39.406] [INFO] [Voice Thread] Training voice model
+[01-06-2023 22:59:39.438] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:59:39.439] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:59:39.439] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:59:39.442] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:59:39.443] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:59:39.445] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:59:39.446] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:59:39.446] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:59:39.447] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 22:59:39.437] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 22:59:52.970] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 22:59:52.974] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 22:59:52.975] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 22:59:52.978] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 22:59:52.979] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 22:59:52.981] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 22:59:52.982] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 22:59:52.984] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 22:59:52.980] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 22:59:52.983] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 22:59:53.167] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 22:59:53.168] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 22:59:53.168] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 22:59:53.735] [INFO] [Voice Thread] Training voice model
+[01-06-2023 22:59:54.830] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 22:59:54.831] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 22:59:54.832] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 22:59:54.833] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 22:59:54.838] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 22:59:54.838] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 22:59:54.840] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 22:59:54.841] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 22:59:54.845] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 22:59:54.846] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:00:17.498] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:00:17.501] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:00:17.502] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:00:17.504] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:00:17.505] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:00:17.506] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:00:17.506] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:00:17.506] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:00:17.507] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:00:17.506] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:00:17.617] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:00:17.617] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:00:17.618] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:00:18.199] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:00:18.197] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:00:18.204] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:00:18.204] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:00:18.206] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:00:18.206] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:00:18.206] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:00:18.206] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:00:18.199] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:00:18.201] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:00:18.200] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:00:48.16] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:00:48.20] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:00:48.20] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:00:48.23] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:00:48.24] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:00:48.25] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:00:48.25] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:00:48.26] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:00:48.26] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:00:48.25] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:00:48.138] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:00:48.138] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:00:48.138] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:00:48.713] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:00:48.720] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:00:48.720] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:00:48.721] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:00:48.721] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:00:48.724] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:00:48.725] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:00:48.726] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:00:48.726] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:00:48.727] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:00:48.727] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:06:09.73] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:06:09.76] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:06:09.77] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:06:09.80] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:06:09.80] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:06:09.82] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:06:09.82] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:06:09.83] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:06:09.83] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:06:09.84] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:06:09.200] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:06:09.201] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:06:09.200] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:06:09.772] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:06:09.794] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:06:09.793] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:06:09.795] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:06:09.795] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:06:09.798] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:06:09.798] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:06:09.800] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:06:09.800] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:06:09.800] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:06:09.801] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:15:54.86] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:15:54.90] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:15:54.90] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:15:54.93] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:15:54.93] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:15:54.94] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:15:54.94] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:15:54.95] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:15:54.95] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:15:54.95] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:15:54.212] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:15:54.243] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:15:54.244] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:15:54.818] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:15:54.836] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:15:54.836] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:15:54.838] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:15:54.838] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:15:54.841] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:15:54.842] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:15:54.843] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:15:54.843] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:15:54.844] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:15:54.844] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:18:07.479] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:18:07.483] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:18:07.483] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:18:07.486] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:18:07.487] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:18:07.488] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:18:07.488] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:18:07.489] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:18:07.489] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:18:07.488] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:18:07.597] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:18:07.597] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:18:07.598] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:18:08.153] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:18:08.171] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:18:08.171] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:18:08.172] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:18:08.178] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:18:08.178] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:18:08.172] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:18:08.176] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:18:08.176] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:18:08.178] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:18:08.179] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:19:47.365] [INFO] [Connection Thread] Client has connected [18989c5c6a5]
+[01-06-2023 23:23:13.492] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:23:13.496] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:23:13.496] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:23:13.499] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:23:13.499] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:23:13.500] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:23:13.500] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:23:13.501] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:23:13.501] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:23:13.501] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:23:13.614] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:23:13.615] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:23:13.616] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:23:14.215] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:23:14.235] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:23:14.236] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:23:14.237] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:23:14.237] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:23:14.241] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:23:14.241] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:23:14.243] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:23:14.243] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:23:14.244] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:23:14.244] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:23:20.987] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:23:20.991] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:23:20.991] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:23:20.994] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:23:20.995] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:23:20.997] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:23:20.997] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:23:20.998] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:23:20.998] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:23:20.999] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:23:21.115] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:23:21.116] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:23:21.116] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:23:21.686] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:23:21.764] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:23:21.765] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:23:21.767] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:23:21.768] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:23:21.771] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:23:21.773] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:23:21.772] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:23:21.774] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:23:21.774] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:23:21.775] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:23:34.288] [INFO] [Connection Thread] Client has connected [18989c93d10]
+[01-06-2023 23:26:47.524] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:26:47.528] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:26:47.528] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:26:47.531] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:26:47.531] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:26:47.533] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:26:47.534] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:26:47.536] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:26:47.534] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:26:47.535] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:26:47.664] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:26:47.665] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:26:47.665] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:26:48.268] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:26:48.355] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:26:48.355] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:26:48.369] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:26:48.377] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:26:48.381] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:26:48.382] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:26:48.383] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:26:48.384] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:26:48.385] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:26:48.386] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:26:53.593] [INFO] [Connection Thread] Client has connected [18989cc4799]
+[01-06-2023 23:27:58.152] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:27:58.155] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:27:58.156] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:27:58.161] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:27:58.162] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:28:00.419] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:28:00.414] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:28:00.420] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:28:00.423] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:28:00.423] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:28:00.424] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:28:00.425] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:28:00.425] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:28:00.425] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:28:00.426] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:28:00.556] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:28:00.557] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:28:00.557] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:28:01.128] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:28:01.145] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:28:01.145] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:28:01.146] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:28:01.146] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:28:01.150] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:28:01.151] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:28:01.153] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:28:01.153] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:28:01.154] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:28:01.154] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:28:03.668] [INFO] [Connection Thread] Client has connected [18989cd5954]
+[01-06-2023 23:29:07.447] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:29:07.451] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:29:07.451] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:29:07.455] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:29:07.455] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:29:07.457] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:29:07.457] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:29:07.458] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:29:07.456] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:29:07.457] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:29:07.582] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:29:07.584] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:29:07.585] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:29:08.161] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:29:08.177] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:29:08.177] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:29:08.178] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:29:08.178] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:29:08.183] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:29:08.183] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:29:08.185] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:29:08.185] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:29:08.185] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:29:08.186] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:29:12.590] [INFO] [Connection Thread] Client has connected [18989ce668e]
+[01-06-2023 23:38:59.160] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:38:59.164] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:38:59.164] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:38:59.167] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:38:59.167] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:38:59.168] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:38:59.168] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:38:59.169] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:38:59.169] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:38:59.169] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:38:59.294] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:38:59.294] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:38:59.294] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:38:59.907] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:38:59.940] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:38:59.941] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:38:59.940] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:38:59.944] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:38:59.944] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:38:59.941] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:38:59.946] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:38:59.946] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:38:59.947] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:38:59.947] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:39:12.463] [INFO] [Connection Thread] Client has connected [18989d78dcf]
+[01-06-2023 23:47:01.8] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:47:01.11] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:47:01.12] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:47:01.14] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:47:01.15] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:47:01.16] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:47:01.16] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:47:01.16] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:47:01.17] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:47:01.16] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:47:01.126] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:47:01.127] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:47:01.127] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:47:01.695] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:47:01.861] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:47:01.863] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:47:01.862] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:47:01.864] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:47:01.867] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:47:01.868] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:47:01.870] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:47:01.871] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:47:01.872] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:47:01.872] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:47:12.665] [INFO] [Connection Thread] Client has connected [18989dee199]
+[01-06-2023 23:49:16.266] [INFO] [Main Thread] Initializing varriables
+[01-06-2023 23:49:16.270] [INFO] [Main Thread] Varriables has been inilialized
+[01-06-2023 23:49:16.270] [INFO] [Main Thread] Loading configurations files
+[01-06-2023 23:49:16.272] [INFO] [Main Thread] Configurations files has been loaded
+[01-06-2023 23:49:16.273] [INFO] [Main Thread] Loading server cache and data files
+[01-06-2023 23:49:16.274] [INFO] [Main Thread] Server cache and data files has been loaded
+[01-06-2023 23:49:16.274] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[01-06-2023 23:49:16.275] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[01-06-2023 23:49:16.275] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[01-06-2023 23:49:16.274] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[01-06-2023 23:49:16.355] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[01-06-2023 23:49:16.355] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[01-06-2023 23:49:16.355] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[01-06-2023 23:49:16.576] [INFO] [Voice Thread] Training voice model
+[01-06-2023 23:49:16.600] [INFO] [Interface Thread] Initializing Web interface listener
+[01-06-2023 23:49:16.601] [INFO] [Interface Thread] Web interface listener has been initialized
+[01-06-2023 23:49:16.600] [INFO] [Voice Thread] Voice model trained
+[01-06-2023 23:49:16.601] [INFO] [Interface Thread] Trying to create Web Interface listener
+[01-06-2023 23:49:16.604] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[01-06-2023 23:49:16.605] [INFO] [Main Thread] Trying to create WebSocket listener
+[01-06-2023 23:49:16.606] [INFO] [Main Thread] WebSocket listener is listening
+[01-06-2023 23:49:16.607] [INFO] [Interface Thread] Web Interface listener has been created
+[01-06-2023 23:49:16.607] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[01-06-2023 23:49:16.606] [INFO] [Main Thread] Server has been fully started
+[01-06-2023 23:49:31.874] [INFO] [Connection Thread] Client has connected [18989e10162]
+[01-06-2023 23:51:40.73] [INFO] [Connection Thread] Client has connected [18989e2f629]
+[01-06-2023 23:52:53.290] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 23:52:53.473] [INFO] [Connection Thread] Client has connected [18989e414e1]
+[01-06-2023 23:53:18.428] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 23:53:18.615] [INFO] [Connection Thread] Client has connected [18989e47717]
+[01-06-2023 23:55:04.476] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 23:55:04.672] [INFO] [Connection Thread] Client has connected [18989e61560]
+[01-06-2023 23:59:20.748] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 23:59:21.925] [INFO] [Connection Thread] Client has connected [18989ea0245]
+[01-06-2023 23:59:43.134] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 23:59:43.439] [INFO] [Connection Thread] Client has connected [18989ea564f]
+[01-06-2023 23:59:57.245] [INFO] [Connection Thread] Client has disconnected
+[01-06-2023 23:59:57.424] [INFO] [Connection Thread] Client has connected [18989ea8cf0]
+[02-06-2023 00:01:05.747] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 00:01:05.945] [INFO] [Connection Thread] Client has connected [18989eb9899]
+[02-06-2023 00:04:27.986] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 00:04:51.598] [INFO] [Connection Thread] Client has connected [18989ef0a0e]
+[02-06-2023 00:05:15.881] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 00:05:15.966] [INFO] [Connection Thread] Client has connected [18989ef693e]
+[02-06-2023 00:08:11.46] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 00:08:11.50] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 00:08:11.50] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 00:08:11.53] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 00:08:11.53] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 00:08:11.54] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 00:08:11.55] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 00:08:11.55] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 00:08:11.56] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 00:08:11.55] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 00:08:11.133] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 00:08:11.134] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 00:08:11.134] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 00:08:11.349] [INFO] [Voice Thread] Training voice model
+[02-06-2023 00:08:11.372] [INFO] [Voice Thread] Voice model trained
+[02-06-2023 00:08:11.372] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 00:08:11.374] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 00:08:11.374] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 00:08:11.377] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 00:08:11.379] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 00:08:11.378] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 00:08:11.380] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 00:08:11.380] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 00:08:11.380] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 00:08:11.380] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 00:08:11.379] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 00:09:30.721] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 00:09:30.724] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 00:09:30.725] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 00:09:30.727] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 00:09:30.728] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 00:09:30.728] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 00:09:30.729] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 00:09:30.729] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 00:09:30.730] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 00:09:30.729] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 00:09:30.808] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 00:09:30.809] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 00:09:30.808] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 00:09:31.26] [INFO] [Voice Thread] Training voice model
+[02-06-2023 00:09:31.48] [INFO] [Voice Thread] Voice model trained
+[02-06-2023 00:09:31.49] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 00:09:31.93] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 00:09:31.94] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 00:09:31.98] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 00:09:31.100] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 00:09:31.98] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 00:09:31.101] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 00:09:31.105] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 00:09:31.106] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 00:09:31.106] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 00:09:31.107] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 00:21:56.905] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 00:21:56.909] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 00:21:56.909] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 00:21:56.913] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 00:21:56.914] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 00:21:56.915] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 00:21:56.915] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 00:21:56.916] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 00:21:56.916] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 00:21:56.917] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 00:21:56.999] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 00:21:57.0] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 00:21:57.0] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 00:21:57.217] [INFO] [Voice Thread] Training voice model
+[02-06-2023 00:21:57.240] [INFO] [Voice Thread] Voice model trained
+[02-06-2023 00:21:57.241] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 00:21:57.242] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 00:21:57.245] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 00:21:57.245] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 00:21:57.247] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 00:21:57.247] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 00:21:57.247] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 00:21:57.248] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 00:21:57.242] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 00:22:11.57] [INFO] [Main Thread] Initializing varriables
+[02-06-2023 00:22:11.64] [INFO] [Main Thread] Varriables has been inilialized
+[02-06-2023 00:22:11.65] [INFO] [Main Thread] Loading configurations files
+[02-06-2023 00:22:11.68] [INFO] [Main Thread] Configurations files has been loaded
+[02-06-2023 00:22:11.69] [INFO] [Main Thread] Loading server cache and data files
+[02-06-2023 00:22:11.70] [INFO] [Main Thread] Server cache and data files has been loaded
+[02-06-2023 00:22:11.70] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[02-06-2023 00:22:11.71] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[02-06-2023 00:22:11.72] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[02-06-2023 00:22:11.76] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[02-06-2023 00:22:11.154] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[02-06-2023 00:22:11.155] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[02-06-2023 00:22:11.155] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[02-06-2023 00:22:11.370] [INFO] [Voice Thread] Training voice model
+[02-06-2023 00:22:11.373] [INFO] [Voice Thread] Voice model trained
+[02-06-2023 00:22:11.375] [INFO] [Interface Thread] Initializing Web interface listener
+[02-06-2023 00:22:11.376] [INFO] [Interface Thread] Web interface listener has been initialized
+[02-06-2023 00:22:11.376] [INFO] [Interface Thread] Trying to create Web Interface listener
+[02-06-2023 00:22:11.379] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[02-06-2023 00:22:11.379] [INFO] [Main Thread] Trying to create WebSocket listener
+[02-06-2023 00:22:11.380] [INFO] [Main Thread] WebSocket listener is listening
+[02-06-2023 00:22:11.380] [INFO] [Main Thread] Server has been fully started
+[02-06-2023 00:22:11.381] [INFO] [Interface Thread] Web Interface listener has been created
+[02-06-2023 00:22:11.381] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[02-06-2023 00:22:31.117] [INFO] [Connection Thread] Client has connected [18989ff34cd]
+[02-06-2023 00:34:13.990] [INFO] [Connection Thread] Client has disconnected
+[02-06-2023 00:34:14.75] [INFO] [Connection Thread] Client has connected [1898a09eebb]
+[02-06-2023 00:36:07.52] [INFO] [Connection Thread] Client has disconnected

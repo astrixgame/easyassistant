@@ -48,6 +48,9 @@ var lxMenu3 = document.getElementById("lxMenu3");
 var lxMenu1svg = document.getElementById("lxMenu1svg");
 var lxMenu2svg = document.getElementById("lxMenu2svg");
 var lxMenu3svg = document.getElementById("lxMenu3svg");
+var speechRecognition_start = document.getElementById("speechRecognition");
+var speechRecognition_buble = document.getElementById("speechBuble");
+var speechRecognition_thread = null;
 var days = ["Neděle","Pondělí","Úterý","Středa","Čtvrtek","Pátek","Sobota"];
 var months = ["Ledna","Února","Března","Dubna","Května","Června","Července","Srpna","Zíří","Října","Listopadu","Prosince"];
 var weatherTimes = ["Aktuálně","Večer","Zítra","Pozítří"];
@@ -60,7 +63,10 @@ var weatherData = [
 var volum = 0;
 var lxData;
 var lxAlias = {};
+var jLockables = {};
 var opennedPanel = "";
+
+var audio_notification = new Audio('assets/media/notification.mp3');
 
 connection.onerror = function() {
     modalOverlay.style.display = "block";
@@ -111,264 +117,505 @@ connection.onopen = function() {
                 if(data["type"] == "add") {
                     lxData = data["items"];
                     Object.keys(lxData.controls).forEach(async function(uuid) {
-                        var icon = lxData.cats[lxData.controls[uuid].cat].image;
-                        if(lxData.controls[uuid]["defaultIcon"]) {
-                            icon = lxData.controls[uuid]["defaultIcon"];
+                        if(lxData.controls[uuid].states) {
+                            Object.values(lxData.controls[uuid].states).forEach(function(uuid1) {
+                                lxAlias[uuid1] = uuid;
+                            });
+                            if(lxData.controls[uuid].subControls) {
+                                Object.keys(lxData.controls[uuid].subControls).forEach(function(key) {
+                                    Object.values(lxData.controls[uuid].subControls[key].states).forEach(function(ud) {
+                                        lxAlias[ud] = uuid;
+                                    });
+                                });
+                            }
                         }
-                        Object.values(lxData.controls[uuid].states).forEach(function(uuid1) {
-                            lxAlias[uuid1] = uuid;
-                        });
-                        var value = "";
-                        var opennedPanelVal = "";
-                        switch(lxData.controls[uuid].type) {
+                        var name = lxData.controls[uuid].name;
+                        var action = lxData.controls[uuid].uuidAction;
+                        var type = lxData.controls[uuid].type;
+                        var room = lxData.controls[uuid].room;
+                        var category = lxData.controls[uuid].cat;
+                        var icon = lxData.controls[uuid].defaultIcon != "" ? lxData.controls[uuid].defaultIcon : lxData.cat[category].image;
+                        var panel = "";
+
+                        panel += '<div class="panel cControl" id="'+uuid+'" data-type="'+type+'" data-uuid-action="'+action+'" data-room="'+room+'" data-category="'+category+'">';
+                        panel += '<txt class="title">'+smallerSentence(name)+'</txt>';
+                        panel += '<div class="value">'+getControl(lxData.controls[uuid])+'</div>';
+                        panel += '</div>';
+
+                        controling.innerHTML += panel;
+                        getSvg(icon, uuid);
+                    });
+                    Object.keys(lxData.rooms).forEach(async function(uuid) {
+                        var name = lxData.rooms[uuid].name;
+                        var icon = lxData.rooms[uuid].image;
+                        var panel = "";
+
+                        panel += '<div class="panel cRoom" id="'+uuid+'" onclick="showRoom(\''+uuid+'\')">';
+                        panel += '<txt class="title">'+smallerSentence(name)+'</txt>';
+                        panel += '</div>';
+
+                        controling.innerHTML += panel;
+                        getSvg(icon, uuid, "rgb(105, 195, 80)");
+                    });
+                    Object.keys(lxData.cats).forEach(async function(uuid) {
+                        var name = lxData.cats[uuid].name;
+                        var icon = lxData.cats[uuid].image;
+                        var color = lxData.cats[uuid].color;
+                        var panel = "";
+
+                        panel += '<div class="panel cCategory" id="'+uuid+'" onclick="showCategory(\''+uuid+'\')">';
+                        panel += '<txt class="title">'+smallerSentence(name)+'</txt>';
+                        panel += '</div>';
+
+                        controling.innerHTML += panel;
+                        getSvg(icon, uuid, color);
+                    });
+                    function getControl(element) {
+                        var res = "";
+                        var jLocked = "";
+                        if(element.details && element.details.jLockable) jLocked = 'data-jLocked="'+element.states.jLocked+'" ';
+                        switch(element.type) {
                             case "InfoOnlyDigital":
-                                value = '<txt class="value" id="'+lxData.controls[uuid].states.active+'-value">N/A</txt>';
-                                opennedPanelVal = '<div class="openned-value-item"><txt id="'+lxData.controls[uuid].states.active+'-value-open">N/A</txt></div>';
+                                res = '<p '+jLocked+'data-active="'+element.states.active+'">N/A</p>';
                             break;
                             case "InfoOnlyAnalog":
-                                value = '<txt class="value" id="'+lxData.controls[uuid].states.value+'-value">N/A</txt>';
-                                opennedPanelVal = '<div class="openned-value-item"><txt id="'+lxData.controls[uuid].states.value+'-value-open">N/A</txt></div>';
+                                res = '<p '+jLocked+'data-value="'+element.states.value+'" data-error="'+element.states.error+'" data-format="'+element.details.format+'">N/A</p>';
                             break;
                             case "Switch":
-                                value = '<label class="switch"><input type="checkbox" id="'+lxData.controls[uuid].states.active+'-value" onchange="lxControl(this, \'Switch\')"><span class="slider"></span></label>';
-                                opennedPanelVal = '<div class="openned-value-item"><label class="switch"><input type="checkbox" id="'+lxData.controls[uuid].states.active+'-value-open" onchange="lxControl(this, \'Switch\')"><span class="slider"></span></label></div>';
+                                res = '<label class="switch"><input type="checkbox" '+jLocked+'data-active="'+element.states.active+'" onchange="lxControl(this, \'Switch\')"><span class="slider"></span></label>';
                             break;
                             case "TextState":
-                                value = '<txt class="value" id="'+lxData.controls[uuid].states.value+'-value">N/A</txt>';
-                                opennedPanelVal = '<div class="openned-value-item"><txt id="'+lxData.controls[uuid].states.value+'-value-open">N/A</txt></div>';
+                                res = '<p '+jLocked+'data-textAndIcon="'+element.states.textAndIcon+'" data-iconAndColor="'+element.states.iconAndColor+'">N/A</p>';
                             break;
                             case "Meter":
-                                value = '<txt class="value">Aktuální: <txt id="'+lxData.controls[uuid].states.actual+'-value">N/A</txt><br>Celkem: <txt id="'+lxData.controls[uuid].states.total+'-value">N/A</txt></txt>';
-                                opennedPanelVal = '<div class="openned-value-item">Aktuální: <txt id="'+lxData.controls[uuid].states.actual+'-value-open">N/A</txt><br>Celkem: <txt id="'+lxData.controls[uuid].states.total+'-value-open">N/A</txt></div>';
+                                if(element.details.type == "storage")
+                                    res = '<p '+jLocked+'data-storage="'+element.states.storage+'" data-storageFormat="'+element.details.storageFormat+'">N/A</p>';
+                                else
+                                    res = '<p '+jLocked+'data-actual="'+element.states.actual+'" data-actualFormat="'+element.details.actualFormat+'">N/A</p><p>•</p><p '+jLocked+'data-total="'+element.states.total+'" data-totalFormat="'+element.details.totalFormat+'">N/A</p>';
                             break;
                             case "EIBDimmer":
-                                value = '<input type="range" min="0" max="100" step="1" id="'+lxData.controls[uuid].states.position+'-value" oninput="lxControl(this, \'EIBDimmer\')">';
-                                opennedPanelVal = '<div class="openned-value-item"><input type="range" min="0" max="100" step="1" id="'+lxData.controls[uuid].states.position+'-value-open" oninput="lxControl(this, \'EIBDimmer\')"></div>';
+                                res = '<input type="range" data-position="'+element.states.position+'" min="0" max="100" step="0.01">';
                             break;
                             case "IRoomControllerV2":
-                                value = '<button class="inteligentController" onclick="lxControl(this, \'IRoomControllerV2\')" id="'+uuid+'-button"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></button>';
-                                opennedPanelVal = '';// ###
+                                
                             break;
                             case "PresenceDetector":
-                                value = '<txt class="value" id="'+lxData.controls[uuid].states.active+'-value">N/A</txt>';
-                                opennedPanelVal = '<div class="openned-value-item"><txt class="value" id="'+lxData.controls[uuid].states.active+'-value-open">N/A</txt></div>';
+                                res = '<p '+jLocked+'data-active="'+element.states.active+'" data-format="'+element.details.format+'">N/A</p>';
                             break;
                             case "TimedSwitch":
-                                value = '<button class="timedswitch" onclick="lxControl(this, \'TimedSwitch\')" id="'+lxData.controls[uuid].states.deactivationDelay+'-button"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></button>';
-                                opennedPanelVal = '<div class="openned-value-item"><button class="timedswitch" onclick="lxControl(this, \'TimedSwitch\')" id="'+lxData.controls[uuid].states.deactivationDelay+'-button-open"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></button></div>';
+                                res = '<button '+jLocked+'data-deactivationDelay="'+element.states.deactivationDelayTotal+'"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></button>';
                             break;
                             case "LeftRightAnalog":
-                                value = '<txt class="value" id="'+lxData.controls[uuid].states.value+'-value">N/A</txt><button class="leftbutton" onclick="lxControl(this, \'LeftRightAnalog1\')" id="'+uuid+'-button1"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></button><button class="rightbutton" onclick="lxControl(this, \'LeftRightAnalog2\')" id="'+uuid+'-button2"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></button>';
-                                opennedPanelVal = '<div class="openned-value-item"><txt class="value" id="'+lxData.controls[uuid].states.value+'-value-open">N/A</txt><button class="leftbutton" onclick="lxControl(this, \'LeftRightAnalog1\')" id="'+uuid+'-button1-open"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></button><button class="rightbutton" onclick="lxControl(this, \'LeftRightAnalog2\')" id="'+uuid+'-button2-open"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></button></div>';
+                                res = '<p '+jLocked+'data-value="'+element.states.value+'" data-min="'+element.details.min+'" data-max="'+element.details.max+'" data-step="'+element.details.step+'" data-format="'+element.details.format+'">N/A</p><button '+jLocked+'><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></button><button '+jLocked+'><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></button>';
                             break;
                             case "Pushbutton":
-                                value = '<button class="pushbutton" onclick="lxControl(this, \'Pushbutton\')" id="'+lxData.controls[uuid].states.active+'-button"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>';
-                                opennedPanelVal = '<div class="openned-value-item"><button class="pushbutton" onclick="lxControl(this, \'Pushbutton\')" id="'+lxData.controls[uuid].states.active+'-button-open"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button></div>';
+                                res = '<button '+jLocked+'data-active="'+element.states.active+'"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>';
                             break;
                             case "Irrigation":
-                                value = '<button class="irrigation" onclick="lxControl(this, \'Irrigation\')" id="'+lxData.controls[uuid].states.rainActive+'-button"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>';
-                                opennedPanelVal = '<div class="openned-value-item"><button class="irrigation" onclick="lxControl(this, \'Irrigation\')" id="'+lxData.controls[uuid].states.rainActive+'-button-open"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button></div>';
+                                res = '<p '+jLocked+'data-currentZone="'+element.states.currentZone+'">N/A</p><button '+jLocked+'data-rainActive="'+element.states.rainActive+'"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>';
                             break;
                             case "Intercom":
-                                //value = '<button class="intercom" onclick="lxControl(this, \'Intercom\')" id="'+uuid+'-button"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/></svg></button>';
-                                //opennedPanelVal = '';// ###
+                                
                             break;
                             case "SmokeAlarm":
-                                value = '<txt class="value" id="'+lxData.controls[uuid].states.areAlarmSignalsOff+'-value">N/A</txt>';
-                                opennedPanelVal = '<div class="openned-value-item"><txt id="'+lxData.controls[uuid].states.areAlarmSignalsOff+'-value-open">N/A</txt></div>';
+                                res = '<p '+jLocked+'data-areAlarmSignalsOff="'+element.states.areAlarmSignalsOff+'" data-alarmCause="'+element.states.alarmCause+'">N/A</p>';
+                            break;
+                            case "EnergyManager2":
+
+                            break;
+                            case "EFM":
+                                
+                            break;
+                            case "Wallbox2":
+                                res = '<p '+jLocked+'data-connected="'+element.states.connected+'">N/A</p>';
+                            break;
+                            case "LoadManager":
+                                res = '<p '+jLocked+'data-availablePower="'+element.states.availablePower+'">N/A</p>';
+                            break;
+                            case "AalSmartAlarm":
+                                res = '<p '+jLocked+'data-alarmLevel="'+element.states.alarmLevel+'">N/A</p>';
+                            break;
+                            case "Alarm":
+                                res = '<p '+jLocked+'data-armed="'+element.states.armed+'" data-level="'+element.states.level+'">N/A</p>';
+                            break;
+                            case "AalEmergency":
+
+                            break;
+                            case "PulseAt":
+
+                            break;
+                            case "Webpage":
+                                res = '<button '+jLocked+'onclick="window.open(\''+element.details.urlHd+'\', \'_blank\')"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg></button>';
+                            break;
+                            case "WindowMonitor":
+
+                            break;
+                            case "CentralLightController":
+
+                            break;
+                            case "CentralJalousie":
+
+                            break;
+                            case "ClimateController":
+
+                            break;
+                            case "CentralAudioZone":
+
+                            break;
+                            case "LightControllerV2":
+
+                            break;
+                            case "AlarmClock":
+
+                            break;
+                            case "Window":
+
+                            break;
+                            case "Jalousie":
+
+                            break;
+                            case "Gate":
+                                
+                            break;
+                            case "Ventilation":
+
+                            break;
+                            case "Radio":
+
+                            break;
+                            case "AudioZoneV2":
+
+                            break;
+                            case "Remote":
+
+                            break;
+                            case "NfcCodeTouch":
+
+                            break;
+                            case "Sauna":
+
                             break;
                             default:
                                 console.log(lxData.controls[uuid].type);
                             break;
                         }
-                        opennedPanelVal += '<div class="connected-objects"><txt class="connected-objects-title">Propojené Objekty</txt>';
-                        if(lxData.controls[uuid].links) {
-                            Object.values(lxData.controls[uuid].links).forEach(function(u) {
-                                var icon = lxData.cats[lxData.controls[u].cat].image;
-                                if(lxData.controls[u]["defaultIcon"]) {
-                                    icon = lxData.controls[u]["defaultIcon"];
-                                }
-                                getSvg(icon, u+"-object-connected-svg");
-                                opennedPanelVal += '<div class="connected-object" onclick="showItem(null, null, \''+u+'\')"><div class="connected-object-svg" id="'+u+'-object-connected-svg"></div><txt>'+lxData.controls[u].name+'</txt></div>';
-                            });
-                        }
-                        opennedPanelVal += '</div>';
-                        getSvg(icon,uuid+'-open-svg');
-                        opennedPanels.innerHTML += '<div class="openned-item" id="'+uuid+'-showcase"><div class="openned-main"><div id="'+uuid+'-open-svg"></div><txt class="item-open-title">'+lxData.controls[uuid].name+'</txt>'+opennedPanelVal+'</div><div class="openned-stats"><txt>Statistiky</txt><div class="stats" id="'+uuid+'-stats"></div></div></div>';
-                        getSvg(icon,uuid);
-                        controling.innerHTML += '<div class="panel panel-item" id="'+uuid+'" onclick="showItem(this, event)"><txt class="title">'+smallerSentence(lxData.controls[uuid].name,20)+'</txt>'+value+'</div>';
-                        
-                    });
-                    Object.keys(lxData.rooms).forEach(async function(uuid) {
-                        getSvg(lxData.rooms[uuid].image,uuid,lxData.rooms[uuid].color);
-                        controling.innerHTML += '<div class="panel panel-room" id="'+uuid+'" onclick="showRoom(this)"><txt class="title">'+smallerSentence(lxData.rooms[uuid].name,20)+'</txt></div>';
-                    });
-                    Object.keys(lxData.cats).forEach(async function(uuid) {
-                        getSvg(lxData.cats[uuid].image,uuid,lxData.cats[uuid].color);
-                        controling.innerHTML += '<div class="panel panel-category" id="'+uuid+'" onclick="showCategory(this)"><txt class="title">'+smallerSentence(lxData.cats[uuid].name,20)+'</txt></div>';
-                    });
-                    lxMenu1svg.style.fill = "rgb(105, 195, 80)";
-                    lxMenu2svg.style.fill = "rgb(206, 206, 206)";
-                    lxMenu3svg.style.fill = "rgb(206, 206, 206)";
-                    Object.keys(lxData.controls).forEach(function(key) {
-                        document.getElementById(key).style.display = "none";
-                    });
-                    Object.keys(lxData.rooms).forEach(function(key) {
-                        document.getElementById(key).style.display = "none";
-                    });
-                    Object.keys(lxData.cats).forEach(function(key) {
-                        document.getElementById(key).style.display = "none";
-                    });
-                    Object.keys(lxData.controls).forEach(function(key) {
-                        if(lxData.controls[key].isFavorite) {
-                            document.getElementById(key).style.display = "block";
-                        }
-                    });
+                        return res;
+                    }
                 } else if(data["type"] == "update") {
-                    var uid = lxAlias[data["uuid"]];
-                    if(lxData.controls[uid]) {
-                        if(data["uuid"] == "109ba049-024b-40b2-ffff5c23eca9d419") console.log("1");
-                        switch(lxData.controls[uid].type) {
+                    var mainUuid = data["uuid"];
+                    if(lxAlias[data["uuid"]]) mainUuid = lxAlias[data["uuid"]];
+                    if(lxData.controls[mainUuid]) {
+                        var mainElm = lxData.controls[mainUuid];
+                        switch(mainElm.type) {
                             case "InfoOnlyDigital":
-                                var val = lxData.controls[uid].details.text.off;
-                                var color = lxData.controls[uid].details.color.off;
-                                if(data["value"] == 1) {
-                                    val = lxData.controls[uid].details.text.on;
-                                    color = lxData.controls[uid].details.color.on;
+                                var eel = document.querySelector("[data-active='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var valueC = data["value"] == 1 ? "on" : "off";
+                                    var value = mainElm.details ? mainElm.details.text[valueC] : data["value"] == 1 ? "Aktivní" : "Neaktivní";
+                                    var color = mainElm.details ? mainElm.details.color[valueC] : data["value"] == 1 ? "rgb(105, 195, 80)" : "rgba(234, 234, 245, 0.6)";
+                                    if(eel.innerHTML != value) {
+                                        eel.innerHTML = value;
+                                        eel.style.color = color;
+                                    }
                                 }
-                                document.getElementById(data["uuid"]+"-value").innerHTML = val;
-                                document.getElementById(data["uuid"]+"-value").style.color = color;
-                                document.getElementById(data["uuid"]+"-value-open").innerHTML = val;
-                                document.getElementById(data["uuid"]+"-value-open").style.color = color;
                             break;
                             case "InfoOnlyAnalog":
-                                var val = formatNumber(lxData.controls[uid].details.format, data["value"]);
-                                if(document.getElementById(data["uuid"]+"-value")) {
-                                    document.getElementById(data["uuid"]+"-value").innerHTML = val;
-                                }
-                                if(document.getElementById(data["uuid"]+"-value-open")) {
-                                    document.getElementById(data["uuid"]+"-value-open").innerHTML = val;
+                                var eel = document.querySelector("[data-value='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var value = formatNumber(mainElm.details.format, data["value"]);
+                                    if(eel.innerHTML != value)
+                                        eel.innerHTML = value;
                                 }
                             break;
                             case "Switch":
-                                var val = false;
-                                if(data["value"] == 1) val = true;
-                                document.getElementById(data["uuid"]+"-value").checked = val;
-                                document.getElementById(data["uuid"]+"-value-open").checked = val;
+                                var eel = document.querySelector("[data-active='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var value = data["value"] == 1 ? true : false;
+                                    if(eel.checked != value)
+                                        eel.checked = value;
+                                }
                             break;
                             case "TextState":
-                                document.getElementById(data["uuid"]+"-value").innerHTML = data["value"];
+                                var eel = document.querySelector("[data-textAndIcon='"+data["uuid"]+"']");
+                                if(eel)
+                                    if(eel.innerHTML != data["value"])
+                                        eel.innerHTML = data["value"];
                             break;
                             case "Meter":
-                                var format = "";
-                                Object.keys(lxData.controls[uid].states).forEach(function(i) {
-                                    if(lxData.controls[uid].states[i] == data["uuid"]) {
-                                        format = lxData.controls[uid].details[i+"Format"];
+                                if(mainElm.details.type == "storage") {
+                                    var eel = document.querySelector("[data-storage='"+data["uuid"]+"']");
+                                    if(eel) {
+                                        var text = formatNumber(mainElm.details.storageFormat, data["value"]);
+                                        if(eel.innerHTML != text)
+                                            eel.innerHTML = text;
                                     }
-                                });
-                                document.getElementById(data["uuid"]+"-value").innerHTML = formatNumber(format, data["value"]);
-                                document.getElementById(data["uuid"]+"-value-open").innerHTML = formatNumber(format, data["value"]);
+                                } else {
+                                    var eel = document.querySelector("[data-actual='"+data["uuid"]+"']");
+                                    if(eel) {
+                                        var text = formatNumber(mainElm.details.actualFormat, data["value"]);
+                                        if(eel.innerHTML != text)
+                                            eel.innerHTML = text;
+                                    } else {
+                                        eel = document.querySelector("[data-total='"+data["uuid"]+"']");
+                                        if(eel) {
+                                            var text = formatNumber(mainElm.details.totalFormat, data["value"]);
+                                            if(eel.innerHTML != text)
+                                                eel.innerHTML = text;
+                                        }
+                                    }
+                                }
                             break;
                             case "EIBDimmer":
-                                document.getElementById(data["uuid"]+"-value").value = parseInt(data["value"]);
-                                document.getElementById(data["uuid"]+"-value-open").value = parseInt(data["value"]);
+                                var eel = document.querySelector("[data-position='"+data["uuid"]+"']");
+                                if(eel && eel.value != data["value"])
+                                    eel.value = data["value"];
                             break;
                             case "IRoomControllerV2":
                                 
                             break;
                             case "PresenceDetector":
-                                if(document.getElementById(data["uuid"]+"-value")) {
-                                    var val = lxData.controls[uid].details.text.off;
-                                    if(data["value"] == 1) val = lxData.controls[uid].details.text.on;
-                                    document.getElementById(data["uuid"]+"-value").innerHTML = val;
-                                    document.getElementById(data["uuid"]+"-value-open").innerHTML = val;
+                                var eel = document.querySelector("[data-active='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var text = data["value"] == 1 ? "Přítomnost aktivní" : "Přitomnost neaktivní";
+                                    if(eel.innerHTML != text) {
+                                        eel.innerHTML = text;
+                                        eel.style.color = data["value"] == 1 ? "rgb(105, 195, 80)" : "rgba(234, 234, 245, 0.6)";
+                                    }
                                 }
                             break;
                             case "TimedSwitch":
-                                if(lxData.controls[lxAlias[data["uuid"]]].states.deactivationDelay == data["uuid"]) {
-                                    if(data["value"] > 0) {
-                                        document.getElementById(data["uuid"]+"-button").style.backgroundColor = "rgba(105, 195, 80, 0.3)";
-                                        document.getElementById(data["uuid"]+"-button-open").style.backgroundColor = "rgba(105, 195, 80, 0.3)";
-                                    } else if(document.getElementById(data["uuid"]+"-button").style.backgroundColor == "rgba(105, 195, 80, 0.3)") {
-                                        document.getElementById(data["uuid"]+"-button").style.backgroundColor = "transparent";
-                                        document.getElementById(data["uuid"]+"-button-open").style.backgroundColor = "transparent";
-                                    }
-                                }
+                                var eel = document.querySelector("[data-deactivationDelay='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var color = data["value"] > 0 ? "rgb(105, 195, 80)" : "";// Button background
+                                    if(eel.style.backgroundColor != color)
+                                        eel.style.backgroundColor = color;
+                                } 
                             break;
                             case "LeftRightAnalog":
-                                if(lxData.controls[lxAlias[data["uuid"]]].states.value == data["uuid"]) {
-                                    document.getElementById(data["uuid"]+"-value").innerHTML = data["value"];
-                                    document.getElementById(data["uuid"]+"-value-open").innerHTML = data["value"];
-                                }
+                                var eel = document.querySelector("[data-value='"+data["uuid"]+"']")
+                                if(eel && eel.innerHTML != formatNumber(mainElm.details.format, data["value"]))
+                                    eel.innerHTML = formatNumber(mainElm.details.format, data["value"]);
                             break;
                             case "Pushbutton":
-                                if(data["value"] == 1) {
-                                    document.getElementById(data["uuid"]+"-button").style.backgroundColor = "rgba(105, 195, 80, 0.3)";
-                                    document.getElementById(data["uuid"]+"-button-open").style.backgroundColor = "rgba(105, 195, 80, 0.3)";
-                                } else if(document.getElementById(data["uuid"]+"-button").style.backgroundColor == "rgba(105, 195, 80, 0.3)") {
-                                    document.getElementById(data["uuid"]+"-button").style.backgroundColor = "transparent";
-                                    document.getElementById(data["uuid"]+"-button-open").style.backgroundColor = "transparent";
-                                }
+                                var eel = document.querySelector("[data-active='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var color = data["value"] == 1 ? "rgb(105, 195, 80)" : "";// Button background
+                                    if(eel.style.backgroundColor != color)
+                                        eel.style.backgroundColor = color;
+                                } 
                             break;
                             case "Irrigation":
-                                if(lxData.controls[lxAlias[data["uuid"]]].states.rainActive == data["uuid"]) {
-                                    if(data["value"] == 1) {
-                                        document.getElementById(uid+"-button").style.backgroundColor = "rgba(105, 195, 80, 0.3)";
-                                        document.getElementById(uid+"-button-open").style.backgroundColor = "rgba(105, 195, 80, 0.3)";
-                                    } else if(document.getElementById(data["uuid"]+"-button").style.backgroundColor == "rgba(105, 195, 80, 0.3)") {
-                                        document.getElementById(uid+"-button").style.backgroundColor = "transparent";
-                                        document.getElementById(uid+"-button-open").style.backgroundColor = "transparent";
-                                    }
+                                var eel = document.querySelector("[data-rainActive='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var color = data["value"] == 1 ? "rgb(105, 195, 80)" : "";// Button background
+                                    if(eel.style.backgroundColor != color)
+                                        eel.style.backgroundColor = color;
                                 }
+                                eel = document.querySelector("[data-currentZone='"+data["uuid"]+"']");
+                                if(eel)
+                                    if(data["value"] != -1) {
+                                        eel.innerHTML = "Ventil "+(data["value"]+1)+" aktivní";
+                                        eel.style.color = "rgb(105, 195, 80)";
+                                    } else {
+                                        eel.innerHTML = "Vypnuto";
+                                        eel.style.color = "rgba(234, 234, 245, 0.6)";
+                                    }
                             break;
                             case "Intercom":
                                 
                             break;
                             case "SmokeAlarm":
-                                if(lxData.controls[lxAlias[data["uuid"]]].states.areAlarmSignalsOff == data["uuid"]) {
-                                    if(data["value"] == 0) {
-                                        document.getElementById(data["uuid"]+"-value").innerHTML = "Vše OK";
-                                        document.getElementById(data["uuid"]+"-value").style.color = "rgb(105, 195, 80)";
-                                        document.getElementById(data["uuid"]+"-value-open").innerHTML = "Vše OK";
-                                        document.getElementById(data["uuid"]+"-value-open").style.color = "rgb(105, 195, 80)";
-                                        if(document.getElementById(lxAlias[data["uuid"]]+"-svg")) {
-                                            document.getElementById(lxAlias[data["uuid"]]+"-svg").style.fill = "rgb(193, 193, 193)";
-                                        }
+                                var eel = document.querySelector("[data-areAlarmSignalsOff='"+data["uuid"]+"']");
+                                var titles = ["Kouřový poplach","Vodní poplach","Teplotní poplach","Obloukový (elektrický) poplach"];
+                                if(eel)
+                                    if(data["value"] == 1) {
+                                        eel.innerHTML = "Detekován";
+                                        eel.style.color = "rgb(231, 50, 70)";
                                     } else {
-                                        document.getElementById(data["uuid"]+"-value").innerHTML = "Kouř Detekován";
-                                        document.getElementById(data["uuid"]+"-value").style.color = "rgb(231, 50, 70)";
-                                        document.getElementById(data["uuid"]+"-value-open").innerHTML = "Kouř Detekován";
-                                        document.getElementById(data["uuid"]+"-value-open").style.color = "rgb(231, 50, 70)";
-                                        if(document.getElementById(lxAlias[data["uuid"]]+"-svg")) {
-                                            document.getElementById(lxAlias[data["uuid"]]+"-svg").style.fill = "rgb(231, 50, 70)";
+                                        eel.innerHTML = "Vše OK";
+                                        eel.style.color = "rgb(105, 195, 80)";
+                                    }
+                                else {
+                                    eel = document.querySelector("[data-alarmCause='"+data["uuid"]+"']");
+                                    if(eel && data["value"] > 0 && eel.innerHTML != titles[data["value"]-1])
+                                        eel.innerHTML = titles[data["value"]-1];
+                                }
+                            break;
+                            case "EnergyManager2":
+
+                            break;
+                            case "EFM":
+
+                            break;
+                            case "Wallbox2":
+                                var eel = document.querySelector("[data-connected='"+data["uuid"]+"']");
+                                if(eel) {
+                                    var text = data["value"] == 1 ? "Vozidlo připojeno" : "Vozidlo odpojeno";
+                                    var color = data["value"] == 1 ? "rgb(105, 195, 80)" : "rgba(234, 234, 245, 0.6)";
+                                    if(eel.innerHTML != text) {
+                                        eel.innerHTML = text;
+                                        eel.style.color = color;
+                                    }
+                                }
+                            break;
+                            case "LoadManager":
+                                var eel = document.querySelector("[data-availablePower='"+data["uuid"]+"']");
+                                if(eel && eel.innerHTML != data["value"] + "kW k dispozici") {
+                                    eel.innerHTML = data["value"] + " kW k dispozici";
+                                    if(data["value"] > 2)
+                                        eel.style.color = "rgb(105, 195, 80)";
+                                    else
+                                        eel.style.color = "rgb(231, 50, 70)";
+                                }
+                                    
+                            break;
+                            case "AalSmartAlarm":
+                                var eel = document.querySelector("[data-alarmLevel='"+data["uuid"]+"']");
+                                var titles = ["Okamžitý poplach","Zpožděný poplach"];
+                                if(eel)
+                                    if(data["value"] > 0 && eel.innerHTML != titles[data["value"]-1]) {
+                                        eel.innerHTML = titles[data["value"]-1];
+                                        eel.style.color = "rgb(231, 50, 70)";
+                                        audio_notification.play();
+                                    } else {
+                                        eel.innerHTML = "Vše OK";
+                                        eel.style.color = "rgb(105, 195, 80)";
+                                    }
+                            break;
+                            case "Alarm":
+                                var eel = document.querySelector("[data-armed='"+data["uuid"]+"']");
+                                var titles = ["Tichý poplach","Akustický poplach","Optický poplach","Vnitřní poplach","Venkovní poplach","Vzdálený poplach"];
+                                if(eel)
+                                    if(data["value"] == 0 && eel.innerHTML != "Odstřeženo") {
+                                        eel.innerHTML = "Odstřeženo";
+                                        eel.style.color = "rgba(234, 234, 245, 0.6)";
+                                    } else if(data["value"] == 1 && eel.innerHTML == "Odstřeženo") {
+                                        eel.innerHTML = "Zastřeženo";
+                                        eel.style.color = "rgb(105, 195, 80)";
+                                    }
+                                else {
+                                    eel = document.querySelector("[data-level='"+data["uuid"]+"']");
+                                    if(eel) {
+                                        if(data["value"] > 0 && titles[data["value"]-1] != eel.innerHTML) {
+                                            eel.innerHTML = titles[data["value"]-1];
+                                            eel.style.color = "rgb(231, 50, 70)";
+                                            audio_notification.play();
                                         }
                                     }
                                 }
                             break;
+                            case "AalEmergency":
+
+                            break;
+                            case "PulseAt":
+
+                            break;
+                            case "Webpage":
+                                // No events
+                            break;
+                            case "WindowMonitor":
+
+                            break;
+                            case "CentralLightController":
+
+                            break;
+                            case "CentralJalousie":
+
+                            break;
+                            case "ClimateController":
+
+                            break;
+                            case "CentralAudioZone":
+
+                            break;
+                            case "LightControllerV2":
+
+                            break;
+                            case "AlarmClock":
+
+                            break;
+                            case "Window":
+
+                            break;
+                            case "Jalousie":
+
+                            break;
+                            case "Gate":
+                                
+                            break;
+                            case "Ventilation":
+
+                            break;
+                            case "Radio":
+
+                            break;
+                            case "AudioZoneV2":
+
+                            break;
+                            case "Remote":
+
+                            break;
+                            case "NfcCodeTouch":
+
+                            break;
+                            case "Sauna":
+
+                            break;
                         }
                     }
+                } else if(data["type"] == "response") {
+
                 }
             break;
         }
     };
 
+    if("webkitSpeechRecognition" in window) {
+        var SpeechRecognition = SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        speechRecognition_thread = new SpeechRecognition();
+        speechRecognition_thread.continuous = false;
+        speechRecognition_thread.lang = "cs-CZ";
+        speechRecognition_thread.interimResults = false;
+        speechRecognition_thread.onstart = function() {
+            speechRecognition_buble.style.opacity = "1";
+        }
+        speechRecognition_thread.onerror = function(mes) {
+            alert(JSON.stringify(mes));
+        }
+        speechRecognition_thread.onresult = function(event) {
+            var current = event.resultIndex;
+            var transcript = event.results[current][0].transcript;
+            speechRecognition_buble.style.opacity = "1";
+            speechRecognition_buble.innerHTML = transcript;
+            setTimeout(function() {
+                speechRecognition_buble.style.opacity = "0";
+            }, 3000);
+            connection.send(JSON.stringify({ module: "speech", sentence: transcript }));
+        }
+        speechRecognition_start.addEventListener("click", function() {
+            speechRecognition_thread.start();
+        });
+    } else {
+        alert("No Speech");
+        console.warn("Speech Recognition is not supported in your browser!");
+    }
+    
     lxMenu1.addEventListener("click", function() {
         lxMenu1svg.style.fill = "rgb(105, 195, 80)";
         lxMenu2svg.style.fill = "rgb(206, 206, 206)";
         lxMenu3svg.style.fill = "rgb(206, 206, 206)";
-        Object.keys(lxData.controls).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
-        });
-        Object.keys(lxData.rooms).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
-        });
-        Object.keys(lxData.cats).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
+        document.querySelectorAll('.cControl').forEach(element => {
+            element.style.display = 'none';
         });
         Object.keys(lxData.controls).forEach(function(key) {
-            if(lxData.controls[key].isFavorite) {
+            if(lxData.controls[key].isFavorite && document.getElementById(key))
                 document.getElementById(key).style.display = "block";
-            }
+        });
+        document.querySelectorAll('.cRoom').forEach(element => {
+            element.style.display = 'none';
+        });
+        document.querySelectorAll('.cCategory').forEach(element => {
+            element.style.display = 'none';
         });
     });
 
@@ -376,17 +623,15 @@ connection.onopen = function() {
         lxMenu1svg.style.fill = "rgb(206, 206, 206)";
         lxMenu2svg.style.fill = "rgb(105, 195, 80)";
         lxMenu3svg.style.fill = "rgb(206, 206, 206)";
-        Object.keys(lxData.controls).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
+        document.querySelectorAll('.cControl').forEach(element => {
+            element.style.display = 'none';
         });
-        Object.keys(lxData.rooms).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
+        document.querySelectorAll('.cRoom').forEach(element => {
+            if(document.querySelectorAll("[data-room='"+element.id+"']").length != 0)
+                element.style.display = 'block';
         });
-        Object.keys(lxData.cats).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
-        });
-        Object.keys(lxData.rooms).forEach(function(key) {
-            document.getElementById(key).style.display = "block";
+        document.querySelectorAll('.cCategory').forEach(element => {
+            element.style.display = 'none';
         });
     });
 
@@ -394,22 +639,20 @@ connection.onopen = function() {
         lxMenu1svg.style.fill = "rgb(206, 206, 206)";
         lxMenu2svg.style.fill = "rgb(206, 206, 206)";
         lxMenu3svg.style.fill = "rgb(105, 195, 80)";
-        Object.keys(lxData.controls).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
+        document.querySelectorAll('.cControl').forEach(element => {
+            element.style.display = 'none';
         });
-        Object.keys(lxData.rooms).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
+        document.querySelectorAll('.cRoom').forEach(element => {
+            element.style.display = 'none';
         });
-        Object.keys(lxData.cats).forEach(function(key) {
-            document.getElementById(key).style.display = "none";
-        });
-        Object.keys(lxData.cats).forEach(function(key) {
-            document.getElementById(key).style.display = "block";
+        document.querySelectorAll('.cCategory').forEach(element => {
+            if(document.querySelectorAll("[data-category='"+element.id+"']").length != 0)
+                element.style.display = 'block';
         });
     });
 
     async function getSvg(imageUrl, key, color) {
-        await $.get("assets/images/"+imageUrl, function(data) {
+        if(imageUrl && imageUrl != "") await $.get("assets/images/"+imageUrl, function(data) {
             var t = document.getElementById(key);
             var colorSet = "";
             if(color) {
@@ -622,7 +865,7 @@ function lxControl(element, type) {
         case "Switch":
             var sw;
             if(element.checked) sw = uuid+"/on"; else sw = uuid+"/off";
-            connection.send(JSON.stringify({ module: "loxone", action: "resend", value: "jdev/sps/io/"+sw }))
+            connection.send(JSON.stringify({ module: "loxone", action: "resend", value: "jdev/sps/io/"+sw }));
         break;
         case "EIBDimmer":
             connection.send(JSON.stringify({ module: "loxone", action: "resend", value: "jdev/sps/io/"+uuid+"/"+element.value+".000000" }));
@@ -677,24 +920,22 @@ function closeOpnened() {
     document.getElementById(opennedPanel+"-showcase").style.display = "none";
 }
 
-function showRoom(element) {
-    Object.keys(lxData.rooms).forEach(function(key) {
-        document.getElementById(key).style.display = "none";
+function showRoom(uuid) {
+    document.querySelectorAll(".cRoom").forEach(function(room) {
+        room.style.display = "none";
     });
-    Object.keys(lxData.controls).forEach(function(key) {
-        if(lxData.controls[key].room == element.id) {
-            document.getElementById(key).style.display = "block";
-        }
+    Object.values(document.querySelectorAll("[data-room='"+uuid+"']")).forEach(function(control) {
+        if(control.style)
+            control.style.display = "block";
     });
 }
 
-function showCategory(element) {
-    Object.keys(lxData.cats).forEach(function(key) {
-        document.getElementById(key).style.display = "none";
+function showCategory(uuid) {
+    document.querySelectorAll(".cCategory").forEach(function(category) {
+        category.style.display = "none";
     });
-    Object.keys(lxData.controls).forEach(function(key) {
-        if(lxData.controls[key].cat == element.id) {
-            document.getElementById(key).style.display = "block";
-        }
+    Object.values(document.querySelectorAll("[data-category='"+uuid+"']")).forEach(function(control) {
+        if(control.style)
+            control.style.display = "block";
     });
-}
+}//console.log(arr[data["uuid"]] + " --> " + data["value"]);

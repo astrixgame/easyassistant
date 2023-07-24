@@ -20,21 +20,6 @@ body {
     border-bottom: 2px solid rgb(26, 209, 255);
 }
 
-.topbar .left {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: calc(50% - 25px);
-    height: 100%;
-}
-
-.topbar .right {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: calc(50% - 25px);
-    height: 100%;
-}
 
 .topbar .logo {
     position: absolute;
@@ -52,6 +37,19 @@ body {
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
+}
+
+.topbar .textBuble {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 #date-date {
@@ -254,17 +252,17 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.controling .panel-item {
+.controling .cControl {
     width: 150px;
     height: 200px;
 }
 
-.controling .panel-room {
+.controling .cRoom {
     width: 150px;
     height: 140px;
 }
 
-.controling .panel-category {
+.controling .cCategory {
     width: 150px;
     height: 140px;
 }
@@ -284,235 +282,48 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 20px);
-    color: rgb(193, 193, 193);
+    color: rgb(206, 206, 206);
     text-align: center;
 }
 
 .controling .panel .value {
     position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 20px);
-    color: rgb(150, 150, 150);
-    text-align: center;
-}
-
-.controling .panel .switch {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.controling .panel input[type=range] {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-}
-
-.controling .panel .timedswitch {
-    position: absolute;
+    left: 10px;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid transparent;
+    display: flex;
+    width: 130px;
+    height: 50px;
+    justify-content: center;
+    color: rgba(234, 234, 245, 0.6);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.controling .panel .value p {
+    float: left;
+}
+
+.controling .panel .value button {
+    position: relative;
+    float: left;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.35);
     cursor: pointer;
     transition: 0.2s;
 }
 
-.controling .panel .timedswitch:hover {
-    border: 2px solid white;
-
+.controling .panel .value button:hover {
+    background-color: rgba(50, 50, 50, 0.35);
 }
 
-.controling .panel .timedswitch svg {
+.controling .panel .value button svg {
     position: absolute;
+    left: 50%;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    fill: rgb(238, 238, 238);
-}
-
-.controling .panel .leftbutton {
-    position: absolute;
-    bottom: 10px;
-    left: 15px;
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.controling .panel .leftbutton:hover {
-    border: 2px solid white;
-}
-
-.controling .panel .rightbutton {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.controling .panel .rightbutton:hover {
-    border: 2px solid white;
-}
-
-.controling .panel .leftbutton svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    fill: rgb(238, 238, 238);
-}
-
-.controling .panel .rightbutton svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    fill: rgb(238, 238, 238);
-}
-
-.controling .panel .pushbutton {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.controling .panel .pushbutton:hover {
-    border: 2px solid white;
-}
-
-.controling .panel .pushbutton svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    fill: rgb(238, 238, 238);
-}
-
-.controling .panel .irrigation {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.controling .panel .irrigation:hover {
-    border: 2px solid white;
-}
-
-.controling .panel .irrigation svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    fill: rgb(238, 238, 238);
-}
-
-.controling .panel .intercom {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.controling .panel .intercom:hover {
-    border: 2px solid white;
-}
-
-.controling .panel .intercom svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    fill: rgb(238, 238, 238);
-}
-.controling .panel .inteligentController {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.controling .panel .inteligentController:hover {
-    border: 2px solid white;
-
-}
-
-.controling .panel .inteligentController svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    fill: rgb(238, 238, 238);
 }
 
 .weather {
@@ -876,13 +687,13 @@ input:checked + .slider:before {
 
 @media only screen and (max-width: 740px) {
     #date-day {
-        left: -135%;
-
+        left: 0px;
+        right: auto;
     }
 
     #date-date {
-        left: -135%;
-
+        left: 0px;
+        right: auto;
     }
 }
 

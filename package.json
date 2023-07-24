@@ -18,10 +18,16 @@
   "author": "AstrixGame",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/speech": "^5.6.0",
     "axios": "^1.4.0",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
+    "jaro-winkler": "^0.2.8",
     "lxcommunicator": "^1.1.1",
+    "natural": "^6.5.0",
+    "node-microphone": "^0.1.6",
+    "node-record-lpcm16": "^1.0.1",
+    "vosk": "^0.3.39",
     "ws": "^8.13.0",
     "xml-js": "^1.6.11",
     "xmljs": "^0.3.2"

@@ -4,6 +4,7 @@ import LxCommunicator from "LxCommunicator";
 import axios from 'axios';
 import xmljs from 'xml-js';
 import fs from 'fs';
+import natural from 'natural';
 
 log("INFO","Main Thread","Initializing varriables");
 
@@ -11,6 +12,8 @@ var clients = new Set();
 var conf = {};
 var weatherReadData = {};
 var lxDt = {};
+var lxValues = {};
+var sentenceMapping = [];
 
 log("INFO","Main Thread","Varriables has been inilialized");
 log("INFO","Main Thread","Loading configurations files");
@@ -52,6 +55,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     clients.forEach(function(client) {
                         Object.keys(lxDt).forEach(function(uuid) {
                             client.send(JSON.stringify({ module: "loxone", type: "update", uuid: uuid, value: lxDt[uuid] }));
+                            lxValues = { uuid: uuid, value: lxDt[uuid] };
                         });
                     });
                 });
@@ -65,13 +69,200 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
     log("INFO","Loxone Thread","Trying to fetch settings from Loxone Miniserver");
 
     axios.get("http://"+lxAddr+"/data/LoxAPP3.json", {headers: {Authorization: "Basic "+Buffer.from(lxUser+':'+lxPass).toString('base64')}}).then(function(lxDataFull) {
+        var lxData = lxDataFull.data;
+
         log("INFO","Loxone Thread","Settings from Loxone Miniserver fetched successfully");
         log("INFO","Loxone Thread","Configuring connection has been added successfully");
         log("INFO","Loxone Thread","Trying to create connection with Loxone Miniserver");
 
         socket.open(lxAddr, lxUser, lxPass).then(function() {
             socket.send("jdev/sps/enablebinstatusupdate").then(function(respons) {
+                log("INFO","Voice Thread","Training voice model");
 
+                Object.keys(lxData.controls).forEach(function(uuid) {
+                    var control = lxData.controls[uuid];
+                    switch(control.type) {
+                        case "InfoOnlyDigital":/*
+                            var startWith = {
+                                "InfoOnlyDigital_say":"jaká je ",
+                                "InfoOnlyDigital_say":"jak ",
+                                "InfoOnlyDigital_say":"kolik je ",
+                                "InfoOnlyDigital_say":"rekni ",
+                                "InfoOnlyDigital_say":"zjisti ",
+                                "InfoOnlyDigital_say":"potřebuji vědět "
+                            };
+                            Object.keys(startWith).forEach(function(item) {
+                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
+                            });*/
+                        break;
+                        case "InfoOnlyAnalog":/*
+                            var startWith = {
+                                "InfoOnlyAnalog_say":"jaká je ",
+                                "InfoOnlyAnalog_say":"jak ",
+                                "InfoOnlyAnalog_say":"kolik je ",
+                                "InfoOnlyAnalog_say":"rekni ",
+                                "InfoOnlyAnalog_say":"zjisti ",
+                                "InfoOnlyAnalog_say":"potřebuji vědět "
+                            };
+                            Object.keys(startWith).forEach(function(item) {
+                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
+                            });*/
+                        break;
+                        case "Switch":
+                            sentenceMapping.push(
+                                { command: "Switch_say:"+uuid, sentence: "je zapnutý "+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "je zapnutá "+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "je zapnuté "+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "rekni "+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "zjisti "+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "potřebuji vědět "+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "zapni "+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "rožni "+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "rozsviť "+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "nastartuj "+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "nahoď "+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "spusť "+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "vypni "+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "zhasni "+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "zhoď "+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "zastav "+control.name }
+                            );
+                        break;
+                        case "TextState":/*
+                            var startWith = {
+                                "TextState_say":"jaká je ",
+                                "TextState_say":"jak ",
+                                "TextState_say":"kolik je ",
+                                "TextState_say":"rekni ",
+                                "TextState_say":"zjisti ",
+                                "TextState_say":"potřebuji vědět "
+                            };
+                            Object.keys(startWith).forEach(function(item) {
+                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
+                            });*/
+                        break;
+                        case "Meter":/*
+                            var startWith = {
+                                "Meter_say":"jaká je ",
+                                "Meter_say":"jak ",
+                                "Meter_say":"kolik je ",
+                                "Meter_say":"rekni ",
+                                "Meter_say":"zjisti ",
+                                "Meter_say":"potřebuji vědět "
+                            };
+                            Object.keys(startWith).forEach(function(item) {
+                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
+                            });*/
+                        break;
+                        case "EIBDimmer":
+
+                        break;
+                        case "IRoomControllerV2":
+                            
+                        break;
+                        case "PresenceDetector":/*
+                            var startWith = {
+                                "PresenceDetector_say":"jaká je ",
+                                "PresenceDetector_say":"je někdo v ",
+                                "PresenceDetector_say":"rekni ",
+                                "PresenceDetector_say":"zjisti ",
+                                "PresenceDetector_say":"potřebuji vědět "
+                            };
+                            Object.keys(startWith).forEach(function(item) {
+                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
+                            });*/
+                        break;
+                        case "TimedSwitch":
+
+                        break;
+                        case "LeftRightAnalog":
+
+                        break;
+                        case "Pushbutton":
+
+                        break;
+                        case "Irrigation":
+
+                        break;
+                        case "SmokeAlarm":
+
+                        break;
+                        case "EnergyManager2":
+
+                        break;
+                        case "EFM":
+
+                        break;
+                        case "Wallbox2":
+
+                        break;
+                        case "LoadManager":
+
+                        break;
+                        case "AalSmartAlarm":
+
+                        break;
+                        case "Alarm":
+
+                        break;
+                        case "AalEmergency":
+
+                        break;
+                        case "PulseAt":
+
+                        break;
+                        case "WindowMonitor":
+
+                        break;
+                        case "CentralLightController":
+
+                        break;
+                        case "CentralJalousie":
+
+                        break;
+                        case "ClimateController":
+
+                        break;
+                        case "CentralAudioZone":
+
+                        break;
+                        case "LightControllerV2":
+
+                        break;
+                        case "AlarmClock":
+
+                        break;
+                        case "Window":
+
+                        break;
+                        case "Jalousie":
+
+                        break;
+                        case "Gate":
+                            
+                        break;
+                        case "Ventilation":
+
+                        break;
+                        case "Radio":
+
+                        break;
+                        case "AudioZoneV2":
+
+                        break;
+                        case "Remote":
+
+                        break;
+                        case "NfcCodeTouch":
+
+                        break;
+                        case "Sauna":
+
+                        break;
+                    }
+                });
+
+                log("INFO","Voice Thread","Voice model trained");
                 log("INFO","Interface Thread","Initializing Web interface listener");
 
                 var webServer = http.createServer((req, res) => {
@@ -111,8 +302,6 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     log("INFO","Interface Thread","Web Interface listener has been created");
                     log("INFO","Interface Thread","Web Interface listener running on http://localhost:80");
                 });
-
-                var lxData = lxDataFull.data;
                     
                 log("INFO","Loxone Thread","Connection with Loxone Miniserver has been established successfully");
                 log("INFO","Main Thread","Trying to create WebSocket listener");
@@ -219,10 +408,49 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             break;
                             case "loxone":
                                 if(dt["action"] == "resend") {
-                                    socket.send(dt["value"]);
+                                    socket.send(dt["value"]).then(function(d) {
+                                        sendMessage(JSON.stringify({ module: "loxone", type: "response", data: d }));
+                                    }).catch(function(err) {
+                                        sendMessage(JSON.stringify({ module: "loxone", type: "response", data: err }));
+                                    });
                                 } else {
                                     log("ERROR","Communication Thread","Accepted incorrent command from client");
                                     ws.send("ERROR:[NEPLATNÁ AKCE]");
+                                }
+                            break;
+                            case "speech":
+                                var command = processSentence(dt["sentence"]).split(":");
+                                console.log(command);
+                                var control = lxData.controls[command[1]];
+                                switch(command[0]) {
+                                    case "Switch_setOn":
+                                        socket.send("jdev/sps/io/"+control.uuidAction+"/on");
+                                    break;
+                                    case "Switch_setOff":
+                                        socket.send("jdev/sps/io/"+control.uuidAction+"/off");
+                                    break;
+                                    case "Switch_say":
+                                        if(lxValues[control.states.active])
+                                            if(lxValues[control.states.active] == 1)
+                                                console.log("Zapnuto");
+                                            else
+                                                console.log("Vypnuto");
+                                        else
+                                            console.log("Neznámo");
+                                    break;
+                                }
+                                
+                                function processSentence(sentence) {
+                                    var bestMatch = null, bestScore = 0;
+                                    for(var mapping of sentenceMapping) {
+                                        var distance = natural.JaroWinklerDistance(mapping.sentence, sentence.toLowerCase(), {ignoreCase:true});
+                                        console.log({sentence: sentence, mapping: mapping.sentence, score: distance});
+                                        if(distance>bestScore) {
+                                            bestMatch = mapping.command;
+                                            bestScore = distance;
+                                        }
+                                    }
+                                    return bestMatch;
                                 }
                             break;
                             default:
@@ -236,6 +464,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
 
                     ws.on('close', function(ws) {
                         clients.delete(ws);
+                        clients.clear();
                         log("INFO","Connection Thread","Client has disconnected");
                     });
                 });
