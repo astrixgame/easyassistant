@@ -5,6 +5,7 @@ import axios from 'axios';
 import xmljs from 'xml-js';
 import fs from 'fs';
 import natural from 'natural';
+import chalk from 'chalk';
 
 log("INFO","Main Thread","Initializing varriables");
 
@@ -14,6 +15,10 @@ var weatherReadData = {};
 var lxDt = {};
 var lxValues = {};
 var sentenceMapping = [];
+var lxNamesAlias = {
+    "1a4da4f3-00c7-f5b8-ffff5c23eca9d419": "žárovka žárovku lustr",
+    "1a4da4fd-02f6-fdf0-ffffb6ede515692f": "žárovka žárovku lustr teplota"
+};
 
 log("INFO","Main Thread","Varriables has been inilialized");
 log("INFO","Main Thread","Loading configurations files");
@@ -77,100 +82,111 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
 
         socket.open(lxAddr, lxUser, lxPass).then(function() {
             socket.send("jdev/sps/enablebinstatusupdate").then(function(respons) {
-                log("INFO","Voice Thread","Training voice model");
-
+                var len = Object.keys(lxData.controls).length;
+                var currentPercent = 0;
+                var currentLoop = 0;
                 Object.keys(lxData.controls).forEach(function(uuid) {
                     var control = lxData.controls[uuid];
+                    var addAlias = lxNamesAlias[uuid] ? lxNamesAlias[uuid]+" " : "";
                     switch(control.type) {
-                        case "InfoOnlyDigital":/*
-                            var startWith = {
-                                "InfoOnlyDigital_say":"jaká je ",
-                                "InfoOnlyDigital_say":"jak ",
-                                "InfoOnlyDigital_say":"kolik je ",
-                                "InfoOnlyDigital_say":"rekni ",
-                                "InfoOnlyDigital_say":"zjisti ",
-                                "InfoOnlyDigital_say":"potřebuji vědět "
-                            };
-                            Object.keys(startWith).forEach(function(item) {
-                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
-                            });*/
+                        case "InfoOnlyDigital":
+                            sentenceMapping.push(
+                                { command: "InfoOnlyDigital_say:"+uuid, sentence: "jaká je "+addAlias+control.name },
+                                { command: "InfoOnlyDigital_say:"+uuid, sentence: "jak "+addAlias+control.name },
+                                { command: "InfoOnlyDigital_say:"+uuid, sentence: "kolik je "+addAlias+control.name },
+                                { command: "InfoOnlyDigital_say:"+uuid, sentence: "řekni "+addAlias+control.name },
+                                { command: "InfoOnlyDigital_say:"+uuid, sentence: "zjisti "+addAlias+control.name },
+                                { command: "InfoOnlyDigital_say:"+uuid, sentence: "potřebuji vědět "+addAlias+control.name }
+                            );
                         break;
-                        case "InfoOnlyAnalog":/*
-                            var startWith = {
-                                "InfoOnlyAnalog_say":"jaká je ",
-                                "InfoOnlyAnalog_say":"jak ",
-                                "InfoOnlyAnalog_say":"kolik je ",
-                                "InfoOnlyAnalog_say":"rekni ",
-                                "InfoOnlyAnalog_say":"zjisti ",
-                                "InfoOnlyAnalog_say":"potřebuji vědět "
-                            };
-                            Object.keys(startWith).forEach(function(item) {
-                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
-                            });*/
+                        case "InfoOnlyAnalog":
+                            sentenceMapping.push(
+                                { command: "InfoOnlyAnalog_say:"+uuid, sentence: "jaká je "+addAlias+control.name },
+                                { command: "InfoOnlyAnalog_say:"+uuid, sentence: "jak "+addAlias+control.name },
+                                { command: "InfoOnlyAnalog_say:"+uuid, sentence: "kolik je "+addAlias+control.name },
+                                { command: "InfoOnlyAnalog_say:"+uuid, sentence: "řekni "+addAlias+control.name },
+                                { command: "InfoOnlyAnalog_say:"+uuid, sentence: "zjisti "+addAlias+control.name },
+                                { command: "InfoOnlyAnalog_say:"+uuid, sentence: "potřebuji vědět "+addAlias+control.name }
+                            );
                         break;
                         case "Switch":
                             sentenceMapping.push(
-                                { command: "Switch_say:"+uuid, sentence: "je zapnutý "+control.name },
-                                { command: "Switch_say:"+uuid, sentence: "je zapnutá "+control.name },
-                                { command: "Switch_say:"+uuid, sentence: "je zapnuté "+control.name },
-                                { command: "Switch_say:"+uuid, sentence: "rekni "+control.name },
-                                { command: "Switch_say:"+uuid, sentence: "zjisti "+control.name },
-                                { command: "Switch_say:"+uuid, sentence: "potřebuji vědět "+control.name },
-                                { command: "Switch_setOn:"+uuid, sentence: "zapni "+control.name },
-                                { command: "Switch_setOn:"+uuid, sentence: "rožni "+control.name },
-                                { command: "Switch_setOn:"+uuid, sentence: "rozsviť "+control.name },
-                                { command: "Switch_setOn:"+uuid, sentence: "nastartuj "+control.name },
-                                { command: "Switch_setOn:"+uuid, sentence: "nahoď "+control.name },
-                                { command: "Switch_setOn:"+uuid, sentence: "spusť "+control.name },
-                                { command: "Switch_setOff:"+uuid, sentence: "vypni "+control.name },
-                                { command: "Switch_setOff:"+uuid, sentence: "zhasni "+control.name },
-                                { command: "Switch_setOff:"+uuid, sentence: "zhoď "+control.name },
-                                { command: "Switch_setOff:"+uuid, sentence: "zastav "+control.name }
+                                { command: "Switch_say:"+uuid, sentence: "je zapnutý "+addAlias+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "je zapnutá "+addAlias+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "je zapnuté "+addAlias+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "řekni "+addAlias+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "zjisti "+addAlias+control.name },
+                                { command: "Switch_say:"+uuid, sentence: "potřebuji vědět "+addAlias+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "zapni "+addAlias+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "rožni "+addAlias+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "rozsviť "+addAlias+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "nastartuj "+addAlias+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "nahoď "+addAlias+control.name },
+                                { command: "Switch_setOn:"+uuid, sentence: "spusť "+addAlias+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "vypni "+addAlias+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "zhasni "+addAlias+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "zhoď "+addAlias+control.name },
+                                { command: "Switch_setOff:"+uuid, sentence: "zastav "+addAlias+control.name }
                             );
                         break;
-                        case "TextState":/*
-                            var startWith = {
-                                "TextState_say":"jaká je ",
-                                "TextState_say":"jak ",
-                                "TextState_say":"kolik je ",
-                                "TextState_say":"rekni ",
-                                "TextState_say":"zjisti ",
-                                "TextState_say":"potřebuji vědět "
-                            };
-                            Object.keys(startWith).forEach(function(item) {
-                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
-                            });*/
+                        case "TextState":
+                            sentenceMapping.push(
+                                { command: "TextState_say:"+uuid, sentence: "jaká je "+addAlias+control.name },
+                                { command: "TextState_say:"+uuid, sentence: "jak "+addAlias+control.name },
+                                { command: "TextState_say:"+uuid, sentence: "kolik je "+addAlias+control.name },
+                                { command: "TextState_say:"+uuid, sentence: "řekni "+addAlias+control.name },
+                                { command: "TextState_say:"+uuid, sentence: "zjisti "+addAlias+control.name },
+                                { command: "TextState_say:"+uuid, sentence: "potřebuji vědět "+addAlias+control.name }
+                            );
                         break;
-                        case "Meter":/*
-                            var startWith = {
-                                "Meter_say":"jaká je ",
-                                "Meter_say":"jak ",
-                                "Meter_say":"kolik je ",
-                                "Meter_say":"rekni ",
-                                "Meter_say":"zjisti ",
-                                "Meter_say":"potřebuji vědět "
-                            };
-                            Object.keys(startWith).forEach(function(item) {
-                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
-                            });*/
+                        case "Meter":
+                            sentenceMapping.push(
+                                { command: "Meter_say:"+uuid, sentence: "jaká je "+addAlias+control.name },
+                                { command: "Meter_say:"+uuid, sentence: "jak "+addAlias+control.name },
+                                { command: "Meter_say:"+uuid, sentence: "kolik je "+addAlias+control.name },
+                                { command: "Meter_say:"+uuid, sentence: "řekni "+addAlias+control.name },
+                                { command: "Meter_say:"+uuid, sentence: "zjisti "+addAlias+control.name },
+                                { command: "Meter_say:"+uuid, sentence: "potřebuji vědět "+addAlias+control.name }
+                            );
                         break;
                         case "EIBDimmer":
-
+                            sentenceMapping.push(
+                                { command: "EIBDimmer_say:"+uuid, sentence: "jaká je "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "jak "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "kolik je "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "řekni "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "zjisti "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "potřebuji vědět "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "je rožnuto "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "je rozsvíceno "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "je zapnuto "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "je zhasnuto "+addAlias+control.name },
+                                { command: "EIBDimmer_say:"+uuid, sentence: "je vypnuto "+addAlias+control.name },
+                                { command: "EIBDimmer_setOn:"+uuid, sentence: "zapni "+addAlias+control.name },
+                                { command: "EIBDimmer_setOn:"+uuid, sentence: "rožni "+addAlias+control.name },
+                                { command: "EIBDimmer_setOn:"+uuid, sentence: "rozsviť "+addAlias+control.name },
+                                { command: "EIBDimmer_setOn:"+uuid, sentence: "nastartuj "+addAlias+control.name },
+                                { command: "EIBDimmer_setOn:"+uuid, sentence: "nahoď "+addAlias+control.name },
+                                { command: "EIBDimmer_setOn:"+uuid, sentence: "spusť "+addAlias+control.name },
+                                { command: "EIBDimmer_setOff:"+uuid, sentence: "vypni "+addAlias+control.name },
+                                { command: "EIBDimmer_setOff:"+uuid, sentence: "zhasni "+addAlias+control.name },
+                                { command: "EIBDimmer_setOff:"+uuid, sentence: "zhoď "+addAlias+control.name },
+                                { command: "EIBDimmer_setOff:"+uuid, sentence: "zastav "+addAlias+control.name },
+                                { command: "EIBDimmer_setChange:"+uuid, sentence: "nastav "+addAlias+control.name },
+                                { command: "EIBDimmer_setChange:"+uuid, sentence: "změň "+addAlias+control.name }
+                            );
                         break;
                         case "IRoomControllerV2":
                             
                         break;
-                        case "PresenceDetector":/*
-                            var startWith = {
-                                "PresenceDetector_say":"jaká je ",
-                                "PresenceDetector_say":"je někdo v ",
-                                "PresenceDetector_say":"rekni ",
-                                "PresenceDetector_say":"zjisti ",
-                                "PresenceDetector_say":"potřebuji vědět "
-                            };
-                            Object.keys(startWith).forEach(function(item) {
-                                sentenceMapping.push({ sentence: startWith[item]+control.name, command: item+":"+uuid });
-                            });*/
+                        case "PresenceDetector":
+                            sentenceMapping.push(
+                                { command: "PresenceDetector_say:"+uuid, sentence: "jaká je "+addAlias+control.name },
+                                { command: "PresenceDetector_say:"+uuid, sentence: "je někdo v "+addAlias+control.name },
+                                { command: "PresenceDetector_say:"+uuid, sentence: "potřebuji vědět "+addAlias+control.name },
+                                { command: "PresenceDetector_say:"+uuid, sentence: "řekni "+addAlias+control.name },
+                                { command: "PresenceDetector_say:"+uuid, sentence: "zjisti "+addAlias+control.name }
+                            );
                         break;
                         case "TimedSwitch":
 
@@ -260,9 +276,15 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
 
                         break;
                     }
+                    var calc = Math.round((currentLoop / len)*10)*10;
+                    if(currentPercent != calc) {
+                        currentPercent = calc;
+                        log("INFO","Voice Thread",chalk.yellow("Training voice model "+currentPercent+"%"));
+                    }
+                    currentLoop++;
                 });
 
-                log("INFO","Voice Thread","Voice model trained");
+                log("INFO","Voice Thread","Voice model has been trained");
                 log("INFO","Interface Thread","Initializing Web interface listener");
 
                 var webServer = http.createServer((req, res) => {
@@ -300,7 +322,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                 log("INFO","Interface Thread","Trying to create Web Interface listener");
                 webServer.listen(80, () => {
                     log("INFO","Interface Thread","Web Interface listener has been created");
-                    log("INFO","Interface Thread","Web Interface listener running on http://localhost:80");
+                    log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
                 });
                     
                 log("INFO","Loxone Thread","Connection with Loxone Miniserver has been established successfully");
@@ -419,32 +441,72 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                 }
                             break;
                             case "speech":
-                                var command = processSentence(dt["sentence"]).split(":");
-                                console.log(command);
+                                var sentence = dt["sentence"].toLowerCase();
+                                var command = processSentence(sentence).split(":");
                                 var control = lxData.controls[command[1]];
                                 switch(command[0]) {
                                     case "Switch_setOn":
                                         socket.send("jdev/sps/io/"+control.uuidAction+"/on");
+                                        log("INFO","Voice Thread","Recieved voice command to turn on the switch, {uuid:"+control.uuidAction+",state:on}");
                                     break;
                                     case "Switch_setOff":
                                         socket.send("jdev/sps/io/"+control.uuidAction+"/off");
+                                        log("INFO","Voice Thread","Recieved voice command to turn off the switch, {uuid:"+control.uuidAction+",state:off}");
                                     break;
                                     case "Switch_say":
                                         if(lxValues[control.states.active])
                                             if(lxValues[control.states.active] == 1)
-                                                console.log("Zapnuto");
+                                                sendToSpeech("Zapnuto");
                                             else
-                                                console.log("Vypnuto");
+                                                sendToSpeech("Vypnuto");
                                         else
-                                            console.log("Neznámo");
+                                            sendToSpeech("Neznámo");
+                                    break;
+                                    case "EIBDimmer_say":
+                                        if(lxValues[control.states.position])
+                                            sendToSpeech(lxValues[control.states.position]+"%");
+                                        else
+                                            sendToSpeech("Neznámo");
+                                    break;
+                                    case "EIBDimmer_setOn":
+                                        if(sentence.includes("%")) {
+                                            var half = sentence.substring(0, sentence.lastIndexOf("%"));
+                                            var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
+                                            socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
+                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                        } else {
+                                            socket.send("jdev/sps/io/"+control.uuidAction+"/100.000000");
+                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                        }
+                                    break;
+                                    case "EIBDimmer_setOff":
+                                        if(sentence.includes("%")) {
+                                            var half = sentence.substring(0, sentence.lastIndexOf("%"));
+                                            var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
+                                            socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
+                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                        } else {
+                                            socket.send("jdev/sps/io/"+control.uuidAction+"/0.000000");
+                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                        }
+                                    break;
+                                    case "EIBDimmer_setChange":
+                                        if(sentence.includes("%")) {
+                                            var half = sentence.substring(0, sentence.lastIndexOf("%"));
+                                            var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
+                                            socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
+                                            log("INFO","Voice Thread","Recieved voice command to change dimmer value, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                        } else {
+                                            log("INFO","Voice Thread","Recieved voice command to change dimmer value, but percent value is not set");
+                                        }
                                     break;
                                 }
                                 
                                 function processSentence(sentence) {
                                     var bestMatch = null, bestScore = 0;
                                     for(var mapping of sentenceMapping) {
-                                        var distance = natural.JaroWinklerDistance(mapping.sentence, sentence.toLowerCase(), {ignoreCase:true});
-                                        console.log({sentence: sentence, mapping: mapping.sentence, score: distance});
+                                        var distance = natural.JaroWinklerDistance(mapping.sentence.toLowerCase(), sentence, { caseSensitive: false });
+                                        //console.log({sentence: sentence, mapping: mapping.sentence.toLowerCase(), score: distance});
                                         if(distance>bestScore) {
                                             bestMatch = mapping.command;
                                             bestScore = distance;
@@ -481,6 +543,12 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
         });
     });
 }
+
+function sendToSpeech(text) {
+    console.log("#######################################");
+    console.log(text);
+    console.log("#######################################");
+}
     
 function log(level, module, text) {
     var date = new Date();
@@ -490,13 +558,15 @@ function log(level, module, text) {
     var minutes = date.getMinutes();if(minutes < 10) minutes = "0"+minutes;
     var seconds = date.getSeconds();if(seconds < 10) seconds = "0"+seconds;
     var fDate = day+"-"+month+"-"+date.getFullYear()+" "+hours+":"+minutes+":"+seconds+"."+date.getMilliseconds();
-    fs.appendFile("server.log", "["+fDate+"] ["+level+"] ["+module+"] "+text+"\n", function() {});
+    fs.appendFile("server.log", "["+fDate+"] ["+level+"] ["+module+"] "+text.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, "")+"\n", function() {});
+    module = chalk.blue(module);
+    fDate = chalk.gray(fDate);
     if(level == "INFO") {
-        console.log("["+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+"] ["+level+"] ["+module+"] "+text);
+        console.log("["+fDate+"] ["+chalk.cyan("INFO")+"] ["+module+"] "+text);
     } else if(level == "WARNING") {
-        console.warn("["+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+"] ["+level+"] ["+module+"] "+text);
+        console.log("["+fDate+"] ["+chalk.cyan("WARNING")+"] ["+module+"] "+text);
     } else if(level == "ERROR") {
-        console.error("["+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+"] ["+level+"] ["+module+"] "+text);
+        console.log("["+fDate+"] ["+chalk.red("ERROR")+"] ["+module+"] "+text);
     }
 }
 
