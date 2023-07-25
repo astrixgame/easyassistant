@@ -576,12 +576,6 @@ connection.onopen = function() {
         speechRecognition_thread.continuous = false;
         speechRecognition_thread.lang = "cs-CZ";
         speechRecognition_thread.interimResults = false;
-        speechRecognition_thread.onstart = function() {
-            speechRecognition_buble.style.opacity = "1";
-        }
-        speechRecognition_thread.onerror = function(mes) {
-            alert(JSON.stringify(mes));
-        }
         speechRecognition_thread.onresult = function(event) {
             var current = event.resultIndex;
             var transcript = event.results[current][0].transcript;
@@ -589,8 +583,12 @@ connection.onopen = function() {
             speechRecognition_buble.innerHTML = transcript;
             setTimeout(function() {
                 speechRecognition_buble.style.opacity = "0";
+                speechRecognition_buble.innerHTML = "";
             }, 3000);
             connection.send(JSON.stringify({ module: "speech", sentence: transcript }));
+        }
+        speechRecognition_thread.onend = function() {
+            speechRecognition_thread.start();
         }
         speechRecognition_start.addEventListener("click", function() {
             speechRecognition_thread.start();
