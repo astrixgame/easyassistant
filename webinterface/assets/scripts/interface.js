@@ -92,40 +92,41 @@ connection.onopen = function() {
                                         control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "EnergyManager2":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value"></p>';
                                     break;
                                     case "EFM":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value"><txt id="'+data["uuid"]+'-value1">N/A</txt><txt id="'+data["uuid"]+'-value2">N/A</txt></p>';
                                     break;
                                     case "Wallbox2":
                                         control = '<p class="value" id="'+data["uuid"]+'-value"><txt id="'+data["uuid"]+'-value1">N/A</txt><txt id="'+data["uuid"]+'-value2">N/A</txt></p>';
                                     break;
                                     case "LoadManager":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "AalSmartAlarm":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "Alarm":
                                         control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "AalEmergency":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "PulseAt":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button></div>';
                                     break;
                                     case "WindowMonitor":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value"><txt id="'+data["uuid"]+'-value1">N/A</txt><txt id="'+data["uuid"]+'-value2">N/A</txt><txt id="'+data["uuid"]+'-value3">N/A</txt></p>';
                                     break;
                                     case "CentralLightController":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "CentralJalousie":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
+                                        control = '<div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
+                                        valueLine = false;
                                     break;
                                     case "ClimateController":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "CentralAudioZone":
                                         control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg></button></div>';
@@ -134,34 +135,35 @@ connection.onopen = function() {
                                         control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg></button></div>';
                                     break;
                                     case "AlarmClock":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M32 32c17.7 0 32 14.3 32 32V320H288V160c0-17.7 14.3-32 32-32H544c53 0 96 43 96 96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V416H352 320 64v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M32 32c17.7 0 32 14.3 32 32V320H288V160c0-17.7 14.3-32 32-32H544c53 0 96 43 96 96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V416H352 320 64v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg></button></div>';
                                     break;
                                     case "Window":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
                                     break;
                                     case "Jalousie":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
                                     break;
                                     case "Gate":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg></button></div>';
                                     break;
                                     case "Ventilation":
                                         control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "Radio":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button></div>';
                                     break;
                                     case "AudioZoneV2":
                                         control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M320 64c0-12.6-7.4-24-18.9-29.2s-25-3.1-34.4 5.3L131.8 160H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h67.8L266.7 471.9c9.4 8.4 22.9 10.4 34.4 5.3S320 460.6 320 448V64z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"/></svg></button></div>';
                                     break;
                                     case "Remote":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M320 64c0-12.6-7.4-24-18.9-29.2s-25-3.1-34.4 5.3L131.8 160H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h67.8L266.7 471.9c9.4 8.4 22.9 10.4 34.4 5.3S320 460.6 320 448V64z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M320 64c0-12.6-7.4-24-18.9-29.2s-25-3.1-34.4 5.3L131.8 160H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h67.8L266.7 471.9c9.4 8.4 22.9 10.4 34.4 5.3S320 460.6 320 448V64z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"/></svg></button></div>';
                                     break;
                                     case "NfcCodeTouch":
-                                        control = '<p class="value">N/A</p><div class="control"><label class="switch"><input type="checkbox" id="'+data["uuid"]+'-v"><span class="slider"></span></label></div>';
+                                        control = '<div class="control"><div class="control"><button id="'+data["uuid"]+'-v"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button></div></div>';
+                                        valueLine = false;
                                     break;
                                     case "Sauna":
-                                        control = '<p class="value">N/A</p>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p>';
                                     break;
                                     case "Intercom":
                                         valueLine = false;
@@ -281,10 +283,22 @@ connection.onopen = function() {
                                 }
                             break;
                             case "EnergyManager2":
-                                
+                                if(data["subtype"] == "status") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "EFM":
-                                
+                                if(data["color"])
+                                    document.getElementById(data["uuid"]+"-value").style.color = data["color"];
+                                if(data["subtype"] == "grid")
+                                    document.getElementById(data["uuid"]+"-value2").innerHTML = data["value"];
+                                if(data["subtype"] == "storage") {
+                                    document.getElementById(data["uuid"]+"-value1").innerHTML = data["value"];
+                                    if(document.getElementById(data["uuid"]+"-value2").innerHTML == "N/A")
+                                        document.getElementById(data["uuid"]+"-value2").innerHTML = "";
+                                }
                             break;
                             case "Wallbox2":
                                 if(data["color"]) 
@@ -297,10 +311,18 @@ connection.onopen = function() {
                                 }
                             break;
                             case "LoadManager":
-                                
+                                if(data["subtype"] == "available") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "AalSmartAlarm":
-                                
+                                if(data["subtype"] == "alarm") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Alarm":
                                 if(data["subtype"] == "level") {
@@ -310,20 +332,34 @@ connection.onopen = function() {
                                 }
                             break;
                             case "AalEmergency":
-                                
+                                if(data["subtype"] == "alarm") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "PulseAt":
-                                
+                                if(data["subtype"] == "pulse") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "WindowMonitor":
                                 if(data["subtype"] == "open") {
-                                    
+                                    var itm = document.getElementById(data["uuid"]+"-value2");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
                                 }
                                 if(data["subtype"] == "tilted") {
-                                    
+                                    var itm = document.getElementById(data["uuid"]+"-value3");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
                                 }
                                 if(data["subtype"] == "offline") {
-                                    
+                                    var itm = document.getElementById(data["uuid"]+"-value1");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
                                 }
                             break;
                             case "CentralLightController":
@@ -333,25 +369,42 @@ connection.onopen = function() {
                                 
                             break;
                             case "ClimateController":
-                                
-                            break;
-                            case "CentralAudioZone":
-                                
+                                if(data["subtype"] == "vent") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "LightControllerV2":
                                 
                             break;
                             case "AlarmClock":
-                                
+                                if(data["subtype"] == "clock") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Window":
-                                
+                                if(data["subtype"] == "position") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Jalousie":
-                                
+                                if(data["subtype"] == "position") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Gate":
-                                
+                                if(data["subtype"] == "position") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Ventilation":
                                 if(data["subtype"] == "speed") {
@@ -361,24 +414,39 @@ connection.onopen = function() {
                                 }
                             break;
                             case "Radio":
-                                
-                            break;
-                            case "AudioZoneV2":
-                                
+                                if(data["subtype"] == "state") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Remote":
-                                
+                                if(data["subtype"] == "mode") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "NfcCodeTouch":
                                 
                             break;
                             case "Sauna":
-                                
+                                if(data["subtype"] == "turn") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Intercom":
                                 
                             break;
                             case "Webpage":
+                                
+                            break;
+                            case "CentralAudioZone":
+                                
+                            break;
+                            case "AudioZoneV2":
                                 
                             break;
                         }

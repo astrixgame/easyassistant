@@ -218,10 +218,24 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "EnergyManager2":
-
+                    if(mainItem.states.Gpwr == uuid) {
+                        var val = "";
+                        var col = "";
+                        if(value >= 0) {
+                            val = "100% Vlastní spotřeba";
+                            col = "rgb(105, 195, 80)";
+                        } else {
+                            val = kwtow(value)+" ze sítě";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "status", value: val, color: col }));
+                    }
                 break;
                 case "EFM":
-
+                    if(mainItem.states.Ppwr == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "grid", value: value > 0 ? " • Vlastní: "+kwtow(value) : "", color: "rgb(105, 195, 80)" }));
+                    if(mainItem.states.Spwr == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "storage", value: "Bat: "+kwtow(value), color: "rgb(105, 195, 80)" }));
                 break;
                 case "Wallbox2":
                     switch(mainItem.details.type) {
@@ -235,10 +249,49 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "LoadManager":
-
+                    if(mainItem.states.availablePower == uuid) {
+                        var val = "";
+                        var col = "";
+                        if(value > 0) {
+                            val = value+" kW k dispozici";
+                            col = "rgb(105, 195, 80)";
+                        } else {
+                            val = value+" kW k dispozici";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "available", value: val, color: col }));
+                    }
                 break;
                 case "AalSmartAlarm":
-
+                    var levels = ["Okamžitý","Opožděný"];
+                    if(mainItem.states.disableEndTime == uuid) {
+                        var val = "Vše OK";
+                        var col = "rgb(105, 195, 80)";
+                        if(value == 0) {
+                            if(controlValues[mainItem.states.alarmLevel] != 0) {
+                                val = levels[controlValues[mainItem.states.alarmLevel]-1]+" poplach aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        } else {
+                            val = "Neaktivní";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "alarm", value: val, color: col }));
+                    }
+                    if(mainItem.states.alarmLevel == uuid) {
+                        var val = "Vše OK";
+                        var col = "rgb(105, 195, 80)";
+                        if(controlValues[mainItem.states.disableEndTime] == 0) {
+                            if(value != 0) {
+                                val = levels[value-1]+" poplach aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        } else {
+                            val = "Neaktivní";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "alarm", value: val, color: col }));
+                    }
                 break;
                 case "Alarm":
                     var levels = ["I • Tichý","II • Akustický","III • Optický","IV • Vnitřní","V • Venkovní","VI • Dálkový"];
@@ -270,17 +323,53 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "AalEmergency":
-
+                    var levels = ["Alarm aktivní","Reset vstupu potvrzen, ovládání je vypnuto","Ovládání dočasně zablokováno"];
+                    if(mainItem.states.disableEndTime == uuid) {
+                        var val = "Připraveno";
+                        var col = "rgb(105, 195, 80)";
+                        if(value == 4294963696) {
+                            if(controlValues[mainItem.states.status] != 0) {
+                                val = levels[controlValues[mainItem.states.status]-1];
+                                col = "rgb(231, 50, 70)";
+                            }
+                        } else {
+                            val = "Neaktivní";
+                            col = "rgba(234, 234, 245, 0.6)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "alarm", value: val, color: col }));
+                    }
+                    if(mainItem.states.status == uuid) {
+                        var val = "Vše OK";
+                        var col = "rgb(105, 195, 80)";
+                        if(controlValues[mainItem.states.disableEndTime] == 4294963696) {
+                            if(value != 0) {
+                                val = levels[value-1]+" poplach aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        } else {
+                            val = "Neaktivní";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "alarm", value: val, color: col }));
+                    }
                 break;
                 case "PulseAt":
-
+                    if(mainItem.states.isActive == uuid) {
+                        var val = "Neaktivní";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value == 1) {
+                            val = "Aktivní";
+                            col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "pulse", value: val, color: col }));
+                    }
                 break;
                 case "WindowMonitor":
                     if(mainItem.states.numClosed == uuid) {
                         var val = "Zavřeno: "+value;
                         var col = "rgb(105, 195, 80)";
                         if(controlValues[mainItem.states.numOpen] > 0) {
-                            val = "Otevřeno: "+value;
+                            val = "Otevřeno: "+controlValues[mainItem.states.numOpen];
                             col = "rgb(247, 181, 92)";
                         }
                         if(controlValues[mainItem.states.numTilted] > 0)
@@ -342,28 +431,156 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
 
                 break;
                 case "CentralJalousie":
-
+                    // No Update Required
                 break;
                 case "ClimateController":
-
-                break;
-                case "CentralAudioZone":
-
+                    if(mainItem.states.ventilation == uuid) {
+                        var val = "Vypnuto";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value == 1) {
+                            val = "Probíhá chalzení";
+                            col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "vent", value: val, color: col }));
+                    }
                 break;
                 case "LightControllerV2":
                     
                 break;
                 case "AlarmClock":
-
+                    if(mainItem.states.nextEntryTime == uuid) {controlValues[mainItem.states.nextEntryTime]
+                        var val = "Žádný budík";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value != 0) {
+                            val = ""+calculateClockDate(value);
+                            col = "rgb(105, 195, 80)";
+                        }
+                        if(controlValues[mainItem.states.isAlarmActive] == 1) {
+                            val = "Aktivní";
+                            col = "rgb(105, 195, 80)";
+                        }
+                        if(controlValues[mainItem.states.snoozeTime] > 0) {
+                            val = "Odloženo";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "clock", value: val, color: col }));
+                    }
+                    if(mainItem.states.snoozeTime == uuid) {
+                        var val = "Žádný budík";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.nextEntryTime] != 0) {
+                            val = ""+calculateClockDate(controlValues[mainItem.states.nextEntryTime]);
+                            col = "rgb(105, 195, 80)";
+                        }
+                        if(controlValues[mainItem.states.isAlarmActive] == 1) {
+                            val = "Aktivní";
+                            col = "rgb(105, 195, 80)";
+                        }
+                        if(value > 0) {
+                            val = "Odloženo";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "clock", value: val, color: col }));
+                    }
+                    if(mainItem.states.isAlarmActive == uuid) {
+                        var val = "Žádný budík";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.nextEntryTime] != 0) {
+                            val = ""+calculateClockDate(controlValues[mainItem.states.nextEntryTime]);
+                            col = "rgb(105, 195, 80)";
+                        }
+                        if(value == 1) {
+                            val = "Aktivní";
+                            col = "rgb(105, 195, 80)";
+                        }
+                        if(controlValues[mainItem.states.snoozeTime] > 0) {
+                            val = "Odloženo";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "clock", value: val, color: col }));
+                    }
                 break;
                 case "Window":
-
+                    if(mainItem.states.position == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value == 1)
+                            val = "Otevřeno";
+                        if(value == 0)
+                            val = "Zavřeno";
+                        if(0 < value && value < 1)
+                            switch(controlValues[mainItem.states.direction]) {
+                                case -1:
+                                    val = "Zavírání ("+Math.round(value*100)+"%)";
+                                    col = "rgb(105, 195, 80)";   
+                                break;
+                                case 0:
+                                    val = "Otevřeno ("+Math.round(value*100)+"%)";
+                                break;
+                                case 1:
+                                    val = "Otevírání ("+Math.round(value*100)+"%)";
+                                    col = "rgb(105, 195, 80)";
+                                break;
+                            }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
+                    if(mainItem.states.direction == uuid)
+                        if(value == 0 && 0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1)
+                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: "Otevřeno ("+Math.round(controlValues[mainItem.states.position]*100)+"%)", color: "rgba(234, 234, 245, 0.6)" }));
                 break;
                 case "Jalousie":
-
+                    if(mainItem.states.position == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value == 1) 
+                            val = "Zavřeno";
+                        if(value == 0)
+                            val = "Otevřeno";
+                        if(value < 1 && value > 0) {
+                            if(controlValues[mainItem.states.up] == 1) {
+                                val = "Otevírání ("+Math.round(value*100)+"%)";
+                                col = "rgb(105, 195, 80)";
+                            } else if(controlValues[mainItem.states.down] == 1) {
+                                val = "Zavírání ("+Math.round(value*100)+"%)";
+                                col = "rgb(105, 195, 80)";
+                            } else {
+                                val = "Zavřeno ("+Math.round(value*100)+"%)";
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
                 break;
                 case "Gate":
-                    
+                    if(mainItem.states.position == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value == 1) {
+                            val = "Otevřeno";
+                            col = "rgb(247, 181, 92)";
+                        }
+                        if(value == 0)
+                            val = "Zavřeno";
+                        if(0 < value && value < 1)
+                            switch(controlValues[mainItem.states.active]) {
+                                case -1:
+                                    val = "Zavírání ("+Math.round(value*100)+"%)";
+                                    col = "rgb(105, 195, 80)";   
+                                break;
+                                case 0:
+                                    val = "Otevřeno ("+Math.round(value*100)+"%)";
+                                    col = "rgb(247, 181, 92)";
+                                break;
+                                case 1:
+                                    val = "Otevírání ("+Math.round(value*100)+"%)";
+                                    col = "rgb(105, 195, 80)";
+                                break;
+                            }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
+                    if(mainItem.states.active == uuid) {
+                        if(value == 0 && 0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1)
+                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: "Otevřeno ("+Math.round(controlValues[mainItem.states.position]*100)+"%)", color: "rgb(247, 181, 92)" }));
+                    }
                 break;
                 case "Ventilation":
                     if(mainItem.states.speed == uuid) {
@@ -377,19 +594,53 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "Radio":
+                    if(mainItem.states.activeOutput == uuid) {
+                        var val = mainItem.details.allOff;
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value != 0) {
+                            val = mainItem.details.outputs[value];
+                            col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "state", value: val, color: col }));
+                    }
+                break;
+                case "Remote":
+                    if(mainItem.states.mode == uuid) {
+                        var val = "Vypnuto";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value > 0) {
+                            val = mainItem.details.modeList[value].name;
+                            col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "mode", value: val, color: col }));
+                    }
+                break;
+                case "NfcCodeTouch":
+                    // No Update Required
+                break;
+                case "Sauna":
+                    var levels = ["Manuální režim sauny","Finská sauna manuálně","Vlhká suana manuálně","Finská sauna","Bylinná sauna","Parní lázeň","Horký vzduch"];
+                    if(mainItem.states.active == uuid) {
+                        var val = "Vypnuto";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value == 1) {
+                            val = levels[controlValues[mainItem.states.mode]];
+                            col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "turn", value: val, color: col }));
+                    }
+                break;
+                case "Intercom":
+                    
+                break;
+                case "Webpage":
+                    
+                break;
+                case "CentralAudioZone":
 
                 break;
                 case "AudioZoneV2":
-
-                break;
-                case "Remote":
-
-                break;
-                case "NfcCodeTouch":
-
-                break;
-                case "Sauna":
-
+                    
                 break;
             }
         }
@@ -399,6 +650,22 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
         var tens = parseInt(format.substring(format.lastIndexOf(".")+1, format.lastIndexOf("f")));
         var roundInNumber = 10 ** tens;
         return format.replace("%."+tens+"f",Math.round(number * roundInNumber) / roundInNumber).replace("%%","%");
+    }
+
+    function calculateClockDate(seconds) {
+        var newDate = new Date(new Date('2009-01-01').getTime() + seconds * 1000);
+        var hours = newDate.getHours();
+        hours = hours < 10 ? "0"+hours : hours;
+        var minutes = newDate.getMinutes();
+        minutes = minutes < 10 ? "0"+minutes : minutes;
+        return hours+':'+minutes+' '+newDate.getDate().toString().padStart(2,'0')+'.'+(newDate.getMonth()+1).toString().padStart(2,'0')+'.'+newDate.getFullYear();
+    }
+
+    function kwtow(value) {
+        if(value < 1)
+            return (Math.round(value*1000))+" W";
+        else
+            return value+" kW";
     }
 
     log("INFO","Loxone Thread","Listeners for receiving has been added successfully");
@@ -580,9 +847,6 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         case "ClimateController":
 
                         break;
-                        case "CentralAudioZone":
-
-                        break;
                         case "LightControllerV2":
 
                         break;
@@ -604,9 +868,6 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         case "Radio":
 
                         break;
-                        case "AudioZoneV2":
-
-                        break;
                         case "Remote":
 
                         break;
@@ -614,6 +875,18 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
 
                         break;
                         case "Sauna":
+
+                        break;
+                        case "Intercom":
+                            
+                        break;
+                        case "Webpage":
+                            
+                        break;
+                        case "CentralAudioZone":
+
+                        break;
+                        case "AudioZoneV2":
 
                         break;
                     }
