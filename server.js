@@ -57,13 +57,19 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
     config.delegate = {
         socketOnDataProgress: function socketOnDataProgress(socket, progress) {},
         socketOnEventReceived: function socketOnEventReceived(socket, events, type) {
-            if(type === 2) {
-                events.forEach(function(event) {
-                    var uuid = event.uuid;
-                    var value = event.value;
-                    controlValues[uuid] = value;
-                    sendValues(uuid, value);
-                });
+            switch(type) {
+                case 2:
+                    events.forEach(function(event) {
+                        controlValues[event.uuid] = event.value;
+                        sendValues(event.uuid, event.value);
+                    });
+                break;
+                case 3:
+                    events.forEach(function(event) {
+                        controlValues[event.uuid] = event.text;
+                        sendValues(event.uuid, event.text);
+                    });
+                break;
             }
         }
     };
@@ -445,10 +451,30 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "LightControllerV2":
-                    
+                    if(mainItem.states.activeMoodsNum == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.moodList]) {
+                            var a = JSON.parse(controlValues[mainItem.states.moodList]);
+                            a = a[a.length-1];
+                            if(value != a.id) {
+                                val = JSON.parse(controlValues[mainItem.states.moodList]).filter(item => {
+                                    return item.id == value;
+                                })[0];
+                                if(val)
+                                    val = val.name;
+                                else
+                                    val = "Vlastní nálada";
+                                col = "rgb(105, 195, 80)";
+                            } else {
+                                val = a.name;
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "mood", value: val, color: col }));
+                    }
                 break;
                 case "AlarmClock":
-                    if(mainItem.states.nextEntryTime == uuid) {controlValues[mainItem.states.nextEntryTime]
+                    if(mainItem.states.nextEntryTime == uuid) {
                         var val = "Žádný budík";
                         var col = "rgba(234, 234, 245, 0.6)";
                         if(value != 0) {
@@ -665,7 +691,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
         if(value < 1)
             return (Math.round(value*1000))+" W";
         else
-            return value+" kW";
+            return (Math.round(value*100)/100)+" kW";
     }
 
     log("INFO","Loxone Thread","Listeners for receiving has been added successfully");
