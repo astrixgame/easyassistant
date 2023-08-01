@@ -66,7 +66,7 @@ connection.onopen = function() {
                                         control = '<p class="value" id="'+data["uuid"]+'-value"><txt id="'+data["uuid"]+'-value1">N/A</txt><txt id="'+data["uuid"]+'-value2">N/A</txt><txt id="'+data["uuid"]+'-value3">N/A</txt></p>';
                                     break;
                                     case "EIBDimmer":
-                                        control = '<p class="value">N/A</p><div class="control"><label class="switch"><input type="checkbox" id="'+data["uuid"]+'-v"><span class="slider"></span></label></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><label class="switch"><input type="checkbox" id="'+data["uuid"]+'-value1"><span class="slider"></span></label></div>';
                                     break;
                                     case "IRoomControllerV2":
                                         control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-value1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M160 64c-26.5 0-48 21.5-48 48V276.5c0 17.3-7.1 31.9-15.3 42.5C86.2 332.6 80 349.5 80 368c0 44.2 35.8 80 80 80s80-35.8 80-80c0-18.5-6.2-35.4-16.7-48.9c-8.2-10.6-15.3-25.2-15.3-42.5V112c0-26.5-21.5-48-48-48zM48 112C48 50.2 98.1 0 160 0s112 50.1 112 112V276.5c0 .1 .1 .3 .2 .6c.2 .6 .8 1.6 1.7 2.8c18.9 24.4 30.1 55 30.1 88.1c0 79.5-64.5 144-144 144S16 447.5 16 368c0-33.2 11.2-63.8 30.1-88.1c.9-1.2 1.5-2.2 1.7-2.8c.1-.3 .2-.5 .2-.6V112zM208 368c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-20.9 13.4-38.7 32-45.3V208c0-8.8 7.2-16 16-16s16 7.2 16 16V322.7c18.6 6.6 32 24.4 32 45.3z"/></svg></button></div>';
@@ -79,7 +79,7 @@ connection.onopen = function() {
                                         valueLine = false;
                                     break;
                                     case "LeftRightAnalog":
-                                        control = '<p class="value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></button></div>';
+                                        control = '<p class="value" id="'+data["uuid"]+'-value">N/A</p><div class="control"><button id="'+data["uuid"]+'-v2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></button><button id="'+data["uuid"]+'-v1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></button></div>';
                                     break;
                                     case "Pushbutton":
                                         control = '<div class="control"><button id="'+data["uuid"]+'-v"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button></div>';
@@ -243,7 +243,13 @@ connection.onopen = function() {
                                 }
                             break;
                             case "EIBDimmer":
-                                
+                                if(data["subtype"] == "dimmer") {
+                                    var itm = document.getElementById(data["uuid"]+"-value");
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
+                                if(data["subtype"] == "dimmersw")
+                                    document.getElementById(data["uuid"]+"-value1").checked = data["value"];
                             break;
                             case "IRoomControllerV2":
                                 if(data["subtype"] == "activemode") {
@@ -263,7 +269,11 @@ connection.onopen = function() {
                                 
                             break;
                             case "LeftRightAnalog":
-                                
+                                if(data["subtype"] == "value") {
+                                    var itm = document.getElementById(data["uuid"]+"-value")
+                                    itm.innerHTML = data["value"];
+                                    itm.style.color = data["color"];
+                                }
                             break;
                             case "Pushbutton":
                                 

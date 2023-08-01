@@ -327,6 +327,10 @@ html, body {
     top: 10px;
 }
 
+.controls .all .item .value strong {
+    color: rgb(105, 195, 80);
+}
+
 .switch {
     position: relative;
     display: inline-block;

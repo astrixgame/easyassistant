@@ -116,37 +116,51 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: value }))
                 break;
                 case "Meter":
-                    switch(mainItem.details.type) {
-                        case "storage":
-                            if(mainItem.states.actual == uuid) {
-                                var val = "";
-                                var col = "rgba(234, 234, 245, 0.6)";
-                                if(value != 0) {
-                                    val = value < 0 ? " • Nabíjení "+formatNumber(mainItem.details.actualFormat, value) : " • Dodávání "+formatNumber(mainItem.details.actualFormat, value);
-                                    col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
+                    if(mainItem.details.type)
+                        switch(mainItem.details.type) {
+                            case "storage":
+                                if(mainItem.states.actual == uuid) {
+                                    var val = "";
+                                    var col = "rgba(234, 234, 245, 0.6)";
+                                    if(value != 0) {
+                                        val = value < 0 ? " • Nabíjení "+formatNumber(mainItem.details.actualFormat, value) : " • Dodávání "+formatNumber(mainItem.details.actualFormat, value);
+                                        col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
+                                    }
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: val, color: col }));
                                 }
-                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: val, color: col }));
-                            }
-                            if(mainItem.states.storage == uuid)
-                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "storage", value: formatNumber(mainItem.details.storageFormat, value) }));
-                        break;
-                        case "unidirectional":
-                            if(mainItem.states.actual == uuid)
-                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: Math.round(value) == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
-                            if(mainItem.states.total == uuid)
-                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "total", value: " • "+formatNumber(mainItem.details.totalFormat, value) }));
-                        break;
-                        case "bidirectional":
-                            if(mainItem.states.actual == uuid) {
-                                var col = "rgba(234, 234, 245, 0.6)";
-                                if(value != 0) col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
-                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: col }));
-                            }
-                        break;
+                                if(mainItem.states.storage == uuid)
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "storage", value: formatNumber(mainItem.details.storageFormat, value) }));
+                            break;
+                            case "unidirectional":
+                                if(mainItem.states.actual == uuid)
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: Math.round(value) == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
+                                if(mainItem.states.total == uuid)
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "total", value: " • "+formatNumber(mainItem.details.totalFormat, value) }));
+                            break;
+                            case "bidirectional":
+                                if(mainItem.states.actual == uuid) {
+                                    var col = "rgba(234, 234, 245, 0.6)";
+                                    if(value != 0) col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: col }));
+                                }
+                            break;
+                        }
+                    else {
+                        if(mainItem.states.actual == uuid)
+                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value) }));
+                        if(mainItem.states.total == uuid)
+                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "total", value: " • "+formatNumber(mainItem.details.totalFormat, value) }));
                     }
                 break;
                 case "EIBDimmer":
-
+                    if(mainItem.states.position == uuid) {
+                        var val = value+"%";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value > 0)
+                            col = "rgb(105, 195, 80)";
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "dimmer", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "dimmersw", value: value > 0 ? true : false }));
+                    }
                 break;
                 case "IRoomControllerV2":
                     if(mainItem.states.activeMode == uuid) {
@@ -164,13 +178,26 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "active", value: value == 0 ? "Bez přítomnosti" : "Přítomnost aktivní", color: value == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
                 break;
                 case "TimedSwitch":
-
+                    // No Update Required
                 break;
                 case "LeftRightAnalog":
-
+                    if(mainItem.states.value) {
+                        var val = "";
+                        var min = mainItem.details.min;
+                        var max = mainItem.details.max;
+                        var step = mainItem.details.step;
+                        if(value - step >= min) {
+                            val = (value - step)+" • ";
+                        }
+                        val += "<strong>"+value+"</strong>";
+                        if(value + step <= max) {
+                            val += " • "+(value + step);
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: val }));
+                    }
                 break;
                 case "Pushbutton":
-                    
+                    // No Update Required
                 break;
                 case "Irrigation":
                     if(mainItem.states.currentZone == uuid) {
@@ -434,7 +461,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "CentralLightController":
-
+                    // No Update Required
                 break;
                 case "CentralJalousie":
                     // No Update Required
@@ -657,10 +684,10 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "Intercom":
-                    
+                    // No Update Required
                 break;
                 case "Webpage":
-                    
+                    // No Update Required
                 break;
                 case "CentralAudioZone":
 
