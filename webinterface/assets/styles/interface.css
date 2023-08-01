@@ -1,622 +1,337 @@
-body {
-    background-color: darkgray;
+@font-face {
+    font-family: AvertaSemibold;
+    src: url(../fonts/AvertaSemibold.ttf);
+}
+
+html, body {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
     background-image: url(../images/background.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(10px);
-}
-
-.topbar {
-    position: relative;
-    top: 0px;
-    left: 20px;
-    width: calc(100% - 40px);
-    height: 65px;
-    border-bottom: 2px solid rgb(26, 209, 255);
-}
-
-
-.topbar .logo {
+.page {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    cursor: pointer;
-}
-
-#date-day {
-    position: absolute;
-    top: 10px;
-    right: 135px;
-    color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-}
-
-.topbar .textBuble {
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 5px;
-    padding: 10px 15px 10px 15px;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-#date-date {
-    position: absolute;
-    bottom: 10px;
-    right: 135px;
-    color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-}
-
-#date-time {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0px;
-    color: rgb(255, 255, 255);
-    font-family: 'Montserrat';
-    font-size: 50px;
-    font-weight: 600;
-}
-
-.panels {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 200px);
-    height: calc(100% - 450px);
-    max-width: 1510px;
-    padding: 10px 10px 10px 10px;
-}
-
-.p-menu {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: 70px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.p-menu .item {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: 0.2s;
-    margin: 7.5px 20px 7.5px 20px;
-}
-
-.p-menu .item:hover {
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.p-menu .item svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    fill: rgb(206, 206, 206);
-}
-
-.p-menu .item-back {
-    position: absolute;
-    top: 7.5px;
-    left: 7.5px;
-    margin: 0px 0px 0px 0px;
-    border-radius: 20px;
-    display: none;
-}
-
-.openned-item {
-    position: absolute;
-    top: 80px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 80px);
-    overflow-y: scroll;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.openned-value-item {
-    position: absolute;
-    top: 240px;
-    left: calc((100% - 40%) / 2);
-    transform: translateX(-(100% - 40%) / 2);
-    color: rgb(206, 206, 206);
-}
-
-.openned-main {
-    position: relative;
-    width: 100%;
-    height: 100px;
-}
-
-.openned-main svg {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    height: 70%;
-    fill: rgb(193, 193, 193);
-}
-
-.item-open-title {
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    transform: translateY(-50%);
-    font-size: 26px;
-    color: rgb(206, 206, 206);
-}
-
-.openned-stats {
-    
-}
-
-.openned-stats txt {
-    
-}
-
-.openned-stats .stats {
-    
-}
-
-.connected-objects {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 40%;
-    height: 100%;
-    max-width: 400px;
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.connected-objects-title {
-    display: block;
-    font-size: 20px;
-    color: rgb(206, 206, 206);
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.connected-object {
-    position: relative;
-    width: 90%;
-    height: 50px;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-top: 1px solid rgba(206, 206, 206, 0.2);
-    border-bottom: 1px solid rgba(206, 206, 206, 0.2);
-    color: rgb(206, 206, 206);
-    cursor: pointer;
-}
-
-.connected-object svg {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    width: 35px;
-    fill: rgb(206, 206, 206);
-}
-
-.connected-object txt {
-    position: absolute;
-    top: 50%;
-    left: 60px;
-    transform: translateY(-50%);
-}
-
-.controling {
-    position: absolute;
-    top: 80px;
     left: 0px;
-    width: 100%;
-    height: calc(100% - 80px);
-    overflow-y: scroll;
-}
-
-.controling .panel {
-    position: relative;
-    float: left;
-    margin: 10px 10px 10px 10px;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.controling .cControl {
-    width: 150px;
-    height: 200px;
-}
-
-.controling .cRoom {
-    width: 150px;
-    height: 140px;
-}
-
-.controling .cCategory {
-    width: 150px;
-    height: 140px;
-}
-
-.controling .panel svg {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    fill: rgb(193, 193, 193);
-}
-
-.controling .panel .title {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 20px);
-    color: rgb(206, 206, 206);
-    text-align: center;
-}
-
-.controling .panel .value {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    display: flex;
-    width: 130px;
-    height: 50px;
-    justify-content: center;
-    color: rgba(234, 234, 245, 0.6);
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.controling .panel .value p {
-    float: left;
-}
-
-.controling .panel .value button {
-    position: relative;
-    float: left;
-    width: 35px;
-    height: 35px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.35);
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.controling .panel .value button:hover {
-    background-color: rgba(50, 50, 50, 0.35);
-}
-
-.controling .panel .value button svg {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.weather {
-    position: absolute;
-    bottom: 230px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-}
-
-.weather-col {
-    position: relative;
-    display: inline-block;
-    width: 150px;
-    height: 180px;
-    border-radius: 15px;
-    transition: 0.2s;
-    border: 2px solid rgba(255, 255, 255, 0);
-    cursor: pointer;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.weather-col:hover {
-    border: 2px solid white;
-}
-
-i {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    color: white;
-    font-size: 50px;
-}
-
-.weather-title {
-    position: absolute;
-    bottom: 55px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgb(226, 226, 226);
-    font-size: 20px;
-}
-
-.weather-temp {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgb(209, 209, 209);
-}
-
-.openned-weather {
-    position: relative;
-    width: 720px;
-    height: 180px;
-    border: 2px solid white;
-    border-radius: 15px;
-    display: none;
-}
-
-.weather-preview {
-    position: relative;
-    width: 150px;
-    height: 100%;
-    transition: 0.2s;
-    border-right: 2px solid white;
-    cursor: pointer;
-}
-
-.weather-preview:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.openned-weather table {
-    position: absolute;
     top: 0px;
-    right: 0px;
-    width: calc(100% - 152px);
-    padding: 10px 10px 10px 10px;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-}
-
-.openned-weather table td {
-    color: rgb(209, 209, 209);
-}
-
-.openned-weather table td strong {
-    color: rgb(226, 226, 226);
-}
-
-.radio {
-    position: absolute;
-    left: 20px;
-    bottom: 0px;
-    width: calc(100% - 40px);
-    height: 100px;
-    border-top: 2px solid rgb(81, 94, 97);
-}
-
-.radio img {
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    height: 70px;
-    border-radius: 10px;
-}
-
-.radio #radio-title {
-    position: absolute;
-    top: 27.5px;
-    left: 110px;
-    color: rgb(227, 227, 227);
-}
-
-.radio #radio-description {
-    position: absolute;
-    bottom: 27.5px;
-    left: 110px;
-    color: rgb(153, 153, 153);
-}
-
-.radio .controls {
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 100px;
-    width: 20%;
-    height: 100%;
-}
-
-.radio .controls .radio-back {
-    position: absolute;
-    top: 50%;
-    left: 0px;
-    transform: translateY(-50%);
-    width: 35px;
-    fill: rgb(212, 212, 212);
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.radio .controls .radio-back:hover {
-    fill: rgb(131, 131, 131);
-}
-
-.radio .controls .radio-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 55px;
-    fill: rgb(212, 212, 212);
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.radio .controls .radio-play:hover {
-    fill: rgb(131, 131, 131);
-}
-
-#radio-pause {
-    display: none;
-}
-
-.radio .controls .radio-next {
-    position: absolute;
-    top: 50%;
-    right: 0px;
-    transform: translateY(-50%);
-    width: 35px;
-    fill: rgb(212, 212, 212);
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.radio .controls .radio-next:hover {
-    fill: rgb(131, 131, 131);
-}
-
-.radio-volume {
-    position: absolute;
-    top: 0px;
-    right: 20px;
-    width: 400px;
-    height: 100%;
-}
-
-.v-down {
-    position: absolute;
-    top: 50%;
-    left: 55px;
-    height: 30px;
-    transform: translateY(-50%);
-    fill: rgb(212, 212, 212);
-}
-
-.v-up {
-    position: absolute;
-    top: 50%;
-    right: 55px;
-    height: 30px;
-    transform: translateY(-50%);
-    fill: rgb(212, 212, 212);
-}
-
-.radio-volume #v-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-  
-#slider-inner {
-    fill: transparent;
-    stroke: transparent;
-}
-  
-#track-inner {
-    fill: #6a6a6a;
-}
-  
-#track-fill, #handle-inner, #handle-clone {
-    fill: #ffffff;
-}
-  
-.progress {
-    position: absolute;
-    font-weight: bold;
-    line-height: 100px;
-    top: 50%;
-    left: 100%;
-    transform: translate(-25%, -50%);
-}
-
-.model-overlay {
-    position: absolute;
-    top: 0px;
-    left: 0px;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal {
+.topbar {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    border-bottom: 3px solid rgb(1, 101, 194);
+}
+
+.topbar .brand {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 500px;
-    width: calc(100% - 4px);
-    max-height: 700px;
-    height: calc(100% - 4px);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid rgb(26, 209, 255);
-    border-radius: 5px;
-    display: none;
+    height: 60%;
+    cursor: pointer;
 }
 
-.modal h1 {
+.topbar .menu {
     position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    fill: white;
+    cursor: pointer;
+}
+
+.topbar .weather-showcase {
+    position: absolute;
+    left: 70px;
     top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 95%;
-    color: rgb(199, 198, 198);
-    text-align: center;
+    width: 120px;
+    height: 100%;
+    cursor: pointer;
 }
 
-.modal txt {
+.topbar .weather-showcase img {
     position: absolute;
-    top: 150px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 120%;
+}
+
+.topbar .weather-showcase p {
+    position: absolute;
+    right: 20px;
+    top: -2px;
+    font-size: 22px;
+    color: white;
+}
+
+.topbar .datetime {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+}
+
+.topbar .datetime .clock {
+    position: absolute;
+    right: 10px;
+    top: -50px;
+    font-size: 50px;
+    color: white;
+}
+
+.topbar .datetime .day {
+    position: absolute;
+    right: 150px;
+    top: -5px;
+    color: white;
+}
+
+.topbar .datetime .date {
+    position: absolute;
+    right: 150px;
+    bottom: -5px;
+    color: white;
+    white-space: nowrap;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 73px);
+}
+
+.content .control-menu {
+    width: 100%;
+    height: 60px;
+}
+
+.content .control-menu .menu-item {
+    float: left;
+    display: flex;
+    width: calc(100% / 4);
+    height: 100%;
+    justify-content: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.content .control-menu .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.content .control-menu .menu-item svg {
+    float: left;
+    height: 25px;
+    fill: rgb(174, 174, 174);
+    margin: 17.5px 17.5px 17.5px 17.5px;
+}
+
+.content .control-menu .menu-item p {
+    float: left;
+    color: rgb(142, 142, 142);
+    font-size: 18px;
+}
+
+.controls {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-y: scroll;
+}
+
+.controls .rated {
+    width: calc(100% - 30px);
+    margin: 15px 15px 15px 15px;
+    display: table;
+    clear: both;
+}
+
+.controls .rated .item {
+    position: relative;
+    float: left;
     display: block;
-    width: 95%;
-    color: rgb(163, 163, 163);
-    text-align: center;
+    width: 230px;
+    height: 210px;
+    margin: 5px 5px 5px 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: "AvertaSemibold";
+    cursor: pointer;
+}
+
+.controls .rated .item svg {
+    margin: 38px 0px 0px 50px;
+    width: 50px;
+    fill: rgb(235, 235, 245);
+}
+
+.controls .rated .item .title {
+    margin: 25px 30px 0px 30px;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .rated .item .value {
+    margin: 1px 30px 0px 30px;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgba(234, 234, 245, 0.6);
+}
+
+.controls .rated .item .category {
+    margin: 10px 30px 0px 30px;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(235, 235, 245, 0.3);
+}
+
+.controls .rated .lcenter svg {
+    position: absolute;
+    left: 50%;
+    top: 38px;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.controls .rated .lcenter {
+    height: 160px;
+}
+
+.controls .rated .lcenter .title {
+    position: absolute;
+    left: 50%;
+    top: 108px;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.controls .all {
+    width: calc(100% - 40px);
+    margin: 20px 20px 20px 20px;
+}
+
+.controls .all .item-title {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: calc(100% - 10px);
+    height: 64px;
+    font-family: "AvertaSemibold";
+}
+
+.controls .all .item-title p {
+    float: left;
+    margin: 25px 0px 0px 0px;
+    font-size: 20px;
+    color: white;
+}
+
+.controls .all .item-title svg {
+    float: left;
+    width: 15px;
+    margin: 30px 0px 0px 15px;
+    fill: white;
+}
+
+.controls .all .item {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    height: 74px;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: "AvertaSemibold";
+    border-top: 1px solid rgba(49, 49, 51, 0.65);
+    cursor: pointer;
+}
+
+.controls .all .item svg {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 37px;
+    fill: rgb(235, 235, 245);
+}
+
+.controls .all .item .title {
+    position: absolute;
+    left: 70px;
+    top: -1px;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .all .item .value {
+    position: absolute;
+    left: 70px;
+    bottom: -1px;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgba(234, 234, 245, 0.6);
+}
+
+.controls .all .item .control {
+    float: right;
+    height: 100%;
+}
+
+.controls .all .item .control .switch {
+    margin: 18px 10px 18px 10px;
+}
+
+.controls .all .item .control button {
+    position: relative;
+    float: right;
+    width: 38px;
+    height: 38px;
+    margin: 18px 10px 18px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controls .all .item .control button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.controls .all .item .control button:active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.controls .all .item .control button svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+}
+
+.controls .all .tcenter .title {
+    top: 10px;
 }
 
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 50px;
+    height: 38px;
 }
   
 .switch input { 
@@ -632,154 +347,54 @@ i {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #787878;
+    background-color: rgba(255, 255, 255, 0.1);
     -webkit-transition: .4s;
     transition: .4s;
-    border-radius: 10px;
+    border-radius: 5px;
 }
   
 .slider:before {
     position: absolute;
     content: "";
     height: 26px;
-    width: 26px;
+    width: 22px;
     left: 4px;
-    bottom: 4px;
-    background-color: rgb(255, 255, 255);
+    bottom: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
     -webkit-transition: .4s;
     transition: .4s;
-    border-radius: 5px;
+    box-shadow: 0px 0px 1px 0px black;
+    border-radius: 3px;
 }
   
 input:checked + .slider {
-    background-color: #006fc9;
+    background-color: rgb(105, 195, 80);
 }
   
 input:focus + .slider {
-    box-shadow: 0 0 1px #006fc9;
+    box-shadow: 0 0 1px rgb(105, 195, 80);
 }
   
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
 }
 
-@media only screen and (max-width: 1295px) {
-    .v-up {
-        display: none;
-    }
+@media only screen and (max-width: 510px) {
 
-    .v-down {
-        display: none;
-    }
-
-    #radio-description {
-        display: none;
-    }
 }
 
-@media only screen and (max-width: 1030px) {
-    .radio-volume {
-        width: 100px;
-    }
+@media only screen and (max-width: 670px) {
+    .all .item {
+        clear: both;
+        width: calc(100% - 10px);
+    }   
 }
 
-@media only screen and (max-width: 740px) {
-    #date-day {
-        left: 0px;
-        right: auto;
-    }
-
-    #date-date {
-        left: 0px;
-        right: auto;
-    }
-}
-
-@media only screen and (max-width: 655px) {
-    .weather {
-        bottom: 200px;
-        height: 80px;
-    }
-    
-    .weather-col {
-        width: 150px;
-        height: 140px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    
-    .weather-col:hover {
-        border: 2px solid white;
-    }
-    
-    .weather-col i {
-        top: 20px;
-        font-size: 35px;
-    }
-    
-    .weather-col .weather-title {
-        bottom: 45px;
-        font-size: 15px;
-    }
-    
-    .weather-col .weather-temp {
-        bottom: 20px;
-        font-size: 13px;
-        white-space: nowrap;
-    }
-
-    .openned-weather {
-        width: 100%;
-        height: 140px;
-    }
-    
-    .weather-preview {
-        width: 100px;
-        height: 100%;
-    }
-
-    .weather-preview i {
-        top: 20px;
-        font-size: 35px;
-    }
-
-    .weather-preview .weather-title {
-        bottom: 45px;
-        font-size: 15px;
-    }
-
-    .weather-preview .weather-temp {
-        bottom: 20px;
-        font-size: 13px;
-        white-space: nowrap;
-    }
-
-    
-    .openned-weather table {
-        width: calc(100% - 102px);
-        border-spacing: 0 8px;
-        font-size: 10px;
-    }
-
-    #radio-title {
-        display: none;
-    }
-
-    #radio-back {
-        width: 20px;
-    }
-
-    #radio-next {
-        width: 20px;
-    }
-
-    #radio-play {
-        width: 40px;
-    }
-
-    #radio-pause {
-        width: 40px;
-    }
+@media only screen and (min-width: 670px) {
+    .all .item {
+        float: left;
+        width: calc(50% - 10px);
+    }   
 }

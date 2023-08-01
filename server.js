@@ -2,18 +2,23 @@ import { WebSocketServer, WebSocket } from 'ws';
 import http from 'http';
 import LxCommunicator from "LxCommunicator";
 import axios from 'axios';
-import xmljs from 'xml-js';
 import fs from 'fs';
 import natural from 'natural';
 import chalk from 'chalk';
+import readline, { clearScreenDown } from 'readline';
 
 log("INFO","Main Thread","Initializing varriables");
 
 var clients = new Set();
 var conf = {};
 var weatherReadData = {};
-var lxDt = {};
-var lxValues = {};
+var controlControlsIds = {};
+var controlRoomsIds = {};
+var controlCatsIds = {};
+var lxAlias = {};
+var lxData = {};
+var idSeed = 1;
+var controlValues = {};
 var sentenceMapping = [];
 var lxNamesAlias = {
     "1a4da4f3-00c7-f5b8-ffff5c23eca9d419": "žárovka žárovku lustr",
@@ -56,17 +61,346 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                 events.forEach(function(event) {
                     var uuid = event.uuid;
                     var value = event.value;
-                    lxDt[uuid] = value;
-                    clients.forEach(function(client) {
-                        Object.keys(lxDt).forEach(function(uuid) {
-                            client.send(JSON.stringify({ module: "loxone", type: "update", uuid: uuid, value: lxDt[uuid] }));
-                            lxValues = { uuid: uuid, value: lxDt[uuid] };
-                        });
-                    });
+                    controlValues[uuid] = value;
+                    sendValues(uuid, value);
                 });
             }
         }
     };
+
+    function sendValues(uuid, value) {
+        if(lxData.controls[lxAlias[uuid]]) {
+            var mainItem = lxData.controls[lxAlias[uuid]];
+            var myUuid = controlControlsIds[lxAlias[uuid]];
+            switch(mainItem.type) {
+                case "InfoOnlyDigital":
+                    if(mainItem.states.active == uuid) {
+                        var val = "";
+                        var col = "";
+                        if(mainItem.details) {
+                            if(mainItem.details.text)
+                                val = value == 0 ? mainItem.details.text.off : mainItem.details.text.on;
+                            else
+                                val = value == 0 ? "Vypnuto" : "Zapnuto";
+                            if(mainItem.details.color)
+                                col = value == 0 ? mainItem.details.color.off : mainItem.details.color.on;
+                            else
+                                col = value == 0 ? "rgb(231, 50, 70)" : "rgb(105, 195, 80)";
+                        } else {
+                            val = value == 0 ? "Vypnuto" : "Zapnuto";
+                            col = value == 0 ? "rgb(231, 50, 70)" : "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: val, color: col }));
+                    }
+                break;
+                case "InfoOnlyAnalog":
+                    if(mainItem.states.value == uuid) {
+                        var val = value.toString();
+                        if(mainItem.details && mainItem.details.format)
+                            val = formatNumber(mainItem.details.format, value);
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: val }));
+                    }
+                break;
+                case "Switch":
+                    if(mainItem.states.active == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: value == 0 ? false : true }));
+                break;
+                case "TextState":
+                    if(mainItem.states.textAndIcon == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: value }))
+                break;
+                case "Meter":
+                    switch(mainItem.details.type) {
+                        case "storage":
+                            if(mainItem.states.actual == uuid) {
+                                var val = "";
+                                var col = "rgba(234, 234, 245, 0.6)";
+                                if(value != 0) {
+                                    val = value < 0 ? " • Nabíjení "+formatNumber(mainItem.details.actualFormat, value) : " • Dodávání "+formatNumber(mainItem.details.actualFormat, value);
+                                    col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
+                                }
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: val, color: col }));
+                            }
+                            if(mainItem.states.storage == uuid)
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "storage", value: formatNumber(mainItem.details.storageFormat, value) }));
+                        break;
+                        case "unidirectional":
+                            if(mainItem.states.actual == uuid)
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: Math.round(value) == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
+                            if(mainItem.states.total == uuid)
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "total", value: " • "+formatNumber(mainItem.details.totalFormat, value) }));
+                        break;
+                        case "bidirectional":
+                            if(mainItem.states.actual == uuid) {
+                                var col = "rgba(234, 234, 245, 0.6)";
+                                if(value != 0) col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: col }));
+                            }
+                        break;
+                    }
+                break;
+                case "EIBDimmer":
+
+                break;
+                case "IRoomControllerV2":
+                    if(mainItem.states.activeMode == uuid) {
+                        var val = "";
+                        Object.keys(mainItem.details.timerModes).forEach(function(i) {
+                            if(mainItem.details.timerModes[i].id == value) {
+                                val = mainItem.details.timerModes[i].name;
+                            }
+                        });
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "activemode", value: val, color: "rgb(105, 195, 80)" }));
+                    }
+                break;
+                case "PresenceDetector":
+                    if(mainItem.states.active == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "active", value: value == 0 ? "Bez přítomnosti" : "Přítomnost aktivní", color: value == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
+                break;
+                case "TimedSwitch":
+
+                break;
+                case "LeftRightAnalog":
+
+                break;
+                case "Pushbutton":
+                    
+                break;
+                case "Irrigation":
+                    if(mainItem.states.currentZone == uuid) {
+                        var val = "Vypnuto";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value != -1) {
+                            val = "Ventil "+(value+1)+" aktivní";
+                            col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "currentzone", value: val, color: col }));
+                    }
+                break;
+                case "SmokeAlarm":
+                    if(mainItem.states.level == uuid) {
+                        var val = "Vše OK";
+                        var col = "rgb(105, 195, 80)";
+                        if(value > 0) {
+                            if(controlValues[mainItem.states.timeServiceMode] > 0) {
+                                val = "Servisní režim aktivní";
+                                col = "rgb(247, 181, 92)";
+                            } else {
+                                val = "Alarm aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        } else {
+                            if(controlValues[mainItem.states.timeServiceMode] > 0) {
+                                val = "Servisní režim aktivní";
+                                col = "rgb(247, 181, 92)";
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                    }
+                    if(mainItem.states.timeServiceMode == uuid) {
+                        var val = "Vše OK";
+                        var col = "rgb(105, 195, 80)";
+                        if(controlValues[mainItem.states.level] > 0) {
+                            if(value > 0) {
+                                val = "Servisní režim aktivní";
+                                col = "rgb(247, 181, 92)";
+                            } else {
+                                val = "Alarm aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        } else {
+                            if(value > 0) {
+                                val = "Servisní režim aktivní";
+                                col = "rgb(247, 181, 92)";
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                    }
+                break;
+                case "EnergyManager2":
+
+                break;
+                case "EFM":
+
+                break;
+                case "Wallbox2":
+                    switch(mainItem.details.type) {
+                        case "unidirectional":
+                            if(mainItem.states.connected == uuid) {
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "connected", value: value == 0 ? "Vozidlo odpojeno" : "Vozidlo připojeno", color: value == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
+                            }
+                            if(mainItem.states.enabled == uuid)
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "enabled", value: value == 0 ? "Nabíjení pozastaveno • " : "Nabíjení • " }));
+                        break;
+                    }
+                break;
+                case "LoadManager":
+
+                break;
+                case "AalSmartAlarm":
+
+                break;
+                case "Alarm":
+                    var levels = ["I • Tichý","II • Akustický","III • Optický","IV • Vnitřní","V • Venkovní","VI • Dálkový"];
+                    if(mainItem.states.level == uuid) {
+                        var val = "Odstřeženo";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.armed] == 1) {
+                            val = "Zastřeženo";
+                            col = "rgb(105, 195, 80)";
+                            if(value > 0) {
+                                val = levels[controlValues[mainItem.states.level]-1]+" alarm aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                    }
+                    if(mainItem.states.armed == uuid) {
+                        var val = "Odstřeženo";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value == 1) {
+                            val = "Zastřeženo";
+                            col = "rgb(105, 195, 80)";
+                            if(controlValues[mainItem.states.level] > 0) {
+                                val = levels[controlValues[mainItem.states.level]-1]+" alarm aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                    }
+                break;
+                case "AalEmergency":
+
+                break;
+                case "PulseAt":
+
+                break;
+                case "WindowMonitor":
+                    if(mainItem.states.numClosed == uuid) {
+                        var val = "Zavřeno: "+value;
+                        var col = "rgb(105, 195, 80)";
+                        if(controlValues[mainItem.states.numOpen] > 0) {
+                            val = "Otevřeno: "+value;
+                            col = "rgb(247, 181, 92)";
+                        }
+                        if(controlValues[mainItem.states.numTilted] > 0)
+                            col = "rgb(247, 181, 92)";
+                        if(controlValues[mainItem.states.numOffline] > 0)
+                            col = "rgb(231, 50, 70)";
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "open", value: val, color: col }));
+                    }
+                    if(mainItem.states.numOpen == uuid) {
+                        var val = "Zavřeno: "+controlValues[mainItem.states.numClosed];
+                        var col = "rgb(105, 195, 80)";
+                        if(value > 0) {
+                            val = "Otevřeno: "+value;
+                            col = "rgb(247, 181, 92)";
+                        }
+                        if(controlValues[mainItem.states.numTilted] > 0)
+                            col = "rgb(247, 181, 92)";
+                        if(controlValues[mainItem.states.numOffline] > 0)
+                            col = "rgb(231, 50, 70)";
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "open", value: val, color: col }));
+                    }
+                    if(mainItem.states.numTilted == uuid) {
+                        var val = "";
+                        var col = "";
+                        if(value > 0) {
+                            val = ", Vyklopeno: "+value;
+                            col = "rgb(247, 181, 92)";
+                        }
+                        if(controlValues[mainItem.states.numOffline] > 0)
+                            col = "rgb(231, 50, 70)";
+                        if(col == "") {
+                            if(controlValues[mainItem.states.numOpen] > 0)
+                                col = "rgb(247, 181, 92)";
+                            else
+                                col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "tilted", value: val, color: col }));
+                    }
+                    if(mainItem.states.numOffline == uuid) {
+                        var val = "";
+                        var col = "";
+                        if(value > 0) {
+                            val = "Offline: "+value+", ";
+                            col = "rgb(231, 50, 70)";
+                        } else {
+                            if(controlValues[mainItem.states.numTilted] > 0)
+                                col = "rgb(247, 181, 92)";
+                            if(col == "") {
+                                if(controlValues[mainItem.states.numOpen] > 0)
+                                    col = "rgb(247, 181, 92)";
+                                else
+                                    col = "rgb(105, 195, 80)";
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "offline", value: val, color: col }));
+                    }
+                break;
+                case "CentralLightController":
+
+                break;
+                case "CentralJalousie":
+
+                break;
+                case "ClimateController":
+
+                break;
+                case "CentralAudioZone":
+
+                break;
+                case "LightControllerV2":
+                    
+                break;
+                case "AlarmClock":
+
+                break;
+                case "Window":
+
+                break;
+                case "Jalousie":
+
+                break;
+                case "Gate":
+                    
+                break;
+                case "Ventilation":
+                    if(mainItem.states.speed == uuid) {
+                        var val = "Vypnuto";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(value > 0) {
+                            val = "Intenzita " + value + "%";
+                            col = "rgb(105, 195, 80)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "speed", value: val, color: col }));
+                    }
+                break;
+                case "Radio":
+
+                break;
+                case "AudioZoneV2":
+
+                break;
+                case "Remote":
+
+                break;
+                case "NfcCodeTouch":
+
+                break;
+                case "Sauna":
+
+                break;
+            }
+        }
+    }
+
+    function formatNumber(format, number) {
+        var tens = parseInt(format.substring(format.lastIndexOf(".")+1, format.lastIndexOf("f")));
+        var roundInNumber = 10 ** tens;
+        return format.replace("%."+tens+"f",Math.round(number * roundInNumber) / roundInNumber).replace("%%","%");
+    }
+
     log("INFO","Loxone Thread","Listeners for receiving has been added successfully");
 
     var socket = new LxCommunicator.WebSocket(config);
@@ -74,18 +408,25 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
     log("INFO","Loxone Thread","Trying to fetch settings from Loxone Miniserver");
 
     axios.get("http://"+lxAddr+"/data/LoxAPP3.json", {headers: {Authorization: "Basic "+Buffer.from(lxUser+':'+lxPass).toString('base64')}}).then(function(lxDataFull) {
-        var lxData = lxDataFull.data;
+        lxData = lxDataFull.data;
 
         log("INFO","Loxone Thread","Settings from Loxone Miniserver fetched successfully");
         log("INFO","Loxone Thread","Configuring connection has been added successfully");
         log("INFO","Loxone Thread","Trying to create connection with Loxone Miniserver");
 
         socket.open(lxAddr, lxUser, lxPass).then(function() {
+            log("INFO","Loxone Thread","Connection with Loxone Miniserver has been established successfully");
+            log("INFO","Loxone Thread","Creating status update listener");
             socket.send("jdev/sps/enablebinstatusupdate").then(function(respons) {
+                log("INFO","Loxone Thread","Status update listener has been created");
                 var len = Object.keys(lxData.controls).length;
                 var currentPercent = 0;
                 var currentLoop = 0;
                 Object.keys(lxData.controls).forEach(function(uuid) {
+                    if(lxData.controls[uuid].states)
+                        Object.values(lxData.controls[uuid].states).forEach(function(it) {
+                            lxAlias[it] = uuid;
+                        });
                     var control = lxData.controls[uuid];
                     var addAlias = lxNamesAlias[uuid] ? lxNamesAlias[uuid]+" " : "";
                     switch(control.type) {
@@ -195,7 +536,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
 
                         break;
                         case "Pushbutton":
-
+                            
                         break;
                         case "Irrigation":
 
@@ -258,7 +599,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             
                         break;
                         case "Ventilation":
-
+                            
                         break;
                         case "Radio":
 
@@ -319,13 +660,6 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     });
                 });
                 log("INFO","Interface Thread","Web interface listener has been initialized");
-                log("INFO","Interface Thread","Trying to create Web Interface listener");
-                webServer.listen(80, () => {
-                    log("INFO","Interface Thread","Web Interface listener has been created");
-                    log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
-                });
-                    
-                log("INFO","Loxone Thread","Connection with Loxone Miniserver has been established successfully");
                 log("INFO","Main Thread","Trying to create WebSocket listener");
 
                 var wss = new WebSocketServer({ port: 34987 });
@@ -336,19 +670,30 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     clients.add(ws);
                     log("INFO","Connection Thread","Client has connected ["+new Date().getTime().toString(16)+"]");
 
-                    ws.send(JSON.stringify({ module: "loxone", type: "add", items: lxData }));
-                    Object.keys(lxDt).forEach(function(uuid) {
-                        ws.send(JSON.stringify({ module: "loxone", type: "update", uuid: uuid, value: lxDt[uuid] }));
+                    Object.keys(lxData.rooms).forEach(function(item) {
+                        controlRoomsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
+                        idSeed++;
+                        ws.send(JSON.stringify({ module: "control", action: "add", menu: "room", uuid: controlRoomsIds[item], title: lxData.rooms[item].name, svg: lxData.rooms[item].image, rating: lxData.rooms[item].defaultRating ? lxData.rooms[item].defaultRating : 0 }));
                     });
-                    if(conf["radioPlaying"] == 0) {
-                        ws.send(JSON.stringify({ module: "radio", action: "pause" }));
-                    } else {
-                        ws.send(JSON.stringify({ module: "radio", action: "play" }));
-                    }
-                    var c_radio = conf["radioStations"][conf["radioStation"]-1];
-                    ws.send(JSON.stringify({ module: "radio", action: "change", image: c_radio["image"], title: c_radio["name"] }));
-                    ws.send(JSON.stringify({ module: "radio", action: "volume", value: conf["radioVolume"] }));
-                    
+                    Object.keys(lxData.cats).forEach(function(item) {
+                        controlCatsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
+                        idSeed++;
+                        ws.send(JSON.stringify({ module: "control", action: "add", menu: "category", uuid: controlCatsIds[item], title: lxData.cats[item].name, svg: lxData.cats[item].image, rating: lxData.cats[item].defaultRating ? lxData.cats[item].defaultRating : 0 }));
+                    });
+                    Object.keys(lxData.controls).forEach(function(item) {
+                        controlControlsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
+                        idSeed++;
+                        var name = lxData.controls[item].name;
+                        if(lxData.controls[item].preset) {
+                            var t = lxData.controls[item].preset.name;
+                            name = t.substring(0, t.lastIndexOf(" "));
+                        }
+                        ws.send(JSON.stringify({ module: "control", action: "add", menu: "control", uuid: controlControlsIds[item], type: lxData.controls[item].type, title: name, svg: lxData.controls[item].defaultIcon ? lxData.controls[item].defaultIcon : "", room: controlRoomsIds[lxData.controls[item].room], category: controlCatsIds[lxData.controls[item].cat], rating: lxData.controls[item].defaultRating ? lxData.controls[item].defaultRating : 0, roomname: lxData.rooms[lxData.controls[item].room].name }));
+                    });
+                    Object.keys(controlValues).forEach(function(i) {
+                        sendValues(i, controlValues[i]);
+                    });
+
                     var sunrise = new Date(weatherReadData["city"]["sunrise"]*1000);
                     var sunset = new Date(weatherReadData["city"]["sunset"]*1000);
                     sunrise = (sunrise.getHours() < 10 ? "0"+sunrise.getHours() : sunrise.getHours())+":"+(sunrise.getMinutes() < 10 ? "0"+sunrise.getMinutes() : sunrise.getMinutes());
@@ -386,48 +731,6 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     ws.on('message', function(data) {
                         var dt = JSON.parse(new Buffer.from(data).toString());
                         switch(dt["module"]) {
-                            case "radio":
-                                if(dt["action"] == "play") {
-                                    if(conf["radioPlaying"] == 0) {
-                                        conf["radioPlaying"] = 1;
-                                        sendMessage(JSON.stringify({ module: "radio", action: "play" }));
-                                        play();
-                                    } else {
-                                        conf["radioPlaying"] = 0;
-                                        sendMessage(JSON.stringify({ module: "radio", action: "pause" }));
-                                        pause();
-                                    }
-                                } else if(dt["action"] == "back") {
-                                    var current_radio = conf["radioStation"];
-                                    if(current_radio > 1) {
-                                        conf["radioStation"] = current_radio-1;
-                                        var c_radio = conf["radioStations"][current_radio-2];
-                                        stop();
-                                        sendMessage(JSON.stringify({ module: "radio", action: "change", image: c_radio["image"], title: c_radio["name"] }));
-                                        playAudioStream(c_radio[2]);
-                                        if(conf["radioPlaying"] == 1) play();
-                                    }
-                                } else if(dt["action"] == "next") {
-                                    var current_radio = conf["radioStation"];
-                                    if(current_radio < conf["radioStations"].length) {
-                                        conf["radioStation"] = current_radio+1;
-                                        var c_radio = conf["radioStations"][current_radio];
-                                        stop();
-                                        sendMessage(JSON.stringify({ module: "radio", action: "change", image: c_radio["image"], title: c_radio["name"] }));
-                                        playAudioStream(c_radio[2]);
-                                        if(conf["radioPlaying"] == 1) play();
-                                    }
-                                } else if(dt["action"] == "volume") {
-                                    if(typeof dt["value"] !== "undefined" && dt["value"] != null) {
-                                        setVolume(parseFloat(dt["value"]));
-                                        conf["radioVolume"] = parseFloat(dt["value"]);
-                                        sendMessage(JSON.stringify({ module: "radio", action: "volume", value: dt["value"] }));
-                                    }
-                                } else {
-                                    log("ERROR","Communication Thread","Accepted incorrent command from client");
-                                    ws.send("ERROR:[NEPLATNÁ AKCE]");
-                                }
-                            break;
                             case "loxone":
                                 if(dt["action"] == "resend") {
                                     socket.send(dt["value"]).then(function(d) {
@@ -447,36 +750,27 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                 switch(command[0]) {
                                     case "Switch_setOn":
                                         socket.send("jdev/sps/io/"+control.uuidAction+"/on");
-                                        log("INFO","Voice Thread","Recieved voice command to turn on the switch, {uuid:"+control.uuidAction+",state:on}");
+                                        log("INFO","Voice Thread","Recieved voice command to turn on the switch, {uuid:"+control.uuidAction+",state:on,sure:"+command[2]+"}");
                                     break;
                                     case "Switch_setOff":
                                         socket.send("jdev/sps/io/"+control.uuidAction+"/off");
-                                        log("INFO","Voice Thread","Recieved voice command to turn off the switch, {uuid:"+control.uuidAction+",state:off}");
+                                        log("INFO","Voice Thread","Recieved voice command to turn off the switch, {uuid:"+control.uuidAction+",state:off,sure:"+command[2]+"}");
                                     break;
                                     case "Switch_say":
-                                        if(lxValues[control.states.active])
-                                            if(lxValues[control.states.active] == 1)
-                                                sendToSpeech("Zapnuto");
-                                            else
-                                                sendToSpeech("Vypnuto");
-                                        else
-                                            sendToSpeech("Neznámo");
+                                        
                                     break;
                                     case "EIBDimmer_say":
-                                        if(lxValues[control.states.position])
-                                            sendToSpeech(lxValues[control.states.position]+"%");
-                                        else
-                                            sendToSpeech("Neznámo");
+                                        
                                     break;
                                     case "EIBDimmer_setOn":
                                         if(sentence.includes("%")) {
                                             var half = sentence.substring(0, sentence.lastIndexOf("%"));
                                             var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
                                             socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
                                         } else {
                                             socket.send("jdev/sps/io/"+control.uuidAction+"/100.000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
                                         }
                                     break;
                                     case "EIBDimmer_setOff":
@@ -484,10 +778,10 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                             var half = sentence.substring(0, sentence.lastIndexOf("%"));
                                             var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
                                             socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
                                         } else {
                                             socket.send("jdev/sps/io/"+control.uuidAction+"/0.000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
                                         }
                                     break;
                                     case "EIBDimmer_setChange":
@@ -495,7 +789,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                             var half = sentence.substring(0, sentence.lastIndexOf("%"));
                                             var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
                                             socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
-                                            log("INFO","Voice Thread","Recieved voice command to change dimmer value, {uuid:"+control.uuidAction+",value:"+percent+"}");
+                                            log("INFO","Voice Thread","Recieved voice command to change dimmer value, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
                                         } else {
                                             log("INFO","Voice Thread","Recieved voice command to change dimmer value, but percent value is not set");
                                         }
@@ -512,7 +806,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                             bestScore = distance;
                                         }
                                     }
-                                    return bestMatch;
+                                    return bestMatch+":"+(Math.round(distance*100))+"%";
                                 }
                             break;
                             default:
@@ -531,18 +825,51 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     });
                 });
 
+                var userInput = readline.createInterface({
+                    input: process.stdin,
+                    output: process.stdout
+                });
 
-                function sendMessage(message) {
-                    clients.forEach((client) => {
-                        if(client.readyState === WebSocket.OPEN) {
-                            client.send(message);
+                log("INFO","Interface Thread","Trying to create Web Interface listener");
+                webServer.listen(80, () => {
+                    log("INFO","Interface Thread","Web Interface listener has been created");
+                    log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
+                    promptUser();
+                });
+                
+                function promptUser() {
+                    userInput.question('> ', (commandandargs) => {
+                        fs.appendFile("server.log", "> "+commandandargs+"\n", function() {});
+                        var all = commandandargs.split(" ");
+                        var command = all[0];all[0] = "";
+                        var args = all.filter((arg) => arg !== "");
+                        switch(command) {
+                            case "stop":
+                                process.exit(0);
+                            break;
+                            default:
+                                log("INFO","Console Thread","Command '"+command+"' does not exist!");
+                            break;
                         }
+                        promptUser();
                     });
                 }
             });
         });
     });
+
+    function sendMessage(message) {
+        clients.forEach((client) => {
+            if(client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    }
 }
+
+process.on('exit', function(code) {
+    log("INFO","Main Thread","Server shutdown requested");
+});
 
 function sendToSpeech(text) {
     console.log("#######################################");
@@ -568,36 +895,4 @@ function log(level, module, text) {
     } else if(level == "ERROR") {
         console.log("["+fDate+"] ["+chalk.red("ERROR")+"] ["+module+"] "+text);
     }
-}
-
-async function setVolume(volume) {
-    await sendVlcRequest("status.xml?command=volume&val="+(512*volume));
-}
-
-async function play() {
-    await sendVlcRequest("status.xml?command=pl_play");
-}
-
-async function pause() {
-    await sendVlcRequest("status.xml?command=pl_pause");
-}
-
-async function stop() {
-    await sendVlcRequest("status.xml?command=pl_stop");
-    await sendVlcRequest("status.xml?command=pl_empty");
-}
-
-async function playAudioStream(streamUrl) {
-    await sendVlcRequest("status.xml?command=in_enqueue&input="+encodeURIComponent(streamUrl));
-}
-
-async function getLastPlayList() {
-    await sendVlcRequest("playlist.xml").then(function(res) {
-        var d = JSON.parse(xmljs.xml2json(res.data, {compact: true,space: 4}))["node"]["node"][0]["leaf"];
-        console.log(d[d.length-1]["_attributes"]["id"]);
-    });
-}
-
-async function sendVlcRequest(url) {
-    try { await axios.get("http://"+conf["vlcAddr"]+"/requests/"+url, { auth: { username: '', password: conf["vlcPass"] }}); } catch(e) {}
 }

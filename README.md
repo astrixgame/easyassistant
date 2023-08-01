@@ -14,7 +14,7 @@ And run following commands:<br><br>
 Download files
 <pre>git clone https://github.com/astrixgame/easyassistant.git</pre>
 Install modules
-<pre>npm i ws http lxcommunicator axios xml-js fs natural chalk</pre>
+<pre>npm i ws http lxcommunicator axios xml-js fs natural chalk readline</pre>
 Rename config.sample.json to config.json and change the values for your use.<br><br>
 Run the server
 <pre>node server.js</pre>
