@@ -2339,3 +2339,185 @@
 [04-07-2023 21:10:11.653] [INFO] [Connection Thread] Client has connected [189bcceb8c5]
 [04-07-2023 21:50:34.486] [INFO] [Connection Thread] Client has disconnected
 [04-07-2023 21:50:34.631] [INFO] [Connection Thread] Client has connected [189bcf3b187]
+[04-07-2023 21:57:52.137] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 21:57:52.140] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 21:57:52.141] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 21:57:52.143] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 21:57:52.144] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 21:57:52.145] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 21:57:52.145] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 21:57:52.145] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 21:57:52.145] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 21:57:52.146] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 21:57:52.283] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 21:57:52.284] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 21:57:52.283] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 21:57:52.777] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 21:57:52.778] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 21:57:52.859] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 21:57:52.861] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 21:57:52.861] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 21:57:52.862] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 21:57:52.862] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 21:57:52.863] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 21:57:52.863] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 21:57:52.864] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 21:57:52.865] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 21:57:52.865] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 21:57:52.866] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 21:57:52.867] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 21:57:52.866] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 21:57:52.867] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 21:57:52.871] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 21:57:52.871] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 21:57:52.873] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 21:57:52.874] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 21:57:52.874] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 21:57:52.860] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 21:57:54.749] [INFO] [Connection Thread] Client has connected [189bcfa68bd]
+[04-07-2023 21:58:15.607] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 21:58:15.722] [INFO] [Connection Thread] Client has connected [189bcfabaaa]
+[04-07-2023 21:58:27.733] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 21:58:27.946] [INFO] [Connection Thread] Client has connected [189bcfaea6a]
+[04-07-2023 21:58:47.888] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 21:58:47.993] [INFO] [Connection Thread] Client has connected [189bcfb38b9]
+[04-07-2023 21:58:54.534] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 21:58:54.647] [INFO] [Connection Thread] Client has connected [189bcfb52b7]
+[04-07-2023 21:59:12.91] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 21:59:12.204] [INFO] [Connection Thread] Client has connected [189bcfb974c]
+[04-07-2023 21:59:18.204] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 21:59:18.304] [INFO] [Connection Thread] Client has connected [189bcfbaf20]
+[04-07-2023 22:04:15.407] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:04:15.527] [INFO] [Connection Thread] Client has connected [189bd003827]
+[04-07-2023 22:04:18.883] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:04:18.997] [INFO] [Connection Thread] Client has connected [189bd0045b5]
+[04-07-2023 22:05:11.528] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:05:11.636] [INFO] [Connection Thread] Client has connected [189bd011354]
+[04-07-2023 22:05:59.124] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:05:59.227] [INFO] [Connection Thread] Client has connected [189bd01cd3b]
+[04-07-2023 22:06:12.468] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:06:12.581] [INFO] [Connection Thread] Client has connected [189bd020165]
+[04-07-2023 22:06:27.700] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:06:27.807] [INFO] [Connection Thread] Client has connected [189bd023cdf]
+[04-07-2023 22:06:34.796] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:06:34.902] [INFO] [Connection Thread] Client has connected [189bd025896]
+[04-07-2023 22:06:37.598] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:06:37.704] [INFO] [Connection Thread] Client has connected [189bd026388]
+[04-07-2023 22:06:52.763] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:06:52.896] [INFO] [Connection Thread] Client has connected [189bd029ee0]
+[04-07-2023 22:07:02.811] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:03.177] [INFO] [Connection Thread] Client has connected [189bd02c709]
+[04-07-2023 22:07:09.594] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:09.781] [INFO] [Connection Thread] Client has connected [189bd02e0d5]
+[04-07-2023 22:07:18.357] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:18.592] [INFO] [Connection Thread] Client has connected [189bd030340]
+[04-07-2023 22:07:23.557] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:23.728] [INFO] [Connection Thread] Client has connected [189bd031750]
+[04-07-2023 22:07:27.685] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:27.848] [INFO] [Connection Thread] Client has connected [189bd032768]
+[04-07-2023 22:07:33.569] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:33.755] [INFO] [Connection Thread] Client has connected [189bd033e7b]
+[04-07-2023 22:07:37.750] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:37.899] [INFO] [Connection Thread] Client has connected [189bd034eab]
+[04-07-2023 22:07:43.706] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:43.873] [INFO] [Connection Thread] Client has connected [189bd036601]
+[04-07-2023 22:07:50.88] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:07:50.251] [INFO] [Connection Thread] Client has connected [189bd037eeb]
+[04-07-2023 22:08:11.745] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:08:12.48] [INFO] [Connection Thread] Client has connected [189bd03d410]
+[04-07-2023 22:08:21.482] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:08:21.645] [INFO] [Connection Thread] Client has connected [189bd03f98d]
+[04-07-2023 22:08:40.124] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:08:40.272] [INFO] [Connection Thread] Client has connected [189bd044250]
+[04-07-2023 22:08:52.536] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:08:52.714] [INFO] [Connection Thread] Client has connected [189bd0472ea]
+[04-07-2023 22:09:17.732] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:09:17.897] [INFO] [Connection Thread] Client has connected [189bd04d549]
+[04-07-2023 22:09:22.472] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:09:22.608] [INFO] [Connection Thread] Client has connected [189bd04e7b0]
+[04-07-2023 22:09:38.510] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:09:38.664] [INFO] [Connection Thread] Client has connected [189bd052668]
+[04-07-2023 22:09:59.241] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:09:59.413] [INFO] [Connection Thread] Client has connected [189bd057775]
+[04-07-2023 22:10:13.279] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:10:13.469] [INFO] [Connection Thread] Client has connected [189bd05ae5d]
+[04-07-2023 22:10:19.499] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:10:19.674] [INFO] [Connection Thread] Client has connected [189bd05c69a]
+[04-07-2023 22:11:30.675] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:11:30.910] [INFO] [Connection Thread] Client has connected [189bd06dcde]
+[04-07-2023 22:11:49.870] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:11:50.43] [INFO] [Connection Thread] Client has connected [189bd07279b]
+[04-07-2023 22:11:58.580] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:11:58.763] [INFO] [Connection Thread] Client has connected [189bd0749ab]
+[04-07-2023 22:12:53.492] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:12:53.667] [INFO] [Connection Thread] Client has connected [189bd082023]
+[04-07-2023 22:13:00.701] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:13:00.897] [INFO] [Connection Thread] Client has connected [189bd083c61]
+[04-07-2023 22:13:09.590] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:13:09.924] [INFO] [Connection Thread] Client has connected [189bd085fa4]
+[04-07-2023 22:13:18.760] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:13:18.939] [INFO] [Connection Thread] Client has connected [189bd0882db]
+[04-07-2023 22:13:51.317] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:13:51.496] [INFO] [Connection Thread] Client has connected [189bd090208]
+[04-07-2023 22:13:55.926] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:13:56.132] [INFO] [Connection Thread] Client has connected [189bd091424]
+[04-07-2023 22:14:04.450] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:14:04.612] [INFO] [Connection Thread] Client has connected [189bd093544]
+[04-07-2023 22:15:20.360] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:15:20.553] [INFO] [Connection Thread] Client has connected [189bd0a5de9]
+[04-07-2023 22:15:31.192] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:15:31.404] [INFO] [Connection Thread] Client has connected [189bd0a884c]
+[04-07-2023 22:15:58.444] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:15:58.632] [INFO] [Connection Thread] Client has connected [189bd0af2a8]
+[04-07-2023 22:16:12.953] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:16:13.127] [INFO] [Connection Thread] Client has connected [189bd0b2b47]
+[04-07-2023 22:16:19.599] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:16:19.864] [INFO] [Connection Thread] Client has connected [189bd0b4598]
+[04-07-2023 22:17:03.145] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:17:03.293] [INFO] [Connection Thread] Client has connected [189bd0bef3d]
+[04-07-2023 22:17:09.740] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:17:09.930] [INFO] [Connection Thread] Client has connected [189bd0c092a]
+[04-07-2023 22:18:23.715] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:18:23.904] [INFO] [Connection Thread] Client has connected [189bd0d2a20]
+[04-07-2023 22:19:23.447] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:19:23.628] [INFO] [Connection Thread] Client has connected [189bd0e136c]
+[04-07-2023 22:19:39.423] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:19:39.651] [INFO] [Connection Thread] Client has connected [189bd0e5203]
+[04-07-2023 22:20:11.526] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:20:11.708] [INFO] [Connection Thread] Client has connected [189bd0ecf3c]
+[04-07-2023 22:20:27.476] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:20:27.652] [INFO] [Connection Thread] Client has connected [189bd0f0d84]
+[04-07-2023 22:21:02.614] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:21:02.764] [INFO] [Connection Thread] Client has connected [189bd0f96ac]
+[04-07-2023 22:21:19.133] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:21:19.379] [INFO] [Connection Thread] Client has connected [189bd0fd793]
+[04-07-2023 22:22:06.68] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:22:06.236] [INFO] [Connection Thread] Client has connected [189bd108e9c]
+[04-07-2023 22:22:12.139] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:22:12.345] [INFO] [Connection Thread] Client has connected [189bd10a679]
+[04-07-2023 22:23:05.205] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:23:05.323] [INFO] [Connection Thread] Client has connected [189bd11756b]
+[04-07-2023 22:23:37.945] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:23:38.146] [INFO] [Connection Thread] Client has connected [189bd11f5a2]
+[04-07-2023 22:23:50.963] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:23:51.78] [INFO] [Connection Thread] Client has connected [189bd122826]
+[04-07-2023 22:24:49.805] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:24:49.926] [INFO] [Connection Thread] Client has connected [189bd130e06]
+[04-07-2023 22:25:07.870] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:25:08.4] [INFO] [Connection Thread] Client has connected [189bd1354a4]
+[04-07-2023 22:25:13.859] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:25:13.980] [INFO] [Connection Thread] Client has connected [189bd136bfc]
+[04-07-2023 22:25:52.32] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:25:52.224] [INFO] [Connection Thread] Client has connected [189bd140160]
+[04-07-2023 22:26:26.696] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:26:27.45] [INFO] [Connection Thread] Client has connected [189bd148965]
+[04-07-2023 22:26:39.549] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:26:39.772] [INFO] [Connection Thread] Client has connected [189bd14bb1c]
+[04-07-2023 22:26:48.150] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:26:48.311] [INFO] [Connection Thread] Client has connected [189bd14dc77]
+[04-07-2023 22:27:25.998] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:27:26.209] [INFO] [Connection Thread] Client has connected [189bd157081]
+[04-07-2023 22:28:57.980] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:28:58.168] [INFO] [Connection Thread] Client has connected [189bd16d7b8]
+[04-07-2023 22:29:07.98] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 22:29:07.347] [INFO] [Connection Thread] Client has connected [189bd16fb93]

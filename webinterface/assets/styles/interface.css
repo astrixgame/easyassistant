@@ -376,6 +376,92 @@ html, body {
     color: rgb(105, 195, 80);
 }
 
+.controls .all {
+    display: none;
+}
+.controls .rated {
+    display: none;
+}
+
+.controls .open {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px 20px 20px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.controls .open .item {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: "AvertaSemibold";
+}
+
+.controls .open .item .title {
+    margin: 0;
+    padding: 40px 0px 15px 0px;
+    font-size: 23px;
+    line-height: 21px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .open .item .value {
+    margin: 0;
+    font-size: 19px;
+    line-height: 21px;
+    color: rgba(234, 234, 245, 0.6);
+}
+
+.controls .open .item svg {
+    height: 90px;
+    margin: 50px 0px 60px 0px;
+    fill: rgb(235, 235, 245);
+}
+
+.controls .open .item .controling {
+    width: calc(100% - 40px);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.controls .open .item .controling button {
+    margin: 5px 5px 5px 5px;
+    padding: 20px 0px 20px 0px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgb(235, 235, 245);
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controls .open .item .controling button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.controls .open .item .controling button:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.controls .open .item .controling .b1 {
+    width: calc(100% - 20px);
+}
+
+.controls .open .item .controling .b2 {
+    width: calc(50% - 20px);
+}
+
+.controls .open .item .controling .b3 {
+    width: calc((100% / 3) - 20px);
+}
+
+.controls .open .item .controling .b4 {
+    width: calc(25% - 20px);
+}
+
 .switch {
     position: relative;
     display: inline-block;

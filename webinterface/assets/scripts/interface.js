@@ -53,16 +53,23 @@ connection.onopen = function() {
                         switch(data["menu"]) {
                             case "control":
                                 var control = "";
+                                var fullControl = "";
                                 var valueLine = true;
                                 switch(data["type"]) {
                                     case "InfoOnlyDigital":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "InfoOnlyAnalog":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "Switch":
@@ -74,11 +81,17 @@ connection.onopen = function() {
                                                 </label>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                         valueLine = false;
                                     break;
                                     case "TextState":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "Meter":
@@ -88,6 +101,9 @@ connection.onopen = function() {
                                                 <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
                                                 <txt data-id="`+data["uuid"]+`-value3">N/A</txt>
                                             </p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "EIBDimmer":
@@ -99,6 +115,9 @@ connection.onopen = function() {
                                                     <span class="slider"></span>
                                                 </label>
                                             </div>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "IRoomControllerV2":
@@ -112,10 +131,16 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "PresenceDetector":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "TimedSwitch":
@@ -127,6 +152,9 @@ connection.onopen = function() {
                                                     </svg>
                                                 </button>
                                             </div>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                         valueLine = false;
                                     break;
@@ -146,6 +174,9 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "Pushbutton":
                                         control = `
@@ -156,6 +187,9 @@ connection.onopen = function() {
                                                     </svg>
                                                 </button>
                                             </div>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                         valueLine = false;
                                     break;
@@ -170,15 +204,24 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "SmokeAlarm":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "EnergyManager2":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value"></p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "EFM":
@@ -188,6 +231,9 @@ connection.onopen = function() {
                                                 <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
                                             </p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "Wallbox2":
                                         control = `
@@ -196,25 +242,40 @@ connection.onopen = function() {
                                                 <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
                                             </p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "LoadManager":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "AalSmartAlarm":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "Alarm":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "AalEmergency":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "PulseAt":
@@ -228,6 +289,9 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "WindowMonitor":
                                         control = `
@@ -236,6 +300,9 @@ connection.onopen = function() {
                                                 <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
                                                 <txt data-id="`+data["uuid"]+`-value3">N/A</txt>
                                             </p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "CentralLightController":
@@ -251,14 +318,23 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                         valueLine = false;
                                     break;
                                     case "ClimateController":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "CentralAudioZone":
+                                        fullControl = `
+
+                                        `;
                                         valueLine = false;
                                     break;
                                     case "LightControllerV2":
@@ -271,6 +347,9 @@ connection.onopen = function() {
                                                     </svg>
                                                 </button>
                                             </div>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "AlarmClock":
@@ -289,6 +368,9 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "Window":
                                         control = `
@@ -305,6 +387,9 @@ connection.onopen = function() {
                                                     </svg>
                                                 </button>
                                             </div>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "Jalousie":
@@ -323,6 +408,9 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "Gate":
                                         control = `
@@ -340,10 +428,16 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "Ventilation":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                     break;
                                     case "Radio":
@@ -362,8 +456,14 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "AudioZoneV2":
+                                        fullControl = `
+
+                                        `;
                                         valueLine = false;
                                     break;
                                     case "Remote":
@@ -382,6 +482,9 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "NfcCodeTouch":
                                         control = `
@@ -393,14 +496,23 @@ connection.onopen = function() {
                                                 </button>
                                             </div>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                         valueLine = false;
                                     break;
                                     case "Sauna":
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
+                                        fullControl = `
+
+                                        `;
                                     break;
                                     case "Intercom":
+                                        fullControl = `
+
+                                        `;
                                         valueLine = false;
                                     break;
                                     case "Webpage":
@@ -412,6 +524,9 @@ connection.onopen = function() {
                                                     </svg>
                                                 </button>
                                             </div>
+                                        `;
+                                        fullControl = `
+
                                         `;
                                         valueLine = false;
                                     break;
@@ -425,6 +540,7 @@ connection.onopen = function() {
                                     rated.innerHTML += '<div class="item" id="'+data["uuid"]+'-r" data-menu="control" data-room="'+data["room"]+'" data-category="'+data["category"]+'"><p class="title">'+data["title"]+'</p>'+control+'<p class="category">'+data["roomname"]+'</p></div>';
                                     getSvg(data["svg"], data["uuid"]+"-r");
                                 }
+                                
                             break;
                             case "room":
                                 all.innerHTML += '<div class="item-title" data-subtitle="'+data["uuid"]+'" style="display:none;"><p>'+data["title"]+'</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></div>';
