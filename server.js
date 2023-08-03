@@ -190,9 +190,8 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             val = (value - step)+" • ";
                         }
                         val += "<strong>"+value+"</strong>";
-                        if(value + step <= max) {
+                        if(value + step <= max)
                             val += " • "+(value + step);
-                        }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: val }));
                     }
                 break;
@@ -561,25 +560,35 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             val = "Otevřeno";
                         if(value == 0)
                             val = "Zavřeno";
-                        if(0 < value && value < 1)
-                            switch(controlValues[mainItem.states.direction]) {
-                                case -1:
-                                    val = "Zavírání ("+Math.round(value*100)+"%)";
-                                    col = "rgb(105, 195, 80)";   
-                                break;
-                                case 0:
-                                    val = "Otevřeno ("+Math.round(value*100)+"%)";
-                                break;
-                                case 1:
-                                    val = "Otevírání ("+Math.round(value*100)+"%)";
-                                    col = "rgb(105, 195, 80)";
-                                break;
-                            }
+                        if(controlValues[mainItem.states.direction] == -1) {
+                            val = "Zavírání ("+Math.round(value*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(controlValues[mainItem.states.direction] == 1) {
+                            val = "Otevírání ("+Math.round(value*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(0 < value && value < 1) {
+                            val = "Otevřeno ("+Math.round(value*100)+"%)";
+                        }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
                     }
-                    if(mainItem.states.direction == uuid)
-                        if(value == 0 && 0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1)
-                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: "Otevřeno ("+Math.round(controlValues[mainItem.states.position]*100)+"%)", color: "rgba(234, 234, 245, 0.6)" }));
+                    if(mainItem.states.direction == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.position] == 1)
+                            val = "Otevřeno";
+                        if(controlValues[mainItem.states.position] == 0)
+                            val = "Zavřeno";
+                        if(value == -1) {
+                            val = "Zavírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(value == 1) {
+                            val = "Otevírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1) {
+                            val = "Otevřeno ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
                 break;
                 case "Jalousie":
                     if(mainItem.states.position == uuid) {
@@ -589,16 +598,126 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             val = "Zavřeno";
                         if(value == 0)
                             val = "Otevřeno";
-                        if(value < 1 && value > 0) {
-                            if(controlValues[mainItem.states.up] == 1) {
-                                val = "Otevírání ("+Math.round(value*100)+"%)";
-                                col = "rgb(105, 195, 80)";
-                            } else if(controlValues[mainItem.states.down] == 1) {
-                                val = "Zavírání ("+Math.round(value*100)+"%)";
-                                col = "rgb(105, 195, 80)";
-                            } else {
-                                val = "Zavřeno ("+Math.round(value*100)+"%)";
-                            }
+                        if(controlValues[mainItem.states.up] == 1) {
+                            val = "Otevírání ("+Math.round(value*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(controlValues[mainItem.states.down] == 1) {
+                            val = "Zavírání ("+Math.round(value*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1) {
+                            val = "Zavřeno ("+Math.round(value*100)+"%)";
+                        }
+                        if(controlValues[mainItem.states.locked] == 1) {
+                            val = "Zamčeno";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        if(controlValues[mainItem.states.safetyActive] == 1) {
+                            val = "Bezpečnostní vypnutí";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
+                    if(mainItem.states.up == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.position] == 1) 
+                            val = "Zavřeno";
+                        if(controlValues[mainItem.states.position] == 0)
+                            val = "Otevřeno";
+                        if(value == 1) {
+                            val = "Otevírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(controlValues[mainItem.states.down] == 1) {
+                            val = "Zavírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1) {
+                            val = "Zavřeno ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                        }
+                        if(controlValues[mainItem.states.locked] == 1) {
+                            val = "Zamčeno";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        if(controlValues[mainItem.states.safetyActive] == 1) {
+                            val = "Bezpečnostní vypnutí";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
+                    if(mainItem.states.down == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.position] == 1) 
+                            val = "Zavřeno";
+                        if(controlValues[mainItem.states.position] == 0)
+                            val = "Otevřeno";
+                        if(controlValues[mainItem.states.up] == 1) {
+                            val = "Otevírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(value == 1) {
+                            val = "Zavírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1) {
+                            val = "Zavřeno ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                        }
+                        if(controlValues[mainItem.states.locked] == 1) {
+                            val = "Zamčeno";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        if(controlValues[mainItem.states.safetyActive] == 1) {
+                            val = "Bezpečnostní vypnutí";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
+                    if(mainItem.states.locked == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.position] == 1) 
+                            val = "Zavřeno";
+                        if(controlValues[mainItem.states.position] == 0)
+                            val = "Otevřeno";
+                        if(controlValues[mainItem.states.up] == 1) {
+                            val = "Otevírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(controlValues[mainItem.states.down] == 1) {
+                            val = "Zavírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1) {
+                            val = "Zavřeno ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                        }
+                        if(value == 1) {
+                            val = "Zamčeno";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        if(controlValues[mainItem.states.safetyActive] == 1) {
+                            val = "Bezpečnostní vypnutí";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
+                    }
+                    if(mainItem.states.safetyActive == uuid) {
+                        var val = "";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.position] == 1) 
+                            val = "Zavřeno";
+                        if(controlValues[mainItem.states.position] == 0)
+                            val = "Otevřeno";
+                        if(controlValues[mainItem.states.up] == 1) {
+                            val = "Otevírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(controlValues[mainItem.states.down] == 1) {
+                            val = "Zavírání ("+Math.round(controlValues[mainItem.states.position]*100)+"%)";
+                            col = "rgb(105, 195, 80)";
+                        } else if(0 < controlValues[mainItem.states.position] && controlValues[mainItem.states.position] < 1) {
+                            val = "Zavřeno ("+Math.round(value*100)+"%)";
+                        }
+                        if(controlValues[mainItem.states.locked] == 1) {
+                            val = "Zamčeno";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        if(value == 1) {
+                            val = "Bezpečnostní vypnutí";
+                            col = "rgb(231, 50, 70)";
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
                     }
@@ -1057,16 +1176,245 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     ws.on('message', function(data) {
                         var dt = JSON.parse(new Buffer.from(data).toString());
                         switch(dt["module"]) {
-                            case "loxone":
-                                if(dt["action"] == "resend") {
-                                    socket.send(dt["value"]).then(function(d) {
-                                        sendMessage(JSON.stringify({ module: "loxone", type: "response", data: d }));
-                                    }).catch(function(err) {
-                                        sendMessage(JSON.stringify({ module: "loxone", type: "response", data: err }));
+                            case "control":
+                                if(dt["action"] == "change") {
+                                    var uid = "";
+                                    Object.keys(controlControlsIds).forEach(function(v) {
+                                        if(dt["uuid"] == controlControlsIds[v]) uid = v;
                                     });
-                                } else {
-                                    log("ERROR","Communication Thread","Accepted incorrent command from client");
-                                    ws.send("ERROR:[NEPLATNÁ AKCE]");
+                                    var type = dt["type"];
+                                    var value = dt["value"];
+                                    switch(type) {
+                                        case "Switch":
+                                            switch(value) {
+                                                case 0:
+                                                    socket.send("jdev/sps/io/"+uid+"/off");
+                                                break;
+                                                case 1:
+                                                    socket.send("jdev/sps/io/"+uid+"/on");
+                                                break;
+                                            }
+                                        break;
+                                        case "EIBDimmer":
+                                            if(typeof value == "string" && value.includes("%"))
+                                                socket.send("jdev/sps/io/"+uid+"/"+value.replace("%",""));
+                                            else
+                                                if(value == 1)
+                                                    socket.send("jdev/sps/io/"+uid+"/on");
+                                                else
+                                                    socket.send("jdev/sps/io/"+uid+"/off");
+                                        break;
+                                        case "IRoomControllerV2":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "TimedSwitch":
+                                            switch(value) {
+                                                case "push":
+                                                    socket.send("jdev/sps/io/"+uid+"/pulse");
+                                                break;
+                                            }
+                                        break;
+                                        case "LeftRightAnalog":
+                                            var current = controlValues[lxData.controls[uid].states.value];
+                                            var step = lxData.controls[uid].details.step;
+                                            var min = lxData.controls[uid].details.min;
+                                            var max = lxData.controls[uid].details.max;
+                                            switch(value) {
+                                                case "left":
+                                                    if(current-step >= min)
+                                                        socket.send("jdev/sps/io/"+uid+"/"+(current-step));
+                                                break;
+                                                case "right":
+                                                    if(current+step <= max)
+                                                        socket.send("jdev/sps/io/"+uid+"/"+(current+step));
+                                                break;
+                                            }
+                                        break;
+                                        case "Pushbutton":
+                                            switch(value) {
+                                                case "push":
+                                                    socket.send("jdev/sps/io/"+uid+"/pulse");
+                                                break;
+                                            }
+                                        break;
+                                        case "Irrigation":
+                                            var isStarted = controlValues[lxData.controls[uid].states.currentZone];
+                                            switch(value) {
+                                                case "push":
+                                                    if(isStarted == -1)
+                                                        socket.send("jdev/sps/io/"+uid+"/startForce");
+                                                    else
+                                                        socket.send("jdev/sps/io/"+uid+"/stop");
+                                                break;
+                                            }
+                                        break;
+                                        case "SmokeAlarm":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "EnergyManager2":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "Wallbox2":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "AalSmartAlarm":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "Alarm":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "AalEmergency":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "PulseAt":
+                                            switch(value) {
+                                                case "push":
+                                                    socket.send("jdev/sps/io/"+uid+"/pulse");
+                                                break;
+                                            }
+                                        break;
+                                        case "CentralLightController":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "CentralJalousie":
+                                            switch(value) {
+                                                case "up":
+                                                    Object.values(lxData.controls[uid].details.controls).forEach(function(u) {
+                                                        socket.send("jdev/sps/io/"+u.uuid+"/FullUp");
+                                                    });
+                                                break;
+                                                case "down":
+                                                    Object.values(lxData.controls[uid].details.controls).forEach(function(u) {
+                                                        socket.send("jdev/sps/io/"+u.uuid+"/FullDown");
+                                                    });
+                                                break;
+                                            }
+                                        break;
+                                        case "ClimateController":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "LightControllerV2":
+                                            switch(value) {
+                                                case "next":
+                                                    socket.send("jdev/sps/io/"+uid+"/plus");
+                                                break;
+                                            }
+                                        break;
+                                        case "AlarmClock":
+                                            switch(value) {
+                                                case "snooze":
+                                                    socket.send("jdev/sps/io/"+uid+"/snooze");
+                                                break;
+                                                case "dismiss":
+                                                    socket.send("jdev/sps/io/"+uid+"/dismiss");
+                                                break;
+                                            }
+                                        break;
+                                        case "Window":
+                                            switch(value) {
+                                                case "open":
+                                                    socket.send("jdev/sps/io/"+uid+"/fullopen");
+                                                break;
+                                                case "close":
+                                                    socket.send("jdev/sps/io/"+uid+"/fullclose");
+                                                break;
+                                            }
+                                        break;
+                                        case "Jalousie":
+                                            switch(value) {
+                                                case "up":
+                                                    socket.send("jdev/sps/io/"+uid+"/FullUp");
+                                                break;
+                                                case "down":
+                                                    socket.send("jdev/sps/io/"+uid+"/FullDown");
+                                                break;
+                                            }
+                                        break;
+                                        case "Gate":
+                                            switch(value) {
+                                                case "up":
+                                                    socket.send("jdev/sps/io/"+uid+"/open");
+                                                break;
+                                                case "down":
+                                                    socket.send("jdev/sps/io/"+uid+"/close");
+                                                break;
+                                            }
+                                        break;
+                                        case "Ventilation":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "Radio":
+                                            var current = controlValues[lxData.controls[uid].states.activeOutput];
+                                            var lastX = 0;
+                                            var lastY = Object.keys(lxData.controls[uid].details.outputs);
+                                            lastX = lastY[lastY.length-1];
+                                            switch(value) {
+                                                case "plus":
+                                                    if(current+1 <= lastX)
+                                                        socket.send("jdev/sps/io/"+uid+"/"+(current+1));
+                                                    else
+                                                        socket.send("jdev/sps/io/"+uid+"/reset");
+                                                break;
+                                                case "minus":
+                                                    if(current == 0)
+                                                        socket.send("jdev/sps/io/"+uid+"/"+lastX);
+                                                    else if(current-1 >= 1)
+                                                        socket.send("jdev/sps/io/"+uid+"/"+(current-1));
+                                                    else
+                                                        socket.send("jdev/sps/io/"+uid+"/reset");
+                                                break;
+                                            }
+                                        break;
+                                        case "Remote":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "NfcCodeTouch":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "Sauna":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "Intercom":
+                                            
+                                        break;
+                                        case "Webpage":
+                                            switch(value) {
+                                                
+                                            }
+                                        break;
+                                        case "CentralAudioZone":
+                                            
+                                        break;
+                                        case "AudioZoneV2":
+                                            
+                                        break;
+                                    }
                                 }
                             break;
                             case "speech":

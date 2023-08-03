@@ -321,3 +321,2021 @@
 [02-07-2023 23:53:29.95] [INFO] [Main Thread] Trying to create WebSocket listener
 [02-07-2023 23:53:29.91] [INFO] [Voice Thread] Training voice model 30%
 [02-07-2023 23:53:32.187] [INFO] [Connection Thread] Client has connected [189b3178c1b]
+[03-07-2023 16:23:41.991] [INFO] [Main Thread] Initializing varriables
+[03-07-2023 16:23:41.995] [INFO] [Main Thread] Varriables has been inilialized
+[03-07-2023 16:23:41.995] [INFO] [Main Thread] Loading configurations files
+[03-07-2023 16:23:41.998] [INFO] [Main Thread] Configurations files has been loaded
+[03-07-2023 16:23:41.998] [INFO] [Main Thread] Loading server cache and data files
+[03-07-2023 16:23:41.999] [INFO] [Main Thread] Server cache and data files has been loaded
+[03-07-2023 16:23:41.999] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[03-07-2023 16:23:42.0] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[03-07-2023 16:23:42.0] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[03-07-2023 16:23:42.0] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[03-07-2023 16:23:42.83] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[03-07-2023 16:23:42.83] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[03-07-2023 16:23:42.84] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[03-07-2023 16:23:42.335] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[03-07-2023 16:23:42.336] [INFO] [Loxone Thread] Creating status update listener
+[03-07-2023 16:23:42.340] [INFO] [Loxone Thread] Status update listener has been created
+[03-07-2023 16:23:42.342] [INFO] [Voice Thread] Training voice model 20%
+[03-07-2023 16:23:42.342] [INFO] [Voice Thread] Training voice model 30%
+[03-07-2023 16:23:42.343] [INFO] [Voice Thread] Training voice model 50%
+[03-07-2023 16:23:42.342] [INFO] [Voice Thread] Training voice model 40%
+[03-07-2023 16:23:42.343] [INFO] [Voice Thread] Training voice model 60%
+[03-07-2023 16:23:42.343] [INFO] [Voice Thread] Training voice model 70%
+[03-07-2023 16:23:42.344] [INFO] [Voice Thread] Training voice model 90%
+[03-07-2023 16:23:42.344] [INFO] [Voice Thread] Training voice model 80%
+[03-07-2023 16:23:42.344] [INFO] [Voice Thread] Training voice model 100%
+[03-07-2023 16:23:42.345] [INFO] [Voice Thread] Voice model has been trained
+[03-07-2023 16:23:42.345] [INFO] [Interface Thread] Initializing Web interface listener
+[03-07-2023 16:23:42.348] [INFO] [Main Thread] Trying to create WebSocket listener
+[03-07-2023 16:23:42.352] [INFO] [Main Thread] WebSocket listener is listening
+[03-07-2023 16:23:42.352] [INFO] [Main Thread] Server has been fully started
+[03-07-2023 16:23:42.355] [INFO] [Interface Thread] Trying to create Web Interface listener
+[03-07-2023 16:23:42.341] [INFO] [Voice Thread] Training voice model 10%
+[03-07-2023 16:23:42.348] [INFO] [Interface Thread] Web interface listener has been initialized
+[03-07-2023 16:23:42.357] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[03-07-2023 16:23:42.357] [INFO] [Interface Thread] Web Interface listener has been created
+[03-07-2023 16:24:10.407] [INFO] [Connection Thread] Client has connected [189b6a280a7]
+[03-07-2023 16:24:13.298] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 16:24:13.395] [INFO] [Connection Thread] Client has connected [189b6a28c53]
+[03-07-2023 17:46:27.905] [INFO] [Main Thread] Initializing varriables
+[03-07-2023 17:46:27.914] [INFO] [Main Thread] Varriables has been inilialized
+[03-07-2023 17:46:27.915] [INFO] [Main Thread] Loading configurations files
+[03-07-2023 17:46:27.920] [INFO] [Main Thread] Configurations files has been loaded
+[03-07-2023 17:46:27.936] [INFO] [Main Thread] Loading server cache and data files
+[03-07-2023 17:46:27.964] [INFO] [Main Thread] Server cache and data files has been loaded
+[03-07-2023 17:46:27.964] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[03-07-2023 17:46:27.965] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[03-07-2023 17:46:27.987] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[03-07-2023 17:46:28.42] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[03-07-2023 17:46:28.154] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[03-07-2023 17:46:28.164] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[03-07-2023 17:46:28.164] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[03-07-2023 17:46:28.384] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[03-07-2023 17:46:28.388] [INFO] [Loxone Thread] Creating status update listener
+[03-07-2023 17:46:28.393] [INFO] [Loxone Thread] Status update listener has been created
+[03-07-2023 17:46:28.395] [INFO] [Voice Thread] Training voice model 10%
+[03-07-2023 17:46:28.395] [INFO] [Voice Thread] Training voice model 20%
+[03-07-2023 17:46:28.396] [INFO] [Voice Thread] Training voice model 30%
+[03-07-2023 17:46:28.397] [INFO] [Voice Thread] Training voice model 40%
+[03-07-2023 17:46:28.397] [INFO] [Voice Thread] Training voice model 50%
+[03-07-2023 17:46:28.398] [INFO] [Voice Thread] Training voice model 60%
+[03-07-2023 17:46:28.399] [INFO] [Voice Thread] Training voice model 80%
+[03-07-2023 17:46:28.398] [INFO] [Voice Thread] Training voice model 70%
+[03-07-2023 17:46:28.400] [INFO] [Voice Thread] Training voice model 100%
+[03-07-2023 17:46:28.399] [INFO] [Voice Thread] Training voice model 90%
+[03-07-2023 17:46:28.401] [INFO] [Voice Thread] Voice model has been trained
+[03-07-2023 17:46:28.401] [INFO] [Interface Thread] Initializing Web interface listener
+[03-07-2023 17:46:28.403] [INFO] [Main Thread] Trying to create WebSocket listener
+[03-07-2023 17:46:28.402] [INFO] [Interface Thread] Web interface listener has been initialized
+[03-07-2023 17:46:28.406] [INFO] [Main Thread] WebSocket listener is listening
+[03-07-2023 17:46:28.407] [INFO] [Main Thread] Server has been fully started
+[03-07-2023 17:46:28.409] [INFO] [Interface Thread] Trying to create Web Interface listener
+[03-07-2023 17:46:28.411] [INFO] [Interface Thread] Web Interface listener has been created
+[03-07-2023 17:46:28.411] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[03-07-2023 17:46:30.708] [INFO] [Connection Thread] Client has connected [189b6ede2b4]
+[03-07-2023 17:55:49.912] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 17:55:50.61] [INFO] [Connection Thread] Client has connected [189b6f66bad]
+[03-07-2023 17:59:36.153] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 17:59:36.286] [INFO] [Connection Thread] Client has connected [189b6f9df5e]
+[03-07-2023 17:59:46.29] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 17:59:46.160] [INFO] [Connection Thread] Client has connected [189b6fa05f0]
+[03-07-2023 17:59:55.768] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 17:59:55.984] [INFO] [Connection Thread] Client has connected [189b6fa2c50]
+[03-07-2023 18:12:40.575] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:12:40.697] [INFO] [Connection Thread] Client has connected [189b705d779]
+[03-07-2023 18:15:58.672] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:15:58.867] [INFO] [Connection Thread] Client has connected [189b708dd93]
+[03-07-2023 18:16:19.460] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:16:19.597] [INFO] [Connection Thread] Client has connected [189b7092e8d]
+[03-07-2023 18:20:09.390] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:20:09.663] [INFO] [Connection Thread] Client has connected [189b70cb13f]
+[03-07-2023 18:20:53.645] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:20:54.136] [INFO] [Connection Thread] Client has connected [189b70d5ef8]
+[03-07-2023 18:21:18.232] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:21:18.461] [INFO] [Connection Thread] Client has connected [189b70dbdfd]
+[03-07-2023 18:21:45.169] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:21:45.565] [INFO] [Connection Thread] Client has connected [189b70e27dd]
+[03-07-2023 18:21:50.370] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:21:50.579] [INFO] [Connection Thread] Client has connected [189b70e3b73]
+[03-07-2023 18:21:58.527] [INFO] [Connection Thread] Client has disconnected
+[03-07-2023 18:21:58.774] [INFO] [Connection Thread] Client has connected [189b70e5b76]
+[04-07-2023 12:09:00.504] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 12:09:00.508] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 12:09:00.508] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 12:09:00.512] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 12:09:00.513] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 12:09:00.515] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 12:09:00.516] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 12:09:00.518] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 12:09:00.518] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 12:09:00.517] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 12:09:00.603] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 12:09:00.604] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 12:09:00.603] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 12:09:00.856] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 12:09:00.856] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 12:09:00.863] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 12:09:00.864] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 12:09:00.865] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 12:09:00.865] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 12:09:00.865] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 12:09:00.865] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 12:09:00.866] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 12:09:00.866] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 12:09:00.866] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 12:09:00.872] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 12:09:00.872] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 12:09:00.872] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 12:09:00.875] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 12:09:00.873] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 12:09:00.875] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 12:09:00.883] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 12:09:00.879] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 12:09:00.884] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 12:09:00.880] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 12:09:00.884] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 12:19:21.541] [INFO] [Connection Thread] Client has connected [189bae8ba45]
+[04-07-2023 12:19:24.461] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:19:24.558] [INFO] [Connection Thread] Client has connected [189bae8c60e]
+[04-07-2023 12:19:31.104] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:29:01.837] [INFO] [Connection Thread] Client has connected [189baf1950d]
+[04-07-2023 12:29:15.924] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:29:16.34] [INFO] [Connection Thread] Client has connected [189baf1cc82]
+[04-07-2023 12:29:23.132] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:42:32.26] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 12:42:32.30] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 12:42:32.31] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 12:42:32.34] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 12:42:32.34] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 12:42:32.35] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 12:42:32.35] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 12:42:32.37] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 12:42:32.36] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 12:42:32.36] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 12:42:32.115] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 12:42:32.115] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 12:42:32.116] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 12:42:32.361] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 12:42:32.362] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 12:42:32.368] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 12:42:32.369] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 12:42:32.370] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 12:42:32.370] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 12:42:32.370] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 12:42:32.371] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 12:42:32.371] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 12:42:32.371] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 12:42:32.372] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 12:42:32.372] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 12:42:32.372] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 12:42:32.373] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 12:42:32.373] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 12:42:32.374] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 12:42:32.374] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 12:42:32.377] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 12:42:32.378] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 12:42:32.379] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 12:42:32.381] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 12:42:32.381] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 12:43:55.278] [INFO] [Connection Thread] Client has connected [189baff370e]
+[04-07-2023 12:52:01.605] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 12:52:01.609] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 12:52:01.609] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 12:52:01.611] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 12:52:01.612] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 12:52:01.613] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 12:52:01.613] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 12:52:01.614] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 12:52:01.613] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 12:52:01.614] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 12:52:01.747] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 12:52:01.748] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 12:52:01.748] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 12:52:02.237] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 12:52:02.238] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 12:52:02.316] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 12:52:02.317] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 12:52:02.317] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 12:52:02.318] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 12:52:02.318] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 12:52:02.318] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 12:52:02.319] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 12:52:02.320] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 12:52:02.321] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 12:52:02.321] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 12:52:02.321] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 12:52:02.322] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 12:52:02.323] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 12:52:02.323] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 12:52:02.319] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 12:52:02.328] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 12:52:02.326] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 12:52:02.330] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 12:52:02.330] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 12:52:02.326] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 12:52:05.897] [INFO] [Connection Thread] Client has connected [189bb06b389]
+[04-07-2023 12:53:46.742] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:53:46.850] [INFO] [Connection Thread] Client has connected [189bb083de2]
+[04-07-2023 12:53:59.698] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:53:59.809] [INFO] [Connection Thread] Client has connected [189bb087081]
+[04-07-2023 12:55:29.503] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:55:29.701] [INFO] [Connection Thread] Client has connected [189bb09cfa5]
+[04-07-2023 12:55:57.261] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:55:57.948] [INFO] [Connection Thread] Client has connected [189bb0a3dfc]
+[04-07-2023 12:56:39.892] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:56:40.129] [INFO] [Connection Thread] Client has connected [189bb0ae2c1]
+[04-07-2023 12:56:52.534] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:56:52.656] [INFO] [Connection Thread] Client has connected [189bb0b13b0]
+[04-07-2023 12:57:51.884] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:57:51.979] [INFO] [Connection Thread] Client has connected [189bb0bfb6b]
+[04-07-2023 12:58:19.574] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:58:19.686] [INFO] [Connection Thread] Client has connected [189bb0c67a6]
+[04-07-2023 12:58:39.551] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:58:39.659] [INFO] [Connection Thread] Client has connected [189bb0cb5ab]
+[04-07-2023 12:59:08.533] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:59:08.745] [INFO] [Connection Thread] Client has connected [189bb0d2749]
+[04-07-2023 12:59:21.224] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:59:21.337] [INFO] [Connection Thread] Client has connected [189bb0d5879]
+[04-07-2023 12:59:40.887] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 12:59:40.991] [INFO] [Connection Thread] Client has connected [189bb0da53f]
+[04-07-2023 13:02:15.163] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:02:15.270] [INFO] [Connection Thread] Client has connected [189bb0fffe6]
+[04-07-2023 13:02:28.80] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:02:28.192] [INFO] [Connection Thread] Client has connected [189bb103260]
+[04-07-2023 13:03:19.388] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:03:19.580] [INFO] [Connection Thread] Client has connected [189bb10fb1c]
+[04-07-2023 13:03:40.41] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:03:40.290] [INFO] [Connection Thread] Client has connected [189bb114c02]
+[04-07-2023 13:03:46.988] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:03:47.151] [INFO] [Connection Thread] Client has connected [189bb1166cf]
+[04-07-2023 13:04:10.430] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:04:10.635] [INFO] [Connection Thread] Client has connected [189bb11c28b]
+[04-07-2023 13:04:27.9] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:04:27.179] [INFO] [Connection Thread] Client has connected [189bb12032b]
+[04-07-2023 13:05:23.51] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:05:23.203] [INFO] [Connection Thread] Client has connected [189bb12de03]
+[04-07-2023 13:06:12.59] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:06:12.241] [INFO] [Connection Thread] Client has connected [189bb139d91]
+[04-07-2023 13:06:17.167] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:06:17.319] [INFO] [Connection Thread] Client has connected [189bb13b167]
+[04-07-2023 13:06:55.396] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:06:55.567] [INFO] [Connection Thread] Client has connected [189bb1446cf]
+[04-07-2023 13:15:53.338] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 13:15:53.478] [INFO] [Connection Thread] Client has connected [189bb1c7c06]
+[04-07-2023 13:22:36.970] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 13:22:36.973] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 13:22:36.974] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 13:22:36.976] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 13:22:36.977] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 13:22:36.983] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 13:22:36.984] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 13:22:36.985] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 13:22:36.985] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 13:22:36.986] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 13:22:37.107] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 13:22:37.108] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 13:22:37.108] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 13:22:37.607] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 13:22:37.607] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 13:22:37.688] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 13:22:37.689] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 13:22:37.690] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 13:22:37.690] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 13:22:37.691] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 13:22:37.691] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 13:22:37.692] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 13:22:37.692] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 13:22:37.693] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 13:22:37.694] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 13:22:37.694] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 13:22:37.695] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 13:22:37.694] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 13:22:37.696] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 13:22:37.697] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 13:22:37.700] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 13:22:37.701] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 13:22:37.703] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 13:22:37.704] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 13:22:37.705] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 13:25:15.151] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 13:25:15.156] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 13:25:15.156] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 13:25:15.159] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 13:25:15.159] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 13:25:15.161] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 13:25:15.162] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 13:25:15.163] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 13:25:15.163] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 13:25:15.163] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 13:25:15.293] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 13:25:15.305] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 13:25:15.306] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 13:25:15.809] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 13:25:15.810] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 13:25:15.890] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 13:25:15.891] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 13:25:15.892] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 13:25:15.893] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 13:25:15.892] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 13:25:15.895] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 13:25:15.894] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 13:25:15.895] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 13:25:15.896] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 13:25:15.896] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 13:25:15.897] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 13:25:15.896] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 13:25:15.893] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 13:25:15.898] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 13:25:15.901] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 13:25:15.903] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 13:25:15.905] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 13:25:15.905] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 13:25:15.893] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 13:25:15.901] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 13:26:22.460] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 13:26:22.464] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 13:26:22.464] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 13:26:22.466] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 13:26:22.467] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 13:26:22.470] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 13:26:22.470] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 13:26:22.471] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 13:26:22.471] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 13:26:22.471] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 13:26:22.608] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 13:26:22.609] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 13:26:22.609] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 13:26:23.128] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 13:26:23.128] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 13:26:23.208] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 13:26:23.209] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 13:26:23.210] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 13:26:23.211] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 13:26:23.211] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 13:26:23.211] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 13:26:23.212] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 13:26:23.213] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 13:26:23.212] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 13:26:23.213] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 13:26:23.214] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 13:26:23.214] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 13:26:23.215] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 13:26:23.210] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 13:26:23.218] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 13:26:23.219] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 13:26:23.215] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 13:26:23.221] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 13:26:23.222] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 13:26:23.223] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 13:53:10.41] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 13:53:10.44] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 13:53:10.45] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 13:53:10.47] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 13:53:10.48] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 13:53:10.50] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 13:53:10.51] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 13:53:10.50] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 13:53:10.51] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 13:53:10.52] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 13:53:10.195] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 13:53:10.195] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 13:53:10.195] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 13:53:10.689] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 13:53:10.690] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 13:53:10.770] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 13:53:10.771] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 13:53:10.771] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 13:53:10.772] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 13:53:10.772] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 13:53:10.773] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 13:53:10.773] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 13:53:10.774] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 13:53:10.774] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 13:53:10.775] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 13:53:10.775] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 13:53:10.775] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 13:53:10.775] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 13:53:10.776] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 13:53:10.776] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 13:53:10.780] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 13:53:10.780] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 13:53:10.783] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 13:53:10.781] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 13:53:10.783] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 13:53:44.721] [INFO] [Connection Thread] Client has connected [189bb3f2411]
+[04-07-2023 14:05:45.908] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 14:05:46.151] [INFO] [Connection Thread] Client has connected [189bb4a2627]
+[04-07-2023 14:07:26.898] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 14:07:27.138] [INFO] [Connection Thread] Client has connected [189bb4bb0a2]
+[04-07-2023 15:34:29.712] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:34:29.944] [INFO] [Connection Thread] Client has connected [189bb9b6238]
+[04-07-2023 15:35:17.168] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:35:17.705] [INFO] [Connection Thread] Client has connected [189bb9c1cc9]
+[04-07-2023 15:36:07.127] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:36:07.412] [INFO] [Connection Thread] Client has connected [189bb9cdef4]
+[04-07-2023 15:36:21.156] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:36:21.402] [INFO] [Connection Thread] Client has connected [189bb9d159a]
+[04-07-2023 15:40:07.247] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:40:07.481] [INFO] [Connection Thread] Client has connected [189bba088b9]
+[04-07-2023 15:40:36.368] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:40:36.612] [INFO] [Connection Thread] Client has connected [189bba0fa84]
+[04-07-2023 15:42:09.864] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:42:10.138] [INFO] [Connection Thread] Client has connected [189bba267da]
+[04-07-2023 15:47:28.947] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:47:29.210] [INFO] [Connection Thread] Client has connected [189bba7463a]
+[04-07-2023 15:47:50.17] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 15:47:50.491] [INFO] [Connection Thread] Client has connected [189bba7995b]
+[04-07-2023 15:57:38.833] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 15:57:38.838] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 15:57:38.838] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 15:57:38.841] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 15:57:38.842] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 15:57:38.842] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 15:57:38.843] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 15:57:38.843] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 15:57:38.844] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 15:57:38.843] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 15:57:39.7] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 15:57:39.7] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 15:57:39.8] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 15:57:39.495] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 15:57:39.495] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 15:57:39.573] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 15:57:39.574] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 15:57:39.575] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 15:57:39.575] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 15:57:39.576] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 15:57:39.576] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 15:57:39.577] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 15:57:39.577] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 15:57:39.578] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 15:57:39.578] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 15:57:39.579] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 15:57:39.579] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 15:57:39.579] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 15:57:39.580] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 15:57:39.580] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 15:57:39.584] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 15:57:39.584] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 15:57:39.586] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 15:57:39.588] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 15:57:39.588] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 15:57:45.383] [INFO] [Connection Thread] Client has connected [189bbb0ad27]
+[04-07-2023 16:00:29.10] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 16:00:29.15] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 16:00:29.15] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 16:00:29.18] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 16:00:29.18] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 16:00:29.19] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 16:00:29.21] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 16:00:29.22] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 16:00:29.22] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 16:00:29.22] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 16:00:29.172] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 16:00:29.172] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 16:00:29.172] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 16:00:29.664] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 16:00:29.665] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 16:00:29.745] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 16:00:29.747] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 16:00:29.748] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 16:00:29.747] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 16:00:29.748] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 16:00:29.749] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 16:00:29.749] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 16:00:29.751] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 16:00:29.751] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 16:00:29.751] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 16:00:29.752] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 16:00:29.752] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 16:00:29.753] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 16:00:29.756] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 16:00:29.760] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 16:00:29.756] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 16:00:29.750] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 16:00:29.758] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 16:00:29.760] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 16:00:29.749] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 16:00:34.857] [INFO] [Connection Thread] Client has connected [189bbb34329]
+[04-07-2023 16:01:39.617] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 16:01:39.622] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 16:01:39.622] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 16:01:39.626] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 16:01:39.626] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 16:01:39.627] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 16:01:39.627] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 16:01:39.628] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 16:01:39.628] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 16:01:39.628] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 16:01:39.754] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 16:01:39.754] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 16:01:39.755] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 16:01:40.248] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 16:01:40.249] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 16:01:40.327] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 16:01:40.328] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 16:01:40.329] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 16:01:40.329] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 16:01:40.330] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 16:01:40.330] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 16:01:40.330] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 16:01:40.331] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 16:01:40.331] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 16:01:40.332] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 16:01:40.333] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 16:01:40.332] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 16:01:40.333] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 16:01:40.339] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 16:01:40.334] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 16:01:40.339] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 16:01:40.335] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 16:01:40.341] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 16:01:40.343] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 16:01:40.343] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 16:02:05.864] [INFO] [Connection Thread] Client has connected [189bbb4a6a8]
+[04-07-2023 16:02:35.835] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 16:02:35.839] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 16:02:35.839] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 16:02:35.842] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 16:02:35.843] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 16:02:35.863] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 16:02:35.865] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 16:02:35.867] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 16:02:35.866] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 16:02:35.867] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 16:02:35.993] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 16:02:35.995] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 16:02:35.996] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 16:02:36.532] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 16:02:36.531] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 16:02:36.609] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 16:02:36.611] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 16:02:36.611] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 16:02:36.612] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 16:02:36.612] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 16:02:36.613] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 16:02:36.612] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 16:02:36.614] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 16:02:36.615] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 16:02:36.616] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 16:02:36.616] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 16:02:36.616] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 16:02:36.617] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 16:02:36.621] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 16:02:36.618] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 16:02:36.621] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 16:02:36.623] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 16:02:36.614] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 16:02:36.624] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 16:02:36.625] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 16:02:38.102] [INFO] [Connection Thread] Client has connected [189bbb52496]
+[04-07-2023 16:14:17.825] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 16:14:17.828] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 16:14:17.828] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 16:14:17.831] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 16:14:17.831] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 16:14:17.832] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 16:14:17.833] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 16:14:17.834] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 16:14:17.833] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 16:14:17.833] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 16:14:17.953] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 16:14:17.953] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 16:14:17.953] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 16:14:18.469] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 16:14:18.470] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 16:14:18.551] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 16:14:18.554] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 16:14:18.554] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 16:14:18.555] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 16:14:18.555] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 16:14:18.556] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 16:14:18.556] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 16:14:18.557] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 16:14:18.557] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 16:14:18.557] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 16:14:18.558] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 16:14:18.558] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 16:14:18.562] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 16:14:18.562] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 16:14:18.564] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 16:14:18.565] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 16:14:18.566] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 16:14:18.552] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 16:14:18.553] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 16:14:18.553] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 16:14:22.451] [INFO] [Connection Thread] Client has connected [189bbbfe3f3]
+[04-07-2023 16:31:34.536] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 16:31:34.540] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 16:31:34.540] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 16:31:34.545] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 16:31:34.544] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 16:31:34.546] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 16:31:34.546] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 16:31:34.547] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 16:31:34.547] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 16:31:34.548] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 16:31:34.670] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 16:31:34.671] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 16:31:34.671] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 16:31:35.163] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 16:31:35.163] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 16:31:35.241] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 16:31:35.242] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 16:31:35.243] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 16:31:35.245] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 16:31:35.244] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 16:31:35.246] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 16:31:35.246] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 16:31:35.247] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 16:31:35.247] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 16:31:35.248] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 16:31:35.248] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 16:31:35.249] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 16:31:35.244] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 16:31:35.249] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 16:31:35.253] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 16:31:35.245] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 16:31:35.255] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 16:31:35.257] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 16:31:35.257] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 16:31:35.253] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 16:31:38.181] [INFO] [Connection Thread] Client has connected [189bbcfb1c5]
+[04-07-2023 16:35:59.254] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 16:35:59.257] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 16:35:59.258] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 16:35:59.260] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 16:35:59.261] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 16:35:59.262] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 16:35:59.262] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 16:35:59.263] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 16:35:59.262] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 16:35:59.262] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 16:35:59.370] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 16:35:59.370] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 16:35:59.371] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 16:35:59.854] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 16:35:59.855] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 16:35:59.932] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 16:35:59.934] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 16:35:59.934] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 16:35:59.935] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 16:35:59.935] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 16:35:59.935] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 16:35:59.936] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 16:35:59.937] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 16:35:59.937] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 16:35:59.938] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 16:35:59.938] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 16:35:59.933] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 16:35:59.938] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 16:35:59.939] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 16:35:59.945] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 16:35:59.947] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 16:35:59.948] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 16:35:59.939] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 16:35:59.943] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 16:35:59.943] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 17:35:23.46] [INFO] [Connection Thread] Client has connected [189bc0a0ea6]
+[04-07-2023 17:35:46.288] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 17:35:46.335] [INFO] [Connection Thread] Client has connected [189bc0a699f]
+[04-07-2023 17:36:09.812] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 17:36:09.887] [INFO] [Connection Thread] Client has connected [189bc0ac59f]
+[04-07-2023 17:36:12.457] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae23d17-0270-9b2d-ffffd7cade8cb5d3,state:on,sure:29%}
+[04-07-2023 17:36:22.14] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae23d16-0342-98c7-ffffd7cade8cb5d3,state:on,sure:0%}
+[04-07-2023 17:36:25.560] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae23d16-0342-98c7-ffffd7cade8cb5d3,state:on,sure:44%}
+[04-07-2023 17:36:31.268] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae388ef-02e9-650a-ffffd7cade8cb5d3,state:on,sure:29%}
+[04-07-2023 17:36:34.799] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae388f0-015e-8cd5-ffffd7cade8cb5d3,state:on,sure:48%}
+[04-07-2023 17:36:37.375] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae23d14-027c-824d-ffffd7cade8cb5d3,state:on,sure:70%}
+[04-07-2023 17:36:44.678] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1ae23d14-027c-824d-ffffd7cade8cb5d3,state:off,sure:48%}
+[04-07-2023 17:36:51.521] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae23d17-0270-9b2d-ffffd7cade8cb5d3,state:on,sure:37%}
+[04-07-2023 17:37:03.797] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae23d14-027c-824d-ffffd7cade8cb5d3,state:on,sure:70%}
+[04-07-2023 17:37:20.255] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 17:37:20.322] [INFO] [Connection Thread] Client has connected [189bc0bd8c2]
+[04-07-2023 17:37:24.108] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1ae23d14-027c-824d-ffffd7cade8cb5d3,state:on,sure:70%}
+[04-07-2023 17:37:51.220] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 17:37:51.223] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 17:37:51.223] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 17:37:51.225] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 17:37:51.226] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 17:37:51.227] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 17:37:51.227] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 17:37:51.228] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 17:37:51.228] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 17:37:51.228] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 17:37:51.308] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 17:37:51.310] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 17:37:51.309] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 17:37:51.550] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 17:37:51.551] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 17:37:51.558] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 17:37:51.559] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 17:37:51.560] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 17:37:51.560] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 17:37:51.560] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 17:37:51.561] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 17:37:51.561] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 17:37:51.561] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 17:37:51.562] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 17:37:51.562] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 17:37:51.563] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 17:37:51.562] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 17:37:51.563] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 17:37:51.564] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 17:37:51.564] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 17:37:51.567] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 17:37:51.568] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 17:37:51.569] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 17:37:51.571] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 17:37:51.571] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 17:38:00.249] [INFO] [Connection Thread] Client has connected [189bc0c74b9]
+[04-07-2023 17:38:03.718] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:on,sure:49%}
+[04-07-2023 17:38:07.14] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:14227973-020c-3eed-ffff5c23eca9d419,state:off,sure:50%}
+[04-07-2023 17:38:11.498] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:off,sure:58%}
+[04-07-2023 17:38:14.162] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68aa-0028-9db4-ffff5c23eca9d419,state:off,sure:46%}
+[04-07-2023 17:38:17.448] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1a4d68aa-0028-9db4-ffff5c23eca9d419,state:on,sure:42%}
+[04-07-2023 17:38:20.510] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68aa-0028-9db4-ffff5c23eca9d419,state:off,sure:49%}
+[04-07-2023 17:38:27.758] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:off,sure:45%}
+[04-07-2023 17:38:31.474] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:off,sure:45%}
+[04-07-2023 17:38:36.542] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:off,sure:29%}
+[04-07-2023 17:38:39.370] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:on,sure:49%}
+[04-07-2023 17:38:52.396] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:on,sure:53%}
+[04-07-2023 17:39:02.678] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:off,sure:47%}
+[04-07-2023 17:39:13.543] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1a4d68aa-0028-9db4-ffff5c23eca9d419,state:on,sure:50%}
+[04-07-2023 17:39:21.495] [INFO] [Voice Thread] Recieved voice command to turn off the switch, {uuid:1a4d68aa-0028-9db4-ffff5c23eca9d419,state:off,sure:50%}
+[04-07-2023 17:39:31.927] [INFO] [Voice Thread] Recieved voice command to turn on the switch, {uuid:1a4d68ba-01c3-ad0c-ffff5c23eca9d419,state:on,sure:49%}
+[04-07-2023 17:40:03.581] [INFO] [Voice Thread] Recieved voice command to turn off the dimmer, {uuid:1a4da4f3-00c7-f5b8-ffff5c23eca9d419,value:undefined,sure:43%}
+[04-07-2023 17:40:09.488] [INFO] [Voice Thread] Recieved voice command to turn off the dimmer, {uuid:1a4da4f3-00c7-f5b8-ffff5c23eca9d419,value:undefined,sure:46%}
+[04-07-2023 17:40:13.502] [INFO] [Voice Thread] Recieved voice command to change dimmer value, {uuid:1a4da4f3-00c7-f5b8-ffff5c23eca9d419,value:0,sure:44%}
+[04-07-2023 17:40:20.224] [INFO] [Voice Thread] Recieved voice command to change dimmer value, but percent value is not set
+[04-07-2023 17:40:48.613] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 17:41:12.433] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 17:41:12.437] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 17:41:12.437] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 17:41:12.440] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 17:41:12.440] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 17:41:12.441] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 17:41:12.442] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 17:41:12.442] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 17:41:12.443] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 17:41:12.442] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 17:41:12.591] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 17:41:12.592] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 17:41:12.591] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 17:41:13.82] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 17:41:13.83] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 17:41:13.160] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 17:41:13.162] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 17:41:13.162] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 17:41:13.163] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 17:41:13.161] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 17:41:13.163] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 17:41:13.163] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 17:41:13.164] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 17:41:13.164] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 17:41:13.165] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 17:41:13.165] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 17:41:13.166] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 17:41:13.166] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 17:41:13.167] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 17:41:13.170] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 17:41:13.170] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 17:41:13.172] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 17:41:13.167] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 17:41:13.174] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 17:41:13.174] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 18:33:14.376] [INFO] [Connection Thread] Client has connected [189bc3f0688]
+[04-07-2023 18:38:50.938] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 18:38:50.941] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 18:38:50.941] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 18:38:50.945] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 18:38:50.945] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 18:38:50.946] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 18:38:50.947] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 18:38:50.947] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 18:38:50.947] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 18:38:50.947] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 18:38:51.57] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 18:38:51.58] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 18:38:51.58] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 18:38:51.543] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 18:38:51.544] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 18:38:51.621] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 18:38:51.623] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 18:38:51.623] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 18:38:51.624] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 18:38:51.624] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 18:38:51.625] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 18:38:51.625] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 18:38:51.626] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 18:38:51.628] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 18:38:51.627] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 18:38:51.629] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 18:38:51.629] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 18:38:51.627] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 18:38:51.632] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 18:38:51.633] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 18:38:51.624] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 18:38:51.635] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 18:38:51.637] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 18:38:51.627] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 18:38:51.636] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 18:38:53.713] [INFO] [Connection Thread] Client has connected [189bc443411]
+[04-07-2023 18:39:25.478] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 18:39:25.481] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 18:39:25.481] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 18:39:25.484] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 18:39:25.484] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 18:39:25.485] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 18:39:25.485] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 18:39:25.486] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 18:39:25.486] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 18:39:25.486] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 18:39:25.594] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 18:39:25.595] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 18:39:25.595] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 18:39:26.90] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 18:39:26.90] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 18:39:26.170] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 18:39:26.172] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 18:39:26.172] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 18:39:26.173] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 18:39:26.174] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 18:39:26.174] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 18:39:26.175] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 18:39:26.173] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 18:39:26.176] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 18:39:26.176] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 18:39:26.177] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 18:39:26.177] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 18:39:26.173] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 18:39:26.178] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 18:39:26.181] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 18:39:26.178] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 18:39:26.184] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 18:39:26.182] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 18:39:26.185] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 18:39:26.185] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 18:39:29.570] [INFO] [Connection Thread] Client has connected [189bc44c022]
+[04-07-2023 18:48:18.931] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 18:48:18.935] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 18:48:18.936] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 18:48:18.938] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 18:48:18.938] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 18:48:18.939] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 18:48:18.940] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 18:48:18.941] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 18:48:18.940] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 18:48:18.940] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 18:48:19.54] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 18:48:19.54] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 18:48:19.55] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 18:48:19.553] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 18:48:19.554] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 18:48:19.637] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 18:48:19.638] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 18:48:19.639] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 18:48:19.640] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 18:48:19.640] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 18:48:19.642] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 18:48:19.641] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 18:48:19.643] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 18:48:19.643] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 18:48:19.644] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 18:48:19.644] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 18:48:19.639] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 18:48:19.641] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 18:48:19.645] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 18:48:19.645] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 18:48:19.648] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 18:48:19.650] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 18:48:19.652] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 18:48:19.649] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 18:48:19.652] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 18:48:22.686] [INFO] [Connection Thread] Client has connected [189bc4ce29e]
+[04-07-2023 18:54:40.71] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 18:54:40.74] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 18:54:40.75] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 18:54:40.77] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 18:54:40.78] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 18:54:40.79] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 18:54:40.79] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 18:54:40.79] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 18:54:40.80] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 18:54:40.80] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 18:54:40.196] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 18:54:40.196] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 18:54:40.197] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 18:54:40.690] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 18:54:40.692] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 18:54:40.772] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 18:54:40.774] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 18:54:40.774] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 18:54:40.775] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 18:54:40.775] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 18:54:40.776] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 18:54:40.776] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 18:54:40.777] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 18:54:40.777] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 18:54:40.778] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 18:54:40.778] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 18:54:40.779] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 18:54:40.779] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 18:54:40.780] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 18:54:40.780] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 18:54:40.783] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 18:54:40.785] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 18:54:40.786] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 18:54:40.787] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 18:54:40.783] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 18:54:42.911] [INFO] [Connection Thread] Client has connected [189bc52afdf]
+[04-07-2023 19:04:07.752] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:04:07.756] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:04:07.756] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:04:07.758] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:04:07.759] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:04:07.760] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:04:07.760] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:04:07.761] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:04:07.761] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:04:07.760] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:04:07.872] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:04:07.872] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:04:07.873] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:04:08.365] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:04:08.365] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:04:08.445] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:04:08.446] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:04:08.447] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:04:08.447] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:04:08.448] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:04:08.448] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:04:08.449] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:04:08.449] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:04:08.450] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:04:08.451] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:04:08.451] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:04:08.452] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:04:08.453] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:04:08.457] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:04:08.459] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:04:08.452] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:04:08.460] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:04:08.453] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:04:08.460] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:04:08.456] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:04:13.142] [INFO] [Connection Thread] Client has connected [189bc5b6356]
+[04-07-2023 19:05:03.882] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:05:03.885] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:05:03.886] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:05:03.888] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:05:03.888] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:05:03.889] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:05:03.890] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:05:03.890] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:05:03.890] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:05:03.890] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:05:04.5] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:05:04.6] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:05:04.7] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:05:04.536] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:05:04.537] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:05:04.620] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:05:04.621] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:05:04.622] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:05:04.622] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:05:04.623] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:05:04.623] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:05:04.624] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:05:04.624] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:05:04.626] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:05:04.626] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:05:04.627] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:05:04.625] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:05:04.627] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:05:04.628] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:05:04.631] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:05:04.632] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:05:04.633] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:05:04.635] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:05:04.635] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:05:04.626] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:05:06.546] [INFO] [Connection Thread] Client has connected [189bc5c33f2]
+[04-07-2023 19:05:36.497] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:05:36.501] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:05:36.501] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:05:36.503] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:05:36.504] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:05:36.505] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:05:36.505] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:05:36.506] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:05:36.506] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:05:36.507] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:05:36.648] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:05:36.648] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:05:36.648] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:05:37.165] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:05:37.165] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:05:37.245] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:05:37.246] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:05:37.247] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:05:37.247] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:05:37.248] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:05:37.248] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:05:37.249] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:05:37.249] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:05:37.251] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:05:37.251] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:05:37.251] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:05:37.251] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:05:37.250] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:05:37.252] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:05:37.258] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:05:37.260] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:05:37.260] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:05:37.253] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:05:37.256] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:05:37.257] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:05:47.962] [INFO] [Connection Thread] Client has connected [189bc5cd5ba]
+[04-07-2023 19:17:56.715] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:17:56.718] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:17:56.719] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:17:56.721] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:17:56.722] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:17:56.723] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:17:56.723] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:17:56.724] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:17:56.724] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:17:56.724] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:17:56.843] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:17:56.843] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:17:56.844] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:17:57.327] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:17:57.328] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:17:57.404] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:17:57.406] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:17:57.406] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:17:57.407] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:17:57.407] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:17:57.407] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:17:57.408] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:17:57.408] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:17:57.409] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:17:57.410] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:17:57.411] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:17:57.411] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:17:57.411] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:17:57.412] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:17:57.412] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:17:57.416] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:17:57.416] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:17:57.418] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:17:57.420] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:17:57.420] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:18:00.153] [INFO] [Connection Thread] Client has connected [189bc6801d9]
+[04-07-2023 19:22:08.842] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:22:08.845] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:22:08.845] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:22:08.848] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:22:08.848] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:22:08.849] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:22:08.849] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:22:08.850] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:22:08.850] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:22:08.850] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:22:08.963] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:22:08.964] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:22:08.964] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:22:09.462] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:22:09.463] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:22:09.543] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:22:09.544] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:22:09.545] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:22:09.545] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:22:09.546] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:22:09.546] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:22:09.547] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:22:09.547] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:22:09.548] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:22:09.548] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:22:09.549] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:22:09.549] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:22:09.551] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:22:09.554] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:22:09.554] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:22:09.557] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:22:09.550] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:22:09.559] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:22:09.558] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:22:09.549] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:22:13.29] [INFO] [Connection Thread] Client has connected [189bc6bdda5]
+[04-07-2023 19:22:52.1] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 19:22:52.115] [INFO] [Connection Thread] Client has connected [189bc6c7653]
+[04-07-2023 19:38:43.307] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:38:43.310] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:38:43.311] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:38:43.313] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:38:43.313] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:38:43.314] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:38:43.315] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:38:43.315] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:38:43.315] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:38:43.316] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:38:43.438] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:38:43.439] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:38:43.439] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:38:43.954] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:38:43.955] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:38:44.35] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:38:44.36] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:38:44.37] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:38:44.37] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:38:44.38] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:38:44.38] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:38:44.40] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:38:44.39] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:38:44.41] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:38:44.41] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:38:44.41] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:38:44.42] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:38:44.43] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:38:44.46] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:38:44.46] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:38:44.41] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:38:44.39] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:38:44.48] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:38:44.50] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:38:44.49] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:38:46.507] [INFO] [Connection Thread] Client has connected [189bc7b066b]
+[04-07-2023 19:42:52.874] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:42:52.878] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:42:52.878] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:42:52.880] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:42:52.881] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:42:52.882] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:42:52.882] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:42:52.882] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:42:52.883] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:42:52.883] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:42:52.996] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:42:52.997] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:42:52.997] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:42:53.478] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:42:53.479] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:42:53.559] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:42:53.560] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:42:53.560] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:42:53.561] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:42:53.561] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:42:53.561] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:42:53.562] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:42:53.563] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:42:53.563] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:42:53.564] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:42:53.564] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:42:53.565] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:42:53.565] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:42:53.566] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:42:53.567] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:42:53.570] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:42:53.570] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:42:53.572] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:42:53.573] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:42:53.574] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:43:12.910] [INFO] [Connection Thread] Client has connected [189bc7f170e]
+[04-07-2023 19:50:20.870] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:50:20.873] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:50:20.874] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:50:20.878] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:50:20.879] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:50:20.880] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:50:20.880] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:50:20.881] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:50:20.881] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:50:20.881] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:50:21.16] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:50:21.16] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:50:21.16] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:50:21.523] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:50:21.524] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:50:21.603] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:50:21.604] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:50:21.605] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:50:21.605] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:50:21.606] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:50:21.606] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:50:21.607] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:50:21.607] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:50:21.608] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:50:21.609] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:50:21.609] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:50:21.610] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:50:21.610] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:50:21.613] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:50:21.614] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:50:21.615] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:50:21.617] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:50:21.605] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:50:21.618] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:50:21.608] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:50:26.558] [INFO] [Connection Thread] Client has connected [189bc85b4fe]
+[04-07-2023 19:51:08.65] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:51:08.69] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:51:08.70] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:51:08.73] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:51:08.73] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:51:08.74] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:51:08.75] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:51:08.75] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:51:08.75] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:51:08.76] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:51:08.202] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:51:08.202] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:51:08.203] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:51:08.711] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:51:08.713] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:51:08.791] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:51:08.793] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:51:08.793] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:51:08.794] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:51:08.795] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:51:08.796] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:51:08.795] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:51:08.798] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:51:08.798] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:51:08.798] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:51:08.794] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:51:08.799] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:51:08.800] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:51:08.800] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:51:08.806] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:51:08.806] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:51:08.808] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:51:08.810] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:51:08.810] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:51:08.797] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:51:09.849] [INFO] [Connection Thread] Client has connected [189bc865e19]
+[04-07-2023 19:51:26.705] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:51:26.699] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:51:26.705] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:51:26.710] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:51:26.714] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:51:26.716] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:51:26.717] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:51:26.717] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:51:26.718] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:51:26.718] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:51:26.841] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:51:26.840] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:51:26.841] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:51:27.330] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:51:27.342] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:51:27.425] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:51:27.426] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:51:27.426] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:51:27.427] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:51:27.427] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:51:27.427] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:51:27.428] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:51:27.428] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:51:27.429] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:51:27.430] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:51:27.430] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:51:27.431] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:51:27.432] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:51:27.432] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:51:27.435] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:51:27.431] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:51:27.436] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:51:27.437] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:51:27.439] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:51:27.439] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:51:35.823] [INFO] [Connection Thread] Client has connected [189bc86c38f]
+[04-07-2023 19:51:47.651] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:51:47.654] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:51:47.654] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:51:47.657] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:51:47.658] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:51:47.659] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:51:47.659] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:51:47.660] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:51:47.660] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:51:47.660] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:51:47.786] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:51:47.786] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:51:47.786] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:51:48.331] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:51:48.331] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:51:48.418] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:51:48.419] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:51:48.420] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:51:48.420] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:51:48.422] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:51:48.421] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:51:48.422] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:51:48.424] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:51:48.424] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:51:48.424] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:51:48.425] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:51:48.426] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:51:48.426] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:51:48.429] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:51:48.429] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:51:48.431] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:51:48.423] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:51:48.432] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:51:48.433] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:51:48.421] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:51:53.819] [INFO] [Connection Thread] Client has connected [189bc8709db]
+[04-07-2023 19:52:08.529] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:52:08.533] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:52:08.533] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:52:08.535] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:52:08.536] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:52:08.537] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:52:08.537] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:52:08.538] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:52:08.538] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:52:08.538] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:52:08.658] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:52:08.658] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:52:08.658] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:52:09.155] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:52:09.156] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:52:09.233] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:52:09.234] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:52:09.235] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:52:09.235] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:52:09.236] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:52:09.237] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:52:09.237] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:52:09.238] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:52:09.236] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:52:09.239] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:52:09.239] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:52:09.240] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:52:09.240] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:52:09.244] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:52:09.244] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:52:09.246] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:52:09.247] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:52:09.239] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:52:09.247] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:52:09.238] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:52:10.767] [INFO] [Connection Thread] Client has connected [189bc874c0f]
+[04-07-2023 19:53:47.163] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:53:47.166] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:53:47.167] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:53:47.170] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:53:47.169] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:53:47.171] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:53:47.171] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:53:47.171] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:53:47.172] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:53:47.172] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:53:47.281] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:53:47.282] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:53:47.282] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:53:47.772] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:53:47.773] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:53:47.851] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:53:47.852] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:53:47.852] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:53:47.853] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:53:47.854] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:53:47.853] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:53:47.855] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:53:47.856] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:53:47.854] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:53:47.857] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:53:47.857] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:53:47.858] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:53:47.858] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:53:47.861] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:53:47.862] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:53:47.863] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:53:47.865] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:53:47.865] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:53:47.855] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:53:47.856] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:53:50.304] [INFO] [Connection Thread] Client has connected [189bc88d0e0]
+[04-07-2023 19:54:14.772] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 19:54:14.775] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 19:54:14.776] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 19:54:14.778] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 19:54:14.779] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 19:54:14.780] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 19:54:14.780] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 19:54:14.781] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 19:54:14.781] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 19:54:14.781] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 19:54:14.898] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 19:54:14.899] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 19:54:14.899] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 19:54:15.389] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 19:54:15.390] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 19:54:15.469] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 19:54:15.471] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 19:54:15.471] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 19:54:15.472] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 19:54:15.473] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 19:54:15.473] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 19:54:15.474] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 19:54:15.473] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 19:54:15.475] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 19:54:15.476] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 19:54:15.475] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 19:54:15.472] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 19:54:15.477] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 19:54:15.477] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 19:54:15.481] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 19:54:15.480] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 19:54:15.482] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 19:54:15.476] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 19:54:15.484] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 19:54:15.484] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 19:54:18.197] [INFO] [Connection Thread] Client has connected [189bc893dd5]
+[04-07-2023 20:07:27.874] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:07:27.878] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:07:27.878] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:07:27.881] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:07:27.881] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:07:27.882] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:07:27.882] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:07:27.883] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:07:27.883] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:07:27.883] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:07:28.10] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:07:28.11] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:07:28.11] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:07:28.522] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:07:28.523] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:07:28.605] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:07:28.607] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:07:28.607] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:07:28.608] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:07:28.608] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:07:28.609] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:07:28.611] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:07:28.610] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:07:28.611] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:07:28.611] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:07:28.609] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:07:28.612] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:07:28.612] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:07:28.617] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:07:28.620] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:07:28.622] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:07:28.622] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:07:28.616] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:07:28.613] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:07:28.606] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:07:28.812] [INFO] [Connection Thread] Client has connected [189bc954e2c]
+[04-07-2023 20:15:25.53] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:15:25.57] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:15:25.57] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:15:25.60] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:15:25.60] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:15:25.61] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:15:25.62] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:15:25.62] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:15:25.63] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:15:25.62] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:15:25.179] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:15:25.179] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:15:25.179] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:15:25.665] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:15:25.665] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:15:25.744] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:15:25.746] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:15:25.746] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:15:25.747] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:15:25.747] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:15:25.748] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:15:25.748] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:15:25.749] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:15:25.750] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:15:25.751] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:15:25.750] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:15:25.751] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:15:25.752] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:15:25.752] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:15:25.745] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:15:25.756] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:15:25.758] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:15:25.756] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:15:25.759] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:15:25.760] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:15:29.346] [INFO] [Connection Thread] Client has connected [189bc9ca342]
+[04-07-2023 20:21:37.79] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:21:37.82] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:21:37.83] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:21:37.86] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:21:37.86] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:21:37.87] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:21:37.87] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:21:37.88] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:21:37.88] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:21:37.88] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:21:37.182] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:21:37.194] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:21:37.195] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:21:37.475] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:21:37.476] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:21:37.482] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:21:37.483] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:21:37.483] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:21:37.484] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:21:37.484] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:21:37.484] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:21:37.485] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:21:37.485] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:21:37.485] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:21:37.486] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:21:37.487] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:21:37.487] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:21:37.487] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:21:37.488] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:21:37.489] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:21:37.492] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:21:37.494] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:21:37.492] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:21:37.496] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:21:37.496] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:21:50.888] [INFO] [Connection Thread] Client has connected [189bca275a8]
+[04-07-2023 20:23:20.66] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 20:23:20.327] [INFO] [Connection Thread] Client has connected [189bca3d307]
+[04-07-2023 20:30:41.812] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:30:41.816] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:30:41.817] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:30:41.820] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:30:41.820] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:30:41.823] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:30:41.823] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:30:41.824] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:30:41.824] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:30:41.826] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:30:41.911] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:30:41.911] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:30:41.912] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:30:42.170] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:30:42.171] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:30:42.176] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:30:42.177] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:30:42.177] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:30:42.178] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:30:42.178] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:30:42.179] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:30:42.179] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:30:42.179] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:30:42.180] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:30:42.180] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:30:42.180] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:30:42.180] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:30:42.182] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:30:42.181] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:30:42.181] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:30:42.187] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:30:42.189] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:30:42.189] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:30:42.185] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:30:42.186] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:30:46.69] [INFO] [Connection Thread] Client has connected [189bcaaa035]
+[04-07-2023 20:31:40.695] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:31:40.698] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:31:40.698] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:31:40.701] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:31:40.701] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:31:40.702] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:31:40.702] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:31:40.703] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:31:40.703] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:31:40.704] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:31:40.787] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:31:40.788] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:31:40.789] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:31:41.47] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:31:41.47] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:31:41.53] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:31:41.55] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:31:41.55] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:31:41.56] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:31:41.56] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:31:41.57] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:31:41.57] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:31:41.58] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:31:41.58] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:31:41.59] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:31:41.59] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:31:41.58] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:31:41.60] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:31:41.60] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:31:41.64] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:31:41.64] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:31:41.66] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:31:41.68] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:31:41.69] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:31:41.59] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:31:42.109] [INFO] [Connection Thread] Client has connected [189bcab7b1d]
+[04-07-2023 20:36:29.167] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:36:29.171] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:36:29.171] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:36:29.174] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:36:29.175] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:36:29.177] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:36:29.177] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:36:29.178] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:36:29.178] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:36:29.177] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:36:29.266] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:36:29.266] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:36:29.265] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:36:29.514] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:36:29.532] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:36:29.540] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:36:29.561] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:36:29.572] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:36:29.574] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:36:29.575] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:36:29.576] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:36:29.577] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:36:29.577] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:36:29.577] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:36:29.578] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:36:29.578] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:36:29.578] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:36:29.579] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:36:29.580] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:36:29.579] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:36:29.584] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:36:29.584] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:36:29.588] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:36:29.588] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:36:29.586] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:36:33.467] [INFO] [Connection Thread] Client has connected [189bcafed3b]
+[04-07-2023 20:39:46.135] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:39:46.139] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:39:46.139] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:39:46.141] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:39:46.142] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:39:46.143] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:39:46.143] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:39:46.144] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:39:46.144] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:39:46.144] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:39:46.229] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:39:46.229] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:39:46.230] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:39:46.487] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:39:46.487] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:39:46.492] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:39:46.493] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:39:46.495] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:39:46.496] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:39:46.497] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:39:46.496] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:39:46.496] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:39:46.497] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:39:46.498] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:39:46.497] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:39:46.499] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:39:46.499] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:39:46.502] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:39:46.503] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:39:46.505] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:39:46.494] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:39:46.495] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:39:46.506] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:39:46.495] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:39:46.507] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:39:49.11] [INFO] [Connection Thread] Client has connected [189bcb2e913]
+[04-07-2023 20:40:10.319] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:40:10.323] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:40:10.323] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:40:10.326] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:40:10.326] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:40:10.327] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:40:10.327] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:40:10.328] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:40:10.328] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:40:10.328] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:40:10.413] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:40:10.413] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:40:10.414] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:40:10.674] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:40:10.675] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:40:10.686] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:40:10.687] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:40:10.689] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:40:10.690] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:40:10.691] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:40:10.691] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:40:10.692] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:40:10.692] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:40:10.692] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:40:10.692] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:40:10.693] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:40:10.694] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:40:10.697] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:40:10.697] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:40:10.699] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:40:10.701] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:40:10.701] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:40:10.690] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:40:10.691] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:40:10.690] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:40:11.809] [INFO] [Connection Thread] Client has connected [189bcb34221]
+[04-07-2023 20:40:26.967] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:40:26.970] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:40:26.970] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:40:26.973] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:40:26.973] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:40:26.974] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:40:26.975] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:40:26.976] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:40:26.976] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:40:26.975] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:40:27.59] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:40:27.59] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:40:27.60] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:40:27.308] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:40:27.309] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:40:27.314] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:40:27.315] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:40:27.316] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:40:27.316] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:40:27.317] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:40:27.317] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:40:27.317] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:40:27.318] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:40:27.318] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:40:27.318] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:40:27.318] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:40:27.319] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:40:27.319] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:40:27.320] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:40:27.320] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:40:27.324] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:40:27.326] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:40:27.327] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:40:27.328] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:40:27.323] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:40:28.542] [INFO] [Connection Thread] Client has connected [189bcb3837d]
+[04-07-2023 20:42:24.505] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:42:24.508] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:42:24.508] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:42:24.511] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:42:24.511] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:42:24.512] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:42:24.512] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:42:24.513] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:42:24.513] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:42:24.513] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:42:24.597] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:42:24.597] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:42:24.598] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:42:24.855] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:42:24.855] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:42:24.860] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:42:24.862] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:42:24.862] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:42:24.862] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:42:24.863] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:42:24.863] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:42:24.863] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:42:24.864] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:42:24.864] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:42:24.865] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:42:24.865] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:42:24.865] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:42:24.866] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:42:24.866] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:42:24.867] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:42:24.870] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:42:24.871] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:42:24.874] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:42:24.874] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:42:24.872] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:42:28.668] [INFO] [Connection Thread] Client has connected [189bcb558bc]
+[04-07-2023 20:42:46.273] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:42:46.276] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:42:46.277] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:42:46.279] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:42:46.280] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:42:46.280] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:42:46.281] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:42:46.281] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:42:46.282] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:42:46.281] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:42:46.363] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:42:46.363] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:42:46.363] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:42:46.609] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:42:46.613] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:42:46.619] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:42:46.620] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:42:46.620] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:42:46.621] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:42:46.621] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:42:46.621] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:42:46.621] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:42:46.622] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:42:46.622] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:42:46.622] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:42:46.623] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:42:46.623] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:42:46.623] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:42:46.624] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:42:46.624] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:42:46.628] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:42:46.628] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:42:46.630] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:42:46.631] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:42:46.632] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:42:48.57] [INFO] [Connection Thread] Client has connected [189bcb5a479]
+[04-07-2023 20:42:50.298] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 20:42:50.489] [INFO] [Connection Thread] Client has connected [189bcb5adf9]
+[04-07-2023 20:45:42.181] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:45:42.185] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:45:42.185] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:45:42.188] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:45:42.188] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:45:42.189] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:45:42.189] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:45:42.190] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:45:42.190] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:45:42.190] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:45:42.272] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:45:42.272] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:45:42.273] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:45:42.519] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:45:42.520] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:45:42.525] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:45:42.526] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:45:42.527] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:45:42.527] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:45:42.528] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:45:42.528] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:45:42.527] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:45:42.529] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:45:42.529] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:45:42.530] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:45:42.529] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:45:42.528] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:45:42.531] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:45:42.534] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:45:42.531] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:45:42.537] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:45:42.530] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:45:42.538] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:45:42.539] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:45:42.535] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:46:13.463] [INFO] [Connection Thread] Client has connected [189bcb8c6d7]
+[04-07-2023 20:51:37.352] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:51:37.355] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:51:37.355] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:51:37.358] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:51:37.358] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:51:37.359] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:51:37.360] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:51:37.360] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:51:37.360] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:51:37.361] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:51:37.444] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:51:37.445] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:51:37.444] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:51:37.692] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:51:37.692] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:51:37.697] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:51:37.698] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:51:37.699] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:51:37.700] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:51:37.700] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:51:37.700] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:51:37.701] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:51:37.701] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:51:37.702] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:51:37.702] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:51:37.703] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:51:37.699] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:51:37.703] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:51:37.707] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:51:37.707] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:51:37.709] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:51:37.711] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:51:37.711] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:51:37.704] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:51:37.702] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:51:39.353] [INFO] [Connection Thread] Client has connected [189bcbdbfd9]
+[04-07-2023 20:53:44.281] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:53:44.284] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:53:44.285] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:53:44.288] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:53:44.288] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:53:44.289] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:53:44.290] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:53:44.290] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:53:44.290] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:53:44.291] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:53:44.374] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:53:44.375] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:53:44.375] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:53:44.609] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:53:44.610] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:53:44.614] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:53:44.615] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:53:44.616] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:53:44.616] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:53:44.617] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:53:44.617] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:53:44.618] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:53:44.618] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:53:44.618] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:53:44.619] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:53:44.619] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:53:44.619] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:53:44.621] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:53:44.620] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:53:44.624] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:53:44.617] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:53:44.624] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:53:44.626] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:53:44.628] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:53:44.628] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:53:50.844] [INFO] [Connection Thread] Client has connected [189bcbfc17c]
+[04-07-2023 20:57:06.369] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 20:57:06.373] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 20:57:06.374] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 20:57:06.376] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 20:57:06.377] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 20:57:06.378] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 20:57:06.378] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 20:57:06.379] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 20:57:06.379] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 20:57:06.378] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 20:57:06.553] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 20:57:06.553] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 20:57:06.554] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 20:57:07.143] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 20:57:07.144] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 20:57:07.225] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 20:57:07.226] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 20:57:07.226] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 20:57:07.226] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 20:57:07.227] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 20:57:07.227] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 20:57:07.228] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 20:57:07.228] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 20:57:07.229] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 20:57:07.230] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 20:57:07.230] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 20:57:07.230] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 20:57:07.231] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 20:57:07.232] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 20:57:07.235] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 20:57:07.237] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 20:57:07.239] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 20:57:07.239] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 20:57:07.235] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 20:57:07.229] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 20:57:11.65] [INFO] [Connection Thread] Client has connected [189bcc2cf99]
+[04-07-2023 21:10:08.158] [INFO] [Main Thread] Initializing varriables
+[04-07-2023 21:10:08.162] [INFO] [Main Thread] Varriables has been inilialized
+[04-07-2023 21:10:08.162] [INFO] [Main Thread] Loading configurations files
+[04-07-2023 21:10:08.167] [INFO] [Main Thread] Configurations files has been loaded
+[04-07-2023 21:10:08.167] [INFO] [Main Thread] Loading server cache and data files
+[04-07-2023 21:10:08.168] [INFO] [Main Thread] Server cache and data files has been loaded
+[04-07-2023 21:10:08.169] [INFO] [Loxone Thread] Trying to establish connection with Loxone Miniserver
+[04-07-2023 21:10:08.170] [INFO] [Loxone Thread] Listeners for receiving has been added successfully
+[04-07-2023 21:10:08.169] [INFO] [Loxone Thread] Trying to create listeners for receiving
+[04-07-2023 21:10:08.171] [INFO] [Loxone Thread] Trying to fetch settings from Loxone Miniserver
+[04-07-2023 21:10:08.306] [INFO] [Loxone Thread] Settings from Loxone Miniserver fetched successfully
+[04-07-2023 21:10:08.307] [INFO] [Loxone Thread] Configuring connection has been added successfully
+[04-07-2023 21:10:08.308] [INFO] [Loxone Thread] Trying to create connection with Loxone Miniserver
+[04-07-2023 21:10:08.900] [INFO] [Loxone Thread] Creating status update listener
+[04-07-2023 21:10:08.894] [INFO] [Loxone Thread] Connection with Loxone Miniserver has been established successfully
+[04-07-2023 21:10:09.8] [INFO] [Loxone Thread] Status update listener has been created
+[04-07-2023 21:10:09.12] [INFO] [Voice Thread] Training voice model 10%
+[04-07-2023 21:10:09.17] [INFO] [Voice Thread] Training voice model 20%
+[04-07-2023 21:10:09.19] [INFO] [Voice Thread] Training voice model 30%
+[04-07-2023 21:10:09.21] [INFO] [Voice Thread] Training voice model 40%
+[04-07-2023 21:10:09.22] [INFO] [Voice Thread] Training voice model 50%
+[04-07-2023 21:10:09.22] [INFO] [Voice Thread] Training voice model 60%
+[04-07-2023 21:10:09.23] [INFO] [Voice Thread] Training voice model 70%
+[04-07-2023 21:10:09.24] [INFO] [Voice Thread] Training voice model 80%
+[04-07-2023 21:10:09.24] [INFO] [Voice Thread] Training voice model 90%
+[04-07-2023 21:10:09.25] [INFO] [Voice Thread] Training voice model 100%
+[04-07-2023 21:10:09.26] [INFO] [Interface Thread] Initializing Web interface listener
+[04-07-2023 21:10:09.25] [INFO] [Voice Thread] Voice model has been trained
+[04-07-2023 21:10:09.26] [INFO] [Interface Thread] Web interface listener has been initialized
+[04-07-2023 21:10:09.27] [INFO] [Main Thread] Trying to create WebSocket listener
+[04-07-2023 21:10:09.30] [INFO] [Main Thread] Server has been fully started
+[04-07-2023 21:10:09.32] [INFO] [Interface Thread] Trying to create Web Interface listener
+[04-07-2023 21:10:09.34] [INFO] [Interface Thread] Web Interface listener running on http://localhost:80
+[04-07-2023 21:10:09.30] [INFO] [Main Thread] WebSocket listener is listening
+[04-07-2023 21:10:09.34] [INFO] [Interface Thread] Web Interface listener has been created
+[04-07-2023 21:10:11.653] [INFO] [Connection Thread] Client has connected [189bcceb8c5]
+[04-07-2023 21:50:34.486] [INFO] [Connection Thread] Client has disconnected
+[04-07-2023 21:50:34.631] [INFO] [Connection Thread] Client has connected [189bcf3b187]
