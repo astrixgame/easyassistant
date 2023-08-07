@@ -4,7 +4,9 @@ var dateDate = document.getElementById("date-date");
 var dateTime = document.getElementById("date-clock");
 var all = document.getElementById("all");
 var rated = document.getElementById("rated");
+var openned = document.getElementById("open");
 var menuItems = document.querySelectorAll(".menu-item");
+var overlay = document.getElementById("overlay");
 //var speechRecognition_start = document.getElementById("speechRecognition");
 //var speechRecognition_buble = document.getElementById("speechBuble");
 //var speechRecognition_thread = null;
@@ -61,7 +63,22 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <div class="row">
+                                                            <p class="name">Stav</p><p class="subvalue" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "InfoOnlyAnalog":
@@ -69,7 +86,22 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <div class="row">
+                                                            <p class="name">Stav</p><p class="subvalue" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "Switch":
@@ -82,7 +114,23 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <label class="switch">
+                                                            <input type="checkbox" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', this.checked)" data-id="`+data["uuid"]+`-value">
+                                                            <span class="slider"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                         valueLine = false;
                                     break;
@@ -91,20 +139,114 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <div class="row">
+                                                            <p class="name">Stav</p><p class="subvalue" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "Meter":
-                                        control = `
-                                            <p class="value" data-id="`+data["uuid"]+`-value">
-                                                <txt data-id="`+data["uuid"]+`-value1">N/A</txt>
-                                                <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
-                                                <txt data-id="`+data["uuid"]+`-value3">N/A</txt>
-                                            </p>
-                                        `;
-                                        fullControl = `
-
-                                        `;
+                                        switch(data["subtype"]) {
+                                            case "storage":
+                                                control = `
+                                                    <p class="value" data-id="`+data["uuid"]+`-value">
+                                                        <txt data-id="`+data["uuid"]+`-value1">N/A</txt> • 
+                                                        <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
+                                                    </p>
+                                                `;
+                                                fullControl = `
+                                                    <div class="item" id="`+data["uuid"]+`-open">
+                                                        <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                            </svg>
+                                                        </button>
+                                                        <p class="title">`+data["title"]+`</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                        <div class="controling">
+                                                            <div class="hideselect">
+                                                                <div class="row">
+                                                                    <p class="name">Nabití</p><p class="subvalue" data-id="`+data["uuid"]+`-value1">N/A</p>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p class="name">Stav</p><p class="subvalue" data-id="`+data["uuid"]+`-value2">N/A</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                `;
+                                            break;
+                                            case "unidirectional":
+                                                control = `
+                                                    <p class="value" data-id="`+data["uuid"]+`-value">
+                                                        <txt data-id="`+data["uuid"]+`-value1">N/A</txt> • 
+                                                        <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
+                                                    </p>
+                                                `;
+                                                fullControl = `
+                                                    <div class="item" id="`+data["uuid"]+`-open">
+                                                        <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                            </svg>
+                                                        </button>
+                                                        <p class="title">`+data["title"]+`</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                        <div class="controling">
+                                                            <div class="hideselect">
+                                                                <div class="row">
+                                                                    <p class="name">Aktuálně</p><p class="subvalue" data-id="`+data["uuid"]+`-value1">N/A</p>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p class="name">Celkem</p><p class="subvalue" data-id="`+data["uuid"]+`-value2">N/A</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                `;
+                                            break;
+                                            case "bidirectional":
+                                                control = `
+                                                    <p class="value" data-id="`+data["uuid"]+`-value">
+                                                        <txt data-id="`+data["uuid"]+`-value1">N/A</txt> • 
+                                                        <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
+                                                    </p>
+                                                `;
+                                                fullControl = `
+                                                    <div class="item" id="`+data["uuid"]+`-open">
+                                                        <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                            </svg>
+                                                        </button>
+                                                        <p class="title">`+data["title"]+`</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                        <div class="controling">
+                                                            <div class="hideselect">
+                                                                <div class="row">
+                                                                    <p class="name">Aktuálně</p><p class="subvalue" data-id="`+data["uuid"]+`-value1">N/A</p>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p class="name">Celkem</p><p class="subvalue" data-id="`+data["uuid"]+`-value2">N/A</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                `;
+                                            break;
+                                        }
                                     break;
                                     case "EIBDimmer":
                                         control = `
@@ -117,7 +259,25 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <label class="switch">
+                                                            <input type="checkbox" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', this.checked)" data-id="`+data["uuid"]+`-value1">
+                                                            <span class="slider"></span>
+                                                        </label>
+                                                        <input type="range" class="dimmer" id="`+data["uuid"]+`-temp" data-id="`+data["uuid"]+`-value2" min="0" max="100" value="0" oninput="slider(this.id);lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', this.value+\'%\')">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "IRoomControllerV2":
@@ -140,7 +300,27 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <div class="row">
+                                                            <p class="name">Aktivní od</p><p class="subvalue" data-id="`+data["uuid"]+`-value1">N/A</p>
+                                                        </div>
+                                                        <div class="row row-link">
+                                                            <p class="name">Historie</p>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "TimedSwitch":
@@ -197,7 +377,12 @@ connection.onopen = function() {
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                             <div class="control">
-                                                <button data-id="`+data["uuid"]+`-value1" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'push\')">
+                                                <button data-id="`+data["uuid"]+`-value1" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'startForce\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                                    </svg>
+                                                </button>
+                                                <button data-id="`+data["uuid"]+`-value2" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'stop\')">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                         <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
                                                     </svg>
@@ -205,7 +390,30 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value1" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'startForce\')">Spustit závlahu</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value2" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'stop\')">Zastavit závlahu</button>
+                                                    </div>
+                                                    <div class="row row-link">
+                                                        <p class="name">Aktivita</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                                                    </div>
+                                                    <div class="row row-link">
+                                                        <p class="name">Doba závlahy</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "SmokeAlarm":
@@ -213,7 +421,27 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value1" onclick="">Spustit servisní režim</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value2" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'confirm\')">Potvrďit alarm</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value3" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'mute\')">Vypnout výstupy alarmu</button>
+                                                    </div>
+                                                    <div class="row row-link">
+                                                        <p class="name">Historie</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "EnergyManager2":
@@ -243,7 +471,52 @@ connection.onopen = function() {
                                             </p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">
+                                                    <txt data-id="`+data["uuid"]+`-value1">N/A</txt>
+                                                    <txt data-id="`+data["uuid"]+`-value2">N/A</txt>
+                                                </p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value3" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'pause\')">Pozastavit nabíjení</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value4" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'start\')">Spustit nabíjení</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Výkon</p>
+                                                        <p class="subvalue" data-id="`+data["uuid"]+`-value5">N/A</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Nabitá energie</p>
+                                                        <p class="subvalue" data-id="`+data["uuid"]+`-value6">N/A</p>
+                                                    </div>
+                                                    <div class="spacer">Režim</div>
+                                                    <div class="row">
+                                                        <p class="name">Režim nabíjení</p>
+                                                        <select data-id="`+data["uuid"]+`-value7" onchange="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'mode:\'+this.value)"></select>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Max. výkon</p>
+                                                        <p class="subvalue" data-id="`+data["uuid"]+`-value8">N/A</p>
+                                                        <input type="range" id="`+data["uuid"]+`-temp" data-id="`+data["uuid"]+`-value9" value="0" oninput="slider(this.id);lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'limit:\'+this.value)" min="`+data["min"]+`" max="`+data["max"]+`" step="0.01">
+                                                    </div>
+                                                    <div class="spacer">Statistiky</div>
+                                                    <div class="row row-link">
+                                                        <p class="name">Výkon</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                                                    </div>
+                                                    <div class="row row-link">
+                                                        <p class="name">Spotřeba</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "LoadManager":
@@ -259,7 +532,7 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
                                         fullControl = `
-
+                                            
                                         `;
                                     break;
                                     case "Alarm":
@@ -267,7 +540,35 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value1" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'on\')">Zastřežit</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value2" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'delayon\')">Zastřežit se spožděním</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value3" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'off\')">Odstřežit</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value4" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'confirm\')">Potvrďit</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Pohybové sensory</p>
+                                                        <label class="switch">
+                                                            <input type="checkbox" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', this.checked ? \'dismv:0\' : \'dismv:1\')" data-id="`+data["uuid"]+`-value5">
+                                                            <span class="slider"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row row-link">
+                                                        <p class="name">Historie</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "AalEmergency":
@@ -302,7 +603,29 @@ connection.onopen = function() {
                                             </p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value"></p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                        `;
+                                        data["windows"].forEach(function(item) {
+                                            fullControl += `
+                                                <div class="row">
+                                                    <p class="name ws">`+item.window+`</p>
+                                                    <p class="subname">`+item.room+`</p>
+                                                    <p class="subvalue" data-id="`+data["uuid"]+`-value`+(item.id+4)+`">N/A</p>
+                                                </div>
+                                            `;
+                                        });
+                                        fullControl += `
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "CentralLightController":
@@ -389,7 +712,24 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value1" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'openstart\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'openstop\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'openstart\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'openstop\')">Otevřít</button>
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value2" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'closestart\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'closestop\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'closestart\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'closestop\')">Zavřít</button>
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value3" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'open\')">Úplně otevřit</button>
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value4" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'close\')">Úplně zavřít</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "Jalousie":
@@ -409,7 +749,32 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value1" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'upstart\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'upstop\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'upstart\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'upstop\')">Nahoru</button>
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value2" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'downstart\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'downstop\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'downstart\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'downstop\')">Dolů</button>
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value3" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'up\')">Úplně nahoru</button>
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value4" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'down\')">Úplně dolů</button>
+                                                        <button class="b1" data-id="`+data["uuid"]+`-value5" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'shade\')">Stínění</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Automatika dle polohy slunce</p>
+                                                        <label class="switch">
+                                                            <input type="checkbox" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', this.checked ? \'autoon\' : \'autooff\')" data-id="`+data["uuid"]+`-value6">
+                                                            <span class="slider"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "Gate":
@@ -429,7 +794,22 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value3" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'up\')">Otevřít</button>
+                                                        <button class="b2" data-id="`+data["uuid"]+`-value4" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'down\')">Zavřít</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "Ventilation":
@@ -457,7 +837,25 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                        `;
+                                        data["modes"].forEach(function(item) {
+                                            fullControl += `<button class="b1" data-id="`+data["uuid"]+`-value`+(item.id+3)+`" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'`+item.id+`\')">`+item.title+`</button>`;
+                                        });
+                                        fullControl += `
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "AudioZoneV2":
@@ -534,13 +932,13 @@ connection.onopen = function() {
                                 var tcenterline = "";
 
                                 if(!valueLine) tcenterline = " tcenter";
-                                all.innerHTML += '<div class="item'+tcenterline+'" id="'+data["uuid"]+'" data-menu="control" data-room="'+data["room"]+'" data-category="'+data["category"]+'" data-rating="'+data["rating"]+'"><p class="title">'+data["title"]+'</p>'+control+'</div>';
+                                all.innerHTML += '<div class="item'+tcenterline+'" id="'+data["uuid"]+'" data-menu="control" data-room="'+data["room"]+'" data-category="'+data["category"]+'" data-rating="'+data["rating"]+'" onclick="showPanel(this.id, event)"><p class="title">'+data["title"]+'</p>'+control+'</div>';
                                 getSvg(data["svg"], data["uuid"]);
+                                openned.innerHTML += fullControl;
                                 if(data["rating"] > 0) {
-                                    rated.innerHTML += '<div class="item" id="'+data["uuid"]+'-r" data-menu="control" data-room="'+data["room"]+'" data-category="'+data["category"]+'"><p class="title">'+data["title"]+'</p>'+control+'<p class="category">'+data["roomname"]+'</p></div>';
+                                    rated.innerHTML += '<div class="item" id="'+data["uuid"]+'-r" data-menu="control" data-room="'+data["room"]+'" data-category="'+data["category"]+'" onclick="showPanel(this.id.replace(\'-r\',\'\'), event)"><p class="title">'+data["title"]+'</p>'+control+'<p class="category">'+data["roomname"]+'</p></div>';
                                     getSvg(data["svg"], data["uuid"]+"-r");
                                 }
-                                
                             break;
                             case "room":
                                 all.innerHTML += '<div class="item-title" data-subtitle="'+data["uuid"]+'" style="display:none;"><p>'+data["title"]+'</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></div>';
@@ -594,43 +992,50 @@ connection.onopen = function() {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value']").forEach(function(itm) {
                                         itm.style.color = data["color"];
                                     });
-                                if(data["subtype"] == "storage") {
-                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
-                                        itm.innerHTML = data["value"];
-                                    });
-                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
-                                        itm.innerHTML = "";
-                                    });
-                                }
-                                if(data["subtype"] == "actual") {
-                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
-                                        itm.innerHTML = data["value"];
-                                    });
-                                    var itms = document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']");
-                                    if(itms[0] && itms[0].innerHTML == "N/A") {
-                                        itms.forEach(function(itm) {
-                                            itm.innerHTML = "";
-                                        });
-                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
-                                            itm.innerHTML = "";
-                                        });
-                                    }
-                                }
-                                if(data["subtype"] == "total") {
-                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
-                                        itm.innerHTML = "";
-                                    });
-                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
-                                        itm.innerHTML = data["value"];
-                                    });
+                                switch(data["itemtype"]) {
+                                    case "storage":
+                                        if(data["subtype"] == "storage")
+                                            document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                                itm.innerHTML = data["value"];
+                                            });
+                                        else
+                                            document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                                itm.innerHTML = data["value"];
+                                            });
+                                    break;
+                                    case "unidirectional":
+                                        if(data["subtype"] == "actual")
+                                            document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                                itm.innerHTML = data["value"];
+                                            });
+                                        else
+                                            document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                                itm.innerHTML = data["value"];
+                                            });
+                                    break;
+                                    case "bidirectional":
+                                        if(data["subtype"] == "actual")
+                                            document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                                itm.innerHTML = data["value"];
+                                            });
+                                        else
+                                            document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                                itm.innerHTML = data["value"];
+                                            });
+                                    break;
                                 }
                             break;
                             case "EIBDimmer":
-                                if(data["subtype"] == "dimmer")
+                                if(data["subtype"] == "dimmer") {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value']").forEach(function(itm) {
-                                        itm.innerHTML = data["value"];
+                                        itm.innerHTML = data["value"]+" %";
                                         itm.style.color = data["color"];
                                     });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                        itm.value = data["value"];
+                                        slider(itm.id);
+                                    });
+                                }
                                 if(data["subtype"] == "dimmersw")
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
                                         itm.checked = data["value"];
@@ -648,6 +1053,15 @@ connection.onopen = function() {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value']").forEach(function(itm) {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
+                                    });
+                                if(data["subtype"] == "value")
+                                    if(data["value"] == 0)
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                            itm.innerHTML = "--:-- --.--.----";
+                                        });
+                                if(data["subtype"] == "from")
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"];
                                     });
                             break;
                             case "TimedSwitch":
@@ -668,6 +1082,22 @@ connection.onopen = function() {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
                                     });
+                                if(data["subtype"] == "active")
+                                    if(data["value"] == 0) {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                            itm.style.display = "block";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                            itm.style.display = "none";
+                                        });
+                                    } else {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                            itm.style.display = "none";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                            itm.style.display = "block";
+                                        });
+                                    }
                             break;
                             case "SmokeAlarm":
                                 if(data["subtype"] == "level")
@@ -675,6 +1105,39 @@ connection.onopen = function() {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
                                     });
+                                if(data["subtype"] == "active")
+                                    if(data["value"] == 0) {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                            itm.style.display = "block";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                            itm.style.display = "none";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
+                                            itm.style.display = "none";
+                                        });
+                                    } else {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                            itm.style.display = "none";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                            itm.style.display = "block";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
+                                            itm.style.display = "block";
+                                        });
+                                    }
+                                if(data["subtype"] == "signals")
+                                    if(data["value"] == 0)
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
+                                            itm.disabled = false;
+                                            itm.innerHTML = "Vypnout výstupy alarmu";
+                                        });
+                                    else
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
+                                            itm.disabled = true;
+                                            itm.innerHTML = "Výstupy alarmu byly vypnuty";
+                                        });
                             break;
                             case "EnergyManager2":
                                 if(data["subtype"] == "status")
@@ -716,6 +1179,52 @@ connection.onopen = function() {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
                                         itm.innerHTML = data["value"];
                                     });
+                                if(data["subtype"] == "power")
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value5']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"];
+                                    });
+                                if(data["subtype"] == "charge")
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value6']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"];
+                                    });
+                                if(data["subtype"] == "started")
+                                    if(data["value"] == 1) {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
+                                            itm.style.display = "block";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value4']").forEach(function(itm) {
+                                            itm.style.display = "none";
+                                        });
+                                    } else {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
+                                            itm.style.display = "none";
+                                        });
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value4']").forEach(function(itm) {
+                                            itm.style.display = "block";
+                                        });
+                                    }
+                                if(data["subtype"] == "mode") {
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value7']").forEach(function(itm) {
+                                        itm.value = data["value"].toString();
+                                    });
+                                }
+                                if(data["subtype"] == "modes")
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value7']").forEach(function(itm) {
+                                        if(itm.innerHTML == "")
+                                            data["value"].forEach(function(item) {
+                                                if(item.name != "")
+                                                    itm.innerHTML += '<option value="'+item.id+'">'+item.name+'</option>';
+                                            });
+                                    });
+                                if(data["subtype"] == "limit") {
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value8']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"].format;
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value9']").forEach(function(itm) {
+                                        itm.value = data["value"].value;
+                                        slider(itm.id);
+                                    });
+                                }
                             break;
                             case "LoadManager":
                                 if(data["subtype"] == "available")
@@ -736,6 +1245,16 @@ connection.onopen = function() {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value']").forEach(function(itm) {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
+                                    });
+                                if(data["subtype"] == "cmode")
+                                    data["value"].forEach(function(item, index) {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value"+(index+1)+"']").forEach(function(itm) {
+                                            itm.style.display = item;
+                                        });
+                                    });
+                                if(data["subtype"] == "movement")
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value5']").forEach(function(itm) {
+                                        itm.checked = !data["value"];
                                     });
                             break;
                             case "AalEmergency":
@@ -767,6 +1286,13 @@ connection.onopen = function() {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
+                                    });
+                                if(data["subtype"] == "update")
+                                    data["value"].forEach(function(item, index) {
+                                        document.querySelectorAll("[data-id='"+data["uuid"]+"-value"+(index+4)+"']").forEach(function(itm) {
+                                            itm.innerHTML = item.text;
+                                            itm.style.color = item.color;
+                                        });
                                     });
                             break;
                             case "CentralLightController":
@@ -809,6 +1335,10 @@ connection.onopen = function() {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
                                     });
+                                if(data["subtype"] == "auto")
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value6']").forEach(function(itm) {
+                                        itm.checked = data["value"];
+                                    });
                             break;
                             case "Gate":
                                 if(data["subtype"] == "position")
@@ -830,6 +1360,14 @@ connection.onopen = function() {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
                                     });
+                                if(data["subtype"] == "update") {
+                                    document.getElementById(data["uuid"]+"-open").querySelectorAll("button").forEach(function(item) {
+                                        item.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value"+(data["value"]+3)+"']").forEach(function(itm) {
+                                        itm.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                                    });
+                                }
                             break;
                             case "Remote":
                                 if(data["subtype"] == "mode")
@@ -837,6 +1375,7 @@ connection.onopen = function() {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
                                     });
+                                
                             break;
                             case "NfcCodeTouch":
                                 
@@ -1015,30 +1554,33 @@ connection.onopen = function() {
         dateTime.innerHTML = hours+":"+minutes;
     }
 };
-                    
-function showItem(element, event, uuid) {
-    if(event != null) {
-        if(event.target.nodeName != "BUTTON" && event.target.nodeName != "SPAN" && event.target.nodeName != "INPUT") {
-            if(event.target.nodeName == "SVG") {
-                if(event.target.id.includes("-svg")) {
-                    show();
-                }
-            } else {
-                show();
-            }
-            if(event.target.nodeName == "path") {
-                if(event.target.ownerSVGElement.id.includes("-svg")) {
-                    show();
-                }
-            } else {
-                show();
-            }
-        }
-    } else show();
 
-    function show() {
+function slider(id) {
+	var slider = document.getElementById(id);
+    valPercent = ((slider.value - slider.min) / (slider.max - slider.min))*100;
+    slider.style.background = `linear-gradient(to right, rgb(235, 235, 245) ${valPercent}%, rgba(255, 255, 255, 0.1) ${valPercent}%)`;
+}
 
+function showPanel(id, event) {
+    if(event != null && document.getElementById(id+"-open")) {
+        if(event.target.nodeName.toLowerCase() === "button") return;
+        if(event.target.nodeName.toLowerCase() === "svg") return;
+        if(event.target.nodeName.toLowerCase() === "path") return;
+        if(event.target.nodeName.toLowerCase() === "label") return;
+        if(event.target.nodeName.toLowerCase() === "span") return;
+        if(event.target.nodeName.toLowerCase() === "input") return;
+        document.getElementById(id+"-open").style.display = "block";
+        rated.style.display = "none";
+        all.style.display = "none";
+        openned.style.display = "block";
     }
+}
+
+function closePanel(id) {
+    document.getElementById(id).style.display = "none";
+    rated.style.display = "block";
+    all.style.display = "block";
+    openned.style.display = "none";
 }
 
 function showRoom(uuid) {
@@ -1102,5 +1644,39 @@ function showCategory(uuid) {
         } else {
             i.style.display = "block";
         }
+    });
+}
+
+function timePrompt(hoursMin, hoursMax, minutesMin, minutesMax, callback) {
+    var timeselector = document.getElementById("timeselector");
+    var hElement = document.getElementById("selecthours")
+    var mElement = document.getElementById("selectminutes");
+    var selectedtime = document.getElementById("selectedtime");
+    var totalseconds = document.getElementById("totalseconds");
+    var selectedconfirm = document.getElementById("selectedconfirm");
+    hElement.min = hoursMin;
+    hElement.max = hoursMax;
+    hElement.value = hoursMin;
+    hElement.addEventListener("input", function() {
+        hours = hElement.value;
+        updateSelectedTime();
+    });
+    mElement.value = minutesMin;
+    mElement.min = minutesMin;
+    mElement.max = minutesMax;
+    mElement.addEventListener("input", function() {
+        minutes = mElement.value;
+        updateSelectedTime();
+    });
+    timeselector.style.display = "block";
+    overlay.style.display = "block";
+    function updateSelectedTime() {
+        selectedtime.innerHTML = (hElement.value < 10 ? "0" + hElement.value : hElement.value) + ":" + (mElement.value < 10 ? "0" + mElement.value : mElement.value);
+        totalseconds.value = hElement.value * 3600 + mElement.value * 60;
+    }
+    selectedconfirm.addEventListener("click", function() {
+        timeselector.style.display = "none";
+        overlay.style.display = "none";
+        callback(totalseconds.value);
     });
 }

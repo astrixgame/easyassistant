@@ -123,38 +123,43 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                     var val = "";
                                     var col = "rgba(234, 234, 245, 0.6)";
                                     if(value != 0) {
-                                        val = value < 0 ? " • Nabíjení "+formatNumber(mainItem.details.actualFormat, value) : " • Dodávání "+formatNumber(mainItem.details.actualFormat, value);
+                                        val = value < 0 ? "Nabíjení "+formatNumber(mainItem.details.actualFormat, value) : "Dodávání "+formatNumber(mainItem.details.actualFormat, value);
                                         col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
+                                    } else {
+                                        val = "Neaktivní";
+                                        col = "rgba(234, 234, 245, 0.6)";
                                     }
-                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: val, color: col }));
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: mainItem.details.type, subtype: "actual", value: val, color: col }));
                                 }
                                 if(mainItem.states.storage == uuid)
-                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "storage", value: formatNumber(mainItem.details.storageFormat, value) }));
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: mainItem.details.type, subtype: "storage", value: formatNumber(mainItem.details.storageFormat, value) }));
                             break;
                             case "unidirectional":
                                 if(mainItem.states.actual == uuid)
-                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: Math.round(value) == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: mainItem.details.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: Math.round(value) == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
                                 if(mainItem.states.total == uuid)
-                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "total", value: " • "+formatNumber(mainItem.details.totalFormat, value) }));
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: mainItem.details.type, subtype: "total", value: ""+formatNumber(mainItem.details.totalFormat, value) }));
                             break;
                             case "bidirectional":
                                 if(mainItem.states.actual == uuid) {
                                     var col = "rgba(234, 234, 245, 0.6)";
                                     if(value != 0) col = value < 0 ? "rgb(105, 195, 80)" : "rgb(247, 181, 92)";
-                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: col }));
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: mainItem.details.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value), color: col }));
                                 }
+                                if(mainItem.states.total == uuid)
+                                    sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: mainItem.details.type, subtype: "total", value: formatNumber(mainItem.details.totalFormat, value) }));
                             break;
                         }
                     else {
                         if(mainItem.states.actual == uuid)
-                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value) }));
+                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: "unidirectional", subtype: "actual", value: formatNumber(mainItem.details.actualFormat, value) }));
                         if(mainItem.states.total == uuid)
-                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "total", value: " • "+formatNumber(mainItem.details.totalFormat, value) }));
+                            sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, itemtype: "unidirectional", subtype: "total", value: ""+formatNumber(mainItem.details.totalFormat, value) }));
                     }
                 break;
                 case "EIBDimmer":
                     if(mainItem.states.position == uuid) {
-                        var val = value+"%";
+                        var val = value;
                         var col = "rgba(234, 234, 245, 0.6)";
                         if(value > 0)
                             col = "rgb(105, 195, 80)";
@@ -174,8 +179,12 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     }
                 break;
                 case "PresenceDetector":
-                    if(mainItem.states.active == uuid)
+                    if(mainItem.states.active == uuid) {
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "active", value: value == 0 ? "Bez přítomnosti" : "Přítomnost aktivní", color: value == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "value", value: value }));
+                    }
+                    if(mainItem.states.activeSince == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "from", value: controlValues[mainItem.states.active] == 1 ? calculateClockDate(value) : "--:--" }));
                 break;
                 case "TimedSwitch":
                     // No Update Required
@@ -207,27 +216,24 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             col = "rgb(105, 195, 80)";
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "currentzone", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "active", value: value == -1 ? 0 : 1 }));
                     }
                 break;
                 case "SmokeAlarm":
                     if(mainItem.states.level == uuid) {
                         var val = "Vše OK";
                         var col = "rgb(105, 195, 80)";
+                        var active = controlValues[mainItem.states.timeServiceMode] <= 0 && value > 0;
                         if(value > 0) {
-                            if(controlValues[mainItem.states.timeServiceMode] > 0) {
-                                val = "Servisní režim aktivní";
-                                col = "rgb(247, 181, 92)";
-                            } else {
-                                val = "Alarm aktivní";
-                                col = "rgb(231, 50, 70)";
-                            }
-                        } else {
-                            if(controlValues[mainItem.states.timeServiceMode] > 0) {
-                                val = "Servisní režim aktivní";
-                                col = "rgb(247, 181, 92)";
-                            }
+                            val = "Alarm aktivní";
+                            col = "rgb(231, 50, 70)";
+                        }
+                        if(controlValues[mainItem.states.timeServiceMode] > 0) {
+                            val = "Servisní režim aktivní";
+                            col = "rgb(247, 181, 92)";
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "active", value: active ? 1 : 0 }));
                     }
                     if(mainItem.states.timeServiceMode == uuid) {
                         var val = "Vše OK";
@@ -248,6 +254,8 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
                     }
+                    if(mainItem.states.areAlarmSignalsOff == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "signals", value: value }));
                 break;
                 case "EnergyManager2":
                     if(mainItem.states.Gpwr == uuid) {
@@ -275,8 +283,24 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             if(mainItem.states.connected == uuid) {
                                 sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "connected", value: value == 0 ? "Vozidlo odpojeno" : "Vozidlo připojeno", color: value == 0 ? "rgba(234, 234, 245, 0.6)" : "rgb(105, 195, 80)" }));
                             }
-                            if(mainItem.states.enabled == uuid)
+                            if(mainItem.states.enabled == uuid) {
                                 sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "enabled", value: value == 0 ? "Nabíjení pozastaveno • " : "Nabíjení • " }));
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "started", value: value }));
+                            }
+                            if(mainItem.states.limit == uuid) {
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "power", value: formatNumber(mainItem.details.actualFormat, controlValues[mainItem.states.actual])+" / "+formatNumber(mainItem.details.actualFormat, value) }));
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "limit", value: { value: value, format: formatNumber(mainItem.details.actualFormat, value) } }));
+                            }
+                            if(mainItem.states.actual == uuid)
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "power", value: formatNumber(mainItem.details.actualFormat, value)+" / "+formatNumber(mainItem.details.actualFormat, controlValues[mainItem.states.limit]) }));
+                            if(mainItem.states.session == uuid) {
+                                var parseData = JSON.parse(value);
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "charge", value: formatNumber(mainItem.details.totalFormat, parseData.energy) }));
+                            }
+                            if(mainItem.states.mode == uuid)
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "mode", value: value }));
+                            if(mainItem.states.modes == uuid)
+                                sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "modes", value: JSON.parse(value) }));
                         break;
                     }
                 break;
@@ -327,32 +351,87 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                 break;
                 case "Alarm":
                     var levels = ["I • Tichý","II • Akustický","III • Optický","IV • Vnitřní","V • Venkovní","VI • Dálkový"];
+                    var cmode = ["none","none","none","none"];
                     if(mainItem.states.level == uuid) {
                         var val = "Odstřeženo";
                         var col = "rgba(234, 234, 245, 0.6)";
                         if(controlValues[mainItem.states.armed] == 1) {
+                            cmode[2] = "block";
                             val = "Zastřeženo";
                             col = "rgb(105, 195, 80)";
                             if(value > 0) {
+                                cmode[3] = "block";
                                 val = levels[controlValues[mainItem.states.level]-1]+" alarm aktivní";
                                 col = "rgb(231, 50, 70)";
                             }
+                        } else {
+                            if(controlValues[mainItem.states.armedAt] == 0) {
+                                cmode[0] = "block";
+                                cmode[1] = "block";
+                            } else {
+                                val = "Zastřežení v "+convertUnixToFutureTime(controlValues[mainItem.states.armedAt]);
+                                col = "rgb(247, 181, 92)";
+                                cmode[0] = "block";
+                                cmode[2] = "block";
+                            }
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "cmode", value: cmode }));
                     }
                     if(mainItem.states.armed == uuid) {
                         var val = "Odstřeženo";
                         var col = "rgba(234, 234, 245, 0.6)";
                         if(value == 1) {
+                            cmode[2] = "block";
                             val = "Zastřeženo";
                             col = "rgb(105, 195, 80)";
                             if(controlValues[mainItem.states.level] > 0) {
+                                cmode[3] = "block";
                                 val = levels[controlValues[mainItem.states.level]-1]+" alarm aktivní";
                                 col = "rgb(231, 50, 70)";
                             }
+                        } else {
+                            if(controlValues[mainItem.states.armedAt] == 0) {
+                                cmode[0] = "block";
+                                cmode[1] = "block";
+                            } else {
+                                val = "Zastřežení v "+convertUnixToFutureTime(controlValues[mainItem.states.armedAt]);
+                                col = "rgb(247, 181, 92)";
+                                cmode[0] = "block";
+                                cmode[2] = "block";
+                            }
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "cmode", value: cmode }));
                     }
+                    if(mainItem.states.armedAt == uuid) {
+                        var val = "Odstřeženo";
+                        var col = "rgba(234, 234, 245, 0.6)";
+                        if(controlValues[mainItem.states.armed] == 1) {
+                            cmode[2] = "block";
+                            val = "Zastřeženo";
+                            col = "rgb(105, 195, 80)";
+                            if(controlValues[mainItem.states.armed] > 0) {
+                                cmode[3] = "block";
+                                val = levels[controlValues[mainItem.states.level]-1]+" alarm aktivní";
+                                col = "rgb(231, 50, 70)";
+                            }
+                        } else {
+                            if(controlValues[mainItem.states.armedAt] == 0) {
+                                cmode[0] = "block";
+                                cmode[1] = "block";
+                            } else {
+                                val = "Zastřežení v "+convertUnixToFutureTime(controlValues[mainItem.states.armedAt]);
+                                col = "rgb(247, 181, 92)";
+                                cmode[0] = "block";
+                                cmode[2] = "block";
+                            }
+                        }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "level", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "cmode", value: cmode }));
+                    }
+                    if(mainItem.states.disabledMove == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "movement", value: value == 1 ? true : false }));
                 break;
                 case "AalEmergency":
                     var levels = ["Alarm aktivní","Reset vstupu potvrzen, ovládání je vypnuto","Ovládání dočasně zablokováno"];
@@ -457,6 +536,22 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             }
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "offline", value: val, color: col }));
+                    }
+                    if(mainItem.states.windowStates == uuid) {
+                        var statesData = [];
+                        var states = {
+                            none: "Offline;rgb(231, 50, 70)",
+                            1: "Zavřeno;rgb(105, 195, 80)",
+                            2: "Vyklopeno;rgb(247, 181, 92)",
+                            4: "Otevřeno;rgb(247, 181, 92)",
+                            8: "Zamčeno;rgb(105, 195, 80)",
+                            16: "Odemčeno;rgb(247, 181, 92)"
+                        }
+                        value.split(",").forEach(function(state, index) {
+                            var t = states[state == "" ? "none" : state].split(";");
+                            statesData.push({ id: index, text: t[0], color: t[1] });
+                        });
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "update", value: statesData }));
                     }
                 break;
                 case "CentralLightController":
@@ -721,6 +816,9 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "position", value: val, color: col }));
                     }
+                    if(mainItem.states.autoActive == uuid) {
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "auto", value: value == 1 ? true : false }));
+                    }
                 break;
                 case "Gate":
                     if(mainItem.states.position == uuid) {
@@ -774,6 +872,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             col = "rgb(105, 195, 80)";
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "state", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "update", value: value }));
                     }
                 break;
                 case "Remote":
@@ -821,7 +920,18 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
     function formatNumber(format, number) {
         var tens = parseInt(format.substring(format.lastIndexOf(".")+1, format.lastIndexOf("f")));
         var roundInNumber = 10 ** tens;
-        return format.replace("%."+tens+"f",Math.round(number * roundInNumber) / roundInNumber).replace("%%","%");
+        return format.replace("%."+tens+"f",(Math.round(number * roundInNumber) / roundInNumber)+" ").replace("%%","%");
+    }
+
+    function convertUnixToFutureTime(unixTimestamp) {
+        var futureDate = new Date(unixTimestamp * 1000);
+        var year = futureDate.getFullYear();
+        var month = (futureDate.getMonth() + 1).toString().padStart(2, '0');
+        var day = futureDate.getDate().toString().padStart(2, '0');
+        var hours = futureDate.getHours().toString().padStart(2, '0');
+        var minutes = futureDate.getMinutes().toString().padStart(2, '0');
+        var seconds = futureDate.getSeconds().toString().padStart(2, '0');
+        return hours+':'+minutes+':'+seconds+' '+day+'.'+month+'.'+year;
     }
 
     function calculateClockDate(seconds) {
@@ -1129,11 +1239,32 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         controlControlsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
                         idSeed++;
                         var name = lxData.controls[item].name;
+                        var subtype = "";
+                        var min = 0;
+                        var max = 0;
+                        var windows = [];
+                        var modes = [];
                         if(lxData.controls[item].preset) {
                             var t = lxData.controls[item].preset.name;
                             name = t.substring(0, t.lastIndexOf(" "));
                         }
-                        ws.send(JSON.stringify({ module: "control", action: "add", menu: "control", uuid: controlControlsIds[item], type: lxData.controls[item].type, title: name, svg: lxData.controls[item].defaultIcon ? lxData.controls[item].defaultIcon : "", room: controlRoomsIds[lxData.controls[item].room], category: controlCatsIds[lxData.controls[item].cat], rating: lxData.controls[item].defaultRating ? lxData.controls[item].defaultRating : 0, roomname: lxData.rooms[lxData.controls[item].room].name }));
+                        if(lxData.controls[item].details && lxData.controls[item].details.type)
+                            subtype = lxData.controls[item].details.type;
+                        if(lxData.controls[item].details && lxData.controls[item].details.min)
+                            min = lxData.controls[item].details.min;
+                        if(lxData.controls[item].details && lxData.controls[item].details.max)
+                            max = lxData.controls[item].details.max;
+                        if(lxData.controls[item].details && lxData.controls[item].details.windows)
+                            lxData.controls[item].details.windows.forEach(function(item, index) {
+                                windows.push({ id: index, window: item.name, room: lxData.rooms[item.room].name });
+                            });
+                        if(lxData.controls[item].details && lxData.controls[item].details.outputs) {
+                            Object.values(lxData.controls[item].details.outputs).forEach(function(item, index) {
+                                modes.push({ id: index+1, title: item });
+                            });
+                            modes.push({ id: 0, title: lxData.controls[item].details.allOff });
+                        }
+                        ws.send(JSON.stringify({ module: "control", action: "add", menu: "control", uuid: controlControlsIds[item], type: lxData.controls[item].type, subtype: subtype, title: name, svg: lxData.controls[item].defaultIcon ? lxData.controls[item].defaultIcon : "", room: controlRoomsIds[lxData.controls[item].room], category: controlCatsIds[lxData.controls[item].cat], rating: lxData.controls[item].defaultRating ? lxData.controls[item].defaultRating : 0, roomname: lxData.rooms[lxData.controls[item].room].name, min: min, max: max, windows: windows, modes: modes }));
                     });
                     Object.keys(controlValues).forEach(function(i) {
                         sendValues(i, controlValues[i]);
@@ -1240,19 +1371,20 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                             }
                                         break;
                                         case "Irrigation":
-                                            var isStarted = controlValues[lxData.controls[uid].states.currentZone];
-                                            switch(value) {
-                                                case "push":
-                                                    if(isStarted == -1)
-                                                        socket.send("jdev/sps/io/"+uid+"/startForce");
-                                                    else
-                                                        socket.send("jdev/sps/io/"+uid+"/stop");
-                                                break;
-                                            }
+                                            socket.send("jdev/sps/io/"+uid+"/"+value);
                                         break;
                                         case "SmokeAlarm":
                                             switch(value) {
-                                                
+                                                case "confirm":
+                                                    socket.send("jdev/sps/io/"+uid+"/confirm");
+                                                break;
+                                                case "mute":
+                                                    socket.send("jdev/sps/io/"+uid+"/mute");
+                                                break;
+                                                default:
+                                                    if(value.includes("service:"))
+                                                        socket.send("jdev/sps/io/"+uid+"/"+value.replace("service:",""));
+                                                break;
                                             }
                                         break;
                                         case "EnergyManager2":
@@ -1262,7 +1394,18 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                         break;
                                         case "Wallbox2":
                                             switch(value) {
-                                                
+                                                case "start":
+                                                    socket.send("jdev/sps/io/"+uid+"/allow/on");
+                                                break;
+                                                case "pause":
+                                                    socket.send("jdev/sps/io/"+uid+"/allow/off");
+                                                break;
+                                                default:
+                                                    if(value.includes("limit:"))
+                                                        socket.send("jdev/sps/io/"+uid+"/manualLimit/"+value.replace("limit:",""));
+                                                    if(value.includes("mode:"))
+                                                        socket.send("jdev/sps/io/"+uid+"/setmode/"+value.replace("mode:",""));
+                                                break;
                                             }
                                         break;
                                         case "AalSmartAlarm":
@@ -1272,7 +1415,24 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                         break;
                                         case "Alarm":
                                             switch(value) {
-                                                
+                                                case "on":
+                                                    socket.send("jdev/sps/io/"+uid+"/on");
+                                                break;
+                                                case "delayon":
+                                                    socket.send("jdev/sps/io/"+uid+"/delayedon");
+                                                break;
+                                                case "off":
+                                                    socket.send("jdev/sps/io/"+uid+"/off");
+                                                break;
+                                                case "confirm":
+                                                    socket.send("jdev/sps/io/"+uid+"/quit");
+                                                break;
+                                                case "dismv:0":
+                                                    socket.send("jdev/sps/io/"+uid+"/dismv/0");
+                                                break;
+                                                case "dismv:1":
+                                                    socket.send("jdev/sps/io/"+uid+"/dismv/1");
+                                                break;
                                             }
                                         break;
                                         case "AalEmergency":
@@ -1336,6 +1496,18 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                                 case "close":
                                                     socket.send("jdev/sps/io/"+uid+"/fullclose");
                                                 break;
+                                                case "openstart":
+                                                    socket.send("jdev/sps/io/"+uid+"/open/on");
+                                                break;
+                                                case "openstop":
+                                                    socket.send("jdev/sps/io/"+uid+"/open/off");
+                                                break;
+                                                case "closestart":
+                                                    socket.send("jdev/sps/io/"+uid+"/close/on");
+                                                break;
+                                                case "closestop":
+                                                    socket.send("jdev/sps/io/"+uid+"/close/off");
+                                                break;
                                             }
                                         break;
                                         case "Jalousie":
@@ -1345,6 +1517,27 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                                 break;
                                                 case "down":
                                                     socket.send("jdev/sps/io/"+uid+"/FullDown");
+                                                break;
+                                                case "upstart":
+                                                    socket.send("jdev/sps/io/"+uid+"/up");
+                                                break;
+                                                case "upstop":
+                                                    socket.send("jdev/sps/io/"+uid+"/UpOff");
+                                                break;
+                                                case "downstart":
+                                                    socket.send("jdev/sps/io/"+uid+"/down");
+                                                break;
+                                                case "downstop":
+                                                    socket.send("jdev/sps/io/"+uid+"/DownOff");
+                                                break;
+                                                case "shade":
+                                                    socket.send("jdev/sps/io/"+uid+"/shade");
+                                                break;
+                                                case "autoon":
+                                                    socket.send("jdev/sps/io/"+uid+"/auto");
+                                                break;
+                                                case "autooff":
+                                                    socket.send("jdev/sps/io/"+uid+"/NoAuto");
                                                 break;
                                             }
                                         break;
@@ -1382,6 +1575,11 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                                         socket.send("jdev/sps/io/"+uid+"/"+(current-1));
                                                     else
                                                         socket.send("jdev/sps/io/"+uid+"/reset");
+                                                break;
+                                                default:
+                                                    var value = value == "0" ? "reset" : value;
+                                                    console.log("jdev/sps/io/"+uid+"/"+value);
+                                                    socket.send("jdev/sps/io/"+uid+"/"+value);
                                                 break;
                                             }
                                         break;

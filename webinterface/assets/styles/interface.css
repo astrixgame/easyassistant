@@ -376,25 +376,53 @@ html, body {
     color: rgb(105, 195, 80);
 }
 
-.controls .all {
-    display: none;
-}
-.controls .rated {
-    display: none;
-}
-
 .controls .open {
     width: calc(100% - 40px);
     height: calc(100% - 40px);
     margin: 20px 20px 20px 20px;
     background-color: rgba(0, 0, 0, 0.6);
+    display: none;
 }
 
 .controls .open .item {
+    position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     font-family: "AvertaSemibold";
+    display: none;
+}
+
+.controls .open .item .back {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.controls .open .item .back:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.controls .open .item .back:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.controls .open .item .back svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+    margin: 0;
+    padding: 0;
+    fill: rgb(235, 235, 245);
 }
 
 .controls .open .item .title {
@@ -446,6 +474,12 @@ html, body {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
+.controls .open .item .controling button:disabled {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: rgba(234, 234, 245, 0.6);
+    cursor: default;
+}
+
 .controls .open .item .controling .b1 {
     width: calc(100% - 20px);
 }
@@ -460,6 +494,200 @@ html, body {
 
 .controls .open .item .controling .b4 {
     width: calc(25% - 20px);
+}
+
+.controls .open .item .controling .b5 {
+    position: relative;
+    padding: 0;
+    width: 61px;
+    height: 61px;
+}
+
+.controls .open .item .controling .b5 svg {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+}
+
+.controls .open .item .controling .spacer {
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    color: rgb(235, 235, 245);
+    font-size: 23px;
+    padding-top: 20px;
+}
+
+.controls .open .item .controling .row {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid rgba(49, 49, 51, 0.65);
+}
+
+.controls .open .item .controling .row-link {
+    cursor: pointer;
+}
+
+.controls .open .item .controling .row .name {
+    float: left;
+    margin: 22px 0px 0px 10px;
+    font-size: 20px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .open .item .controling .row .ws {
+    margin: 12px 0px 0px 10px;
+}
+
+.controls .open .item .controling .row .subname {
+    position: absolute;
+    left: 12px;
+    bottom: 3px;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(235, 235, 245, 0.3);
+}
+
+.controls .open .item .controling .row .subvalue {
+    float: right;
+    margin: 22px 10px 0px 0px;
+    font-size: 20px;
+    color: rgba(234, 234, 245, 0.6);
+}
+
+.controls .open .item .controling .row svg {
+    float: right;
+    padding: 0;
+    margin: 22px 10px 0px 0px;
+    height: 20px;
+    fill: rgba(234, 234, 245, 0.6);
+}
+
+.controls .open .item .controling .row select {
+    float: right;
+    height: 38px;
+    margin: 15px 10px 0px 0px;
+    padding: 0px 10px 0px 10px;
+    font-size: 16px;
+    color: rgba(234, 234, 245, 0.6);
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(25.5, 25.5, 25.5);
+    cursor: pointer;
+}
+
+.controls .open .item .controling .row input[type=range] {
+    float: right;
+    width: 120px;
+    margin: 31px 15px 0px 0px;
+}
+
+.controls .open .item .controling .row .switch {
+    float: right;
+    margin: 15px 10px 0px 0px;
+}
+
+.controls .open .item .controling .select {
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+}
+
+.controls .open .item .controling .select .title {
+    float: left;
+    margin: 0px 0px 10px 15px;
+    font-size: 20px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .open .item .controling .select .selitem {
+    position: relative;
+    width: 90%;
+    height: 80px;
+    margin: 10px calc(10% / 2) 10px calc(10% / 2);
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.controls .open .item .controling .select .selitem .radio {
+    float: left;
+    margin: 15px 0px 0px 15px;
+}
+
+.controls .open .item .controling .select .selitem .description {
+    position: absolute;
+    left: 65px;
+    bottom: -3px;
+    color: rgba(234, 234, 245, 0.6);
+}
+
+.controls .open .item .controling .switch {
+    margin: 5px 0px 5px 0px;
+}
+
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgb(235, 235, 245);
+}
+  
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid rgba(234, 234, 245, 0.6);
+    border-radius: 50%;
+    transition: 0.2s;
+}
+  
+.radio:hover input ~ .checkmark {
+    border: 2px solid rgba(234, 234, 245, 1);
+}
+  
+.radio input:checked ~ .checkmark {
+    border: 2px solid transparent;
+    background-color: rgb(105, 195, 80);
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.radio input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.radio .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
 }
 
 .switch {
@@ -516,6 +744,117 @@ input:checked + .slider:before {
     transform: translateX(20px);
 }
 
+input[type="range"]{
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    width: 80%;
+    height: 8px;
+    background-color: #d5d5d5;
+    border-radius: 8px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    height: 8px;
+}
+
+input[type="range"]::-moz-track{
+    -moz-appearance: none;
+    height: 8px;
+}
+
+input[type="range"]::-ms-track{
+    appearance: none;
+    height: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #3264fe;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    border: none;
+}
+
+input[type="range"]::-moz-range-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #3264fe;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    border: none;
+}
+
+input[type="range"]::-ms-thumb{
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #3264fe;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    border: none;
+}
+
+input[type="range"]:active::-webkit-slider-thumb{
+    background-color: #ffffff;
+    border: 3px solid #3264fe;
+}
+
+.dimmer {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    width: 300px;
+    height: 150px;
+    margin: 110px 0px 0px 72.5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    outline: none;
+    rotate: -90deg;
+}
+
+.dimmer::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 8px;
+}
+
+.dimmer::-moz-track {
+    -moz-appearance: none;
+    height: 8px;
+}
+
+.dimmer::-ms-track {
+    appearance: none;
+    height: 8px;
+}
+
+.dimmer::-webkit-slider-thumb {
+    height: 0px;
+    width: 0px;
+    border: none;
+}
+
+.dimmer::-moz-range-thumb {
+    height: 0px;
+    width: 0px;
+    border: none;
+}
+
+.dimmer::-ms-thumb {
+    height: 0px;
+    width: 0px;
+    border: none;
+}
+
 @media only screen and (max-width: 510px) {
 
 }
@@ -532,4 +871,80 @@ input:checked + .slider:before {
         float: left;
         width: calc(50% - 10px);
     }   
+}
+
+.timeselector {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 130px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: none;
+}
+
+.timeselector .selectedtime {
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(235, 235, 245);
+}
+
+.timeselector #selecthours {
+    position: absolute;
+    left: -32.5px;
+    top: 125px;
+    rotate: -90deg;
+    width: 150px;
+    height: 10px;
+}
+
+.timeselector #selectminutes {
+    position: absolute;
+    right: -32.5px;
+    top: 125px;
+    rotate: -90deg;
+    width: 150px;
+    height: 10px;
+}
+
+.timeselector #totalseconds {
+    display: none;
+}
+
+.timeselector button {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    color: rgb(235, 235, 245);
+    font-size: 15px;
+}
+
+.timeselector button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.timeselector button:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
 }
