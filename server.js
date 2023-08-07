@@ -1578,7 +1578,6 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                                 break;
                                                 default:
                                                     var value = value == "0" ? "reset" : value;
-                                                    console.log("jdev/sps/io/"+uid+"/"+value);
                                                     socket.send("jdev/sps/io/"+uid+"/"+value);
                                                 break;
                                             }
