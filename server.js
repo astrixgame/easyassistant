@@ -261,6 +261,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                     if(mainItem.states.Gpwr == uuid) {
                         var val = "";
                         var col = "";
+                        var val1 = { storagePower: value, storagePowerFormat: Math.round(value)+" kW", storageCharge: controlValues[mainItem.states.Ssoc], storageChargeFormat: controlValues[mainItem.states.Ssoc]+" %" };
                         if(value >= 0) {
                             val = "100% Vlastní spotřeba";
                             col = "rgb(105, 195, 80)";
@@ -269,7 +270,30 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             col = "rgb(247, 181, 92)";
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "status", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "battery", value: val1 }));
                     }
+                    if(mainItem.states.Ssoc == uuid) {
+                        var val1 = { storagePower: controlValues[mainItem.states.Gpwr], storagePowerFormat: Math.round(controlValues[mainItem.states.Gpwr])+" kW", storageCharge: value, storageChargeFormat: value+" %" };
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "battery", value: val1 }));
+                    }
+                    if(mainItem.states.loads == uuid) {
+                        var val = [];
+                        var active = 0;
+                        JSON.parse(value).forEach(function(item) {
+                            var state = "Automatika";
+                            active = item.active ? 1 : 0;
+                            if(item.activatedManually)
+                                state = "Zapnuto do půlnoci";
+                            if(item.deactivatedManually)
+                                state = "Vypnuto do půlnoci";
+                            val.push({ name: item.name, power: item.pwr+" kW", active: active, state: state });
+                        });
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "loads", value: val }));
+                    }
+                    if(mainItem.states.MinSoc == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "minstorage", value: value }));
+                    if(mainItem.states.MaxSpwr == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "maxstorage", value: value }));
                 break;
                 case "EFM":
                     if(mainItem.states.Ppwr == uuid)
@@ -884,6 +908,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             col = "rgb(105, 195, 80)";
                         }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "mode", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "update", value: value }));
                     }
                 break;
                 case "NfcCodeTouch":
@@ -1264,6 +1289,12 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                             });
                             modes.push({ id: 0, title: lxData.controls[item].details.allOff });
                         }
+                        if(lxData.controls[item].details && lxData.controls[item].details.modeList) {
+                            Object.values(lxData.controls[item].details.modeList).forEach(function(item, index) {
+                                modes.push({ id: index+1, name: item.name, command: "mode/"+(index+1) });
+                            });
+                            modes.push({ id: 0, name: "Vypnuto", command: "reset" });
+                        }
                         ws.send(JSON.stringify({ module: "control", action: "add", menu: "control", uuid: controlControlsIds[item], type: lxData.controls[item].type, subtype: subtype, title: name, svg: lxData.controls[item].defaultIcon ? lxData.controls[item].defaultIcon : "", room: controlRoomsIds[lxData.controls[item].room], category: controlCatsIds[lxData.controls[item].cat], rating: lxData.controls[item].defaultRating ? lxData.controls[item].defaultRating : 0, roomname: lxData.rooms[lxData.controls[item].room].name, min: min, max: max, windows: windows, modes: modes }));
                     });
                     Object.keys(controlValues).forEach(function(i) {
@@ -1388,9 +1419,10 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                             }
                                         break;
                                         case "EnergyManager2":
-                                            switch(value) {
-                                                
-                                            }
+                                            if(value.includes("minstorage:"))
+                                                socket.send("jdev/sps/io/"+uid+"/setMinSoc/"+value.replace("minstorage:",""));
+                                            if(value.includes("maxstorage:"))
+                                                socket.send("jdev/sps/io/"+uid+"/setMaxSpwr/"+value.replace("maxstorage:",""));
                                         break;
                                         case "Wallbox2":
                                             switch(value) {
@@ -1583,9 +1615,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                             }
                                         break;
                                         case "Remote":
-                                            switch(value) {
-                                                
-                                            }
+                                            socket.send("jdev/sps/io/"+uid+"/"+value);
                                         break;
                                         case "NfcCodeTouch":
                                             switch(value) {

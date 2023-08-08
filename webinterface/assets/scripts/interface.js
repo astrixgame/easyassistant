@@ -449,7 +449,50 @@ connection.onopen = function() {
                                             <p class="value" data-id="`+data["uuid"]+`-value"></p>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <div class="controling">
+                                                    <div class="meterchart">
+                                                        <div class="row">
+                                                            <p class="name">Vlastní spotřeba</p>
+                                                            <p class="value" data-id="`+data["uuid"]+`-value1">N/A</p>
+                                                        </div>
+                                                        <div class="row">
+                                                            <p class="name">Dostupný výkon</p>
+                                                            <p class="value" data-id="`+data["uuid"]+`-value2">N/A</p>
+                                                        </div>
+                                                        <div class="pie-chart" id="pie-chart" onclick="callChart()"></div>
+                                                    </div>
+                                                    <div class="order-rows" data-id="`+data["uuid"]+`-value9">
+                                                        <div class="row-title">
+                                                            <p class="name">Zátěže</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Výkon</p>
+                                                        <p class="subvalue" data-id="`+data["uuid"]+`-value3">N/A</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Stav nabití</p>
+                                                        <p class="subvalue" data-id="`+data["uuid"]+`-value4">N/A</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Min % dobití</p>
+                                                        <p class="subvalue" data-id="`+data["uuid"]+`-value5">N/A</p>
+                                                        <input type="range" id="`+data["uuid"]+`-temp1" data-id="`+data["uuid"]+`-value6" value="0" oninput="slider(this.id);lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'minstorage:\'+this.value)" min="0" max="100" step="1" style="background: linear-gradient(to right, rgb(235, 235, 245) 54.386%, rgba(255, 255, 255, 0.1) 54.386%);">
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="name">Max dobití výkon</p>
+                                                        <p class="subvalue" data-id="`+data["uuid"]+`-value7">N/A</p>
+                                                        <input type="range" id="`+data["uuid"]+`-temp2" data-id="`+data["uuid"]+`-value8" value="0" oninput="slider(this.id);lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'maxstorage:\'+this.value)" min="0" max="10" step="1" style="background: linear-gradient(to right, rgb(235, 235, 245) 54.386%, rgba(255, 255, 255, 0.1) 54.386%);">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "EFM":
@@ -868,12 +911,12 @@ connection.onopen = function() {
                                         control = `
                                             <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
                                             <div class="control">
-                                                <button data-id="`+data["uuid"]+`-value1">
+                                                <button onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminus\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminusoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminus\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminusoff\')">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                                         <path d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"/>
                                                     </svg>
                                                 </button>
-                                                <button id="`+data["uuid"]+`-value2">
+                                                <button onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplus\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplusoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplus\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplusoff\')">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                                         <path d="M320 64c0-12.6-7.4-24-18.9-29.2s-25-3.1-34.4 5.3L131.8 160H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h67.8L266.7 471.9c9.4 8.4 22.9 10.4 34.4 5.3S320 460.6 320 448V64z"/>
                                                     </svg>
@@ -881,7 +924,179 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <div class="controling">
+                                                    <div class="hideselect">
+                                        `;
+                                        data["modes"].forEach(function(item) {
+                                            fullControl += `<button class="b1" data-id="`+data["uuid"]+`-value`+item.id+`" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'`+item.command+`\')">`+item.name+`</button>`;
+                                        });
+                                        fullControl += `
+                                                    </div>
+                                                </div>
+                                                <div class="tv-controller">
+                                                    <button style="background-color:#69c350;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'on\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M14.9941,7h.0118A1.61151,1.61151,0,0,1,16.5,8.70754V21.29246A1.61151,1.61151,0,0,1,15.0059,23h-.0118A1.61151,1.61151,0,0,1,13.5,21.29246V8.70754A1.61151,1.61151,0,0,1,14.9941,7Z" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button style="background-color:#e73246;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'reset\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M15,9.5A5.5,5.5,0,1,1,9.49146,15,5.51048,5.51048,0,0,1,15,9.5M15,7a8,8,0,1,0,8.00854,8A8.00427,8.00427,0,0,0,15,7Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'exit\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30">
+                                                            <path d="M11.79575,14.14675H8.119v-1.9775h4.2847v-1.4356H6.33915v8.5327h6.0865v-1.4209H8.119v-2.2705h3.6768Z"></path>
+                                                            <path d="M15.47575,10.73365h-2.0655l2.7539,4.2334-2.8198,4.2993h2.0801l1.831-2.9956,1.8677,2.9956h2.1094l-2.9004-4.2993,2.7466-4.2334h-2.0801l-1.7725,2.9517Z"></path>
+                                                            <path d="M24.57565,10.73365h-1.7725v8.5327h1.7725Z"></path>
+                                                            <path d="M33.66085,10.73365h-7.3974v1.4356h2.7905v7.0971h1.7798v-7.0971h2.8271Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button id="`+data["uuid"]+`-dirsbtn" onclick="document.getElementById('`+data["uuid"]+`-dirs').style.display='none';document.getElementById('`+data["uuid"]+`-keyboard').style.display='block';this.style.display='none';document.getElementById('`+data["uuid"]+`-keyboardbtn').style.display='block';">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M8.09119,12.40918A2.59079,2.59079,0,1,0,10.682,15,2.59067,2.59067,0,0,0,8.09119,12.40918Zm13.81763,0A2.59079,2.59079,0,1,0,24.49951,15,2.59077,2.59077,0,0,0,21.90881,12.40918ZM15,5.50037a2.59082,2.59082,0,1,0,2.59082,2.59082A2.59077,2.59077,0,0,0,15,5.50037Zm0,6.90881A2.59079,2.59079,0,1,0,17.59082,15,2.59077,2.59077,0,0,0,15,12.40918ZM15,19.318a2.59079,2.59079,0,1,0,2.59082,2.59082A2.59077,2.59077,0,0,0,15,19.318Zm-6.90881,0A2.59079,2.59079,0,1,0,10.682,21.90881,2.59067,2.59067,0,0,0,8.09119,19.318Zm13.81763,0a2.59079,2.59079,0,1,0,2.5907,2.59082A2.59077,2.59077,0,0,0,21.90881,19.318Zm0-8.636A2.59082,2.59082,0,1,0,19.318,8.09119,2.59067,2.59067,0,0,0,21.90881,10.682ZM8.09119,5.50037A2.59082,2.59082,0,1,0,10.682,8.09119,2.59067,2.59067,0,0,0,8.09119,5.50037Z" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button id="`+data["uuid"]+`-keyboardbtn" style="display:none;" onclick="document.getElementById('`+data["uuid"]+`-dirs').style.display='block';document.getElementById('`+data["uuid"]+`-keyboard').style.display='none';this.style.display='none';document.getElementById('`+data["uuid"]+`-dirsbtn').style.display='block';">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M8.76341,15.0001a6.20253,6.20253,0,0,1,1.2768-3.7715l-3.387-3.3872a10.9866,10.9866,0,0,0,0,14.3171l3.387-3.3869A6.20253,6.20253,0,0,1,8.76341,15.0001Zm10.0083,4.9598a6.2094,6.2094,0,0,1-7.5435,0l-3.3867,3.3869a10.9866,10.9866,0,0,0,14.3171,0Zm2.4651-4.9598a6.19875,6.19875,0,0,1-1.2771,3.7715l3.387,3.3869a10.98629,10.98629,0,0,0,0-14.3171l-3.387,3.387A6.20231,6.20231,0,0,1,21.23681,15.0001Zm-10.0086-4.9599a6.20886,6.20886,0,0,1,7.5434,0l3.387-3.3869a10.98629,10.98629,0,0,0-14.3171,0Zm8.4496,4.9599a4.6778,4.6778,0,1,1-4.6776-4.6778A4.67775,4.67775,0,0,1,19.67781,15.0001Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminus\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminusoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminus\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volminusoff\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M13.31763,9.3938V20.60248a.90206.90206,0,0,1-.907.89691L8.28076,18.35931H5.25244a1,1,0,0,1-1-.99994V12.64056a1.00009,1.00009,0,0,1,1-1H8.27637l4.13428-3.14337A.902.902,0,0,1,13.31763,9.3938Zm12.42944,5.27209c-.00049-.35339-.2-.65692-.43262-.65771l-8.12964.032c-.23242-.00055-.4314.30212-.43091.65552l.001.65631c.00024.35358.19946.65662.43164.65741l8.13037-.032c.23218.00079.43115-.3017.43066-.65533Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplus\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplusoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplus\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'volplusoff\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M13.31787,9.3938V20.60248a.90227.90227,0,0,1-.90723.89691L8.28076,18.35931H5.25244a1,1,0,0,1-1-.99994V12.64056a1.00009,1.00009,0,0,1,1-1H8.27637l4.13428-3.14337A.90217.90217,0,0,1,13.31787,9.3938Zm12.4292,5.27209c-.00049-.35339-.2002-.65692-.43237-.65771L22.24,14.02026l-.01221-3.088c.00073-.23242-.302-.43121-.65527-.43085l-.65649.00073c-.35352.00037-.65649.19971-.65723.43188l.012,3.09393-3.08594.01215c-.23267-.00055-.4314.30212-.43091.65552l.001.65631c.00024.35358.19946.65662.43164.65741l3.092-.01215.012,3.06726c-.00049.23218.30176.43085.65527.4306l.65625-.00073c.35352-.00037.657-.19977.658-.43219L22.2478,15.9895l3.06909-.01208c.23218.00079.43115-.3017.43066-.65533Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgminus\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgminusoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgminus\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgminusoff\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M24.62573,16.32208c.00049.35364-.19849.65613-.43066.65533l-8.13037.032c-.23218-.00079-.4314-.30383-.43188-.65741l-.00073-.65631c-.00024-.35339.19849-.65607.43091-.65552l8.12988-.032c.23242.00079.43164.30432.43213.65771ZM11.88794,11.97681a4.79867,4.79867,0,0,1,.14868,1.188,3.93137,3.93137,0,0,1-.24561,1.4527,2.638,2.638,0,0,1-.68384,1.014,2.84908,2.84908,0,0,1-1.06323.59021,4.58811,4.58811,0,0,1-1.3833.19672h-1.145v4.313H5.37427V9.92621H9.12183a3.047,3.047,0,0,1,1.37549.28,2.51979,2.51979,0,0,1,.89966.734A2.89513,2.89513,0,0,1,11.88794,11.97681ZM9.895,13.195a1.93937,1.93937,0,0,0-.342-1.24091,1.39128,1.39128,0,0,0-1.145-.42371H7.51562v3.28387h.9519A1.39818,1.39818,0,0,0,9.501,14.42078,1.67037,1.67037,0,0,0,9.895,13.195Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgplus\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgplusoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgplus\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'prgplusoff\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M24.62573,16.32208c.00049.35364-.19849.65613-.43066.65533L21.126,16.9895l.01221,3.07269c-.001.23242-.3042.43182-.65771.43219l-.65625.00073c-.35376.00024-.656-.19843-.65552-.4306l-.012-3.06726-3.092.01215c-.23218-.00079-.4314-.30383-.43188-.65741l-.00073-.65631c-.00024-.35339.19849-.65607.43091-.65552l3.08594-.01215-.01221-3.09393c.001-.23218.304-.43152.65747-.43188l.65649-.00073c.35327-.00037.656.19843.65527.43085l.01221,3.088,3.07471-.01208c.23242.00079.43164.30432.43213.65771ZM11.88794,11.97681a4.79867,4.79867,0,0,1,.14868,1.188,3.93137,3.93137,0,0,1-.24561,1.4527,2.638,2.638,0,0,1-.68384,1.014,2.84908,2.84908,0,0,1-1.06323.59021,4.58811,4.58811,0,0,1-1.3833.19672h-1.145v4.313H5.37427V9.92621H9.12183a3.047,3.047,0,0,1,1.37549.28,2.51979,2.51979,0,0,1,.89966.734A2.89513,2.89513,0,0,1,11.88794,11.97681ZM9.895,13.195a1.93937,1.93937,0,0,0-.342-1.24091,1.39128,1.39128,0,0,0-1.145-.42371H7.51562v3.28387h.9519A1.39818,1.39818,0,0,0,9.501,14.42078,1.67037,1.67037,0,0,0,9.895,13.195Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <div id="`+data["uuid"]+`-dirs" style="position:relative;width:100%;height:320px;top:160px;">
+                                                        <button style="position:absolute;left:0px;top:5px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'menu\')">
+                                                            <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                                <rect x="8.49994" y="14" width="13.00012" height="2"></rect>
+                                                                <rect x="8.49994" y="18" width="13.00012" height="2"></rect>
+                                                                <rect x="8.49994" y="10" width="13.00012" height="2"></rect>
+                                                            </svg>
+                                                        </button>
+                                                        <button style="position:absolute;right:0px;top:5px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'info\')">
+                                                            <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                                <rect x="9" y="8.5005" width="2.50012" height="3"></rect>
+                                                                <polygon points="23 14 20 14 20 11 18 11 18 14 15 14 15 16 18 16 18 19 20 19 20 16 23 16 23 14" fill-rule="evenodd"></polygon>
+                                                                <rect x="9" y="13.5005" width="2.50012" height="8"></rect>
+                                                            </svg>
+                                                        </button>
+                                                        <svg style="height:260px;position:absolute;left:70px;top:-20px;fill:rgba(50, 50, 55, 0.7);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 185">
+                                                            <path class="buttonbg" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirok\')" d="M92.5,47.00143A45.4986,45.4986,0,1,1,47.00145,92.5,45.49849,45.49849,0,0,1,92.5,47.00143Z"></path>
+                                                            <path class="buttonbg" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirup\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirupoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirup\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirupoff\')" d="M92.50006,41.80475a50.44816,50.44816,0,0,1,34.024,13.13843l29.59106-29.59125a92.49009,92.49009,0,0,0-127.2287-.00134L58.47748,54.94189A50.44836,50.44836,0,0,1,92.50006,41.80475Z"></path>
+                                                            <path class="buttonbg" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirleft\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirleftoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirleft\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirleftoff\')" d="M41.84375,92.5A50.52915,50.52915,0,0,1,54.94556,58.48047L25.35107,28.88586a92.48994,92.48994,0,0,0,.00122,127.22961l29.59436-29.59454A50.52948,50.52948,0,0,1,41.84375,92.5Z"></path>
+                                                            <path class="buttonbg" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirright\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirrightoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirright\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirrightoff\')" d="M159.64783,28.88464,130.05341,58.47931a50.718,50.718,0,0,1,.00116,68.04022L159.649,156.1142a92.49011,92.49011,0,0,0-.00116-127.22955Z"></path>
+                                                            <path class="buttonbg" onmousedown="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirdown\')" onmouseup="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirdownoff\')" ontouchstart="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirdown\')" ontouchstop="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'dirdownoff\')" d="M92.50006,143.19531A50.4486,50.4486,0,0,1,58.47614,130.057l-29.591,29.59125a92.49,92.49,0,0,0,127.22864.0011L126.52264,130.058A50.44794,50.44794,0,0,1,92.50006,143.19531Z"></path>
+                                                            <path class="buttonsvg" d="M91.492,171.42475l-6.8945-9.5584c-.5544-.7684-.3905-1.3977.363-1.3977h15.0793c.7528,0,.9174.6293.363,1.3977l-6.8945,9.5584A1.171,1.171,0,0,1,91.492,171.42475Z"></path>
+                                                            <path class="buttonsvg" d="M13.5766,91.49246l9.5796-6.8923c.7697-.5542,1.4005-.3904,1.4005.3629v15.0741c0,.7526-.6308.9172-1.4005.3629l-9.5796-6.8922A1.16886,1.16886,0,0,1,13.5766,91.49246Z"></path>
+                                                            <path class="buttonsvg" d="M171.42347,93.508l-9.5817,6.8937c-.7702.5543-1.4012.3905-1.4012-.363V84.961c0-.7526.631-.9172,1.4012-.363l9.5817,6.8937A1.16972,1.16972,0,0,1,171.42347,93.508Z"></path>
+                                                            <path class="buttonsvg" d="M93.5075,13.57531l6.8898,9.5569c.554.7682.3902,1.3975-.3629,1.3975H84.9653c-.7521,0-.9169-.6293-.3628-1.3975l6.8899-9.5569A1.17,1.17,0,0,1,93.5075,13.57531Z"></path>
+                                                        </svg>
+                                                        <button style="position:absolute;left:0px;bottom:5px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'return\')">
+                                                            <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                                <path d="M19.99874,10.07621V9.92308H13.00008V7.56535c0-.33557-.30011-.40857-.66644-.16168L7.77535,10.4741a.50466.50466,0,0,0,0,.89807l4.55829,3.0705c.36633.24689.66644.17352.66644-.16168V11.92308h5.49878v6h-9v2h10a1.00008,1.00008,0,0,0,1.00012-1v-8A.98568.98568,0,0,0,19.99874,10.07621Z" fill-rule="evenodd"></path>
+                                                            </svg>
+                                                        </button>
+                                                        <button style="position:absolute;right:0px;bottom:5px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'guide\')">
+                                                            <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                                <path d="M13.99994,9H7.00006V21H22.99994V9ZM8.00006,10h4.99988v2H8.00006Zm0,3h4.99988v3H8.00006Zm0,7V17h4.99988v3Zm13.99988,0h-8V10h8Z" fill-rule="evenodd"></path>
+                                                                <path d="M22,10V20H8V10H22m1-2H7A1,1,0,0,0,6,9V21a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V9a1,1,0,0,0-1-1Z"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div id="`+data["uuid"]+`-keyboard" style="position:relative;width:300px;height:500px;left:50px;top:160px;display:none;">
+                                                        <input type="text" id="`+data["uuid"]+`-keyboardvalue" style="background-color:rgba(50, 50, 55, 0.7);border:none;outline:none;border-radius:5px;color:rgb(235, 235, 245);width:260px;height:50px;font-size:18px;padding-left:10px;padding-right:10px;margin-bottom:10px;">
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num1\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='1';">1</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num2\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='2';">2</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num3\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='3';">3</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num4\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='4';">4</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num5\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='5';">5</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num6\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='6';">6</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num7\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='7';">7</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num8\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='8';">8</button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num9\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='9';">9</button>
+                                                        <button style="background-color:#69c350;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'number/\'+document.getElementById('`+data["uuid"]+`-keyboardvalue').value);document.getElementById('`+data["uuid"]+`-keyboardvalue').value='';">
+                                                            <svg style="height:70%;margin:0;padding-top:5px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+                                                                <path d="M22.13,8.56l-0.04-0.03c-0.44-0.3-1.04-0.19-1.36,0.23L13,19.03l-3.95-2.88c-0.44-0.32-1.06-0.23-1.39,0.21L7.6,16.44c-0.33,0.45-0.24,1.08,0.21,1.4l4.88,3.57c0.44,0.33,1.07,0.23,1.39-0.21l8.29-11.22C22.72,9.52,22.6,8.87,22.13,8.56z"></path>
+                                                            </svg>
+                                                        </button>
+                                                        <button style="font-size:20px;color:rgb(235, 235, 245);" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'num0\');document.getElementById('`+data["uuid"]+`-keyboardvalue').value+='0';">0</button>
+                                                        <button style="background-color:#e73246;" onclick="document.getElementById('`+data["uuid"]+`-keyboardvalue').value='';">
+                                                            <svg style="height:70%;margin:0;padding-top:5px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+                                                                <path d="M20.66,22.07L15,16.41l-5.66,5.66c-0.39,0.39-1.02,0.39-1.41,0h0c-0.39-0.39-0.39-1.02,0-1.41L13.59,15L7.93,9.34c-0.39-0.39-0.39-1.02,0-1.41l0,0c0.39-0.39,1.02-0.39,1.41,0L15,13.59l5.66-5.66c0.39-0.39,1.02-0.39,1.41,0v0c0.39,0.39,0.39,1.02,0,1.41L16.41,15l5.66,5.66c0.39,0.39,0.39,1.02,0,1.41l0,0C21.68,22.46,21.05,22.46,20.66,22.07z"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <button style="margin-top:190px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'mute\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M13.39179,8.41293l-4.1911,3.19043H6.13574a1,1,0,0,0-1,1v4.79688a1,1,0,0,0,1,1H9.20538l4.1864,3.18683a.91354.91354,0,0,0,.91821-.90875V9.32144A.91349.91349,0,0,0,13.39179,8.41293Z"></path>
+                                                            <path d="M24.72125,17.54794,21.926,14.758l2.75873-2.75372a.50535.50535,0,0,0-.00122-.703l-.35278-.35217a.50858.50858,0,0,0-.70471-.00122l-2.7851,2.78058-2.76843-2.76306a.50773.50773,0,0,0-.70416-.00122l-.35181.351a.50553.50553,0,0,0,.00128.703L19.813,14.80832l-2.78564,2.7804a.50577.50577,0,0,0,.00122.70325l.35291.352a.5077.5077,0,0,0,.70428.0014l2.81268-2.8075-.0271-.02722,2.79523,2.79022a.50779.50779,0,0,0,.70441.0011l.35168-.351A.50541.50541,0,0,0,24.72125,17.54794Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button style="margin-top:190px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'play\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M20.17631,15.85687l-9.5325,5.8596c-.7663.4712-1.3938.3318-1.3938-.3086V8.592c0-.6398.6275-.7798,1.3938-.3087l9.5325,5.8597A.92689.92689,0,0,1,20.17631,15.85687Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button style="margin-top:190px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'pause\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M9.4999,8.5h3.5782a.93621.93621,0,0,1,.9218,1v11a.93621.93621,0,0,1-.9218,1H9.4999a1,1,0,0,1-.9999-1V9.5A1,1,0,0,1,9.4999,8.5Zm7.422,0H20.5a1,1,0,0,1,1,1v11a1,1,0,0,1-1,1H16.9219A.936.936,0,0,1,16,20.5V9.5A.93629.93629,0,0,1,16.9219,8.5Z" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button style="margin-top:190px;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'stop')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M9.49983,8.4998h11.0004a1,1,0,0,1,1,1V20.5002a1,1,0,0,1-1,1H9.49983a1.00007,1.00007,0,0,1-1.0001-1V9.4998A1.00007,1.00007,0,0,1,9.49983,8.4998Z" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'previous\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M22.01414,9.44226,15.848,13.887V9.69751c0-.53-.43726-.64526-.97083-.25525L8.68955,13.96118V9.842A.842.842,0,0,0,7.84763,9h-.0033a.842.842,0,0,0-.84216.842v10.3158A.842.842,0,0,0,7.84434,21h.0033a.842.842,0,0,0,.84192-.84216v-4.1189l6.18762,4.519c.53357.38989.97083.274.97083-.25537V16.11316L22.01414,20.558c.54077.38989.98364.274.98364-.25537V9.69751C22.99778,9.16748,22.55491,9.05225,22.01414,9.44226Z" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'rewind\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M21.98282,9.23806l-6.538,4.691V9.50283c0-.54956-.4613-.66895-1.02441-.26477L7.4141,14.265a.85176.85176,0,0,0,0,1.47021l7.00635,5.02686c.56311.40417,1.02441.28418,1.02441-.26465V16.07119l6.538,4.69092c.56311.40417,1.02454.28418,1.02454-.26465V9.50283C23.00736,8.95327,22.54593,8.83389,21.98282,9.23806Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'forward\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M22.57175,14.265,15.58286,9.23954c-.56177-.40405-1.02185-.28394-1.02185.26465v4.432L8.02964,9.23954c-.56165-.40405-1.02185-.28394-1.02185.26465V20.49564c0,.54919.46021.6687,1.02185.26465L14.561,16.06363v4.432c0,.54919.46008.6687,1.02185.26465l6.98889-5.02551A.85246.85246,0,0,0,22.57175,14.265Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'next\')">
+                                                        <svg style="height:70%;margin:0;padding-top:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                                            <path d="M23.00139,14.99866V9.614a.864.864,0,0,0-.864-.864h-.00781a.864.864,0,0,0-.864.864v3.68018l-5.595-4.09338c-.55591-.40674-1.01111-.28589-1.01111.26636v4.59875L8.00957,9.20081c-.55566-.40674-1.01111-.28589-1.01111.26636V20.53247c0,.553.45544.67322,1.01111.26648l6.6499-4.86511v4.59863c0,.553.4552.67322,1.01111.26648l5.595-4.09338v3.6803a.86405.86405,0,0,0,.864.86414h.00781a.86405.86405,0,0,0,.864-.86414V14.99866Z" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button style="background-color:#e73246;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'btnred\')"></button>
+                                                    <button style="background-color:#69c350;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'btngreen\')"></button>
+                                                    <button style="background-color:#fdd835;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'btnyellow\')"></button>
+                                                    <button style="background-color:#00b0db;" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'btnblue\')"></button>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "NfcCodeTouch":
@@ -1145,6 +1360,49 @@ connection.onopen = function() {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
                                     });
+                                if(data["subtype"] == "battery") {
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value3']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"].storagePowerFormat;
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value4']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"].storageChargeFormat;
+                                    });
+                                }
+                                if(data["subtype"] == "loads")
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value9']").forEach(function(itm) {
+                                        itm.innerHTML = '';
+                                        data["value"].forEach(function(item, index) {
+                                            var st = item.active == 1 ? "border: 2px solid rgb(105, 195, 80);" : "border: 2px solid gray;";
+                                            itm.innerHTML += `
+                                                <div class="order-row">
+                                                    <svg style="`+st+`" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        <path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"/>
+                                                    </svg>
+                                                    <p class="name">`+item.power+`</p>
+                                                    <p class="subname">`+item.name+`</p>
+                                                    <p class="subsubname">`+item.state+`</p>
+                                                </div>
+                                            `;
+                                        });
+                                    });
+                                if(data["subtype"] == "minstorage") {
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value5']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"]+" %";
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value6']").forEach(function(itm) {
+                                        itm.value = data["value"];
+                                        slider(itm.id);
+                                    });
+                                }
+                                if(data["subtype"] == "maxstorage") {
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value7']").forEach(function(itm) {
+                                        itm.innerHTML = data["value"]+" kW";
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value8']").forEach(function(itm) {
+                                        itm.value = data["value"];
+                                        slider(itm.id);
+                                    });
+                                }
                             break;
                             case "EFM":
                                 if(data["color"])
@@ -1375,7 +1633,20 @@ connection.onopen = function() {
                                         itm.innerHTML = data["value"];
                                         itm.style.color = data["color"];
                                     });
-                                
+                                if(data["subtype"] == "update") {
+                                    document.getElementById(data["uuid"]+"-open").querySelectorAll("button.b1").forEach(function(item) {
+                                        item.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value"+data["value"]+"']").forEach(function(itm) {
+                                        itm.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                                    });
+                                    document.getElementById(data["uuid"]+"-open").querySelectorAll(".tv-controller").forEach(function(item) {
+                                        if(data["value"] == 0)
+                                            item.style.display = "none";
+                                        else
+                                            item.style.display = "block";
+                                    });
+                                }
                             break;
                             case "NfcCodeTouch":
                                 
@@ -1679,4 +1950,25 @@ function timePrompt(hoursMin, hoursMax, minutesMin, minutesMax, callback) {
         overlay.style.display = "none";
         callback(totalseconds.value);
     });
+}
+
+function callChart() {
+    var root = am5.Root.new("pie-chart");
+    var chart = root.container.children.push(am5percent.PieChart.new(root, {
+        layout: root.verticalLayout,
+        innerRadius: am5.percent(80)
+    }));
+    var series = chart.series.push(am5percent.PieSeries.new(root, {
+        valueField: "value",
+        categoryField: "category",
+        alignLabels: false
+    }));
+    series.get("colors").set("colors", [
+        am5.color(0x69c350),
+        am5.color(0xf7b55c)
+    ]);
+    series.data.setAll([
+        { value: 90, category: "One" },
+        { value: 10, category: "Two" }
+    ]);
 }
