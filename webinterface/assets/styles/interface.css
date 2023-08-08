@@ -521,6 +521,109 @@ html, body {
     padding-top: 20px;
 }
 
+.controls .open .item .controling .meterchart {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.controls .open .item .controling .meterchart .row {
+    position: relative;
+    width: calc(100% - 150px);
+    height: 71.5px;
+    margin: 5px 0px 5px 0px;
+    border: none;
+}
+
+.controls .open .item .controling .meterchart .row .name {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    margin: 0;
+    font-size: 20px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .open .item .controling .meterchart .row .value {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    margin: 0;
+    font-size: 20px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .open .item .controling .meterchart .pie-chart {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 150px;
+    height: 150px;
+}
+
+.controls .open .item .controling .order-rows {
+    border-top: 1px solid rgba(49, 49, 51, 0.65);
+    border-bottom: 1px solid rgba(49, 49, 51, 0.65);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.controls .open .item .controling .order-rows .row-title {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.controls .open .item .controling .order-rows .row-title .name {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .open .item .controling .order-rows .order-row {
+    position: relative;
+    width: 100%;
+    height: 120px;
+}
+
+.controls .open .item .controling .order-rows .order-row svg {
+    float: left;
+    width: 30px;
+    height: 30px;
+    padding: 25px 25px 25px 25px;
+    margin: 18px 18px 18px 18px;
+    border: 2px solid gray;
+    border-radius: 50%;
+}
+
+.controls .open .item .controling .order-rows .order-row .name {
+    float: left;
+    margin: 25px 0px 0px 2.5px;
+    font-size: 18px;
+    color: rgb(235, 235, 245);
+}
+
+.controls .open .item .controling .order-rows .order-row .subname {
+    position: absolute;
+    left: 123px;
+    top: 37px;
+    font-size: 15px;
+    color: rgba(234, 234, 245, 0.6);
+}
+
+.controls .open .item .controling .order-rows .order-row .subsubname {
+    position: absolute;
+    left: 123px;
+    bottom: 10px;
+    font-size: 15px;
+    color: rgba(234, 234, 245, 0.6);
+}
+
 .controls .open .item .controling .row {
     position: relative;
     width: 100%;
@@ -947,4 +1050,70 @@ input[type="range"]:active::-webkit-slider-thumb{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
+}
+
+.tv-controller {
+    width: 400px;
+    height: 700px;
+    margin-left: calc((100% - 400px) / 2);
+    margin-top: 30px;
+}
+
+.tv-controller button {
+    position: relative;
+    float: left;
+    width: 80px;
+    height: 50px;
+    margin: 10px 10px 10px 10px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(50, 50, 55, 0.7);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tv-controller button svg {
+    height: 60%;
+}
+
+.tv-controller button:hover {
+    background-color: rgba(70, 70, 75, 0.7);
+}
+
+.tv-controller button:active {
+    background-color: rgba(100, 100, 105, 0.7);
+}
+
+.btngreen {
+    background-color: #69c350;
+}
+
+.btnred {
+    background-color: #e73246;
+}
+
+.btnyellow {
+    background-color: #fdd835;
+}
+
+.btnblue {
+    background-color: #00b0db;
+}
+
+.buttonbg {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buttonbg:hover {
+    fill: rgba(70, 70, 75, 0.7);
+}
+
+.buttonbg:active {
+    fill: rgba(100, 100, 105, 0.7);
+}
+
+.buttonsvg {
+    fill: rgb(235, 235, 245);
 }
