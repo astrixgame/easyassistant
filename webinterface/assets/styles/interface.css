@@ -550,7 +550,7 @@ html, body {
     left: 10px;
     bottom: 10px;
     margin: 0;
-    font-size: 20px;
+    font-size: 17px;
     color: rgb(235, 235, 245);
 }
 
@@ -622,6 +622,19 @@ html, body {
     bottom: 10px;
     font-size: 15px;
     color: rgba(234, 234, 245, 0.6);
+}
+
+.controls .open .item .controling .order-rows .order-row  select {
+    float: right;
+    height: 38px;
+    margin: 15px 10px 0px 0px;
+    padding: 0px 5px 0px 10px;
+    font-size: 14px;
+    color: rgba(234, 234, 245, 0.6);
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(25.5, 25.5, 25.5);
+    cursor: pointer;
 }
 
 .controls .open .item .controling .row {
@@ -1116,4 +1129,19 @@ input[type="range"]:active::-webkit-slider-thumb{
 
 .buttonsvg {
     fill: rgb(235, 235, 245);
+}
+
+.IroColorPicker {
+    
+}
+
+.IroWheel, .IroSlider {
+    float: left;
+}
+
+.previewSelector {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(150, 150, 150, 0.05);
+    border-radius: 50%;
 }
