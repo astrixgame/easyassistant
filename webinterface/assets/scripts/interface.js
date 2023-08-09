@@ -14,6 +14,8 @@ var days = ["Neděle","Pondělí","Úterý","Středa","Čtvrtek","Pátek","Sobot
 var months = ["Ledna","Února","Března","Dubna","Května","Června","Července","Srpna","Zíří","Října","Listopadu","Prosince"];
 var connectionIntervalRetry = null;
 var audio_notification = new Audio('assets/media/notification.mp3');
+var charts = {};
+var colors = {};
 
 connection.onerror = function() {
     ws.close();
@@ -466,7 +468,7 @@ connection.onopen = function() {
                                                             <p class="name">Dostupný výkon</p>
                                                             <p class="value" data-id="`+data["uuid"]+`-value2">N/A</p>
                                                         </div>
-                                                        <div class="pie-chart" id="pie-chart" onclick="callChart()"></div>
+                                                        <div class="pie-chart" id="`+data["uuid"]+`-chart"></div>
                                                     </div>
                                                     <div class="order-rows" data-id="`+data["uuid"]+`-value9">
                                                         <div class="row-title">
@@ -715,7 +717,34 @@ connection.onopen = function() {
                                             </div>
                                         `;
                                         fullControl = `
-
+                                            <div class="item" id="`+data["uuid"]+`-open">
+                                                <button class="back" onclick="closePanel(\'`+data["uuid"]+`-open\')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                                    </svg>
+                                                </button>
+                                                <p class="title">`+data["title"]+`</p>
+                                                <p class="value" data-id="`+data["uuid"]+`-value">N/A</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                                                <div class="controling" id="`+data["uuid"]+`-controling1">
+                                                    <div class="moods" data-id="`+data["uuid"]+`-value2">
+                                                        
+                                                    </div>
+                                                    <div class="spacer"></div>
+                                                    <div class="row row-link" onclick="document.getElementById('`+data["uuid"]+`-controling1').style.display='none';document.getElementById('`+data["uuid"]+`-controling2').style.display='block';">
+                                                        <p class="name">Více</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg>
+                                                    </div>
+                                                </div>
+                                                <div class="controling" id="`+data["uuid"]+`-controling2" style="display:none;">
+                                                    <div class="custom-color" data-id="`+data["uuid"]+`-value3">
+                                                        <div class="color-selector" id="colorselect`+data["uuid"]+`">
+                                                            <img src="assets/images/colors/rgb.png" class="previewSelector">
+                                                            <img src="assets/images/colors/temp.png" class="previewSelector">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         `;
                                     break;
                                     case "AlarmClock":
@@ -1243,7 +1272,7 @@ connection.onopen = function() {
                             case "EIBDimmer":
                                 if(data["subtype"] == "dimmer") {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value']").forEach(function(itm) {
-                                        itm.innerHTML = data["value"]+" %";
+                                        itm.innerHTML = data["value"]+"%";
                                         itm.style.color = data["color"];
                                     });
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
@@ -1381,13 +1410,18 @@ connection.onopen = function() {
                                                     <p class="name">`+item.power+`</p>
                                                     <p class="subname">`+item.name+`</p>
                                                     <p class="subsubname">`+item.state+`</p>
+                                                    <select id="`+data["uuid"]+`-value1`+index+`" onchange="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'mode:`+index+`:\'+this.value)">
+                                                        <option value="automatic"`+ (item.number == 0 ? " selected" : "") +`>Automatika</option>
+                                                        <option value="activate"`+ (item.number == 1 ? " selected" : "") +`>Zapnuto do půlnoci</option>
+                                                        <option value="deactivate"`+ (item.number == 2 ? " selected" : "") +`>Vypnuto do půlnoci</option>
+                                                    </select>
                                                 </div>
                                             `;
                                         });
                                     });
                                 if(data["subtype"] == "minstorage") {
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value5']").forEach(function(itm) {
-                                        itm.innerHTML = data["value"]+" %";
+                                        itm.innerHTML = data["value"]+"%";
                                     });
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value6']").forEach(function(itm) {
                                         itm.value = data["value"];
@@ -1402,6 +1436,41 @@ connection.onopen = function() {
                                         itm.value = data["value"];
                                         slider(itm.id);
                                     });
+                                }
+                                if(data["subtype"] == "custompower") {
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value1']").forEach(function(itm) {
+                                        itm.style.color = data["value"].color;
+                                        itm.innerHTML = data["value"].percent+"% "+data["value"].total+" kW";
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                        itm.style.color = data["value"].freeColor;
+                                        itm.innerHTML = data["value"].freePercent+"% "+data["value"].freeTotal+" kW";
+                                    });
+                                    if(charts[data["uuid"]+"-chart"]) {
+                                        charts[data["uuid"]+"-chart"].data.setAll([
+                                            { name: "Vlastní spotřeba", value: data["value"].percent },
+                                            { name: "Ze sítě", value: 100-data["value"].percent }
+                                        ]);
+                                    } else {
+                                        var root = am5.Root.new(data["uuid"]+"-chart");
+                                        var chart = root.container.children.push(am5percent.PieChart.new(root, {
+                                            layout: root.verticalLayout,
+                                            innerRadius: am5.percent(80)
+                                        }));
+                                        charts[data["uuid"]+"-chart"] = chart.series.push(am5percent.PieSeries.new(root, {
+                                            valueField: "value",
+                                            categoryField: "name",
+                                            alignLabels: false
+                                        }));
+                                        charts[data["uuid"]+"-chart"].get("colors").set("colors", [
+                                            am5.color(0x69c350),
+                                            am5.color(0xf7b55c)
+                                        ]);
+                                        charts[data["uuid"]+"-chart"].data.setAll([
+                                            { name: "Vlastní", value: data["value"].percent },
+                                            { name: "Ze sítě", value: 100-data["value"].percent }
+                                        ]);
+                                    }
                                 }
                             break;
                             case "EFM":
@@ -1567,6 +1636,60 @@ connection.onopen = function() {
                                     });
                             break;
                             case "LightControllerV2":
+                                if(data["subtype"] == "moodlist") {
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-value2']").forEach(function(itm) {
+                                        data["value"].forEach(function(item) {
+                                            itm.innerHTML += `
+                                                <button class="b1 moods" data-id="`+data["uuid"]+`-mood`+item.id+`" onclick="lxControl(\'`+data["uuid"]+`\', \'`+data["type"]+`\', \'setmood:`+item.id+`\')">`+item.name+`</button>
+                                            `;
+                                        });
+                                    });
+                                    if(colors[data["uuid"]]) {
+
+                                    } else {
+                                        colors[data["uuid"]] = new iro.ColorPicker("#colorselect"+data["uuid"], {
+                                            width: 290,
+                                            height: 360,
+                                            handleRadius: 8,
+                                            activeHandleRadius: 10,
+                                            handleUrl: null,
+                                            handleOrigin: {y: 0, x: 0},
+                                            colors: [
+                                              '#ffffff'
+                                            ],
+                                            borderWidth: 0,
+                                            borderColor: 'black',
+                                            padding: 8,
+                                            wheelLightness: true,
+                                            layoutDirection: 'vertical',
+                                            layout: [
+                                              {
+                                                component: iro.ui.Wheel,
+                                                options: {
+                                                  wheelDirection: 'clockwise',
+                                                  wheelAngle: 0,
+                                                }
+                                              },
+                                              {
+                                                component: iro.ui.Slider,
+                                                options: {
+                                                  sliderType: 'kelvin',
+                                                  sliderShape: 'circle'
+                                                }
+                                              }
+                                            ]
+                                        });
+                                    }
+                                }
+                                if(data["subtype"] == "activemood") {
+                                    data["value"]
+                                    document.getElementById(data["uuid"]+"-open").querySelectorAll("button.moods").forEach(function(item) {
+                                        item.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+                                    });
+                                    document.querySelectorAll("[data-id='"+data["uuid"]+"-mood"+data["value"]+"']").forEach(function(itm) {
+                                        itm.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                                    });
+                                }
                                 if(data["subtype"] == "mood")
                                     document.querySelectorAll("[data-id='"+data["uuid"]+"-value']").forEach(function(itm) {
                                         itm.innerHTML = data["value"];
@@ -1960,7 +2083,7 @@ function callChart() {
     }));
     var series = chart.series.push(am5percent.PieSeries.new(root, {
         valueField: "value",
-        categoryField: "category",
+        categoryField: "name",
         alignLabels: false
     }));
     series.get("colors").set("colors", [
@@ -1968,7 +2091,7 @@ function callChart() {
         am5.color(0xf7b55c)
     ]);
     series.data.setAll([
-        { value: 90, category: "One" },
-        { value: 10, category: "Two" }
+        { name: "One", value: 90 },
+        { name: "Two", value: 10 }
     ]);
 }

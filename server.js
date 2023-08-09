@@ -259,21 +259,33 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                 break;
                 case "EnergyManager2":
                     if(mainItem.states.Gpwr == uuid) {
+                        var Gpwr = controlValues[mainItem.states.Gpwr];
+                        var Spwr = controlValues[mainItem.states.Spwr];
+                        var Ppwr = controlValues[mainItem.states.Ppwr];
+                        var total = Spwr+Ppwr;
+                        var percent = 100;
+                        var freePercent = 0;
+                        var freeTotal = 0;
                         var val = "";
                         var col = "";
-                        var val1 = { storagePower: value, storagePowerFormat: Math.round(value)+" kW", storageCharge: controlValues[mainItem.states.Ssoc], storageChargeFormat: controlValues[mainItem.states.Ssoc]+" %" };
-                        if(value >= 0) {
-                            val = "100% Vlastní spotřeba";
+                        var val1 = { storagePower: Gpwr, storagePowerFormat: Math.round(Gpwr)+" kW", storageCharge: controlValues[mainItem.states.Ssoc], storageChargeFormat: controlValues[mainItem.states.Ssoc]+"%" };
+                        if(Gpwr > 0) {
+                            percent = Math.round((1-Gpwr/(Gpwr+total))*100);
+                            total = Math.round((total+Gpwr)*1000)/1000;
+                            val = percent+"% Vlastní spotřeba";
                             col = "rgb(105, 195, 80)";
                         } else {
-                            val = kwtow(value)+" ze sítě";
+                            freePercent = Gpwr/(total+Gpwr*-1);
+                            freeTotal = Gpwr*-1;
+                            val = kwtow(freeTotal)+" ze sítě";
                             col = "rgb(247, 181, 92)";
                         }
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "custompower", value: { total: total, percent: percent, color: percent > 0 ? "rgb(105, 195, 80)" : "rgba(234, 234, 245, 0.6)", freeTotal: freeTotal, freePercent: freePercent, freeColor: freePercent > 0 ? "rgb(105, 195, 80)" : "rgba(234, 234, 245, 0.6)" } }));
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "status", value: val, color: col }));
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "battery", value: val1 }));
                     }
                     if(mainItem.states.Ssoc == uuid) {
-                        var val1 = { storagePower: controlValues[mainItem.states.Gpwr], storagePowerFormat: Math.round(controlValues[mainItem.states.Gpwr])+" kW", storageCharge: value, storageChargeFormat: value+" %" };
+                        var val1 = { storagePower: controlValues[mainItem.states.Gpwr], storagePowerFormat: Math.round(controlValues[mainItem.states.Gpwr])+" kW", storageCharge: value, storageChargeFormat: value+"%" };
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "battery", value: val1 }));
                     }
                     if(mainItem.states.loads == uuid) {
@@ -281,12 +293,17 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         var active = 0;
                         JSON.parse(value).forEach(function(item) {
                             var state = "Automatika";
+                            var number = 0;
                             active = item.active ? 1 : 0;
-                            if(item.activatedManually)
+                            if(item.activatedManually) {
                                 state = "Zapnuto do půlnoci";
-                            if(item.deactivatedManually)
+                                number = 1;
+                            }
+                            if(item.deactivatedManually) {
                                 state = "Vypnuto do půlnoci";
-                            val.push({ name: item.name, power: item.pwr+" kW", active: active, state: state });
+                                number = 2;
+                            }
+                            val.push({ name: item.name, power: item.pwr+" kW", active: active, state: state, number: number });
                         });
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "loads", value: val }));
                     }
@@ -294,6 +311,7 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "minstorage", value: value }));
                     if(mainItem.states.MaxSpwr == uuid)
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "maxstorage", value: value }));
+
                 break;
                 case "EFM":
                     if(mainItem.states.Ppwr == uuid)
@@ -615,8 +633,14 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                 val = a.name;
                             }
                         }
+                        if(controlValues[mainItem.states.presenceTo] && controlValues[mainItem.states.presenceTo] > 0) {
+                            val += " (Simulace přítomnosti)";
+                        }
                         sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "mood", value: val, color: col }));
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "activemood", value: value }));
                     }
+                    if(mainItem.states.moodList == uuid)
+                        sendMessage(JSON.stringify({ module: "control", action: "update", uuid: myUuid, type: mainItem.type, subtype: "moodlist", value: JSON.parse(value) }));
                 break;
                 case "AlarmClock":
                     if(mainItem.states.nextEntryTime == uuid) {
@@ -1423,6 +1447,13 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                                 socket.send("jdev/sps/io/"+uid+"/setMinSoc/"+value.replace("minstorage:",""));
                                             if(value.includes("maxstorage:"))
                                                 socket.send("jdev/sps/io/"+uid+"/setMaxSpwr/"+value.replace("maxstorage:",""));
+                                            if(value.includes("mode:")) {
+                                                var val = value.split(":");
+                                                JSON.parse(controlValues[lxData.controls[uid].states.loads]).forEach(function(item) {
+                                                    if(item.id.toString() == val[1])
+                                                        socket.send("jdev/sps/io/"+uid+"/"+item.uuid+"/"+val[2]);
+                                                });
+                                            }
                                         break;
                                         case "Wallbox2":
                                             switch(value) {
@@ -1504,11 +1535,10 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                             }
                                         break;
                                         case "LightControllerV2":
-                                            switch(value) {
-                                                case "next":
-                                                    socket.send("jdev/sps/io/"+uid+"/plus");
-                                                break;
-                                            }
+                                            if(value == "next")
+                                                socket.send("jdev/sps/io/"+uid+"/plus");
+                                            if(value.includes("setmood:"))
+                                                socket.send("jdev/sps/io/"+uid+"/changeTo/"+value.replace("setmood:",""));
                                         break;
                                         case "AlarmClock":
                                             switch(value) {
