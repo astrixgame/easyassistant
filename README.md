@@ -19,7 +19,7 @@ Rename config.sample.json to config.json and change the values for your use.<br>
 Run the server
 <pre>node server.js</pre>
 <h2>Licenses</h2>
-These program uses thee programs/libraries:
+These program uses theese programs/libraries:
 <ul><li>Vosk (Speech Recognition)</li></ul>
 <h2>Contact us</h2>
 Website, Forum: <a href="http://easyassistant.clanweb.eu/home/">http://easyassistant.clanweb.eu</a><br>
