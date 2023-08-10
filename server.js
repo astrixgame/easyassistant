@@ -5,10 +5,17 @@ import axios from 'axios';
 import fs from 'fs';
 import natural from 'natural';
 import chalk from 'chalk';
-import readline, { clearScreenDown } from 'readline';
+import readline from 'readline';
+import vosk from 'vosk';
+import mic from 'mic';
 
 log("INFO","Main Thread","Initializing varriables");
 
+vosk.setLogLevel(0);
+var speechModel;
+var speechRecognizer;
+var speechMicrophone;
+var speechMicrophoneStream;
 var clients = new Set();
 var conf = {};
 var weatherReadData = {};
@@ -31,9 +38,24 @@ log("INFO","Main Thread","Loading configurations files");
 if(fs.existsSync("config.json")) {
     fs.readFile("config.json", {encoding: 'utf-8'}, function(err,data) {
         conf = JSON.parse(data);
-    
         log("INFO","Main Thread","Configurations files has been loaded");
         log("INFO","Main Thread","Loading server cache and data files");
+
+        log("INFO","Main Thread","Loading Speech Model");
+        speechModel = new vosk.Model("models/cs-cz");
+        log("INFO","Main Thread","Speech Model has been loaded");
+        log("INFO","Main Thread","Creating Speech Recognizer");
+        speechRecognizer = new vosk.Recognizer({model: speechModel, sampleRate: 44100});
+        log("INFO","Main Thread","Speech Recognizer has been created");
+        log("INFO","Main Thread","Registrating listener for microphone");
+        speechMicrophone = mic({
+            rate: String(25000),
+            channels: '1',
+            debug: false,
+            device: 'default',
+        });
+        speechMicrophoneStream = speechMicrophone.getAudioStream();
+        log("INFO","Main Thread","Listener for microphone has been registrated");
     
         fs.readFile("weather.json", {encoding: 'utf-8'}, function(err, weatherDataReaded) {
             weatherReadData = JSON.parse(weatherDataReaded);
@@ -1674,79 +1696,11 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                                     }
                                 }
                             break;
-                            case "speech":
-                                var sentence = dt["sentence"].toLowerCase();
-                                var command = processSentence(sentence).split(":");
-                                var control = lxData.controls[command[1]];
-                                switch(command[0]) {
-                                    case "Switch_setOn":
-                                        socket.send("jdev/sps/io/"+control.uuidAction+"/on");
-                                        log("INFO","Voice Thread","Recieved voice command to turn on the switch, {uuid:"+control.uuidAction+",state:on,sure:"+command[2]+"}");
-                                    break;
-                                    case "Switch_setOff":
-                                        socket.send("jdev/sps/io/"+control.uuidAction+"/off");
-                                        log("INFO","Voice Thread","Recieved voice command to turn off the switch, {uuid:"+control.uuidAction+",state:off,sure:"+command[2]+"}");
-                                    break;
-                                    case "Switch_say":
-                                        
-                                    break;
-                                    case "EIBDimmer_say":
-                                        
-                                    break;
-                                    case "EIBDimmer_setOn":
-                                        if(sentence.includes("%")) {
-                                            var half = sentence.substring(0, sentence.lastIndexOf("%"));
-                                            var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
-                                            socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
-                                        } else {
-                                            socket.send("jdev/sps/io/"+control.uuidAction+"/100.000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
-                                        }
-                                    break;
-                                    case "EIBDimmer_setOff":
-                                        if(sentence.includes("%")) {
-                                            var half = sentence.substring(0, sentence.lastIndexOf("%"));
-                                            var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
-                                            socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
-                                        } else {
-                                            socket.send("jdev/sps/io/"+control.uuidAction+"/0.000000");
-                                            log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
-                                        }
-                                    break;
-                                    case "EIBDimmer_setChange":
-                                        if(sentence.includes("%")) {
-                                            var half = sentence.substring(0, sentence.lastIndexOf("%"));
-                                            var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
-                                            socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
-                                            log("INFO","Voice Thread","Recieved voice command to change dimmer value, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
-                                        } else {
-                                            log("INFO","Voice Thread","Recieved voice command to change dimmer value, but percent value is not set");
-                                        }
-                                    break;
-                                }
-                                
-                                function processSentence(sentence) {
-                                    var bestMatch = null, bestScore = 0;
-                                    for(var mapping of sentenceMapping) {
-                                        var distance = natural.JaroWinklerDistance(mapping.sentence.toLowerCase(), sentence, { caseSensitive: false });
-                                        //console.log({sentence: sentence, mapping: mapping.sentence.toLowerCase(), score: distance});
-                                        if(distance>bestScore) {
-                                            bestMatch = mapping.command;
-                                            bestScore = distance;
-                                        }
-                                    }
-                                    return bestMatch+":"+(Math.round(distance*100))+"%";
-                                }
-                            break;
                             default:
                                 log("ERROR","Communication Thread","Accepted incorrent command from client-");
                                 ws.send("ERROR:[NEPLATNÝ MODUL]");
                             break;
                         }
-
-
                     });
 
                     ws.on('close', function(ws) {
@@ -1755,6 +1709,87 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
                         log("INFO","Connection Thread","Client has disconnected");
                     });
                 });
+
+                speechMicrophoneStream.on('data', data => {
+                    if(speechRecognizer.acceptWaveform(data)) {
+                        var sentence = speechRecognizer.result().text.toLowerCase();
+                        console.log(sentence);
+                        var command = processSentence(sentence).split(":");
+                        var control = lxData.controls[command[1]];
+                        switch(command[0]) {
+                            case "Switch_setOn":
+                                socket.send("jdev/sps/io/"+control.uuidAction+"/on");
+                                log("INFO","Voice Thread","Recieved voice command to turn on the switch, {uuid:"+control.uuidAction+",state:on,sure:"+command[2]+"}");
+                            break;
+                            case "Switch_setOff":
+                                socket.send("jdev/sps/io/"+control.uuidAction+"/off");
+                                log("INFO","Voice Thread","Recieved voice command to turn off the switch, {uuid:"+control.uuidAction+",state:off,sure:"+command[2]+"}");
+                            break;
+                            case "Switch_say":
+                                
+                            break;
+                            case "EIBDimmer_say":
+                                
+                            break;
+                            case "EIBDimmer_setOn":
+                                if(sentence.includes("%")) {
+                                    var half = sentence.substring(0, sentence.lastIndexOf("%"));
+                                    var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
+                                    socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
+                                    log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
+                                } else {
+                                    socket.send("jdev/sps/io/"+control.uuidAction+"/100.000000");
+                                    log("INFO","Voice Thread","Recieved voice command to turn on the dimmer, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
+                                }
+                            break;
+                            case "EIBDimmer_setOff":
+                                if(sentence.includes("%")) {
+                                    var half = sentence.substring(0, sentence.lastIndexOf("%"));
+                                    var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
+                                    socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
+                                    log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, percent detected changing, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
+                                } else {
+                                    socket.send("jdev/sps/io/"+control.uuidAction+"/0.000000");
+                                    log("INFO","Voice Thread","Recieved voice command to turn off the dimmer, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
+                                }
+                            break;
+                            case "EIBDimmer_setChange":
+                                if(sentence.includes("%")) {
+                                    var half = sentence.substring(0, sentence.lastIndexOf("%"));
+                                    var percent = half.substring(half.lastIndexOf(" ")+1, half.length);
+                                    socket.send("jdev/sps/io/"+control.uuidAction+"/"+percent+".000000");
+                                    log("INFO","Voice Thread","Recieved voice command to change dimmer value, {uuid:"+control.uuidAction+",value:"+percent+",sure:"+command[2]+"}");
+                                } else {
+                                    log("INFO","Voice Thread","Recieved voice command to change dimmer value, but percent value is not set");
+                                }
+                            break;
+                        }
+                        
+                        function processSentence(sentence) {
+                            var bestMatch = null, bestScore = 0;
+                            for(var mapping of sentenceMapping) {
+                                var distance = natural.JaroWinklerDistance(mapping.sentence.toLowerCase(), sentence, { caseSensitive: false });
+                                //console.log({sentence: sentence, mapping: mapping.sentence.toLowerCase(), score: distance});
+                                if(distance>bestScore) {
+                                    bestMatch = mapping.command;
+                                    bestScore = distance;
+                                }
+                            }
+                            return bestMatch+":"+(Math.round(distance*100))+"%";
+                        }
+                    }
+                });
+                
+                speechMicrophoneStream.on('audioProcessExitComplete', function() {
+                    speechRecognizer.free();
+                    speechModel.free();
+                });
+                
+                process.on('SIGINT', function() {
+                    speechMicrophone.stop();
+                });
+                
+                speechMicrophone.start();
 
                 var userInput = readline.createInterface({
                     input: process.stdin,

@@ -738,9 +738,13 @@ connection.onopen = function() {
                                                 </div>
                                                 <div class="controling" id="`+data["uuid"]+`-controling2" style="display:none;">
                                                     <div class="custom-color" data-id="`+data["uuid"]+`-value3">
-                                                        <div class="color-selector" id="colorselect`+data["uuid"]+`">
-                                                            <img src="assets/images/colors/rgb.png" class="previewSelector">
-                                                            <img src="assets/images/colors/temp.png" class="previewSelector">
+                                                        <div class="color-selector" id="colorselect1`+data["uuid"]+`">
+                                                            <div class="color-sel" id="colorselect1-`+data["uuid"]+`"></div>
+                                                            <img src="assets/images/colors/temp.png" class="previewSelector" onclick="document.getElementById('colorselect1`+data["uuid"]+`').style.display='none';document.getElementById('colorselect2`+data["uuid"]+`').style.display='block';">
+                                                        </div>
+                                                        <div class="color-selector" style="display:none;" id="colorselect2`+data["uuid"]+`">
+                                                            <div class="color-sel" id="colorselect2-`+data["uuid"]+`"></div>
+                                                            <img src="assets/images/colors/rgb.png" class="previewSelector" onclick="document.getElementById('colorselect1`+data["uuid"]+`').style.display='block';document.getElementById('colorselect2`+data["uuid"]+`').style.display='none';">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1647,7 +1651,7 @@ connection.onopen = function() {
                                     if(colors[data["uuid"]]) {
 
                                     } else {
-                                        colors[data["uuid"]] = new iro.ColorPicker("#colorselect"+data["uuid"], {
+                                        colors[data["uuid"]+"1"] = new iro.ColorPicker("#colorselect1-"+data["uuid"], {
                                             width: 290,
                                             height: 360,
                                             handleRadius: 8,
@@ -1657,9 +1661,10 @@ connection.onopen = function() {
                                             colors: [
                                               '#ffffff'
                                             ],
-                                            borderWidth: 0,
-                                            borderColor: 'black',
+                                            borderWidth: 10,
+                                            borderColor: 'rgb(30, 30, 30)',
                                             padding: 8,
+                                            margin: 0,
                                             wheelLightness: true,
                                             layoutDirection: 'vertical',
                                             layout: [
@@ -1669,7 +1674,26 @@ connection.onopen = function() {
                                                   wheelDirection: 'clockwise',
                                                   wheelAngle: 0,
                                                 }
-                                              },
+                                              }
+                                            ]
+                                        });
+                                        colors[data["uuid"]+"2"] = new iro.ColorPicker("#colorselect2-"+data["uuid"], {
+                                            width: 290,
+                                            height: 360,
+                                            handleRadius: 8,
+                                            activeHandleRadius: 10,
+                                            handleUrl: null,
+                                            handleOrigin: {y: 0, x: 0},
+                                            colors: [
+                                              '#ffffff'
+                                            ],
+                                            borderWidth: 10,
+                                            borderColor: 'rgb(30, 30, 30)',
+                                            padding: 8,
+                                            margin: 0,
+                                            wheelLightness: true,
+                                            layoutDirection: 'vertical',
+                                            layout: [
                                               {
                                                 component: iro.ui.Slider,
                                                 options: {
