@@ -3,6 +3,5 @@ config.json
 config1.json
 config2.json
 node_modules/
-models/cs-cz/
-models/en-us/
+models/*
 model.nlp
