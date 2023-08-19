@@ -14,13 +14,10 @@ And run following commands:<br><br>
 Download files
 <pre>git clone https://github.com/astrixgame/easyassistant.git</pre>
 Install modules
-<pre>npm i ws http lxcommunicator axios xml-js fs natural chalk readline</pre>
+<pre>npm i axios chalk fs http lxcommunicator node-nlp readline ws</pre>
 Rename config.sample.json to config.json and change the values for your use.<br><br>
 Run the server
 <pre>node server.js</pre>
-<h2>Licenses</h2>
-These program uses theese programs/libraries:
-<ul><li>Vosk (Speech Recognition)</li></ul>
 <h2>Contact us</h2>
 Website, Forum: <a href="http://easyassistant.clanweb.eu/home/">http://easyassistant.clanweb.eu</a><br>
 YouTube: <a href="https://www.youtube.com/@easyassistant">https://www.youtube.com/@easyassistant</a><br>
