@@ -1152,3 +1152,18 @@ input[type="range"]:active::-webkit-slider-thumb{
     border-radius: 50%;
     cursor: pointer;
 }
+
+.custom-color {
+    position: relative;
+    width: 450px;
+    height: 290px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.custom-color .color-selector {
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+}
