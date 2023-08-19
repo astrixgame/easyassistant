@@ -1,4 +1,4 @@
-# Easy Assistant (cs-CZ)
+# Easy Assistant (temp cs-CZ only)
 <h2>Not fully functional yet</h2>Now it supports only <a href="https://www.loxone.com/">Loxone Miniserver</a><br>
 In the future it will have more connection with hubs.<br>
 After the EasyAssistant will be fully operational I'll publish the C++ or C# console app of the server side.
