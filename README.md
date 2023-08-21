@@ -8,6 +8,3 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
 You need these free ports: <ul><li>34987 - EasyAssistantServer (REQUIRED)</li><li>80 - WebInterface (REQUIRED)</li></ul>
 Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> and run it <i>as administrator is recommended</i>
 <h2>How to run the server</h2>
-
-<h2>Links</h2>
-Website, Forum: <a href="http://easyassistant.clanweb.eu/home/">http://easyassistant.clanweb.eu</a><br>
