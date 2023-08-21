@@ -7,15 +7,7 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
 <h2>How to download model</h2>
 You can download it from <a href="https://alphacephei.com/vosk/models">https://alphacephei.com/vosk/models</a>
 <br>
-It will download as modelname.zip so you must unzip it any move it to models/ and it will look like this:<br>
-<pre>
-- EasyAssistant<br>
-  |-- models<br>
-  |   |-- cs-cz<br>
-  |       |-- model folders<br>
-  |   |-- en-us<br>
-  |       |-- model folders
-</pre>
+It will download as modelname.zip then copy it into server models folder <strong>withnout unzipping it</strong><br>
 
 <h2>How to run</h2>
 You need these free ports: <ul><li>34987 - EasyAssistantServer (REQUIRED)</li><li>80 - WebInterface (REQUIRED)</li></ul>
