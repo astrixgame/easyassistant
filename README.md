@@ -9,7 +9,5 @@ You need these free ports: <ul><li>34987 - EasyAssistantServer (REQUIRED)</li><l
 Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> and run it <i>as administrator is recommended</i>
 <h2>How to run the server</h2>
 
-<h2>Contact us</h2>
+<h2>Links</h2>
 Website, Forum: <a href="http://easyassistant.clanweb.eu/home/">http://easyassistant.clanweb.eu</a><br>
-YouTube: <a href="https://www.youtube.com/@easyassistant">https://www.youtube.com/@easyassistant</a><br>
-Mail: <a href="mailto:contact.easyassistant@gmail.com">contact.easyassistant@gmail.com</a>
