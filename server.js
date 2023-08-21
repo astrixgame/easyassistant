@@ -1407,7 +1407,7 @@ function sendValues(uuid, value) {
 }
 
 function processSentence(sentence) {
-    if(sentence.toLowerCase().includes("hej") || sentence.toLowerCase().includes("hrají"))
+    if(sentence.toLowerCase().includes("hej") || sentence.toLowerCase().includes("hrají") || true)
         languageModel.process(sentence).then(function(command) {
             console.log("----------------");
             console.log(sentence);
@@ -1421,8 +1421,8 @@ function processSentence(sentence) {
 }
 
 function proccessInputCommand(type, uuid, command, direct) {
-    command = command.split(":")[0];
     var sentence = command.split(":")[1];
+    command = command.split(":")[0];
     switch(type) {
         case "InfoOnlyDigital":
             if(!direct) {
@@ -1483,19 +1483,19 @@ function proccessInputCommand(type, uuid, command, direct) {
             } else {
                 switch(command) {
                     case "say":
-
+                        sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+" je "+(controlValues[lxData.controls[uuid].states.active] == 1 ? "zapnuté" : "vypnuté"));
                     break;
                     case "ison":
-                        
+                        sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+" je "+(controlValues[lxData.controls[uuid].states.active] == 1 ? "ano je zapnuté" : "ne je vypnuté"));
                     break;
                     case "isoff":
-
+                        sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+" je "+(controlValues[lxData.controls[uuid].states.active] == 1 ? "ne je zapnuté" : "ano je vypnuté"));
                     break;
                     case "on":
-
+                        socket.send("jdev/sps/io/"+uuid+"/on");
                     break;
                     case "off":
-
+                        socket.send("jdev/sps/io/"+uuid+"/off");
                     break;
                 }
             }
@@ -1999,8 +1999,23 @@ function promptUser() {
     });
 }
 
+function findDuplicateWords(sentence1, sentence2) {
+    var words = [];
+    sentence1 = sentence1.toLowerCase().split(" ");
+    sentence2 = sentence2.toLowerCase().split(" ");
+    sentence1.forEach(function(word) {
+        if(sentence2.includes(word))
+            words.push(word);
+    });
+    sentence2.forEach(function(word) {
+        if(sentence1.includes(word) && !words.includes(word))
+            words.push(word);
+    });
+    return words.join(" ");
+}
+
 async function sendToSpeech(text) {
-    
+    console.log(text);
 }
     
 function log(level, module, text) {
