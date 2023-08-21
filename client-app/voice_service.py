@@ -17,13 +17,13 @@ def find_between(s, first, last):
         return s[start:end]
     except ValueError:
         return ""
-
+            
 async def main():
     while True:
         try:
-            with sd.RawInputStream(samplerate=16000, blocksize=8000, dtype="int16", channels=1, callback=callback):
+            with sd.RawInputStream(samplerate=22050, blocksize=8000, dtype="int16", channels=1, callback=callback):
                 async with websockets.connect("ws://localhost:34987/ws") as websocket:
-                    rec = KaldiRecognizer(Model(model_path="models/cs-cz"), 16000)
+                    rec = KaldiRecognizer(Model(model_path="../models/cs-cz"), 22050)
                     while True:
                         data = q.get()
                         if rec.AcceptWaveform(data):
@@ -35,7 +35,9 @@ async def main():
         except Exception as e:
             print(f"An error occurred: {str(e)}. Reconnecting in 10 seconds...")
             await asyncio.sleep(10)
-if os.path.exists('EasyAssistant.address'):
-    asyncio.get_event_loop().run_until_complete(main())
-else:
-    address = input("Your EasyAssistant Server Address (address:34987)")
+asyncio.get_event_loop().run_until_complete(main())
+#if os.path.exists('EasyAssistant.address'):
+#    
+#    asyncio.get_event_loop().run_until_complete(main())
+#else:
+#    address = input("Your EasyAssistant Server Address (address:34987)")
