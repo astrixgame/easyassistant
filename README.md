@@ -30,7 +30,7 @@ Download the latest release from: <a href="https://github.com/astrixgame/easy-as
     },                                         
     "voiceActivateSentences": "hey"            <-- Activation sentence can be everything and you can add more than one separated by comma for example it will be there hey ... or only hey
 }                                              
-</pre>
-3. Run the server by starting script that have name of your OS and 64 bits ...
-4. Test it by simply openning your server address and if everything works it will show and interface filled with controls panels of your hub
+</pre><br>
+3. Run the server by starting script that have name of your OS and 64 bits ...<br>
+4. Test it by simply openning your server address and if everything works it will show and interface filled with controls panels of your hub<br>
 5. (Optional) Install the client-app for voice controling you can select between many types and version of it, so for example if you want only voice recognition background app you can install from Releases voice_server app, but there are many types of client some of that will include interface and more features.
