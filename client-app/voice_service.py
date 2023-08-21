@@ -3,6 +3,7 @@ import asyncio
 import queue
 import sounddevice as sd
 from vosk import Model, KaldiRecognizer
+import os.path
 
 q = queue.Queue()
 
@@ -34,5 +35,7 @@ async def main():
         except Exception as e:
             print(f"An error occurred: {str(e)}. Reconnecting in 10 seconds...")
             await asyncio.sleep(10)
-
-asyncio.get_event_loop().run_until_complete(main())
+if os.path.exists('EasyAssistant.address'):
+    asyncio.get_event_loop().run_until_complete(main())
+else:
+    address = input("Your EasyAssistant Server Address (address:34987)")
