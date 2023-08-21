@@ -16,8 +16,7 @@ Download the latest release from: <a href="https://github.com/astrixgame/easy-as
 <ol>
   <li>Download server.zip from Releases and unzip it</li>
   <li>Configure the server
-  <pre>
-{                                              
+  <pre>{                                              
     "hub": {                                   
         "type": "loxone",                      <-- Name of hub like loxone or other supported hubs
         "address": "Address:Port",             <-- Address and port of your hub
@@ -30,8 +29,7 @@ Download the latest release from: <a href="https://github.com/astrixgame/easy-as
         "openWeatherToken": ""                 <-- If in the row up below filled up with openweather fill this with openweather token
     },                                         
     "voiceActivateSentences": "hey"            <-- Activation sentence can be everything and you can add more than one separated by comma for example it will be there hey ... or only hey
-}                                              
-  </pre></li>
+}</pre></li>
   <li>Run the server by starting script that have name of your OS and 64 bits ...</li>
   <li>Test it by simply openning your server address and if everything works it will show and interface filled with controls panels of your hub</li>
   <li>(Optional) Install the client-app for voice controling you can select between many types and version of it, so for example if you want only voice recognition background app you can install from Releases voice_server app, but there are many types of client some of that will include interface and more features.</li>
