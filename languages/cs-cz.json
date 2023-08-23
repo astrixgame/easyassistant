@@ -1,0 +1,265 @@
+{
+    "voice": {
+        "control": {
+            "InfoOnlyDigital": {
+                "say": [
+                    "jaký {_name_}",
+                    "jaká {_name_}",
+                    "jaké {_name_}",
+                    "kolik {_name_}",
+                    "potřebuji {_name_}",
+                    "zjisti {_name_}",
+                    "řekni {_name_}",
+                    "je {_name_}"
+                ],
+                "ison": [
+                    "aktivní {_name_}",
+                    "zapnutý {_name_}",
+                    "zapnutá {_name_}",
+                    "zapnuté {_name_}",
+                    "zapnuto {_name_}",
+                    "otevřený {_name_}",
+                    "otevřená {_name_}",
+                    "otevřené {_name_}",
+                    "otevřeno {_name_}"
+                ],
+                "isoff": [
+                    "neaktivní {_name_}",
+                    "vypnutý {_name_}",
+                    "vypnutá {_name_}",
+                    "vypnuté {_name_}",
+                    "vypnuto {_name_}",
+                    "zavřený {_name_}",
+                    "zavřená {_name_}",
+                    "zavřené {_name_}",
+                    "zavřeno {_name_}"
+                ]
+            },
+            "InfoOnlyAnalog": {
+                "say": [
+                    "jaký {_name_}",
+                    "jaká {_name_}",
+                    "jaké {_name_}",
+                    "kolik {_name_}",
+                    "potřebuji {_name_}",
+                    "zjisti {_name_}",
+                    "řekni {_name_}"
+                ]
+            },
+            "Switch": {
+                "say": [
+                    "potřebuji {_name_}",
+                    "zjisti {_name_}",
+                    "řekni {_name_}",
+                    "jaká {_name_}"
+                ],
+                "ison": [
+                    "rožnutý {_name_}",
+                    "rožnutá {_name_}",
+                    "rožnuté {_name_}",
+                    "rožnuto {_name_}",
+                    "zhasnutý {_name_}",
+                    "zhasnutá {_name_}",
+                    "zhasnuté {_name_}",
+                    "zhasnuto {_name_}",
+                    "zapnutý {_name_}",
+                    "zapnutá {_name_}",
+                    "zapnuté {_name_}",
+                    "aktivní {_name_}"
+                ],
+                "isoff": [
+                    "neaktivní {_name_}",
+                    "vypnutý {_name_}",
+                    "vypnutá {_name_}",
+                    "vypnuté {_name_}"
+                ],
+                "on": [
+                    "zapni {_name_}",
+                    "rožni {_name_}",
+                    "rozsviť {_name_}",
+                    "zapnout {_name_}",
+                    "nastartuj {_name_}",
+                    "nahoď {_name_}",
+                    "spusť {_name_}"
+                ],
+                "off": [
+                    "vypni {_name_}",
+                    "vypnout {_name_}",
+                    "zhasni {_name_}",
+                    "zhoď {_name_}"
+                ]
+            },
+            "TextState": {
+                "say": [
+                    "jaký {_name_}",
+                    "jaká {_name_}",
+                    "jaké {_name_}",
+                    "kolik {_name_}",
+                    "potřebuji{_name_}",
+                    "zjisti {_name_}",
+                    "řekni {_name_}"
+                ]
+            },
+            "Meter": {
+                "say": [
+                    "jaký {_name_}",
+                    "jaká {_name_}",
+                    "jaké {_name_}",
+                    "kolik {_name_}",
+                    "potřebuji {_name_}",
+                    "zjisti {_name_}",
+                    "řekni {_name_}"
+                ]
+            },
+            "EIBDimmer": {
+                "say": [
+                    "jaká {_name_}",
+                    "jak {_name_}",
+                    "kolik {_name_}",
+                    "řekni {_name_}",
+                    "zjisti {_name_}",
+                    "potřebuji {_name_}"
+                ],
+                "ison": [
+                    "aktivní {_name_}",
+                    "zapnutý {_name_}",
+                    "zapnutá {_name_}",
+                    "zapnuté {_name_}",
+                    "zapnuto {_name_}",
+                    "rožnutý {_name_}",
+                    "rožnutá {_name_}",
+                    "rožnuté {_name_}",
+                    "rožnuto {_name_}",
+                    "zhasnutý {_name_}",
+                    "zhasnutá {_name_}",
+                    "zhasnuté {_name_}",
+                    "zhasnuto {_name_}"
+                ],
+                "isoff": [
+                    "neaktivní {_name_}",
+                    "vypnutý {_name_}",
+                    "vypnutá {_name_}",
+                    "vypnuté {_name_}",
+                    "vypnuto {_name_}"
+                ],
+                "on": [
+                    "zapni {_name_}",
+                    "zapnout {_name_}",
+                    "rožni {_name_}",
+                    "rozsviť {_name_}",
+                    "spusť {_name_}"
+                ],
+                "off": [
+                    "vypnout {_name_}",
+                    "vypni {_name_}",
+                    "zhasni {_name_}"
+                ],
+                "change": [
+                    "nastav {_name_}",
+                    "změň {_name_}"
+                ]
+            },
+            "IRoomControllerV2": {
+                
+            },
+            "PresenceDetector": {
+                "say": [
+                    "je {_name_}",
+                    "řekni {_name_}",
+                    "zjisti {_name_}",
+                    "potřebuji {_name_}"
+                ],
+                "ison": [
+                    "aktivní {_name_}"
+                ],
+                "isoff": [
+                    "neaktivní {_name_}"
+                ]
+            },
+            "TimedSwitch": {
+                
+            },
+            "LeftRightAnalog": {
+                
+            },
+            "Pushbutton": {
+                
+            },
+            "Irrigation": {
+                
+            },
+            "SmokeAlarm": {
+                
+            },
+            "EnergyManager2": {
+                
+            },
+            "EFM": {
+                
+            },
+            "Wallbox2": {
+                
+            },
+            "LoadManager": {
+                
+            },
+            "AalSmartAlarm": {
+                
+            },
+            "Alarm": {
+                
+            },
+            "AalEmergency": {
+                
+            },
+            "PulseAt": {
+                
+            },
+            "WindowMonitor": {
+                
+            },
+            "ClimateController": {
+                
+            },
+            "LightControllerV2": {
+                
+            },
+            "ColorPickerV2": {
+                
+            },
+            "AlarmClock": {
+                
+            },
+            "Window": {
+                
+            },
+            "Jalousie": {
+                
+            },
+            "Gate": {
+                
+            },
+            "Ventilation": {
+                
+            },
+            "Radio": {
+                
+            },
+            "Remote": {
+                
+            },
+            "NfcCodeTouch": {
+                
+            },
+            "Sauna": {
+                
+            },
+            "Intercom": {
+                
+            },
+            "AudioZoneV2": {
+                
+            }
+        }
+    }
+}
