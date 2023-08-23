@@ -1,7 +1,7 @@
 # Easy Assistant (temp cs-CZ only)
 <center>
   <a href=""><img src="https://img.shields.io/badge/License-Apache-blue.svg"></a>
-  <a href=""><img src="https://img.shields.io/badge/Voice-Ready-blue.svg"></a>
+  <a href=""><img src="https://img.shields.io/badge/Voice-Ready-lime.svg"></a>
 </center>
 <h2>Not fully functional yet</h2>Now it supports only <a href="https://www.loxone.com/">Loxone Miniserver</a><br>
 In the future it will have more connection with hubs.<br>
