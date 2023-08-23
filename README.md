@@ -1,6 +1,6 @@
 # Easy Assistant (temp cs-CZ only)
 <center>
-  <a href=""><img src="https://img.shields.io/badge/License-Apache-blue.svg"></a>
+  <a href="https://github.com/astrixgame/easyassistant/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache-blue.svg"></a>
   <a href=""><img src="https://img.shields.io/badge/Voice-Ready-lime.svg"></a>
 </center>
 <h2>Not fully functional yet</h2>Now it supports only <a href="https://www.loxone.com/">Loxone Miniserver</a><br>
@@ -53,4 +53,4 @@ And run the server:<pre>node .</pre>or<pre>node server.js</pre>
   <li>(Optional) Install the client-app for voice controling you can select between many types and version of it, so for example if you want only voice recognition background app you can install from Releases voice_server app, but there are many types of client some of that will include interface and more features.</li>
 </ol>
 <h2>License</h2>
-<a href="">Apache-2.0</a>
+<a href="https://github.com/astrixgame/easyassistant/blob/main/LICENSE">Apache</a>
