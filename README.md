@@ -11,7 +11,9 @@ It will download as modelname.zip then copy it into server models folder <strong
 
 <h2>How to run</h2>
 You need <strong>port 80 free</strong> because the web intreface running on it
-Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> or you can download it from git by <pre>git clone https://github.com/astrixgame/easyassistant.git</pre>
+Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> or you can download it from git:<pre>git clone https://github.com/astrixgame/easyassistant.git</pre>
+Go to the folder:<pre>cd easyassistant</pre>
+And run the server:<pre>node .</pre>or<pre>node server.js</pre>
 <h2>How to run the server</h2>
 <ol>
   <li>Download server.zip from Releases and unzip it</li>
