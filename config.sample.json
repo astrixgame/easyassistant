@@ -11,6 +11,10 @@
         "controlIgnore": [
             "uuid1",
             "uuid2"
+        ],
+        "removedWordFromName": [
+            "name1",
+            "name2"
         ]
     },
     "language": "en-us",
