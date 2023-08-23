@@ -8,6 +8,12 @@ In the future it will have more connection with hubs.<br>
 <h2>About us</h2>
 Easy Assistant is software designed to make life easier. Featuring voice recognition technology, the intelligent Easy Assistant responds instantly to voice commands, such as turning lights on or off, adjusting thermostat settings. It can detect your presence, and automatically adjust the temperature, lighting and other settings to create a comfortable environment while also conserving energy.<br><br>The assistant must be connected to the main controller like Loxone or other hub that we support.<br><br>The voice controling is running on the <a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">Jaro Winkler Distance</a> Algorithm which means that the voice command can perform actions when the sentence is not corrent said or when the name of control is not said full and the Speech Recognition (ASR) is currently running os <a href="https://github.com/alphacep/vosk-api">Vosk</a> from <a href="https://alphacephei.com/vosk/">Alphacephei</a>
 
+<h2>Features</h2>
+- Custom Interface with weather
+- Voice control
+- Simple to use
+- Support hubs
+
 <h2>How to download model</h2>
 You can download it from <a href="https://alphacephei.com/vosk/models">https://alphacephei.com/vosk/models</a>
 <br>
