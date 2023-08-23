@@ -18,15 +18,9 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
 </ul>
 
 <h2>Getting started</h2>
-
-<h2>How to run</h2>
-You need <strong>port 80 free</strong> because the web intreface running on it
-Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> or you can download it from git:<pre>git clone https://github.com/astrixgame/easyassistant.git</pre>
-
-
-<h2>How to run the server</h2>
+<i>You need <strong>port 80 free</strong> because the web intreface running on it</i>
 <ol>
-  <li>Download server.zip from Releases and unzip it</li>
+  <li>Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> or you can download it from git:<pre>git clone https://github.com/astrixgame/easyassistant.git</pre></li>
   <li>Configure the server
     <pre>{                                              
       "hub": {                                   
@@ -55,7 +49,7 @@ Download the latest release from: <a href="https://github.com/astrixgame/easy-as
       "voiceActivateSentences": "hey"            <-- Activation sentence can be everything and you can add more than one separated by comma for example it will be there hey ... or only hey
       }</pre>
   </li>
-  <li>Run the server by starting script that have name of your OS and 64 bits ...<br>or run the server manually:<code>node .</code>or<code>node server.js</code></li>
+  <li>Run the server by starting script that have name of your OS and 64 bits ...<br>or run the server manually: <code>node .</code> or <code>node server.js</code></li>
   <li>Test it by simply openning your server address and if everything works it will show and interface filled with controls panels of your hub</li>
   <li>(Optional) Install the client-app for voice controling you can select between many types and version of it, so for example if you want only voice recognition background app you can install from Releases voice_server app, but there are many types of client some of that will include interface and more features.</li>
   <li>(Optional) <i>Only if you want to use voice control</i><br>
