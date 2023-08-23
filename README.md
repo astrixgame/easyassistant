@@ -20,7 +20,7 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
 <h2>Getting started</h2>
 <i>You need <strong>port 80 free</strong> because the web intreface running on it</i>
 <ol>
-  <li>Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> or you can download it from git:<pre>git clone https://github.com/astrixgame/easyassistant.git</pre></li>
+  <li>Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> or you can download it manually from git:<pre>git clone https://github.com/astrixgame/easyassistant.git</pre></li>
   <li>Configure the server
     <pre>{                                              
       "hub": {                                   
@@ -54,7 +54,7 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
   <li>(Optional) Install the client-app for voice controling you can select between many types and version of it, so for example if you want only voice recognition background app you can install from Releases voice_server app, but there are many types of client some of that will include interface and more features.</li>
   <li>(Optional) <i>Only if you want to use voice control</i><br>
     You can download voice model from <a href="https://alphacephei.com/vosk/models">https://alphacephei.com/vosk/models</a><br>
-    It will download as modelname.zip then copy it into server models folder <strong>withnout unzipping it</strong><br></li>
+    It will download as modelname.zip then copy it into server models folder <strong>withnout unzipping it but rename it to your language name like en-us</strong><br></li>
 </ol>
 
 <h2>License</h2>
