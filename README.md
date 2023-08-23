@@ -21,7 +21,19 @@ Download the latest release from: <a href="https://github.com/astrixgame/easy-as
         "type": "loxone",                      <-- Name of hub like loxone or other supported hubs
         "address": "Address:Port",             <-- Address and port of your hub
         "user": "Username",                    <-- Login Username of your hub
-        "password": "SuperSecretPassword"      <-- Login Password of your hub
+        "password": "SuperSecretPassword",     <-- Login Password of your hub
+        "controlNameAlias": {                  
+            "uuid1": "alias name 1",           <-- If your control named like bulb and you want to tell light bulb you can change this
+            "uuid2": "alias name 2"            
+        },
+        "controlIgnore": [
+            "uuid1",                           <-- Ignored controls that will not show up in the interface and cannot be controlled by voice
+            "uuid2"
+        ],
+        "removedWordFromName": [
+            "name1",                           <-- If some control named like heat thermostat you can remove the word heat from name by adding it there but it will be removed from all controls of your hub
+            "name2"
+        ]
     },                                         
     "language": "en-us",                       <-- Language of the interface and the voice
     "weather": {                               
