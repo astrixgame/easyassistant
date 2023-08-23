@@ -17,10 +17,7 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
   <li>Support HW hubs</li>
 </ul>
 
-<h2>How to download model</h2>
-You can download it from <a href="https://alphacephei.com/vosk/models">https://alphacephei.com/vosk/models</a>
-<br>
-It will download as modelname.zip then copy it into server models folder <strong>withnout unzipping it</strong><br>
+<h2>Getting started</h2>
 
 <h2>How to run</h2>
 You need <strong>port 80 free</strong> because the web intreface running on it
@@ -61,6 +58,10 @@ And run the server:<pre>node .</pre>or<pre>node server.js</pre>
   <li>Run the server by starting script that have name of your OS and 64 bits ...</li>
   <li>Test it by simply openning your server address and if everything works it will show and interface filled with controls panels of your hub</li>
   <li>(Optional) Install the client-app for voice controling you can select between many types and version of it, so for example if you want only voice recognition background app you can install from Releases voice_server app, but there are many types of client some of that will include interface and more features.</li>
+  <li>(Optional) <i>Only if you want to use voice control</i><br>
+    You can download voice model from <a href="https://alphacephei.com/vosk/models">https://alphacephei.com/vosk/models</a><br>
+    It will download as modelname.zip then copy it into server models folder <strong>withnout unzipping it</strong><br>
+  </li>
 </ol>
 
 <h2>License</h2>
