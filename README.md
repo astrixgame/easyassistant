@@ -14,7 +14,7 @@ Easy Assistant is software designed to make life easier. Featuring voice recogni
   <li>Custom Interface with weather</li>
   <li>Voice control</li>
   <li>Simple to use</li>
-  <li>Support hubs</li>
+  <li>Support HW hubs</li>
 </ul>
 
 <h2>How to download model</h2>
