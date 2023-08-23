@@ -1,18 +1,17 @@
 import { WebSocketServer, WebSocket } from 'ws';
 import http from 'http';
 import LxCommunicator from "LxCommunicator";
-import axios from 'axios';
 import fs from 'fs';
 import chalk from 'chalk';
 import readline from 'readline';
-import { NlpManager } from 'node-nlp';
 
 log("INFO","Main Thread","Initializing varriables");
 
 var socket;
 var clients = new Set();
 var conf = {};
-var webServer;
+var languageSet = {};
+var server;
 var controlControlsIds = {};
 var controlRoomsIds = {};
 var controlCatsIds = {};
@@ -20,11 +19,9 @@ var lxAlias = {};
 var lxData = {};
 var idSeed = 1;
 var controlValues = {};
-var languageModel;
-var lxNamesAlias = {
-    "1a4da4f3-00c7-f5b8-ffff5c23eca9d419": "žárovka žárovku lustr",
-    "1a4da4fd-02f6-fdf0-ffffb6ede515692f": "žárovka žárovku lustr teplota"
-};
+var lxNamesAlias = {};
+var lxNamesIgnore = [];
+var removedWordFromName = [];
 var userInput = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -33,56 +30,26 @@ var userInput = readline.createInterface({
 log("INFO","Main Thread","Varriables has been inilialized");
 log("INFO","Main Thread","Loading configurations files");
 
-fs.readFile("config.json", {encoding: 'utf-8'}, function(err,data) {
+fs.readFile("config.json", {encoding: 'utf-8'}, function(err, data) {
     conf = JSON.parse(data);
     log("INFO","Main Thread","Configurations files has been loaded");
     log("INFO","Main Thread","Loading server cache and data files");
 
+    lxNamesAlias = conf.hub.controlNameAlias;
+    lxNamesIgnore = conf.hub.controlIgnore;
+    removedWordFromName = conf.hub.removedWordFromName;
+
+    log("INFO","Main Thread","Loading language file");
+    fs.readFile("languages/"+conf.language+".json", {encoding: 'utf-8'}, function(err, lan) {
+        languageSet = JSON.parse(lan);
+        log("INFO","Main Thread","Language file has been loaded");
+    });
+
     log("INFO","Main Thread","Creating natural language processing model");
     log("INFO","Main Thread","Adding languages to language processing model");
-    languageModel = new NlpManager({ languages: conf.voiceLanguages, nlu: { log: false } });
     log("INFO","Main Thread","Natural language has been created");
 
     log("INFO","Main Thread","Server cache and data files has been loaded");
-
-    log("INFO","Interface Thread","Initializing Web interface listener");
-    webServer = http.createServer((req, res) => {
-        var filePath = './webinterface' + req.url;
-        if(filePath === './webinterface/') filePath = './webinterface/index.html';
-        var extname = filePath.substring(filePath.lastIndexOf('.'));
-        var mimeTypes = {
-          '.html': 'text/html',
-          '.css': 'text/css',
-          '.js': 'text/javascript',
-          '.json': 'application/json',
-          '.png': 'image/png',
-          '.jpg': 'image/jpg',
-          '.gif': 'image/gif',
-          '.svg': 'image:svg+xml',
-          '.ttf': 'font/ttf'
-        };
-        var contentType = mimeTypes[extname] || 'application/octet-stream';
-        fs.readFile(filePath, (error, content) => {
-            if(error) {
-                if(error.code === 'ENOENT') {
-                    res.writeHead(404, { 'Content-Type': 'text/html' });
-                    res.end('<h1>404 Not Found</h1>');
-                } else {
-                    res.writeHead(500);
-                    res.end(`Server Error: ${error.code}`);
-                }
-            } else {
-                res.writeHead(200, { 'Content-Type': contentType });
-                res.end(content, 'utf-8');
-            }
-        });
-    });
-    log("INFO","Interface Thread","Web interface listener has been initialized");
-
-    log("INFO","Interface Thread","Trying to create Web Interface listener");
-    webServer.listen(80, () => {
-        log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
-    });
 
     switch(conf.hub.type) {
         case "loxone":
@@ -92,7 +59,7 @@ fs.readFile("config.json", {encoding: 'utf-8'}, function(err,data) {
     }
 });
 
-function loxoneConnection(lxAddr, lxUser, lxPass) {
+async function loxoneConnection(lxAddr, lxUser, lxPass) {
     var WebSocketConfig = LxCommunicator.WebSocketConfig;
     var config = new WebSocketConfig(WebSocketConfig.protocol.WS,"a466678a-200a-4c8b-beb4-cce31a9b56a4","EasyAssistant",WebSocketConfig.permission.APP,false);
         
@@ -120,396 +87,165 @@ function loxoneConnection(lxAddr, lxUser, lxPass) {
 
     socket = new LxCommunicator.WebSocket(config);
 
-    log("INFO","Loxone Thread","Trying to fetch settings from Loxone Miniserver");
-    axios.get("http://"+lxAddr+"/data/LoxAPP3.json", {headers: {Authorization: "Basic "+Buffer.from(lxUser+':'+lxPass).toString('base64')}}).then(function(lxDataFull) {
-        lxData = lxDataFull.data;
+    log("INFO","Loxone Thread","Trying to create connection with Loxone Miniserver");
+    await socket.open(lxAddr, lxUser, lxPass).then(async function() {
+        log("INFO","Loxone Thread","Connection with Loxone Miniserver has been established successfully");
 
-        log("INFO","Loxone Thread","Settings from Loxone Miniserver fetched successfully");
-        log("INFO","Loxone Thread","Configuring connection has been added successfully");
-        log("INFO","Loxone Thread","Trying to create connection with Loxone Miniserver");
+        log("INFO","Loxone Thread","Trying to fetch data from Loxone Miniserver");
+        socket.send("data/LoxAPP3.json").then(function(lxDataFull) {
+            lxData = JSON.parse(lxDataFull);
+            lxNamesIgnore.forEach(function(uuid) {
+                delete lxData.controls[uuid];
+            });
 
-        socket.open(lxAddr, lxUser, lxPass).then(function() {
-            log("INFO","Loxone Thread","Connection with Loxone Miniserver has been established successfully");
+            log("INFO","Loxone Thread","Settings from Loxone Miniserver fetched successfully");
+            log("INFO","Loxone Thread","Configuring connection has been added successfully");
+
             log("INFO","Loxone Thread","Creating status update listener");
-            socket.send("jdev/sps/enablebinstatusupdate").then(async function(respons) {
+            socket.send("jdev/sps/enablebinstatusupdate").then(async function() {
                 log("INFO","Loxone Thread","Status update listener has been created");
-                var len = Object.keys(lxData.controls).length;
-                var currentPercent = 0;
-                var currentLoop = 0;
-                Object.keys(lxData.controls).forEach(function(uuid) {
+                Object.keys(lxData.controls).forEach(async function(uuid) {
                     if(lxData.controls[uuid].states)
                         Object.values(lxData.controls[uuid].states).forEach(function(it) {
                             lxAlias[it] = uuid;
                         });
-                    var control = lxData.controls[uuid];
-                    var addAlias = lxNamesAlias[uuid] ? lxNamesAlias[uuid]+" " : "";
-                    switch(control.type) {
-                        case "InfoOnlyDigital":
-                            languageModel.addDocument("cs", "jaký "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaká "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaké "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "kolik "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "teplota "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "vlhkost "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "světla "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "stav "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "potřebuji "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "zjisti "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "řekni "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "je "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":say");
-                            languageModel.addDocument("cs", "aktivní "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "neaktivní "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zapnutý "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "zapnutá "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "zapnuté "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "zapnuto "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "vypnutý "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnutá "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnuté "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnuto "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřený "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřená "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřené "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřeno "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "otevřený "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "otevřená "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "otevřené "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                            languageModel.addDocument("cs", "otevřeno "+addAlias+control.name, "InfoOnlyDigital:"+uuid+":isone");
-                        break;
-                        case "InfoOnlyAnalog":
-                            languageModel.addDocument("cs", "jaký "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaká "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaké "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "kolik "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "teplota "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "vlhkost "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "světla "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "stav "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "potřebuji "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "zjisti "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                            languageModel.addDocument("cs", "řekni "+addAlias+control.name, "InfoOnlyAnalog:"+uuid+":say");
-                        break;
-                        case "Switch":
-                            languageModel.addDocument("cs", "stav "+addAlias+control.name, "Switch:"+uuid+":say");
-                            languageModel.addDocument("cs", "potřebuji "+addAlias+control.name, "Switch:"+uuid+":say");
-                            languageModel.addDocument("cs", "zjisti "+addAlias+control.name, "Switch:"+uuid+":say");
-                            languageModel.addDocument("cs", "řekni "+addAlias+control.name, "Switch:"+uuid+":say");
-                            languageModel.addDocument("cs", "je "+addAlias+control.name, "Switch:"+uuid+":say");
-                            languageModel.addDocument("cs", "aktivní "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "neaktivní "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zapnutý "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zapnutá "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zapnuté "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zapnuto "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "vypnutý "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnutá "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnuté "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnuto "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřený "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřená "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřené "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zavřeno "+addAlias+control.name, "Switch:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "otevřený "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "otevřená "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "otevřené "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "otevřeno "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "rožnutý "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "rožnutá "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "rožnuté "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "rožnuto "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnutý "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnutá "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnuté "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnuto "+addAlias+control.name, "Switch:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zapni "+addAlias+control.name, "Switch:"+uuid+":on");
-                            languageModel.addDocument("cs", "rožni "+addAlias+control.name, "Switch:"+uuid+":on");
-                            languageModel.addDocument("cs", "rozsviť "+addAlias+control.name, "Switch:"+uuid+":on");
-                            languageModel.addDocument("cs", "zapnout "+addAlias+control.name, "Switch:"+uuid+":on");
-                            languageModel.addDocument("cs", "nastartuj "+addAlias+control.name, "Switch:"+uuid+":on");
-                            languageModel.addDocument("cs", "nahoď "+addAlias+control.name, "Switch:"+uuid+":on");
-                            languageModel.addDocument("cs", "spusť "+addAlias+control.name, "Switch:"+uuid+":on");
-                            languageModel.addDocument("cs", "vypni "+addAlias+control.name, "Switch:"+uuid+":off");
-                            languageModel.addDocument("cs", "vypnout "+addAlias+control.name, "Switch:"+uuid+":off");
-                            languageModel.addDocument("cs", "zhasni "+addAlias+control.name, "Switch:"+uuid+":off");
-                            languageModel.addDocument("cs", "zhoď "+addAlias+control.name, "Switch:"+uuid+":off");
-                            languageModel.addDocument("cs", "zastav "+addAlias+control.name, "Switch:"+uuid+":off");
-                        break;
-                        case "TextState":
-                            languageModel.addDocument("cs", "jaký "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaká "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaké "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "kolik "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "teplota "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "vlhkost "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "světla "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "stav "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "potřebuji "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "zjisti "+addAlias+control.name, "TextState:"+uuid+":say");
-                            languageModel.addDocument("cs", "řekni "+addAlias+control.name, "TextState:"+uuid+":say");
-                        break;
-                        case "Meter":
-                            languageModel.addDocument("cs", "jaký "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaká "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "jaké "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "kolik "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "teplota "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "vlhkost "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "světla "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "stav "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "potřebuji "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "zjisti "+addAlias+control.name, "Meter:"+uuid+":say");
-                            languageModel.addDocument("cs", "řekni "+addAlias+control.name, "Meter:"+uuid+":say");
-                        break;
-                        case "EIBDimmer":
-                            languageModel.addDocument("cs", "jaká "+addAlias+control.name, "EIBDimmer:"+uuid+":say");
-                            languageModel.addDocument("cs", "jak "+addAlias+control.name, "EIBDimmer:"+uuid+":say");
-                            languageModel.addDocument("cs", "kolik "+addAlias+control.name, "EIBDimmer:"+uuid+":say");
-                            languageModel.addDocument("cs", "řekni "+addAlias+control.name, "EIBDimmer:"+uuid+":say");
-                            languageModel.addDocument("cs", "zjisti "+addAlias+control.name, "EIBDimmer:"+uuid+":say");
-                            languageModel.addDocument("cs", "potřebuji "+addAlias+control.name, "EIBDimmer:"+uuid+":say");
-                            languageModel.addDocument("cs", "je "+addAlias+control.name, "EIBDimmer:"+uuid+":say");
-                            languageModel.addDocument("cs", "aktivní "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "neaktivní "+addAlias+control.name, "EIBDimmer:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "zapnutý "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zapnutá "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zapnuté "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zapnuto "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "vypnutý "+addAlias+control.name, "EIBDimmer:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnutá "+addAlias+control.name, "EIBDimmer:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnuté "+addAlias+control.name, "EIBDimmer:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "vypnuto "+addAlias+control.name, "EIBDimmer:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "rožnutý "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "rožnutá "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "rožnuté "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "rožnuto "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnutý "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnutá "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnuté "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "zhasnuto "+addAlias+control.name, "EIBDimmer:"+uuid+":ison");
-                            languageModel.addDocument("cs", "vypnout "+addAlias+control.name, "EIBDimmer:"+uuid+":off");
-                            languageModel.addDocument("cs", "zapni "+addAlias+control.name, "EIBDimmer:"+uuid+":on");
-                            languageModel.addDocument("cs", "zapnout "+addAlias+control.name, "EIBDimmer:"+uuid+":on");
-                            languageModel.addDocument("cs", "rožni "+addAlias+control.name, "EIBDimmer:"+uuid+":on");
-                            languageModel.addDocument("cs", "rozsviť "+addAlias+control.name, "EIBDimmer:"+uuid+":on");
-                            languageModel.addDocument("cs", "nahoď "+addAlias+control.name, "EIBDimmer:"+uuid+":on");
-                            languageModel.addDocument("cs", "spusť "+addAlias+control.name, "EIBDimmer:"+uuid+":on");
-                            languageModel.addDocument("cs", "vypni "+addAlias+control.name, "EIBDimmer:"+uuid+":off");
-                            languageModel.addDocument("cs", "zhasni "+addAlias+control.name, "EIBDimmer:"+uuid+":off");
-                            languageModel.addDocument("cs", "zhoď "+addAlias+control.name, "EIBDimmer:"+uuid+":off");
-                            languageModel.addDocument("cs", "zastav "+addAlias+control.name, "EIBDimmer:"+uuid+":off");
-                            languageModel.addDocument("cs", "nastav "+addAlias+control.name, "EIBDimmer:"+uuid+":change");
-                            languageModel.addDocument("cs", "změň "+addAlias+control.name, "EIBDimmer:"+uuid+":change");
-                        break;
-                        case "IRoomControllerV2":
-                            
-                        break;
-                        case "PresenceDetector":
-                            languageModel.addDocument("cs", "je "+addAlias+control.name, "PresenceDetector:"+uuid+":say");
-                            languageModel.addDocument("cs", "aktivní "+addAlias+control.name, "PresenceDetector:"+uuid+":ison");
-                            languageModel.addDocument("cs", "neaktivní "+addAlias+control.name, "PresenceDetector:"+uuid+":isoff");
-                            languageModel.addDocument("cs", "řekni "+addAlias+control.name, "PresenceDetector:"+uuid+":say");
-                            languageModel.addDocument("cs", "zjisti "+addAlias+control.name, "PresenceDetector:"+uuid+":say");
-                            languageModel.addDocument("cs", "potřebuji "+addAlias+control.name, "PresenceDetector:"+uuid+":say");
-                        break;
-                        case "TimedSwitch":
-
-                        break;
-                        case "LeftRightAnalog":
-
-                        break;
-                        case "Pushbutton":
-                            
-                        break;
-                        case "Irrigation":
-
-                        break;
-                        case "SmokeAlarm":
-
-                        break;
-                        case "EnergyManager2":
-
-                        break;
-                        case "EFM":
-
-                        break;
-                        case "Wallbox2":
-
-                        break;
-                        case "LoadManager":
-
-                        break;
-                        case "AalSmartAlarm":
-
-                        break;
-                        case "Alarm":
-
-                        break;
-                        case "AalEmergency":
-
-                        break;
-                        case "PulseAt":
-
-                        break;
-                        case "WindowMonitor":
-
-                        break;
-                        case "CentralLightController":
-
-                        break;
-                        case "CentralJalousie":
-
-                        break;
-                        case "ClimateController":
-
-                        break;
-                        case "LightControllerV2":
-
-                        break;
-                        case "ColorPickerV2":
-                            
-                        break;
-                        case "AlarmClock":
-
-                        break;
-                        case "Window":
-
-                        break;
-                        case "Jalousie":
-
-                        break;
-                        case "Gate":
-                            
-                        break;
-                        case "Ventilation":
-                            
-                        break;
-                        case "Radio":
-
-                        break;
-                        case "Remote":
-
-                        break;
-                        case "NfcCodeTouch":
-
-                        break;
-                        case "Sauna":
-
-                        break;
-                        case "Intercom":
-                            
-                        break;
-                        case "Webpage":
-                            
-                        break;
-                        case "CentralAudioZone":
-
-                        break;
-                        case "AudioZoneV2":
-
-                        break;
-                    }
-                    var calc = Math.round((currentLoop / len)*10)*10;
-                    if(currentPercent != calc) {
-                        currentPercent = calc;
-                        log("INFO","Voice Thread",chalk.yellow("Training language model "+currentPercent+"%"));
-                    }
-                    currentLoop++;
                 });
-                await languageModel.train();
-                languageModel.save();
-                log("INFO","Voice Thread","Language model has been trained");
             });
         });
     });
+
+    createNetServer();
 }
 
-log("INFO","Main Thread","Trying to create WebSocket listener");
-var wss = new WebSocketServer({ port: 34987 });
-log("INFO","Main Thread","WebSocket listener is listening");
-log("INFO","Main Thread","Server has been fully started");
+function createNetServer() {
+    log("INFO","Interface Thread","Initializing Web interface listener");
+    server = http.createServer((req, res) => {
+        var filePath = './webinterface' + req.url;
+        if(filePath === './webinterface/') filePath = './webinterface/index.html';
+        var extname = filePath.substring(filePath.lastIndexOf('.'));
+        var mimeTypes = {
+            '.html': 'text/html',
+            '.css': 'text/css',
+            '.js': 'text/javascript',
+            '.json': 'application/json',
+            '.png': 'image/png',
+            '.jpg': 'image/jpg',
+            '.gif': 'image/gif',
+            '.svg': 'image:svg+xml',
+            '.ttf': 'font/ttf'
+        };
+        var contentType = mimeTypes[extname] || 'application/octet-stream';
+        fs.readFile(filePath, (error, content) => {
+            if(error) {
+                if(error.code === 'ENOENT') {
+                    res.writeHead(404, { 'Content-Type': 'text/html' });
+                    res.end('<h1>404 Not Found</h1>');
+                } else {
+                    res.writeHead(500);
+                    res.end(`Server Error: ${error.code}`);
+                }
+            } else {
+                res.writeHead(200, { 'Content-Type': contentType });
+                res.end(content, 'utf-8');
+            }
+        });
+    });
+    log("INFO","Interface Thread","Web interface listener has been initialized");
 
-wss.on('connection', function(ws) {
-    clients.add(ws);
-    log("INFO","Connection Thread","Client has connected ["+new Date().getTime().toString(16)+"]");
-
-    Object.keys(lxData.rooms).forEach(function(item) {
-        controlRoomsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
-        idSeed++;
-        ws.send(JSON.stringify({ module: "control", action: "add", menu: "room", uuid: controlRoomsIds[item], title: lxData.rooms[item].name, svg: lxData.rooms[item].image, rating: lxData.rooms[item].defaultRating ? lxData.rooms[item].defaultRating : 0 }));
-    });
-    Object.keys(lxData.cats).forEach(function(item) {
-        controlCatsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
-        idSeed++;
-        ws.send(JSON.stringify({ module: "control", action: "add", menu: "category", uuid: controlCatsIds[item], title: lxData.cats[item].name, svg: lxData.cats[item].image, rating: lxData.cats[item].defaultRating ? lxData.cats[item].defaultRating : 0 }));
-    });
-    Object.keys(lxData.controls).forEach(function(item) {
-        controlControlsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
-        idSeed++;
-        var name = lxData.controls[item].name;
-        var subtype = "";
-        var min = 0;
-        var max = 0;
-        var windows = [];
-        var modes = [];
-        if(lxData.controls[item].preset) {
-            var t = lxData.controls[item].preset.name;
-            name = t.substring(0, t.lastIndexOf(" "));
-        }
-        if(lxData.controls[item].details && lxData.controls[item].details.type)
-            subtype = lxData.controls[item].details.type;
-        if(lxData.controls[item].details && lxData.controls[item].details.min)
-            min = lxData.controls[item].details.min;
-        if(lxData.controls[item].details && lxData.controls[item].details.max)
-            max = lxData.controls[item].details.max;
-        if(lxData.controls[item].details && lxData.controls[item].details.windows)
-            lxData.controls[item].details.windows.forEach(function(item, index) {
-                windows.push({ id: index, window: item.name, room: lxData.rooms[item.room].name });
-            });
-        if(lxData.controls[item].details && lxData.controls[item].details.outputs) {
-            Object.values(lxData.controls[item].details.outputs).forEach(function(item, index) {
-                modes.push({ id: index+1, title: item });
-            });
-            modes.push({ id: 0, title: lxData.controls[item].details.allOff });
-        }
-        if(lxData.controls[item].details && lxData.controls[item].details.modeList) {
-            Object.values(lxData.controls[item].details.modeList).forEach(function(item, index) {
-                modes.push({ id: index+1, name: item.name, command: "mode/"+(index+1) });
-            });
-            modes.push({ id: 0, name: "Vypnuto", command: "reset" });
-        }
-        ws.send(JSON.stringify({ module: "control", action: "add", menu: "control", uuid: controlControlsIds[item], type: lxData.controls[item].type, subtype: subtype, title: name, svg: lxData.controls[item].defaultIcon ? lxData.controls[item].defaultIcon : "", room: controlRoomsIds[lxData.controls[item].room], category: controlCatsIds[lxData.controls[item].cat], rating: lxData.controls[item].defaultRating ? lxData.controls[item].defaultRating : 0, roomname: lxData.rooms[lxData.controls[item].room].name, min: min, max: max, windows: windows, modes: modes }));
-    });
-    Object.keys(controlValues).forEach(function(i) {
-        sendValues(i, controlValues[i]);
+    log("INFO","Interface Thread","Trying to create Web Interface listener");
+    server.listen(80, () => {
+        log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
     });
 
-    ws.on('message', function(data) {
-        var dt = JSON.parse(new Buffer.from(data).toString());
-        switch(dt["module"]) {
-            case "control":
-                if(dt["action"] == "change")
-                    Object.keys(controlControlsIds).forEach(function(v) {
-                        if(dt["uuid"] == controlControlsIds[v])
-                            proccessInputCommand(dt["type"], v, dt["value"], true);
-                    });
-            break;
-            case "voice":
-                console.log(dt["value"]);
-                processSentence(dt["value"]);
-            break;
-            default:
-                log("ERROR","Communication Thread","Accepted incorrent command from client-");
-                ws.send("ERROR:[NEPLATNÝ MODUL]");
-            break;
-        }
-    });
+    log("INFO","Main Thread","Trying to create WebSocket listener");
+    var wss = new WebSocketServer({ server: server });
 
-    ws.on('close', function(ws) {
-        clients.delete(ws);
-        clients.clear();
-        log("INFO","Connection Thread","Client has disconnected");
+    log("INFO","Main Thread","WebSocket listener is listening");
+    log("INFO","Main Thread","Server has been fully started");
+
+    wss.on('connection', function(ws) {
+        clients.add(ws);
+        log("INFO","Connection Thread","Client has connected ["+new Date().getTime().toString(16)+"]");
+
+        Object.keys(lxData.rooms).forEach(function(item) {
+            controlRoomsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
+            idSeed++;
+            ws.send(JSON.stringify({ module: "control", action: "add", menu: "room", uuid: controlRoomsIds[item], title: lxData.rooms[item].name, svg: lxData.rooms[item].image, rating: lxData.rooms[item].defaultRating ? lxData.rooms[item].defaultRating : 0 }));
+        });
+        Object.keys(lxData.cats).forEach(function(item) {
+            controlCatsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
+            idSeed++;
+            ws.send(JSON.stringify({ module: "control", action: "add", menu: "category", uuid: controlCatsIds[item], title: lxData.cats[item].name, svg: lxData.cats[item].image, rating: lxData.cats[item].defaultRating ? lxData.cats[item].defaultRating : 0 }));
+        });
+        Object.keys(lxData.controls).forEach(function(item) {
+            controlControlsIds[item] = (new Date().getTime()*Math.round(10,100)*idSeed).toString(16);
+            idSeed++;
+            var name = lxData.controls[item].name;
+            var subtype = "";
+            var min = 0;
+            var max = 0;
+            var windows = [];
+            var modes = [];
+            if(lxData.controls[item].preset) {
+                var t = lxData.controls[item].preset.name;
+                name = t.substring(0, t.lastIndexOf(" "));
+            }
+            if(lxData.controls[item].details && lxData.controls[item].details.type)
+                subtype = lxData.controls[item].details.type;
+            if(lxData.controls[item].details && lxData.controls[item].details.min)
+                min = lxData.controls[item].details.min;
+            if(lxData.controls[item].details && lxData.controls[item].details.max)
+                max = lxData.controls[item].details.max;
+            if(lxData.controls[item].details && lxData.controls[item].details.windows)
+                lxData.controls[item].details.windows.forEach(function(item, index) {
+                    windows.push({ id: index, window: item.name, room: lxData.rooms[item.room].name });
+                });
+            if(lxData.controls[item].details && lxData.controls[item].details.outputs) {
+                Object.values(lxData.controls[item].details.outputs).forEach(function(item, index) {
+                    modes.push({ id: index+1, title: item });
+                });
+                modes.push({ id: 0, title: lxData.controls[item].details.allOff });
+            }
+            if(lxData.controls[item].details && lxData.controls[item].details.modeList) {
+                Object.values(lxData.controls[item].details.modeList).forEach(function(item, index) {
+                    modes.push({ id: index+1, name: item.name, command: "mode/"+(index+1) });
+                });
+                modes.push({ id: 0, name: "Vypnuto", command: "reset" });
+            }
+            ws.send(JSON.stringify({ module: "control", action: "add", menu: "control", uuid: controlControlsIds[item], type: lxData.controls[item].type, subtype: subtype, title: name, svg: lxData.controls[item].defaultIcon ? lxData.controls[item].defaultIcon : "", room: controlRoomsIds[lxData.controls[item].room], category: controlCatsIds[lxData.controls[item].cat], rating: lxData.controls[item].defaultRating ? lxData.controls[item].defaultRating : 0, roomname: lxData.rooms[lxData.controls[item].room].name, min: min, max: max, windows: windows, modes: modes }));
+        });
+        Object.keys(controlValues).forEach(function(i) {
+            sendValues(i, controlValues[i]);
+        });
+
+        ws.on('message', function(data) {
+            var dt = JSON.parse(new Buffer.from(data).toString());
+            switch(dt["module"]) {
+                case "control":
+                    if(dt["action"] == "change")
+                        Object.keys(controlControlsIds).forEach(function(v) {
+                            if(dt["uuid"] == controlControlsIds[v])
+                                proccessInputCommand(dt["type"], v, dt["value"], true);
+                        });
+                break;
+                case "voice":
+                    console.log(dt["value"]);
+                    processSentence(dt["value"]);
+                break;
+                default:
+                    log("ERROR","Communication Thread","Accepted incorrent command from client-");
+                    ws.send("ERROR:[NEPLATNÝ MODUL]");
+                break;
+            }
+        });
+
+        ws.on('close', function(ws) {
+            clients.delete(ws);
+            clients.clear();
+            log("INFO","Connection Thread","Client has disconnected");
+        });
     });
-});
+}
 
 function sendValues(uuid, value) {
     if(lxData.controls[lxAlias[uuid]]) {
@@ -1407,34 +1143,85 @@ function sendValues(uuid, value) {
 }
 
 function processSentence(sentence) {
-    if(sentence.toLowerCase().includes("hej") || sentence.toLowerCase().includes("hrají") || true)
-        languageModel.process(sentence).then(function(command) {
-            console.log("----------------");
-            console.log(sentence);
-            console.log(command);
-            console.log("----------------");
-            command = command.intent.split(":");
-            proccessInputCommand(command[0], command[1], command[2]+":"+sentence, false);
+    var fin = false;
+    var str = [];
+    str[4] = 0;
+    if(sentence.toLowerCase().includes("hej") || sentence.toLowerCase().includes("hrají") || true) {
+        Object.keys(lxData.controls).forEach(async function(uuid) {
+            var control = lxData.controls[uuid];
+            var name = (lxNamesAlias[uuid] ? lxNamesAlias[uuid] : "")+" "+control.name.toLowerCase();
+            removedWordFromName.forEach(function(i) {
+                name = name.toLowerCase().replace(i, "");
+            });
+            Object.keys(languageSet.voice.control[control.type]).forEach(function(type) {
+                languageSet.voice.control[control.type][type].forEach(function(item) {
+                    var has = true;
+                    if(!fin)
+                        item.replace("{_name_}", name).split(" ").forEach(function(i) {
+                            if(!sentence.includes(i) && has)
+                                has = false;
+                            else {
+                                str[0] = control.type;
+                                str[1] = uuid;
+                                str[2] = type;
+                                str[3] = item.replace("{_name_}", name);
+                            }
+                        });
+                    if(has)
+                        fin = true;
+                    else {
+                        str[5] = jaroWinkler(sentence, item.replace("{_name_}", name), false);
+                        if(str[5] > str[4]) {
+                            str[0] = control.type;
+                            str[1] = uuid;
+                            str[2] = type;
+                            str[3] = item.replace("{_name_}", name);
+                            str[4] = str[5];
+                        }
+                    }
+                    //console.log(str[5]+" - "+sentence+" - "+item.replace("{_name_}", name));
+                });
+            });
         });
-    else 
-        console.log(sentence.toLowerCase());
+        log("INFO","Voice Thread","Proccessing sentence "+chalk.yellow(sentence)+" as "+chalk.yellow(str[3])+" detected command "+chalk.yellow(str[2])+" for uuid "+chalk.yellow(str[1]));
+        proccessInputCommand(str[0], str[1], str[2]+":"+sentence, false);
+    }
 }
 
 function proccessInputCommand(type, uuid, command, direct) {
-    var sentence = command.split(":")[1];
-    command = command.split(":")[0];
+    var sentence = "";
+    if(!direct) {
+        var tmp = command.split(":")
+        command = tmp[0];
+        sentence = tmp[1];
+    }
     switch(type) {
         case "InfoOnlyDigital":
             if(!direct) {
                 switch(command) {
                     case "say":
-                        sendToSpeech("Ahoj jak se máš");
+                        if(lxData.controls[uuid].details && lxData.controls[uuid].details.on) {
+                            sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+(controlValues[lxData.controls[uuid].states.active] == 1 ? " je "+lxData.controls[uuid].details.on : " je "+lxData.controls[uuid].details.off));
+                        } else {
+                            var endOfWord = getShapeWord(findDuplicateWords(sentence, lxData.controls[uuid].name));
+                            sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+(controlValues[lxData.controls[uuid].states.active] == 1 ? " je zapnut"+endOfWord : " je vypnut"+endOfWord));
+                        }
                     break;
                     case "ison":
-                        sendToSpeech("Ahoj jak se máš");
+                        if(lxData.controls[uuid].details && lxData.controls[uuid].details.on) {
+                            sendToSpeech((controlValues[lxData.controls[uuid].states.active] == 1 ? "ano je "+lxData.controls[uuid].details.on : "ne je "+lxData.controls[uuid].details.off));
+                        } else {
+                            var endOfWord = getShapeWord(findDuplicateWords(sentence, lxData.controls[uuid].name));
+                            sendToSpeech((controlValues[lxData.controls[uuid].states.active] == 1 ? "ano je zapnut"+endOfWord : "ne je vypnut"+endOfWord));
+                        }
                     break;
                     case "isoff":
-                        sendToSpeech("Ahoj jak se máš");
+                        if(lxData.controls[uuid].details && lxData.controls[uuid].details.on) {
+                            sendToSpeech((controlValues[lxData.controls[uuid].states.active] == 1 ? "ne je "+lxData.controls[uuid].details.on : "ano je "+lxData.controls[uuid].details.off));
+                        } else {
+                            var endOfWord = getShapeWord(findDuplicateWords(sentence, lxData.controls[uuid].name));
+                            sendToSpeech((controlValues[lxData.controls[uuid].states.active] == 1 ? "ne je zapnut"+endOfWord : "ano je vypnut"+endOfWord));
+                        }
                     break;
                 }
             }
@@ -1443,11 +1230,7 @@ function proccessInputCommand(type, uuid, command, direct) {
             if(!direct) {
                 switch(command) {
                     case "say":
-                        console.log("test3");
-                        sendToSpeech("Ahoj jak se máš");
-                    break;
-                    default:
-                        console.log(command);
+                        sendToSpeech((lxData.controls[uuid].details && lxData.controls[uuid].details.format ? formatNumber(lxData.controls[uuid].details.format, controlValues[lxData.controls[uuid].states.value]) : controlValues[lxData.controls[uuid].states.value]));
                     break;
                 }
             }
@@ -1456,7 +1239,7 @@ function proccessInputCommand(type, uuid, command, direct) {
             if(!direct) {
                 switch(command) {
                     case "say":
-                        sendToSpeech("Ahoj jak se máš");
+                        sendToSpeech(lxData.controls[uuid].name+" je "+controlValues[lxData.controls[uuid].states.textAndIcon]);
                     break;
                 }
             }
@@ -1465,7 +1248,20 @@ function proccessInputCommand(type, uuid, command, direct) {
             if(!direct) {
                 switch(command) {
                     case "say":
-                        sendToSpeech("Ahoj jak se máš");
+                        switch(mainItem.details.type ? mainItem.details.type : "_") {
+                            case "storage":
+                                
+                            break;
+                            default:
+                                
+                            break;
+                        }
+                    break;
+                    case "total":
+
+                    break;
+                    case "actual":
+
                     break;
                 }
             }
@@ -1483,18 +1279,23 @@ function proccessInputCommand(type, uuid, command, direct) {
             } else {
                 switch(command) {
                     case "say":
-                        sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+" je "+(controlValues[lxData.controls[uuid].states.active] == 1 ? "zapnuté" : "vypnuté"));
+                        var endOfWord = getShapeWord(findDuplicateWords(sentence, lxData.controls[uuid].name));
+                        sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+" je "+(controlValues[lxData.controls[uuid].states.active] == 1 ? "zapnut"+endOfWord : "vypnut"+endOfWord));
                     break;
                     case "ison":
-                        sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+" je "+(controlValues[lxData.controls[uuid].states.active] == 1 ? "ano je zapnuté" : "ne je vypnuté"));
+                        var endOfWord = getShapeWord(findDuplicateWords(sentence, lxData.controls[uuid].name));
+                        sendToSpeech((controlValues[lxData.controls[uuid].states.active] == 1 ? "ano je zapnut"+endOfWord : "ne je vypnut"+endOfWord));
                     break;
                     case "isoff":
-                        sendToSpeech(findDuplicateWords(sentence, lxData.controls[uuid].name)+" je "+(controlValues[lxData.controls[uuid].states.active] == 1 ? "ne je zapnuté" : "ano je vypnuté"));
+                        var endOfWord = getShapeWord(findDuplicateWords(sentence, lxData.controls[uuid].name));
+                        sendToSpeech((controlValues[lxData.controls[uuid].states.active] == 1 ? "ne je zapnut"+endOfWord : "ano je vypnut"+endOfWord));
                     break;
                     case "on":
+                        sendToSpeech("Zapnuto");
                         socket.send("jdev/sps/io/"+uuid+"/on");
                     break;
                     case "off":
+                        sendToSpeech("Vypnuto");
                         socket.send("jdev/sps/io/"+uuid+"/off");
                     break;
                 }
@@ -1521,13 +1322,16 @@ function proccessInputCommand(type, uuid, command, direct) {
 
                     break;
                     case "on":
-
+                        sendToSpeech("Zapnuto");
+                        socket.send("jdev/sps/io/"+uuid+"/on");
                     break;
                     case "off":
-
+                        sendToSpeech("Vypnuto");
+                        socket.send("jdev/sps/io/"+uuid+"/off");
                     break;
                     case "change":
-
+                        sendToSpeech("Nastaveno");
+                        socket.send("jdev/sps/io/"+uuid+"/"+sentence.match(/\d/g).join(""));
                     break;
                 }
             }
@@ -1982,14 +1786,18 @@ function kwtow(value) {
 }
 promptUser();
 function promptUser() {
-    userInput.question('> ', (commandandargs) => {
-        fs.appendFile("server.log", "> "+commandandargs+"\n", function() {});
+    userInput.question('', (commandandargs) => {
+        fs.appendFile("server.log", ""+commandandargs+"\n", function() {});
         var all = commandandargs.split(" ");
-        var command = all[0];all[0] = "";
+        var command = all[0];
+        all[0] = "";
         var args = all.filter((arg) => arg !== "");
         switch(command) {
             case "stop":
                 process.exit(0);
+            break;
+            case "sentence":
+                processSentence(args.join(" "));
             break;
             default:
                 log("INFO","Console Thread","Command '"+command+"' does not exist!");
@@ -1997,6 +1805,32 @@ function promptUser() {
         }
         promptUser();
     });
+}
+
+function jaroWinkler(x, y, caseSensitive = false) {
+    var s1 = [], s2 = [], s3 = [], s4 = [];
+    if(!caseSensitive)
+        s1 = x.toLowerCase().split(""), s2 = y.toLowerCase().split("");
+    else
+        s1 = x.split(""), s2 = y.split("");
+    for(var z1 = x.length;z1 >= 0;z1--)
+        for(var z2 = y.length;z2 >= 0;z2--)
+            if(z2 == s2.lastIndexOf(x[z1]) && s3[z1] != x[z1])
+                s2.splice(s2.lastIndexOf(s3[z1] = x[z1]), 1);
+    for(var z2 = y.length;z2 >= 0;z2--)
+        for(var z1 = x.length;z1 >= 0;z1--)
+            if(z1 == s1.lastIndexOf(y[z2]) && s4[z2] != y[z2])
+                s1.splice(s1.lastIndexOf(s4[z2] = y[z2]), 1);
+    s3 = s3.filter(function(a) { return a != null; });
+    s4 = s4.filter(function(a) { return a != null; });
+    var m = s3.length;
+    var n = 0;
+    for(var z = 0;z < m;z++)
+        if(s3[z] != s4[z])
+            n++;
+    if(m > 0)
+        return 1/3*(m/x.length+m/y.length+(m-n/2)/m);
+    return 0;
 }
 
 function findDuplicateWords(sentence1, sentence2) {
@@ -2012,6 +1846,25 @@ function findDuplicateWords(sentence1, sentence2) {
             words.push(word);
     });
     return words.join(" ");
+}
+
+function getShapeWord(word) {
+    if(word && word != "") {
+        var lettersToLetters = {
+            "a": "á",
+            "o": "é",
+            "č": "ý",
+            "e": "á",
+            "š": "á",
+            "j": "ý",
+            "r": "ý",
+            "z": "ý",
+            "y": "é",
+            "č": "ý"
+        };
+        return lettersToLetters[word.charAt(word.length-1)];
+    }
+    return "";
 }
 
 async function sendToSpeech(text) {
