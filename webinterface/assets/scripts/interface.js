@@ -1,4 +1,4 @@
-var connection = new WebSocket("ws://192.168.5.99:34987");
+var connection = new WebSocket("ws://"+window.location.host+":"+window.location.port+"/ws");
 var dateDay = document.getElementById("date-day");
 var dateDate = document.getElementById("date-date");
 var dateTime = document.getElementById("date-clock");
