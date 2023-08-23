@@ -10,8 +10,8 @@ You can download it from <a href="https://alphacephei.com/vosk/models">https://a
 It will download as modelname.zip then copy it into server models folder <strong>withnout unzipping it</strong><br>
 
 <h2>How to run</h2>
-You need port 80 free because the web intreface running on it
-Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a> and run it <i>as administrator is recommended</i>
+You need port <strong>80 free</strong> because the web intreface running on it
+Download the latest release from: <a href="https://github.com/astrixgame/easy-assistant/releases">https://github.com/astrixgame/easyassistant/releases</a>
 <h2>How to run the server</h2>
 <ol>
   <li>Download server.zip from Releases and unzip it</li>
