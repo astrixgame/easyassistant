@@ -3,7 +3,15 @@
         "type": "loxone",
         "address": "Address:Port",
         "user": "Username",
-        "password": "SuperSecretPassword"
+        "password": "SuperSecretPassword",
+        "controlNameAlias": {
+            "uuid1": "alias name 1",
+            "uuid2": "alias name 2"
+        },
+        "controlIgnore": [
+            "uuid1",
+            "uuid2"
+        ]
     },
     "language": "en-us",
     "weather": {
