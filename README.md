@@ -1,4 +1,4 @@
-<img src="https://ctrlv.cz/TKZ4">
+![Logo](https://ctrlv.cz/TKZ4)
 # Easy Assistant (temp cs-CZ only)
 <center>
   <a href="https://github.com/astrixgame/easyassistant/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache-blue.svg"></a>
