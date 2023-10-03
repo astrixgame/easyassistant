@@ -4,11 +4,11 @@ import queue
 import sounddevice as sd
 from vosk import Model, KaldiRecognizer
 import os.path
+import speech_recognition as sr
 
-q = queue.Queue()
+r = sr.Recognizer()
 
-def callback(indata, frames, time, status):
-    q.put(bytes(indata))
+speech = sr.Microphone(device_index=1)
 
 def find_between(s, first, last):
     try:
@@ -22,16 +22,16 @@ async def main():
     while True:
         try:
             connection = await websockets.connect("ws://localhost:80/ws", ping_interval=None)
-            with sd.RawInputStream(samplerate=22050, blocksize=8000, dtype="int16", channels=1, callback=callback):
-                rec = KaldiRecognizer(Model(model_path="../models/cs-cz"), 22050)
-                while True:
-                    data = q.get()
-                    if rec.AcceptWaveform(data):
-                        d = find_between(rec.Result().replace('"text"', ''), '"', '"')
-                        if d:
-                            print(d)
-                            await connection.send('{"module":"voice","value":"'+d+'"}')
-                            await asyncio.sleep(0)
+            with speech as source:
+                audio = r.adjust_for_ambient_noise(source)
+                audio = r.listen(source)
+            try:
+                recog = r.recognize_google(audio, language = 'cs-CZ')
+                print(recog)
+                await connection.send('{"module":"voice","value":"'+recog+'"}')
+                await asyncio.sleep(0)
+            except sr.RequestError as e:
+                print("E")
         except Exception as e:
             print(f"An error occurred: {str(e)}. Reconnecting in 10 seconds...")
             await asyncio.sleep(10)

@@ -153,7 +153,7 @@ function createNetServer() {
     log("INFO","Interface Thread","Web interface listener has been initialized");
 
     log("INFO","Interface Thread","Trying to create Web Interface listener");
-    server.listen(80, () => {
+    server.listen(8080, () => {
         log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
     });
 
@@ -1806,7 +1806,7 @@ function promptUser() {
         promptUser();
     });
 }
-
+/*
 function jaroWinkler(x, y, caseSensitive = false) {
     var s1 = [], s2 = [], s3 = [], s4 = [];
     if(!caseSensitive)
@@ -1831,6 +1831,44 @@ function jaroWinkler(x, y, caseSensitive = false) {
     if(m > 0)
         return 1/3*(m/x.length+m/y.length+(m-n/2)/m);
     return 0;
+}*/
+
+function jaroWinkler(x, y, caseSensitive = false) {
+    if(!caseSensitive) {
+        x = x.toLowerCase();
+        y = y.toLowerCase();
+    }
+    var maxLen = Math.max(x.length, y.length);
+    var matchWindow = Math.floor(maxLen / 2) - 1;
+    var xMatches = new Array(x.length).fill(false);
+    var yMatches = new Array(y.length).fill(false);
+    var commonChars = 0;
+    for(var i = 0; i < x.length; i++) {
+        var start = Math.max(0, i - matchWindow);
+        var end = Math.min(i + matchWindow + 1, y.length);
+        for(var j = start; j < end; j++) {
+            if(!yMatches[j] && x[i] === y[j]) {
+                xMatches[i] = true;
+                yMatches[j] = true;
+                commonChars++;
+                break;
+            }
+        }
+    }
+    if(commonChars === 0)
+        return 0;
+    var transpositions = 0;
+    var k = 0;
+    for(var i = 0; i < x.length; i++) {
+        if(xMatches[i]) {
+            while(!yMatches[k]) k++;
+            if(x[i] !== y[k])
+                transpositions++;
+            k++;
+        }
+    }
+    var jaro = ((commonChars / x.length + commonChars / y.length + (commonChars - transpositions / 2) / commonChars) / 3) + Math.min(4, Math.min(x.length, y.length));
+    return jaro + prefixLength * 0.1 * (1 - jaro);
 }
 
 function findDuplicateWords(sentence1, sentence2) {
