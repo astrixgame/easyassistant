@@ -2,7 +2,6 @@ import { WebSocketServer, WebSocket } from 'ws';
 import http from 'http';
 import LxCommunicator from "LxCommunicator";
 import fs from 'fs';
-import chalk from 'chalk';
 import readline from 'readline';
 
 log("INFO","Main Thread","Initializing varriables");
@@ -154,7 +153,7 @@ function createNetServer() {
 
     log("INFO","Interface Thread","Trying to create Web Interface listener");
     server.listen(80, () => {
-        log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
+        log("INFO","Interface Thread","Web Interface listener running on http://localhost:80");
     });
 
     log("INFO","Main Thread","Trying to create WebSocket listener");
@@ -1183,7 +1182,7 @@ function processSentence(sentence) {
                 });
             });
         });
-        log("INFO","Voice Thread","Proccessing sentence "+chalk.yellow(sentence)+" as "+chalk.yellow(str[3])+" detected command "+chalk.yellow(str[2])+" for uuid "+chalk.yellow(str[1]));
+        log("INFO","Voice Thread","Proccessing sentence "+sentence+" as "+str[3]+" detected command "+str[2]+" for uuid "+str[1]);
         proccessInputCommand(str[0], str[1], str[2]+":"+sentence, false);
     }
 }
@@ -1880,15 +1879,7 @@ function log(level, module, text) {
     var seconds = date.getSeconds();if(seconds < 10) seconds = "0"+seconds;
     var fDate = day+"-"+month+"-"+date.getFullYear()+" "+hours+":"+minutes+":"+seconds+"."+date.getMilliseconds();
     fs.appendFile("server.log", "["+fDate+"] ["+level+"] ["+module+"] "+text.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, "")+"\n", function() {});
-    module = chalk.blue(module);
-    fDate = chalk.gray(fDate);
-    if(level == "INFO") {
-        console.log("["+fDate+"] ["+chalk.cyan("INFO")+"] ["+module+"] "+text);
-    } else if(level == "WARNING") {
-        console.log("["+fDate+"] ["+chalk.cyan("WARNING")+"] ["+module+"] "+text);
-    } else if(level == "ERROR") {
-        console.log("["+fDate+"] ["+chalk.red("ERROR")+"] ["+module+"] "+text);
-    }
+    console.log("["+fDate+"] ["+level+"] ["+module+"] "+text);
 }
 
 process.on('exit', function(code) {
