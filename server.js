@@ -152,8 +152,6 @@ function createNetServer() {
     log("INFO","Interface Thread","Web interface listener has been initialized");
 
     log("INFO","Interface Thread","Trying to create Web Interface listener");
-    server.listen(8080, () => {
-        log("INFO","Interface Thread","Web Interface listener running on "+chalk.underline("http://localhost:80"));
     server.listen(80, () => {
         log("INFO","Interface Thread","Web Interface listener running on http://localhost:80");
     });
