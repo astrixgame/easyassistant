@@ -28,7 +28,7 @@ connection.onclose = function() {
             retry_connection.close();
             window.location.href=window.location.href;
         };
-    }, 3000);*/
+    }, 10000);*/
 };
 
 function lxControl(uuid, type, value) {
