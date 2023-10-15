@@ -2138,6 +2138,11 @@ function timePrompt(hoursMin, hoursMax, minutesMin, minutesMax, callback) {
         overlay.style.display = "none";
         callback(totalseconds.value);
     });
+    overlay.addEventListener("click", function() {
+        timeselector.style.display = "none";
+        overlay.style.display = "none";
+        callback(0);
+    });
 }
 
 function callChart() {
